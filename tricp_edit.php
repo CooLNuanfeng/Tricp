@@ -151,14 +151,9 @@
         <div class="t_TipsList">
         	<div>
             	<ul>
-                	<li><i class="icon icon_sm_view"></i><a href="javascript:;">马来西亚</a><span>黄浦区南京西路248号大光明影院3楼屋顶</span></li>
-                    <li><i class="icon icon_sm_hotel"></i><a href="javascript:;">马来西亚</a><span>黄浦区南京西路248号大光明影院3楼屋顶</span></li>
-                    <li><i class="icon icon_sm_catering"></i><a href="javascript:;">马来西亚</a><span>黄浦区南京西路248号大光明影院3楼屋顶</span></li>
-                    <li><i class="icon icon_sm_traffic"></i><a href="javascript:;">马马得里亚西餐厅餐厅...</a><span>黄浦区南京西路248号大光明影院3楼屋顶</span></li>
-                    <li><i class="icon icon_sm_shopping"></i><a href="javascript:;">马来西亚</a><span>黄浦区南京西路248号大光明影院3楼屋顶</span></li>
-                    <li><i class="icon icon_sm_recreation"></i><a href="javascript:;">马来西亚</a><span>黄浦区南京西路248号大光明影院3楼屋顶</span></li>
-                    <li class="last"><a href="javascript:;" class="t_tipsAdd">+没有可选的地点，点击创建“<span>马燕山的风景</span>”</a></li>
+                	
                 </ul>
+                <div class="last"><a href="javascript:;" class="t_tipsAdd">+没有可选的地点，点击创建“<span>马燕山的风景</span>”</a></div>
             </div>
         </div>
         <a href="javascript:;" target="_self" class="t_tipsFinish">完 成</a></div>

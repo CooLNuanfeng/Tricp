@@ -1403,10 +1403,21 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		}
 	}
 	.last{
+		width: 630px;
+		padding-left: 8px;
+		overflow: hidden;
+		height: 40px;
+		line-height: 40px;
 		border-top: 1px dotted $borderColor;
-		&:hover{
-			background: #ffffff;
+		a{
+			font-size: 14px;
+			margin-right: 10px;
+			color: $txtBlue;
+			&:hover{
+				color: $orange;
+			}
 		}
+		
 	}
 }
 

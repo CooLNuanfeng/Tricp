@@ -86,7 +86,31 @@ $(function(){
 		$(this).addClass('active');
 	})
 	//弹层内自动补全
-	$('#t_searchInput')
+	
+	$('#t_searchInput').keyup(function(){
+		if($(this).val()==''){
+			$('.t_TipsList').hide();
+		}else{
+			$.ajax({
+				url: 'php/searchData.php',
+				type:'GET',
+				data: $(this).val(),
+				contentType: "application/json",
+				dataType: 'json',
+				success: function(res){
+					var className = ['icon_sm_view','icon_sm_hotel','icon_sm_catering','icon_sm_traffic','icon_sm_shopping','icon_sm_recreation']
+					var str = '';
+					for(var i=0; i<res.length; i++){
+						console.log( typeof(res[i]) )
+						console.log( $.parseJSON(res[i]) )
+						/*str+='<li><i class="icon '+className[res[i]['category']]+'"></i><a href="javascript:;">'+res[i]['pointName'][1]+'</a><span>'+res[i]['adress']+'</span></li>'*/
+					}
+					$('.t_TipsList').find('ul').html(str);
+				}
+			})
+			$('.t_TipsList').show();
+		}
+	})
 	
 	
 	

@@ -335,8 +335,9 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 .t_TipsList li a.t_tipsAdd:hover { color: #ff9900; }
 .t_TipsList li a.t_tipsAdd:hover span { color: #ff9900; }
 .t_TipsList li:hover { background: #F5F5F5; }
-.t_TipsList .last { border-top: 1px dotted #dddddd; }
-.t_TipsList .last:hover { background: #ffffff; }
+.t_TipsList .last { width: 630px; padding-left: 8px; overflow: hidden; height: 40px; line-height: 40px; border-top: 1px dotted #dddddd; }
+.t_TipsList .last a { font-size: 14px; margin-right: 10px; color: #0099cc; }
+.t_TipsList .last a:hover { color: #ff9900; }
 
 .t_tipsFinish { margin: 20px auto; text-align: center; width: 160px; height: 40px; line-height: 40px; color: #ffffff; font-family: "微软雅黑"; font-size: 18px; border-radius: 5px; display: block; background: #ff9900; }
 .t_tipsFinish:hover { background: #ff6600; color: #ffffff; text-decoration: none; }
