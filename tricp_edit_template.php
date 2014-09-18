@@ -70,7 +70,7 @@
                                 <div class="remainTxt">已输入<span>0</span><em>/500</em>字</div>
                                 <a href="javascript:;" class="uploadPics">上传照片</a>
                             </div>
-                            <div class="textareaDiv"><textarea class="dis_default">这里的简介、感觉、旅行故事…</textarea></div>
+                            <div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
                             <i class="icon icon_leftArrow"></i>
                         </div>
                         <a href="javascript:;" target="_self" class="addTravel_essay"><i class="icon icon_addEssay"></i><i class="icon icon_orner"></i>旅行

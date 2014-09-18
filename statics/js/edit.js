@@ -2,12 +2,17 @@
 $(function(){
 	
 	//获取高度适应屏幕
-	var windowHeight = $(window).height() > $(document).height() ? $(window).height() : $(document).height();
-	$('.t_mainbox').height(windowHeight - $('.t_topNav').outerHeight() - $('.footerNav').outerHeight() );
+	
+	function getWinHeight(){
+		var windowHeight = $(window).height() > $(document).height() ? $(window).height() : $(document).height();
+
+		$('.t_mainbox').height(windowHeight - $('.t_topNav').outerHeight() - $('.footerNav').outerHeight() );
+	}
+	getWinHeight();
 	
 	
 	//限制字数
-	$('.textareaDiv textarea').bind('input propertychange',function(){
+	$('.textareaDiv textarea').live('input propertychange',function(){
 		var len = getLength($(this).val());
 		len = Math.ceil(len/2);
 		if(len>500){
@@ -18,13 +23,14 @@ $(function(){
 		$(this).parent().siblings('.writeTitle').find('.remainTxt span').html(len);
 			
 	});
-	$('.textareaDiv textarea').focus(function(){
+	$('.textareaDiv textarea').live('focus',function(){
 		$(this).removeClass('dis_default');
 		if($(this).attr('data-value') && $(this).attr('data-value') == $(this).val() ){
 			$(this).val('');
 			$(this).removeClass('dis_default');
 		}
-	}).blur(function(){
+	})
+	$('.textareaDiv textarea').live('blur',function(){
 		if( $(this).val() != '' ){
 			$(this).removeClass('dis_default');
 		}
@@ -46,11 +52,12 @@ $(function(){
 	
 	
 	
-	
-	
-	
-	//弹层 
-	$('.shootPoint').click(function(){
+	//弹层部分 
+	var createOff = true;   // 区别是修改还是新增  false表示新增
+	var $objClick = null;
+	//弹层
+	$('.shootPoint').live('click',function(){
+		$objClick = $(this);
 		var L = $(window).width();
 		var T = $(window).height();
 		$('.mengban').show();
@@ -61,11 +68,14 @@ $(function(){
 		
 		var str = $(this).parent().attr('class');
 			str = str.toLowerCase();
-		
+		//区分是新增还是修改操作
 		if( str == 'writetitle'){
+			createOff = true;
 			$('.t_addInfoBox').hide();
 			$('#t_searchInput').show().val($(this).prev().html());
 		}else{
+			createOff = false;
+			OneDayOff = false;
 			$('.t_addInfoBox').hide();
 			$('#t_searchInput').show().val('这里是哪？')
 		}
@@ -73,11 +83,12 @@ $(function(){
 	})
 	$('.t_dialog_closed').click(function(ev){
 		$('.mengban').hide();
-		$('.t_dialog').hide()
+		$('.t_dialog').hide();
+		$('.t_TipsList').hide();
 	});
 	$('.mengban').click(function(){
-		$(this).hide();
-		$('.t_dialog').hide()
+		//$('.t_TipsList').find('ul').html('');
+		$('.t_TipsList').hide();
 	})
 	
 	//弹层内拍摄点
@@ -85,42 +96,202 @@ $(function(){
 		$('.t_tabAddPoint a').removeClass('active');
 		$(this).addClass('active');
 	})
+
 	//弹层内自动补全
-	
-	$('#t_searchInput').keyup(function(){
-		if($(this).val()==''){
-			$('.t_TipsList').hide();
-		}else{
-			$.ajax({
-				url: 'php/searchData.php',
-				type:'GET',
-				data: $(this).val(),
-				contentType: "application/json",
-				dataType: 'json',
-				success: function(res){
-					var className = ['icon_sm_view','icon_sm_hotel','icon_sm_catering','icon_sm_traffic','icon_sm_shopping','icon_sm_recreation']
-					var str = '';
-					for(var i=0; i<res.length; i++){
-						console.log( typeof(res[i]) )
-						console.log( $.parseJSON(res[i]) )
-						/*str+='<li><i class="icon '+className[res[i]['category']]+'"></i><a href="javascript:;">'+res[i]['pointName'][1]+'</a><span>'+res[i]['adress']+'</span></li>'*/
+	function atuoComplate(){
+		$('#t_searchInput').bind('input propertychange', function(){
+			
+			if($(this).val()==''){
+				$('.t_TipsList').hide();
+			}else{   //自动补全提示
+				$.ajax({
+					url: 'php/searchData.php',
+					type:'GET',
+					data: {'search_text':$(this).val()},
+					dataType: 'json',
+					contentType:"json",
+					success: function(res){
+						var className = ['icon_sm_view','icon_sm_hotel','icon_sm_catering','icon_sm_traffic','icon_sm_shopping','icon_sm_recreation']
+						var str = '';
+						for(var i=0; i<res.length; i++){
+							//console.log(res[i]['category'] )
+							str+='<li><i class="icon '+ className[res[i]['category']]+'"></i><a href="javascript:;" target="_self">'+res[i]['pointName']+'</a><span>'+res[i]['address']+'</span></li>'
+						}
+						$('.t_TipsList').find('ul').html(str);
 					}
-					$('.t_TipsList').find('ul').html(str);
-				}
-			})
-			$('.t_TipsList').show();
+				})
+				$('.t_TipsList').show();
+				$('.t_TipsList').find('.last a span').text($(this).val());
+			}
+		});
+
+		$('#t_searchInput').focus(function(){
+			if($(this).val()=='这里是哪？'){
+				$(this).val('');
+			}
+		}).blur(function(){
+			//$('.t_TipsList').find('ul').html('');
+			//$('.t_TipsList').hide();
+		})
+
+
+		$('.t_TipsList').find('li a').live('click',function(){
+			$('#t_searchInput').val($(this).text());
+			//$('.t_TipsList').find('ul').html('');
+			$('.t_TipsList').hide();
+		});
+		$('.t_TipsList').find('.last a').click(function(){
+			$('#t_searchInput').val($(this).find('span').text());
+			$('.t_TipsList').hide();
+		});
+
+		//自动补全弹层提交部分
+		$('.t_tipsFinish').click(function(){
+			//修改操作
+			if(createOff && $('#t_searchInput').val()!=''){
+				$.ajax({
+					url: 'php/submit.php',
+					type: 'POST',
+					data: {'point':$('.t_tabAddPoint').find('.active').attr('data-point'),'pointTxt':$('#t_searchInput').val()},
+					dataType: 'json',
+					success: function(res){
+
+						$('.mengban').hide();
+						$('.t_dialog').hide();
+						//$('.t_TipsList').find('ul').html('');
+						$('.t_TipsList').hide();
+
+						//console.log(res)
+						//当为新创建的添加一天中的修改时  设置与左侧树对应关系
+						if($objClick.prev().attr('data-name') ==''){
+							$objClick.prev().attr('data-name',res.nameID);
+
+							var len = $('.treeNav dl').length;
+							var treejson ={
+								day : len+1,
+								nameID : res.nameID,
+								value: ''
+							}
+							var $treedl = $('<dl id="d'+(len+1)+'"></dl>');
+								$treedl.find('dd').attr('id',$objClick.prev().attr('data-name'));
+								$treedl.html(_.template($('#treeTemplate').html(), treejson));
+
+							$('.treeNav').append($treedl);
+						}
+
+						$objClick.prev().html(res.pointTxt);
+						$('#'+ $objClick.prev().attr('data-name')).html(res.pointTxt);
+					}
+				})
+			}else{
+				//增加拍摄点
+
+				if($('#t_searchInput').val()!=''){
+					$.ajax({
+						url: 'php/submit.php',
+						type: 'POST',
+						data: {'point':$('.t_tabAddPoint').find('.active').attr('data-point'),'pointTxt':$('#t_searchInput').val()},
+						dataType: 'json',
+						success: function(res){
+
+							$('.mengban').hide();
+							$('.t_dialog').hide();
+							//$('.t_TipsList').find('ul').html('');
+							$('.t_TipsList').hide();
+
+							var titleTxt = res.pointTxt;
+							var dataName = res.nameID;
+							//console.log(res)
+							var json = {
+								title : titleTxt,
+								name: dataName,
+
+							}
+
+							var $dd = $('<dd></dd>')
+								$dd.html( _.template($('#addPointTemplate').html(),json) )
+
+							$objClick.parent().prev().append($dd);
+							getWinHeight();
+
+							//新增一天中的新增拍摄点
+							if(OneDayOff){
+								alert('yes');
+								
+								var len = $('.treeNav dl').length;
+								var val = $('#t_searchInput').val();
+								var treejson ={
+									day : len+1,
+									nameID : res.nameID,
+									value: val
+								}
+								var $treedl = $('<dl id="d'+(len+1)+'"></dl>');
+								$treedl.html(_.template($('#treeTemplate').html(), treejson));
+								$('.treeNav').append($treedl);
+							}else{
+								alert('no')
+								//OneDayOff = true;
+								var addID = $objClick.parent().prev().attr('data-list');
+								$('#'+ addID).append($('<dd id="'+ res.nameID +'">'+ $('#t_searchInput').val() +'</dd>'));
+							}
+
+							
+
+
+						}
+					})
+				}	
+			}
+		})
+	
+	}
+	atuoComplate();
+	
+	//新增一天
+	var OneDayOff = false;  // 判断是否为新增一天;
+
+	$('.addOneDay').click(function(){
+		var $div = $('<div class="t_oneListModel"></div>');
+		var len = $(this).parent().prev().find('dl').length;
+		//var dateDay = $(this).parent().prev().find('.J_calendar').val().split('-');
+		var json = {
+			day: len+1,
+			date: '请选择日期'
 		}
-	})
-	
-	
+		$div.html( _.template($('#addOneDayTemplate').html(), json) );
+		$(this).parent().prev().append($div);
+		getWinHeight();
+		calendar();
+
+		OneDayOff = true;
+
+
+	});
+
+
 	
 	
 	//日历部分选择日期
-	$('.J_calendar').focus(function(){
+	function selectDateCallback(){
+
+		var re = /\d{4}-\d{2}-\d{2}/;
+		if( re.test($(this.trigger).val()) ){
+			$(this.trigger).attr('data-success',1)
+		}else{
+			$(this.trigger).attr('data-success',0)
+		}
+
+		//
+
+	}
+
+	$('.J_calendar').live('focus',function(){
 		$(this).addClass('active');
-	}).blur(function(){
+	});
+	$('.J_calendar').live('blur',function(){
 		$(this).removeClass('active');
 	})
+	
 	
 	
 	///日历部分 
@@ -130,7 +301,7 @@ $(function(){
 	trigger: ".J_calendar", 
 	triggerClass: "J_calendar", 
 	//offsetAmount:{left:-333,top:0},
-	//selectDateCallback: selectDateCallback, 
+	selectDateCallback: selectDateCallback, 
 	cascade: { 
 	days: 1, // 天数叠加一天 
 	trigger: ".J_calendar", 

@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="statics/css/tricp.css" type="text/css">
 <script src="http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js,/js/new_v/top/header-air_new.js"></script>
 <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/calendar.css">
+<script src="statics/js/Underscore.js"></script>
 <script src="http://pic.lvmama.com/min/index.php?f=/js/v5/modules/pandora-calendar.js"></script>
 </head>
 
@@ -48,73 +49,68 @@
             </div>
             <div class="t_listBox">
                 <div class="t_lineTag"><span></span>行程</div>
-                <dl class="t_lineList">
-                	<dt>
-                    	<h6>第1天</h6>
-                        <input type="text" class="J_calendar" value="2014-07-26">
-                        <i class="icon icon_calendarLittle"></i>
-                        <a href="javascript:;" class="iconBig iconDay">D1</a>
-                    </dt>
-                    <dd>
-                        <i class="icon icon_wrPoint"></i>
-                        <div class="writeTxtBox">
-                            <div class="writeTitle">
-                            	<span>旅行随笔</span>
-                                <div class="remainTxt posr">已输入<span>0</span><em>/500</em>字</div>
+                <div class="t_oneListModel">
+                    <dl class="t_lineList" data-list="d1">
+                        <dt>
+                            <h6>第1天</h6>
+                            <input type="text" class="J_calendar" value="2014-07-26">
+                            <i class="icon icon_calendarLittle"></i>
+                            <a href="javascript:;" class="iconBig iconDay">D1</a>
+                        </dt>
+                        <dd>
+                            <i class="icon icon_wrPoint"></i>
+                            <div class="writeTxtBox">
+                                <div class="writeTitle">
+                                    <span>旅行随笔</span>
+                                    <div class="remainTxt posr">已输入<span>0</span><em>/500</em>字</div>
+                                </div>
+                                <div class="textareaDiv"><textarea data-value='' data-success="0"></textarea></div>
+                                <i class="icon icon_leftArrow"></i>
+                                <i class="icon icon_orner"></i>
                             </div>
-                            <div class="textareaDiv"><textarea data-value='' data-success="0"></textarea></div>
-                            <i class="icon icon_leftArrow"></i>
-                            <i class="icon icon_orner"></i>
-                        </div>
-                    </dd>
-                    <dd>
-                        <i class="icon icon_wrPoint"></i>
-                        <div class="writeTxtBox">
-                            <div class="writeTitle">
-                            	<span>西湖</span><a href="javascript:;" class="modifyTitle shootPoint"><i class="icon icon_modifyTitle"></i>修改</a>
-                                <div class="remainTxt">已输入<span>0</span><em>/500</em>字</div>
-                                <a href="javascript:;" class="uploadPics">上传照片</a>
+                        </dd>
+                        <dd>
+                            <i class="icon icon_wrPoint"></i>
+                            <div class="writeTxtBox">
+                                <div class="writeTitle">
+                                    <span data-name='n1'>西湖</span><a href="javascript:;" class="modifyTitle shootPoint"><i class="icon icon_modifyTitle"></i>修改</a>
+                                    <div class="remainTxt">已输入<span>0</span><em>/500</em>字</div>
+                                    <a href="javascript:;" class="uploadPics">上传照片</a>
+                                </div>
+                                <div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
+                                <i class="icon icon_leftArrow"></i>
                             </div>
-                            <div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
-                            <i class="icon icon_leftArrow"></i>
-                        </div>
-                        <div class="t_list_picModel">
-                        	<div class="t_listPicBox">
-                                <ul class="clearfix">
-                                    <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"><div class="upStatus">75%<span><em></em></span></div></li>
-                                    <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"><div class="upStatus"><p>上传失败</p><a href="javascript:;">重新上传</a></div></li>
-                                    <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"><div class="successPic"><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div><div class="iconBig move"></div></li>
-                                    <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
-                                    <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
-                                    <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
-                                    <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
-                                    <li class="pic_stint"><div class="failure"><p>宽小于600像素</p><a href="javascript:;">重新上传</a></div></li>
-                                    <li class="essay_listTxt">色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂...</li>
-                                </ul>
+                            <div class="t_list_picModel">
+                                <div class="t_listPicBox">
+                                    <ul class="clearfix">
+                                        <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"><div class="upStatus">75%<span><em></em></span></div></li>
+                                        <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"><div class="upStatus"><p>上传失败</p><a href="javascript:;">重新上传</a></div></li>
+                                        <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"><div class="successPic"><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div><div class="iconBig move"></div></li>
+                                        <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
+                                        <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
+                                        <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
+                                        <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
+                                        <li class="pic_stint"><div class="failure"><p>宽小于600像素</p><a href="javascript:;">重新上传</a></div></li>
+                                        <li class="essay_listTxt">色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂...</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <a href="javascript:;" target="_self" class="addTravel_essay"><i class="icon icon_addEssay"></i><i class="icon icon_orner"></i>旅行
-随笔</a>
-                        <a href="javascript:;" target="_self" class="icon del_travel"></a>
-                    </dd>
-                </dl>
-                <div class="newPoint">新增拍摄点<a href="javascript:;" target="_self" class="icon icon_addPoint shootPoint"></a></div>
-                
+                            <a href="javascript:;" target="_self" class="addTravel_essay"><i class="icon icon_addEssay"></i><i class="icon icon_orner"></i>旅行
+    随笔</a>
+                            <a href="javascript:;" target="_self" class="icon del_travel"></a>
+                        </dd>
+                    </dl>
+                    <div class="newPoint">新增拍摄点<a href="javascript:;" target="_self" class="icon icon_addPoint shootPoint"></a></div>
+                </div>
             </div> 
-            <div class="newDay">新增一天<a href="javascript:;" target="_self" class="iconBig icon_add"></a></div>
+            <div class="newDay">新增一天<a href="javascript:;" target="_self" class="iconBig icon_add addOneDay"></a></div>
         </div>
        	<div class="t_publish"><a href="javascript:;" class="publish">发 表</a>或者<a href="javascript:;" class="draft">保存为草稿</a></div>
         <div class="treeNav fl">
             <h6>前言</h6>
-            <dl>
+            <dl id="d1">
                 <dt class="active">D1<span></span></dt>
-                <dd>雷锋塔</dd>
-                <dd>西湖</dd>
-            </dl>
-            <dl>
-                <dt>D2<span></span></dt>
-                <dd>雷锋塔</dd>
-                <dd>西湖</dd>
+                <dd id='n1'>西湖</dd>
             </dl>
         </div>
     </div>
@@ -151,7 +147,6 @@
         <div class="t_TipsList">
         	<div>
             	<ul>
-                	
                 </ul>
                 <div class="last"><a href="javascript:;" class="t_tipsAdd">+没有可选的地点，点击创建“<span>马燕山的风景</span>”</a></div>
             </div>
@@ -168,4 +163,45 @@
 
 </body>
 <script src="statics/js/edit.js"></script>
+<script type="text/template" id="addPointTemplate">
+	<i class="icon icon_wrPoint"></i>
+	<div class="writeTxtBox">
+		<div class="writeTitle">
+			<span data-name="<%= name %>"><%- title %></span><a href="javascript:;" class="modifyTitle shootPoint"><i class="icon icon_modifyTitle"></i>修改</a>
+			<div class="remainTxt">已输入<span>0</span><em>/500</em>字</div>
+			<a href="javascript:;" class="uploadPics">上传照片</a>
+		</div>
+		<div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
+		<i class="icon icon_leftArrow"></i>
+	</div>
+	<a href="javascript:;" target="_self" class="addTravel_essay"><i class="icon icon_addEssay"></i><i class="icon icon_orner"></i>旅行
+随笔</a>
+</script>
+<script type="text/template" id="addOneDayTemplate">
+<dl class="t_lineList" data-list="d<%= day %>">
+	<dt>
+		<h6>第<%= day %>天</h6>
+		<input type="text" class="J_calendar" value="<%= date %>" data-success="0">
+		<i class="icon icon_calendarLittle"></i>
+		<a href="javascript:;" class="iconBig iconDay">D<%= day %></a>
+	</dt>
+	<dd>
+		<i class="icon icon_wrPoint"></i>
+		<div class="writeTxtBox">
+			<div class="writeTitle">
+				<span data-name="">这里是哪？</span><a href="javascript:;" class="modifyTitle shootPoint"><i class="icon icon_modifyTitle"></i>修改</a>
+				<div class="remainTxt">已输入<span>0</span><em>/500</em>字</div>
+				<a href="javascript:;" class="uploadPics">上传照片</a>
+			</div>
+			<div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
+			<i class="icon icon_leftArrow"></i>
+		</div>
+	</dd>
+</dl>
+<div class="newPoint">新增拍摄点<a href="javascript:;" target="_self" class="icon icon_addPoint shootPoint"></a></div>
+</script>
+<script type="text/template" id="treeTemplate">
+	<dt>D<%= day %><span></span></dt>
+	<dd id="<%= nameID %>"><%= value %></dd>
+</script>
 </html>

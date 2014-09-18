@@ -1,0 +1,23 @@
+<?php 
+	header('Content-type: application/json');
+
+	$search = $_GET['search_text'];
+
+	$arr = array(
+		'{"category":"0"， "pointName":"马来西亚", "adress":"黄浦区南京大光明影院3楼屋顶"}',
+		'{"category":"1"， "pointName":"马来西亚1", "adress":"黄浦区南京西路248号大光明影院3楼屋顶"}',
+		'{"category":"2"， "pointName":"马来西亚2", "adress":"黄浦区南京号大光明影院3楼屋顶"}',
+		'{"category":"3"， "pointName":"马来西亚3", "adress":"黄浦区南京西路248号大光明影院3楼屋顶"}',
+		'{"category":"4"， "pointName":"马来西亚4", "adress":"黄浦区南2号大光明影院3楼屋顶"}',
+		'{"category":"5"， "pointName":"马来西亚5", "adress":"黄浦区南京西路248号大光明影院"}',
+		'{"category":"6"， "pointName":"马来西亚6", "adress":"黄浦区南京西路248号"}');
+	
+	echo json_encode($arr);
+	//echo $search
+	
+	
+	/*
+	数据参数
+	category :  拍摄点类别  0 表示景点 1 表示酒店 2表示餐饮 3表示交通 4表示购物 5表示娱乐 6表示其他
+	 */
+?>
