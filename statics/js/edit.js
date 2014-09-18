@@ -54,6 +54,7 @@ $(function(){
 	
 	//弹层部分 
 	var createOff = true;   // 区别是修改还是新增  false表示新增
+	//var start = true;   // 区分是否为初始修改
 	var $objClick = null;
 	//弹层
 	$('.shootPoint').live('click',function(){
@@ -71,11 +72,11 @@ $(function(){
 		//区分是新增还是修改操作
 		if( str == 'writetitle'){
 			createOff = true;
+			//OneDayOff = !OneDayOff;
 			$('.t_addInfoBox').hide();
 			$('#t_searchInput').show().val($(this).prev().html());
 		}else{
 			createOff = false;
-			OneDayOff = false;
 			$('.t_addInfoBox').hide();
 			$('#t_searchInput').show().val('这里是哪？')
 		}
@@ -148,7 +149,9 @@ $(function(){
 		//自动补全弹层提交部分
 		$('.t_tipsFinish').click(function(){
 			//修改操作
-			if(createOff && $('#t_searchInput').val()!=''){
+			//console.log(OneDayOff);
+			if(  createOff  && $('#t_searchInput').val()!=''){
+				
 				$.ajax({
 					url: 'php/submit.php',
 					type: 'POST',
@@ -162,8 +165,12 @@ $(function(){
 						$('.t_TipsList').hide();
 
 						//console.log(res)
-						//当为新创建的添加一天中的修改时  设置与左侧树对应关系
-						if($objClick.prev().attr('data-name') ==''){
+						
+						// 判断是否是在刚增加的一天中修改
+						if($objClick.prev().attr('data-name') =='' && !OneDayOff){
+							//console.log(OneDayOff);
+							console.log('aaaa');
+
 							$objClick.prev().attr('data-name',res.nameID);
 
 							var len = $('.treeNav dl').length;
@@ -177,15 +184,38 @@ $(function(){
 								$treedl.html(_.template($('#treeTemplate').html(), treejson));
 
 							$('.treeNav').append($treedl);
+							$objClick.prev().html(res.pointTxt);
+							$('#'+ $objClick.prev().attr('data-name')).html(res.pointTxt);
+						}else{
+							
+							if(OneDayOff){
+								console.log('start');
+								var id = $('.treeNav dl').length;
+								$objClick.prev().html($('#t_searchInput').val());
+								$objClick.prev().attr('data-name',res.nameID);
+								$('#d'+id).find('dd').first().attr('id',res.nameID)
+								$('#d'+id).find('dd').first().text($('#t_searchInput').val());
+								OneDayOff = false;
+							}/*else if(){
+
+							}else{*/
+								console.log('olde')
+								$objClick.prev().html(res.pointTxt);
+								$('#'+ $objClick.prev().attr('data-name')).html(res.pointTxt);
+								if(OneDayOff){
+									OneDayOff = false;
+								}
+								
+							//}
+							
 						}
 
-						$objClick.prev().html(res.pointTxt);
-						$('#'+ $objClick.prev().attr('data-name')).html(res.pointTxt);
+						
+						
 					}
 				})
 			}else{
 				//增加拍摄点
-
 				if($('#t_searchInput').val()!=''){
 					$.ajax({
 						url: 'php/submit.php',
@@ -213,11 +243,18 @@ $(function(){
 
 							$objClick.parent().prev().append($dd);
 							getWinHeight();
+							var addID = $objClick.parent().prev().attr('data-list');
+							$('#'+ addID).append($('<dd id="'+ res.nameID +'">'+ $('#t_searchInput').val() +'</dd>'));
 
+							/*if(OneDayOff){
+								OneDayOff = false;
+								console.log('off');
+							}*/
+							
 							//新增一天中的新增拍摄点
-							if(OneDayOff){
-								alert('yes');
-								
+							//if(OneDayOff){
+								/*alert('yes');
+								OneDayOff = false;
 								var len = $('.treeNav dl').length;
 								var val = $('#t_searchInput').val();
 								var treejson ={
@@ -228,12 +265,12 @@ $(function(){
 								var $treedl = $('<dl id="d'+(len+1)+'"></dl>');
 								$treedl.html(_.template($('#treeTemplate').html(), treejson));
 								$('.treeNav').append($treedl);
-							}else{
-								alert('no')
+								OneDayOff = false;*/
+							//}else{
+								//alert('no')
 								//OneDayOff = true;
-								var addID = $objClick.parent().prev().attr('data-list');
-								$('#'+ addID).append($('<dd id="'+ res.nameID +'">'+ $('#t_searchInput').val() +'</dd>'));
-							}
+								
+							//}
 
 							
 
@@ -262,6 +299,16 @@ $(function(){
 		$(this).parent().prev().append($div);
 		getWinHeight();
 		calendar();
+
+
+		var treejson ={
+			day : len+1,
+			nameID : '',
+			value: '这里是哪？'
+		}
+		var $treedl = $('<dl id="d'+(len+1)+'"></dl>');
+			$treedl.html(_.template($('#treeTemplate').html(),treejson))
+		$('.treeNav').append($treedl);
 
 		OneDayOff = true;
 
