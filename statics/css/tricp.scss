@@ -705,6 +705,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 	border: 1px solid $orange;
 	outline: none;
 	margin-left: 10px;
+	display: none;
 	
 }
 
@@ -1686,6 +1687,186 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 }
 .icon_saveEssay{
 	background-position: -75px -25px;
+}
+
+
+
+
+//查看页面样式
+
+//头部导航
+.tl_topNavBox{
+	width: 100%;
+	height: auto;
+	background: #ffffff;
+	border-bottom: 1px solid $borderColor;
+	-webkit-box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+	-ms-box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+	-o-box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+.tl_topNavMain{
+	width: 1200px;
+	margin: 0 auto;
+}
+.tl_topNav{
+	height: 37px;
+	border-bottom: 1px solid $borderColor;
+	p{
+		height: 37px;
+		line-height: 37px;
+		a{
+			text-decoration: none;
+			color: $txtGray;
+			margin-right: 5px;
+			&:hover{
+				text-decoration: underline;
+				color: $lvmamaColor;
+			}
+		}
+		.useLink{
+			color: $txtNormal;
+		}
+	}
+	div{
+		height: 37px;
+		line-height: 37px;
+		a{
+			color: $lvmamaColor;
+			font-family: "微软雅黑";
+			font-size: 14px;
+			margin: 0 5px 0 10px;
+		}
+	}
+}
+.tl_userInfo{
+	position: relative;
+	padding: 20px 0px;
+	dl{
+		overflow: hidden;
+	}
+	dt{
+		float: left;
+		width: 170px;
+		padding-left: 70px;
+		div{
+			width: 84px;
+			text-align: center;
+			height: 84px;
+			overflow: hidden;
+			border: 1px solid $borderColor;
+			padding: 4px;
+			border-radius: 50%;
+			img{
+				border-radius: 50%;
+			}
+		}
+	}
+	dd{
+		float: left;
+		position: relative;
+		margin-top: 10px;
+		.title{
+			font-size: 24px;
+			font-family: "微软雅黑";
+			color: $txtBlack;
+			margin-right: 10px;	
+			font-weight: normal;		
+		}
+		.tl_tag{
+			padding: 3px 8px;
+			border: 1px solid $orange;
+			font-size: 12px;
+			color: $orange;
+			margin-right: 5px;
+			border-radius: 3px;
+			cursor: default;
+		}
+		a{
+			margin-left: 50px;
+			color: $txtBlue;
+			&:hover{
+				color: $orange;
+				.icon_modifyTitle{
+					background-position: -475px -2px;
+				}
+			}
+		}
+		p{
+			color: $txtNormal;
+			span{
+				color: $txtGray;
+				em{
+					padding: 0 10px;
+				}
+			}
+			strong{
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+.tl_shareCollection{
+	position: absolute;
+	top: 20px;
+	right: 0px;
+	overflow: hidden;
+	a{
+		display: block;
+		float: left;
+		padding: 0 15px;
+		border-right: 1px solid $borderColor;
+		text-align: center;
+		height: 24px;
+		line-height: 24px;
+		color: $txtGray;
+		&:hover{
+			color: $orange;
+			text-decoration: none;
+			.icon_zan{
+				background-position: -200px -77px;
+			}
+			.icon_commit{
+				background-position: -250px -77px;
+			}
+			.icon_share{
+				background-position: -300px -77px;
+			}
+			.icon_favorites{
+				background-position: -350px -77px;
+			}
+		}
+	}
+	.favorites{
+		border-right: 0px;
+	}
+}
+
+.icon_zan{
+	background-position: -175px -77px;
+}
+.icon_commit{
+	background-position: -225px -77px;
+}
+.icon_share{
+	background-position: -275px -77px;
+}
+.icon_favorites{
+	background-position: -325px -77px;
+}
+
+.icon_travels{
+	background-position: -225px -25px;
+}
+.iconEssence{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0px;
+	left: -64px;
+	background-position: 0px -100px;
 }
 
 //修正样式

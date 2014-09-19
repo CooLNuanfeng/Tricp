@@ -23,12 +23,12 @@
             </ul>
         </div>
         <div class="editMain">
-        	<div class="userHeader error">
+        	<div class="userHeader">
             	<div class="userAvatar"><img src="statics/image/userHeader.png" width="85" height="85"></div>
-                <p class="tricpTitle">雨中有只小阿狗</p>
-                <input type="text" class="t_editingTitle" style="display:none">
-                <div class="leftTxt"><span>80</span>/40</div>
-                <a href="javascript:;" class="modifyTitle"><i class="icon icon_modifyTitle"></i>修改</a>
+                <p class="tricpTitle" data-success='1'>雨中有只小阿狗</p>
+                <input type="text" class="t_editingTitle">
+                <div class="leftTxt"><span>0</span>/30</div>
+                <a href="javascript:;" class="modifyTitle modifyTricpName"><i class="icon icon_modifyTitle"></i>修改</a>
             </div>
             <div class="t_listBox mt20">
                 <div class="t_lineTag"><span></span>前言</div>
@@ -158,7 +158,7 @@
 <div class="t_dialog eassyBox">
 	<div class="t_dialog_border">
     	<div class="eassyTxt">
-        	<textarea data-success="0"></textarea>
+        	<textarea></textarea>
             <p class="eassyLeftTxt">已输入<span>0</span><em>/300</em>字</p>
             <a href="javascript:;" target="_self" class="t_save_eassy dis_link"><i class="icon icon_saveEssay"></i>保存随笔</a>
         </div>

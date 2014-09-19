@@ -163,7 +163,7 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 .userAvatar { float: left; width: 85px; height: 85px; padding: 3px; background: #ffffff; border-radius: 50%; overflow: hidden; border: 1px solid #dddddd; }
 .userAvatar img { border-radius: 50%; }
 
-.t_editingTitle { width: 310px; height: 23px; padding: 5px; padding-right: 40px; line-height: 23px; border: 1px solid #ff9900; outline: none; margin-left: 10px; }
+.t_editingTitle { width: 310px; height: 23px; padding: 5px; padding-right: 40px; line-height: 23px; border: 1px solid #ff9900; outline: none; margin-left: 10px; display: none; }
 
 .tricpTitle { float: left; height: 85px; margin: 0 10px; line-height: 85px; font-family: "微软雅黑"; font-size: 24px; color: #333333; }
 
@@ -399,6 +399,55 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 .t_save_eassy.dis_link:hover { background: #C9C9C9; }
 
 .icon_saveEssay { background-position: -75px -25px; }
+
+.tl_topNavBox { width: 100%; height: auto; background: #ffffff; border-bottom: 1px solid #dddddd; -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); -ms-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); -o-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1); }
+
+.tl_topNavMain { width: 1200px; margin: 0 auto; }
+
+.tl_topNav { height: 37px; border-bottom: 1px solid #dddddd; }
+.tl_topNav p { height: 37px; line-height: 37px; }
+.tl_topNav p a { text-decoration: none; color: #999999; margin-right: 5px; }
+.tl_topNav p a:hover { text-decoration: underline; color: #df1078; }
+.tl_topNav p .useLink { color: #666666; }
+.tl_topNav div { height: 37px; line-height: 37px; }
+.tl_topNav div a { color: #df1078; font-family: "微软雅黑"; font-size: 14px; margin: 0 5px 0 10px; }
+
+.tl_userInfo { position: relative; padding: 20px 0px; }
+.tl_userInfo dl { overflow: hidden; }
+.tl_userInfo dt { float: left; width: 170px; padding-left: 70px; }
+.tl_userInfo dt div { width: 84px; text-align: center; height: 84px; overflow: hidden; border: 1px solid #dddddd; padding: 4px; border-radius: 50%; }
+.tl_userInfo dt div img { border-radius: 50%; }
+.tl_userInfo dd { float: left; position: relative; margin-top: 10px; }
+.tl_userInfo dd .title { font-size: 24px; font-family: "微软雅黑"; color: #333333; margin-right: 10px; font-weight: normal; }
+.tl_userInfo dd .tl_tag { padding: 3px 8px; border: 1px solid #ff9900; font-size: 12px; color: #ff9900; margin-right: 5px; border-radius: 3px; cursor: default; }
+.tl_userInfo dd a { margin-left: 50px; color: #0099cc; }
+.tl_userInfo dd a:hover { color: #ff9900; }
+.tl_userInfo dd a:hover .icon_modifyTitle { background-position: -475px -2px; }
+.tl_userInfo dd p { color: #666666; }
+.tl_userInfo dd p span { color: #999999; }
+.tl_userInfo dd p span em { padding: 0 10px; }
+.tl_userInfo dd p strong { font-weight: normal; }
+
+.tl_shareCollection { position: absolute; top: 20px; right: 0px; overflow: hidden; }
+.tl_shareCollection a { display: block; float: left; padding: 0 15px; border-right: 1px solid #dddddd; text-align: center; height: 24px; line-height: 24px; color: #999999; }
+.tl_shareCollection a:hover { color: #ff9900; text-decoration: none; }
+.tl_shareCollection a:hover .icon_zan { background-position: -200px -77px; }
+.tl_shareCollection a:hover .icon_commit { background-position: -250px -77px; }
+.tl_shareCollection a:hover .icon_share { background-position: -300px -77px; }
+.tl_shareCollection a:hover .icon_favorites { background-position: -350px -77px; }
+.tl_shareCollection .favorites { border-right: 0px; }
+
+.icon_zan { background-position: -175px -77px; }
+
+.icon_commit { background-position: -225px -77px; }
+
+.icon_share { background-position: -275px -77px; }
+
+.icon_favorites { background-position: -325px -77px; }
+
+.icon_travels { background-position: -225px -25px; }
+
+.iconEssence { width: 50px; height: 50px; position: absolute; top: 0px; left: -64px; background-position: 0px -100px; }
 
 .mt20 { margin-top: 20px; }
 

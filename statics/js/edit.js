@@ -363,14 +363,14 @@ $(function(){
 
 	$('.eassyTxt textarea').bind('input propertychange',function(ev){
 		var len = Math.ceil( getLength($(this).val())/2 );
-		if(len>0 && len<=300){
-			$(this).attr('data-success',1);
+		if(len<=300){
+			//$(this).attr('data-success',1);
 			$(this).siblings('a').removeClass('dis_link');
 			$(this).siblings('p').find('span').removeClass('error');
 			$(this).siblings('p').find('span').text(len);
 		}else{
 			$(this).siblings('a').addClass('dis_link');
-			$(this).attr('data-success',0);
+			//$(this).attr('data-success',0);
 			$(this).siblings('p').find('span').addClass('error');
 			$(this).siblings('p').find('span').text(len);
 		}
@@ -406,6 +406,52 @@ $(function(){
 		}
 		
 	});
+
+	//修改游记标题
+	$('.modifyTricpName').click(function(){
+		$(this).siblings('.tricpTitle').hide();
+		$(this).siblings('.t_editingTitle').show();
+	});
+	$('.t_editingTitle').bind('input propertychange',function(){
+		var len = Math.ceil( getLength( $(this).val() )/2 );
+		$(this).siblings('.leftTxt').show();
+		if(len>30){
+			$(this).parent().addClass('error');
+			$(this).siblings('.tricpTitle').attr('data-success',0);
+		}else{
+			$(this).parent().removeClass('error');
+			$(this).siblings('.tricpTitle').attr('data-success',1);
+		}
+		$(this).siblings('.leftTxt').find('span').text(len);
+	});
+	$('.t_editingTitle').blur(function(){
+		$(this).siblings('.leftTxt').hide();
+		$(this).siblings('.tricpTitle').text($(this).val()).show();
+		$(this).hide();
+	});
+
+
+
+
+	$('.publish').click(function(){
+		if($("*[data-success='0']").length){
+			//说明有内容没有填写正确
+			var arr = [];
+			for(var i=0; i< $("*[data-success='0']").length; i++){
+				
+			}
+		}else{
+			//提交数据
+			$.ajax({
+				url: '',
+			})
+		}
+	});
+	
+
+
+
+
 	
 	//日历部分选择日期
 	function selectDateCallback(){
