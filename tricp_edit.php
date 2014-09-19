@@ -127,7 +127,7 @@
     <p><span>色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山</span></p>
     <textarea></textarea>
 </div>
-<div class="t_dialog w730">
+<div class="t_dialog t_addPointInfo w730">
 	<div class="t_dialog_border">
     	<h5 class="t_diaTitle">添加拍摄点</h5>
         <div class="t_tabAddPoint">
@@ -155,6 +155,16 @@
         <a href="javascript:;" target="_self" class="t_dialog_closed"></a>
     </div>
 </div>
+<div class="t_dialog eassyBox">
+	<div class="t_dialog_border">
+    	<div class="eassyTxt">
+        	<textarea data-success="0"></textarea>
+            <p class="eassyLeftTxt">已输入<span>0</span><em>/300</em>字</p>
+            <a href="javascript:;" target="_self" class="t_save_eassy dis_link"><i class="icon icon_saveEssay"></i>保存随笔</a>
+        </div>
+    	<a href="javascript:;" target="_self" class="t_essy_closed"></a>
+    </div>
+</div>
 <div class="mengban"></div>
 <div class="footerNav">                                                                                                         
     <div class="t_main">
@@ -174,8 +184,10 @@
 		<div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
 		<i class="icon icon_leftArrow"></i>
 	</div>
+	<div class="t_list_picModel" style="display:none"></div>
 	<a href="javascript:;" target="_self" class="addTravel_essay"><i class="icon icon_addEssay"></i><i class="icon icon_orner"></i>旅行
 随笔</a>
+	<a href="javascript:;" target="_self" class="icon del_travel"></a>
 </script>
 <script type="text/template" id="addOneDayTemplate">
 <dl class="t_lineList" data-list="d<%= day %>">
@@ -196,6 +208,10 @@
 			<div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
 			<i class="icon icon_leftArrow"></i>
 		</div>
+		<div class="t_list_picModel" style="display:none"></div>
+		<a href="javascript:;" target="_self" class="addTravel_essay"><i class="icon icon_addEssay"></i><i class="icon icon_orner"></i>旅行
+	随笔</a>
+		<a href="javascript:;" target="_self" class="icon del_travel"></a>
 	</dd>
 </dl>
 <div class="newPoint">新增拍摄点<a href="javascript:;" target="_self" class="icon icon_addPoint shootPoint"></a></div>
@@ -203,5 +219,11 @@
 <script type="text/template" id="treeTemplate">
 	<dt>D<%= day %><span></span></dt>
 	<dd id="<%= nameID %>"><%= value %></dd>
+</script>
+<script type="text/template" id="uploadTemplate">
+<div class="t_listPicBox">
+	<ul class="clearfix">
+	</ul>
+</div>
 </script>
 </html>

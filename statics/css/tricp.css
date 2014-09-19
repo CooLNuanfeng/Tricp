@@ -54,8 +54,8 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 
 .t_dialog { width: 700px; height: auto; background: #FFFFFF; border: 5px solid #CCCCCC; position: fixed; z-index: 999; display: none; }
 .t_dialog .t_dialog_border { border: 1px solid #999999; padding: 31px; overflow: hidden; }
-.t_dialog .t_dialog_closed { position: absolute; width: 25px; height: 25px; display: block; top: 5px; right: 5px; background: url(../image/tricp_icon.png) -100px 0px no-repeat; }
-.t_dialog .t_dialog_closed:hover { background-position: -125px 0px; }
+.t_dialog .t_dialog_closed, .t_dialog .t_essy_closed { position: absolute; width: 25px; height: 25px; display: block; top: 5px; right: 5px; background: url(../image/tricp_icon.png) -100px 0px no-repeat; }
+.t_dialog .t_dialog_closed:hover, .t_dialog .t_essy_closed:hover { background-position: -125px 0px; }
 
 .mengban { display: none; width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); z-index: 998; }
 :root .mengban { filter: none; background-color: rgba(0, 0, 0, 0.5); }
@@ -184,9 +184,9 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 .t_lineList dt input.active { background: #ffffff; width: 74px; padding-left: 20px; margin-left: 22px; border: 1px solid #dddddd; }
 .t_lineList dd { position: relative; padding-left: 46px; padding-top: 5px; margin-bottom: 30px; }
 
-.t_list_picModel { width: 732px; height: 190px; background: #ffffff; padding: 10px; border: 1px solid #dddddd; border-top: 0px; position: relative; }
+.t_list_picModel { width: 732px; height: auto; background: #ffffff; padding: 10px; border: 1px solid #dddddd; border-top: 0px; position: relative; }
 .t_list_picModel li { float: left; width: 130px; height: 85px; border: 2px solid #dddddd; overflow: hidden; position: relative; margin-right: 10px; margin-bottom: 10px; cursor: pointer; }
-.t_list_picModel .essay_listTxt { padding: 5px; line-height: 21px; border: 0px; color: #999999; font-size: 12px; background: url(../image/listTxtbg.png) no-repeat; }
+.t_list_picModel .essay_listTxt { padding: 5px; height: 79px; margin-right: 4px; line-height: 21px; border: 0px; color: #999999; font-size: 12px; word-break: break-all; background: url(../image/listTxtbg.png) no-repeat; }
 .t_list_picModel .pic_stint { background: url(../image/failure.png) 0 bottom no-repeat #eaeaea; }
 
 .move { width: 37px; height: 37px; display: block; position: absolute; top: 20%; left: 36%; background-position: -457px -8px; }
@@ -245,7 +245,7 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 
 .dis_default { color: #cccccc !important; }
 
-.del_travel { background-position: -350px 0px; position: absolute; top: -8px; right: -3px; }
+.del_travel { background-position: -350px 0px; position: absolute; top: -8px; right: -3px; display: none; }
 
 /* .t_editing{
 	height: 25px;
@@ -387,6 +387,18 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 .txt_description div { text-align: right; }
 .txt_description p span { padding-bottom: 3px; border-bottom: 1px dotted #dddddd; }
 .txt_description textarea { width: 280px; height: 154px; border: 0px; outline: none; display: none; }
+
+.eassyTxt textarea { width: 610px; height: 200px; overflow: hidden; overflow-y: none; outline: none; padding: 10px; border: 1px solid #DDDDDD; line-height: 32px; font-size: 14px; color: #666666; }
+.eassyTxt p { text-align: right; color: #999999; }
+.eassyTxt p span { color: #ff9900; }
+.eassyTxt p .error { color: #cc0000; }
+
+.t_save_eassy { width: 160px; height: 40px; border-radius: 5px; display: block; margin: 0 auto; background: #ff9900; color: #ffffff; font-family: "微软雅黑"; font-size: 18px; text-align: center; line-height: 40px; }
+.t_save_eassy:hover { color: #ffffff; text-decoration: none; background: #ff6600; }
+.t_save_eassy.dis_link { background: #C9C9C9; }
+.t_save_eassy.dis_link:hover { background: #C9C9C9; }
+
+.icon_saveEssay { background-position: -75px -25px; }
 
 .mt20 { margin-top: 20px; }
 

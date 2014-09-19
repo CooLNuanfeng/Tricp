@@ -190,7 +190,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		padding: 31px;
 		overflow: hidden;
 	}
-	.t_dialog_closed{
+	.t_dialog_closed,.t_essy_closed{
 		position: absolute; 
 		width: 25px;
 		height: 25px;
@@ -439,6 +439,8 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		}
 	}
 }
+
+
 
 .tab_t_booking{
 	height: 34px;
@@ -805,7 +807,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 
 .t_list_picModel{
 	width: 732px;
-	height: 190px;
+	height: auto;
 	background: #ffffff;
 	padding: 10px;
 	border: 1px solid $borderColor;
@@ -827,10 +829,13 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 	}
 	.essay_listTxt{
 		padding: 5px;
+		height: 79px;
+		margin-right: 4px;
 		line-height: 21px;
 		border: 0px;
 		color: $txtGray;
 		font-size: 12px;
+		word-break:break-all;
 		background: url(../image/listTxtbg.png) no-repeat;
 	}
 	
@@ -1098,6 +1103,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 	position: absolute;
 	top: -8px;
 	right: -3px;
+	display: none;
 }
 /* .t_editing{
 	height: 25px;
@@ -1627,6 +1633,59 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		outline: none;
 		display: none;
 	}
+}
+
+//随笔弹层
+.eassyTxt{
+	textarea{
+		width: 610px;
+		height: 200px;
+		overflow: hidden;
+		overflow-y: none;
+		outline: none;
+		padding: 10px;
+		border: 1px solid #DDDDDD;
+		line-height: 32px;
+		font-size: 14px;
+		color: $txtNormal;
+	}
+	p{
+		text-align: right;
+		color: $txtGray;
+		span{
+			color: $orange;
+		}
+		.error{
+			color: $error;
+		}
+	}
+}
+.t_save_eassy{
+	width: 160px;
+	height: 40px;
+	border-radius: 5px;
+	display: block;
+	margin: 0 auto;
+	background: $orange;
+	color: #ffffff;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	text-align: center;
+	line-height: 40px;
+	&:hover{
+		color: #ffffff;
+		text-decoration: none;
+		background: #ff6600;
+	}
+	&.dis_link{
+		background: #C9C9C9;
+		&:hover{
+			background: #C9C9C9;
+		}
+	}
+}
+.icon_saveEssay{
+	background-position: -75px -25px;
 }
 
 //修正样式

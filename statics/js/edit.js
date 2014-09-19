@@ -62,9 +62,9 @@ $(function(){
 		var L = $(window).width();
 		var T = $(window).height();
 		$('.mengban').show();
-		$('.t_dialog').show().css({
-			left: (L-$('.t_dialog').outerWidth())/2,
-			top: (T - $('.t_dialog').outerHeight())/2
+		$('.t_addPointInfo').show().css({
+			left: (L-$('.t_addPointInfo').outerWidth())/2,
+			top: (T - $('.t_addPointInfo').outerHeight())/2
 		});
 		
 		var str = $(this).parent().attr('class');
@@ -82,9 +82,9 @@ $(function(){
 		}
 		
 	})
-	$('.t_dialog_closed').click(function(ev){
+	$('.t_dialog_closed').click(function(){
 		$('.mengban').hide();
-		$('.t_dialog').hide();
+		$('.t_addPointInfo').hide();
 		$('.t_TipsList').hide();
 	});
 	$('.mengban').click(function(){
@@ -160,7 +160,7 @@ $(function(){
 					success: function(res){
 
 						$('.mengban').hide();
-						$('.t_dialog').hide();
+						$('.t_addPointInfo').hide();
 						//$('.t_TipsList').find('ul').html('');
 						$('.t_TipsList').hide();
 
@@ -199,12 +199,12 @@ $(function(){
 							}/*else if(){
 
 							}else{*/
-								console.log('olde')
-								$objClick.prev().html(res.pointTxt);
-								$('#'+ $objClick.prev().attr('data-name')).html(res.pointTxt);
-								if(OneDayOff){
-									OneDayOff = false;
-								}
+							console.log('olde')
+							$objClick.prev().html(res.pointTxt);
+							$('#'+ $objClick.prev().attr('data-name')).html(res.pointTxt);
+							if(OneDayOff){
+								OneDayOff = false;
+							}
 								
 							//}
 							
@@ -225,7 +225,7 @@ $(function(){
 						success: function(res){
 
 							$('.mengban').hide();
-							$('.t_dialog').hide();
+							$('.t_addPointInfo').hide();
 							//$('.t_TipsList').find('ul').html('');
 							$('.t_TipsList').hide();
 
@@ -286,13 +286,16 @@ $(function(){
 	
 	//新增一天
 	var OneDayOff = false;  // 判断是否为新增一天;
+	var dayLen = $('.treeNav').find('dl').length;
 
 	$('.addOneDay').click(function(){
+
 		var $div = $('<div class="t_oneListModel"></div>');
-		var len = $(this).parent().prev().find('dl').length;
+	    //dayLen = $(this).parent().prev().find('dl').length;
 		//var dateDay = $(this).parent().prev().find('.J_calendar').val().split('-');
+		dayLen++;
 		var json = {
-			day: len+1,
+			day: dayLen,
 			date: '请选择日期'
 		}
 		$div.html( _.template($('#addOneDayTemplate').html(), json) );
@@ -302,11 +305,11 @@ $(function(){
 
 
 		var treejson ={
-			day : len+1,
+			day : dayLen,
 			nameID : '',
 			value: '这里是哪？'
 		}
-		var $treedl = $('<dl id="d'+(len+1)+'"></dl>');
+		var $treedl = $('<dl id="d'+(dayLen)+'"></dl>');
 			$treedl.html(_.template($('#treeTemplate').html(),treejson))
 		$('.treeNav').append($treedl);
 
@@ -315,8 +318,94 @@ $(function(){
 
 	});
 
+	//发表旅行随笔
+	$('.addTravel_essay').live('click',function(){
 
-	
+	})
+
+
+	//删除当天操作
+	$('.iconDay').live('click',function(){
+		$(this).parent().parent().parent().remove();
+		var id = $(this).parent().parent().attr('data-list');
+		$('#'+id).remove();
+	});
+	//删除当前拍摄点
+	$('.t_lineList dd').live('mouseover',function(){
+		$(this).find('.del_travel').show();
+	})
+	$('.t_lineList dd').live('mouseout',function(){
+		$(this).find('.del_travel').hide();
+	});
+	$('.del_travel').live('click',function(){
+		$(this).parent().remove();
+		var id = $(this).siblings('.writeTxtBox').find('.writeTitle').find('span:eq(0)').attr('data-name');
+		$('#'+id).remove();
+	})
+
+
+	//添加随笔
+	$essayClick = null;
+	$('.addTravel_essay').live('click',function(){
+		$essayClick = $(this);
+		var L = $(window).width();
+		var T = $(window).height();
+		$('.mengban').show();
+		$('.eassyBox').show().css({
+			left: (L-$('.eassyBox').outerWidth())/2,
+			top: (T - $('.eassyBox').outerHeight())/2
+		});
+	})
+	$('.t_essy_closed').click(function(){
+		$(this).parent().parent().hide();
+		$('.mengban').hide();
+	});
+
+	$('.eassyTxt textarea').bind('input propertychange',function(ev){
+		var len = Math.ceil( getLength($(this).val())/2 );
+		if(len>0 && len<=300){
+			$(this).attr('data-success',1);
+			$(this).siblings('a').removeClass('dis_link');
+			$(this).siblings('p').find('span').removeClass('error');
+			$(this).siblings('p').find('span').text(len);
+		}else{
+			$(this).siblings('a').addClass('dis_link');
+			$(this).attr('data-success',0);
+			$(this).siblings('p').find('span').addClass('error');
+			$(this).siblings('p').find('span').text(len);
+		}
+
+	})
+
+	//保存随笔
+	$('.t_save_eassy').click(function(){
+		if($(this).siblings('textarea').attr('data-success')!= '0'){
+			var _this = this;			
+			$(this).parent().parent().parent().hide();
+			$('.mengban').hide();
+			var txt = $('.eassyTxt textarea').val();
+			$.ajax({
+				url: 'php/eassy_submit.php',
+				type: 'GET',
+				data: {context: txt},
+				dataType:"text",
+				success: function(res){
+					if($essayClick.prev().css('display')=='none'){				
+						$essayClick.prev().show().html(_.template($('#uploadTemplate').html()))
+						var $liEassy = $('<li class="essay_listTxt">'+res+'</li>');
+						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
+						getWinHeight();
+						$(_this).siblings('textarea').val('');
+					}else{
+						var $liEassy = $('<li class="essay_listTxt">'+res+'</li>')
+						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
+						$(_this).siblings('textarea').val('');
+					}
+				}
+			})
+		}
+		
+	});
 	
 	//日历部分选择日期
 	function selectDateCallback(){
