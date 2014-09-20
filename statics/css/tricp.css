@@ -481,7 +481,9 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 .tl_shortShare a:hover .icon_share { background-position: -300px -77px; }
 .tl_shortShare a:hover .icon_favorites { background-position: -350px -77px; }
 
-.t_mainArtical { width: 815px; margin-left: 119px; background: #ffffff; border-left: 4px solid #dddddd; border-right: 1px solid #dddddd; }
+.t_mainArtical { width: 815px; margin-left: 119px; padding-bottom: 20px; }
+
+.t_articalShow { background: #ffffff; border-left: 4px solid #dddddd; border-right: 1px solid #dddddd; }
 
 .t_m_foreword { padding: 20px 45px; color: #666666; font-size: 14px; margin-bottom: 15px; }
 
@@ -562,6 +564,71 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 :root .icon_tagPic { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 
 .icon_pos { background-position: -252px -27px; }
+
+.t_commitBox h5 { margin-bottom: 10px; font-size: 22px; font-weight: normal; color: #333333; font-family: "微软雅黑"; }
+.t_commitBox textarea { width: 760px; padding: 5px; outline: none; border: 1px solid #dddddd; height: 90px; -webkit-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); -ms-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); -o-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); }
+
+.t_commitCount { height: 40px; line-height: 40px; border-bottom: 1px solid #dddddd; font-family: "微软雅黑"; font-size: 16px; color: #666666; }
+.t_commitCount span { font-size: 22px; font-family: Arial; color: #333333; margin-right: 5px; position: relative; top: 2px; left: 0px; }
+
+.t_commitList li { overflow: hidden; padding: 8px 0px; border-bottom: 1px dotted #dddddd; }
+.t_commitList li:last-child { border-bottom: 0px; }
+
+.t_commit { overflow: hidden; }
+.t_commit a { width: 35px; color: #0099cc; display: block; }
+.t_commit a:hover { color: #ff9900; }
+
+.t_commitTxt { width: 725px; }
+.t_commitTxt p { color: #333333; }
+.t_commitTxt p span { color: #999999; margin-right: 3px; }
+.t_commitTxt time { color: #999999; }
+
+.t_commit_replay { background: #F3F3F3; border: 1px solid #dddddd; padding: 5px; position: relative; }
+.t_commit_replay a { width: 63px; height: 26px; display: block; line-height: 26px; color: #ffffff; border-radius: 3px; background: #ff9900; text-align: center; text-decoration: none; margin-top: 23px; }
+.t_commit_replay a:hover { background: #ff6600; color: #ffffff; }
+
+.t_replay { width: 683px; }
+.t_replay span { color: #666666; }
+.t_replay textarea { width: 670px; height: 18px; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none; box-shadow: none; }
+.t_replay p { text-align: right; color: #999999; }
+.t_replay p span { color: #ff9900; }
+.t_replay p .error { color: #cc0000; }
+.t_replay p em { color: #666666; }
+
+.t_page { padding: 10px 0; height: 25px; overflow: hidden; font-family: "宋体"; font-size: 12px; color: #999999; text-align: left; }
+.t_page p { float: right; margin-left: 5px; }
+.t_page p em { float: left; width: auto; height: 25px; margin-left: 5px; display: block; }
+.t_page span { color: #ff9900; margin-right: 5px; }
+.t_page a { width: auto; height: 25px; line-height: 25px; padding: 0 8px; display: block; float: left; text-align: center; font-family: Arial; background: #F6F6F6; color: #666666; margin-left: 5px; text-decoration: none; }
+.t_page a:hover { color: #FFFFFF; background: #ff9900; }
+.t_page a.prev { width: 25px; padding: 0px; height: 25px; display: block; float: left; background: url(../image/tricp_icon.png) -25px -125px no-repeat #f6f6f6; }
+.t_page a.prev:hover { background: url(../image/tricp_icon.png) -75px -125px no-repeat #ff6600; }
+.t_page a.next { width: 25px; padding: 0px; height: 25px; display: block; float: left; background: url(../image/tricp_icon.png) 0px -125px no-repeat #f6f6f6; }
+.t_page a.next:hover { background: url(../image/tricp_icon.png) -50px -125px no-repeat #ff6600; }
+
+/* 底部城市区域 */
+.wy_state_area { width: 100%; background: #FFFFFF; }
+.wy_state_area .wy_other_cities { width: 1200px; margin: 0 auto; padding: 20px 0px; }
+.wy_state_area .wy_other_cities h6 { font-weight: normal; font-family: "微软雅黑"; font-size: 16px; color: #333333; margin-bottom: 0px; }
+.wy_state_area .wy_other_cities p { margin-bottom: 15px; }
+.wy_state_area .wy_other_cities p a { margin-right: 12px; color: #999999; display: inline-block; }
+.wy_state_area .wy_other_cities p a:hover { color: #ff6600; }
+
+/*footer*/
+.footer { width: 100%; height: 148px; border: 1px solid #F0F0F0; border-right: 0px; border-left: 0px; background: #FAFAFA; padding-top: 3px; }
+
+.footer_line { width: 100%; height: 2px; background: #F6F6F6; }
+
+.footer_main { width: 1200px; margin: 0 auto; padding-top: 28px; overflow: hidden; }
+.footer_main ul { float: left; width: 144px; margin-right: 45px; border-right: 1px dashed #dddddd; }
+.footer_main ul li h5 { font-family: "微软雅黑"; font-size: 16px; margin-bottom: 5px; color: #333333; font-weight: normal; }
+.footer_main ul li h5 span { padding: 0 5px; font-family: "宋体"; font-size: 12px; color: #666666; }
+.footer_main ul li a { font-size: 12px; font-family: "宋体"; color: #666666; }
+.footer_main ul li a:hover { color: #ff6600; }
+
+.icon_webo { background-position: -275px -27px; }
+
+.icon_tencent { background-position: -300px -27px; }
 
 .mt20 { margin-top: 20px; }
 
