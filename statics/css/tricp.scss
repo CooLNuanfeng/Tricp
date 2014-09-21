@@ -1523,7 +1523,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		text-align: right;
 		font-size: 18px;
 		position: relative;
-		cursor: pointer;
+		cursor: default;
 		span{
 			width: 9px;
 			height: 30px;
@@ -1545,10 +1545,14 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		height: 22px;
 		line-height: 22px;
 		padding-right: 10px;
-		color: $txtGray;
 		text-align: right;
-		cursor: pointer;
 		@extend %textoverflow;
+		a{
+			color: $txtGray;
+			&:hover{
+				color: $orange;
+			}
+		}
 	}
 }
 
@@ -2556,8 +2560,24 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		line-height: 34px;
 		font-size: 14px;
 		color: $txtNormal;
+		a{
+			font-size: 12px;
+			color: $txtNormal;
+			font-weight: normal;
+			&:hover{
+				color: $orange;
+				.icon_more{
+					background-position: -30px -27px;
+				}
+			}
+		}
 	}
 }
+.icon_more{
+	width: 15px;
+	background-position: -5px -27px;
+}
+
 .t_statistics{
 	height: 54px;
 	margin: 10px 0px;
@@ -2726,10 +2746,13 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 .t_side_you{
 	li{
 		padding: 5px 0px;
+		position: relative;
 		border-bottom: 1px dotted $borderColor;
 		a{
+			width: 200px; 
 			height: 44px;
-			overflow: hidden;;
+			display: block;
+			overflow: hidden;
 			color: $txtBlack;
 			&:hover{
 				color: $orange;
@@ -2750,6 +2773,199 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		}
 	}
 }
+
+.icon_hot{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-position: -325px -27px;
+}
+
+.t_side_hotel{
+	li{
+		border-bottom: 1px dotted $borderColor;
+		padding: 7px 0px;
+		overflow: hidden;
+		a{
+			width: 130px;
+			height: 22px;
+			display: block;
+			color: $txtBlack;
+			@extend %textoverflow;
+			&:hover{
+				color: $orange;
+			}
+		}
+		span{
+			width: auto;
+			height: 22px;
+			display: block;
+			font-weight: normal;
+			color: $txtGray;
+			em{
+				color: $orange;
+				font-family: Arial;
+			}
+			strong{
+				color: $orange;
+				font-family: Arial;
+			}
+		}
+		&:last-child{
+			border-bottom: 0px;
+		}
+	}
+}
+
+.t_hotTab{
+	background: #ffffff;
+	border-left: 1px solid $borderColor;
+	li{
+		float: left;
+		background: #FBFBFB;
+		width: 120px;
+		height: 30px;
+		line-height: 30px;
+		cursor: pointer;
+		text-align: center;
+		color: $txtNormal;
+		font-size: 14px;
+		border: 1px solid $borderColor;
+		border-left: 0;
+		&.active{
+			width: 117px;
+			height: 30px;
+			border-top: 2px solid $orange;
+			border-left: 0px;
+			border-bottom: 1px solid #ffffff;
+			position: relative;
+			font-weight: bold;
+			background: #ffffff;
+		}
+	}
+}
+.t_hotTricp{
+	border: 0px;
+}
+.t_side_hotTricp{
+	border: 1px solid $borderColor;
+	background: #ffffff;
+	border-top: 0px;
+	padding: 10px;
+}
+
+.t_side_hotTricp{
+	dl{
+		padding: 5px 0px;
+		overflow: hidden;
+	}
+	dt{
+		float: left;
+		width: 100px;
+		height: 67px;
+		position: relative;
+	}
+	dd{
+		width: 108px;
+		line-height: 18px;
+		padding-left: 10px;
+		float: left;
+		color: $txtGray;
+		a{
+			height: 32px;
+			display: block;
+			line-height: 18px;
+			color: $txtBlack;
+			&:hover{
+				color: $orange;
+			}
+		}
+		.icon_user{
+			width: 18px;
+			height: 18px;
+			background-position: -353px -28px;
+		}
+	}
+}
+.icon_marrow{
+	position: absolute;
+	top: -12px;
+	left: -11px;
+	background-position: -400px -50px;
+}
+
+.t_side_activities{
+	padding: 3px 5px;
+	a{
+		margin-bottom: 5px;
+		display: block;
+	}
+}
+
+
+//查看也左侧树
+.tl_treeNav{
+	position: fixed;
+	top: 100px;
+	left: 77px;
+	width: 124px;
+	h6{
+		font-size: 18px;
+		padding-right: 20px;
+		text-align: right;
+		color: $txtNormal;
+		font-weight: normal;
+		font-family: "微软雅黑";
+		margin-bottom: 30px;
+	}
+	dl{
+		margin-top: 10px;
+		margin-bottom: 40px;
+	}
+	dt{
+		font-family: Arial;
+		height: 30px;
+		line-height: 30px;
+		padding-right: 20px;
+		text-align: right;
+		font-size: 18px;
+		position: relative;
+		margin-bottom: 10px;
+		cursor: default;
+		span{
+			width: 9px;
+			height: 30px;
+			display: block;
+			position: absolute;
+			right: -5px;
+			top: 0px;
+			display: none;
+			background: url(../image/leftArrow_bg.png) no-repeat;
+		}
+		&.active{
+			color: $orange;
+			span{
+				display: block
+			}
+		}
+	}
+	dd{
+		height: 27px;
+		line-height: 27px;
+		padding-right: 20px;
+		text-align: right;
+		@extend %textoverflow;
+		a{
+			color: $txtGray;
+			&:hover{
+				color: $orange;
+			}
+		}
+
+	}
+}
+
+
 
 
 //修正样式

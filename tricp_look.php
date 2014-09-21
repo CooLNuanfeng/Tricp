@@ -23,6 +23,22 @@
             <div class="t_commitBox mt20 t_model">
             	<?php require_once "models/commitModel/commitModel.php" ?>
             </div>
+            <div class="tl_treeNav fl">
+                <h6>前言</h6>
+                <dl id="d1">
+                    <dt class="active">D1<span></span></dt>
+                    <dd><a href="">西湖</a></dd>
+                    <dd><a href="">西湖</a></dd>
+                </dl>
+                <dl id="d1">
+                    <dt class="active">D2<span></span></dt>
+                    <dd id='n1'><a href="">西湖</a></dd>
+                </dl>
+                <dl id="d1">
+                    <dt class="active">D3<span></span></dt>
+                    <dd id='n1'><a href="">西湖</a></dd>
+                </dl>
+            </div>
         </div>
         <div class="t_side mt20 fr">
         	<div class="t_side_model">
@@ -82,9 +98,74 @@
                     </ul>
                 </div>
             </div>
+            <div class="t_side_model">
+            	<div class="t_side_title"><h6><a href="" class="fr">更多<i class="icon icon_more"></i></a>相关门票推荐</h6></div>
+                <div class="t_side_body">
+                    <ul class="t_side_you">
+                    	<li><i class="icon icon_hot"></i><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
+                        <li><i class="icon icon_hot"></i><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
+                        <li><i class="icon icon_hot"></i><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="t_side_model">
+            	<div class="t_side_title"><h6><a href="" class="fr">更多<i class="icon icon_more"></i></a>相关酒店推荐</h6></div>
+                <div class="t_side_body">
+                    <ul class="t_side_hotel">
+                    	<li><a href="" class="fl">广西南宁天湖酒店广西南宁天湖酒店</a><span class="fr"><em>￥</em><strong>3210</strong>起</span></li>
+                        <li><a href="" class="fl">广西南宁天湖酒店</a><span class="fr"><em>￥</em><strong>3210</strong>起</span></li>
+                        <li><a href="" class="fl">广西南宁天湖酒店</a><span class="fr"><em>￥</em><strong>3210</strong>起</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="t_side_model">
+            	<div class="t_side_title"><h6><a href="" class="fr">更多<i class="icon icon_more"></i></a>相关产品推荐</h6></div>
+                <div class="t_side_body">
+                    <ul class="t_side_you">
+                    	<li><i class="icon icon_hot"></i><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
+                        <li><i class="icon icon_hot"></i><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
+                        <li><i class="icon icon_hot"></i><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="t_side_model t_hotTricp">
+            	<ul class="t_hotTab clearfix">
+                    <li class="active">相关旅程</li>
+                    <li>精华旅程</li>
+                </ul>
+                <div class="t_side_hotTricp">
+                    <dl>
+                    	<dt><a href=""><img src="statics/image/labelpic.png" width="100" height="67"></a><i class="iconBig icon_marrow"></i></dt>
+                        <dd><a href="">首尔街头留脚首尔街头留脚</a></dd>
+                        <dd><i class="icon icon_user"></i>isablea </dd>
+                        <dd><span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>微游宝</em><i>￥20元</i></span></dd>
+                    </dl>
+                    <dl>
+                    	<dt><a href=""><img src="statics/image/labelpic.png" width="100" height="67"></a><i class="iconBig icon_marrow"></i></dt>
+                        <dd><a href="">首尔街头留脚首尔街头留脚</a></dd>
+                        <dd><i class="icon icon_user"></i>isablea </dd>
+                        <dd><span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>微游宝</em><i>￥20元</i></span></dd>
+                    </dl>
+                    <dl>
+                    	<dt><a href=""><img src="statics/image/labelpic.png" width="100" height="67"></a><i class="iconBig icon_marrow"></i></dt>
+                        <dd><a href="">首尔街头留脚首尔街头留脚</a></dd>
+                        <dd><i class="icon icon_user"></i>isablea </dd>
+                        <dd><span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>微游宝</em><i>￥20元</i></span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="t_side_model">
+            	<div class="t_side_title"><h6>最新活动</h6></div>
+                <div class="t_side_body">
+                    <div class="t_side_activities">
+                    	<a href=""><img src="statics/image/labelpic.png" width="210" height="140"></a>
+                    </div>
+                </div>
+            </div>
     	</div>
     </div>
 </div>
+
 <?php require_once "models/areaModel/areaModel.php" ?>
 <script src="statics/js/you_footer.js"></script>
 </body>
