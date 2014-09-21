@@ -22,6 +22,8 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 
 .t_main { margin: 0 auto; width: 1200px; }
 
+.t_side { width: 240px; }
+
 .t_body { background: #F5F5F5; }
 
 .t_model { padding: 20px; background: #ffffff; border: 1px solid #dddddd; }
@@ -629,6 +631,67 @@ body { scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ scrollbar-fac
 .icon_webo { background-position: -275px -27px; }
 
 .icon_tencent { background-position: -300px -27px; }
+
+.t_side_model { margin-bottom: 20px; border: 1px solid #dddddd; }
+
+.t_side_title { background: #FBFBFB; padding: 0 10px; }
+.t_side_title h6 { height: 34px; line-height: 34px; font-size: 14px; color: #666666; }
+
+.t_statistics { height: 54px; margin: 10px 0px; width: 129px; border-right: 1px dotted #dddddd; }
+.t_statistics p { font-size: 14px; color: #999999; height: 27px; line-height: 27px; }
+.t_statistics p span { margin-left: 10px; font-family: Arial; }
+
+.t_statistics_day { font-size: 14px; margin: 10px 0px; color: #999999; width: 85px; height: 54px; text-align: center; line-height: 39px; }
+.t_statistics_day span { position: relative; padding: 0 10px; font-size: 36px; top: 8px; color: #FF6666; font-family: Arial; }
+
+.t_side_body { padding: 10px; background: #ffffff; }
+
+.t_experience { overflow: hidden; }
+.t_experience li { float: left; width: 50%; overflow: hidden; }
+
+.icon_sidePic { background-position: -50px -100px; }
+
+.icon_sideMoney { background-position: -100px -100px; }
+
+.icon_sideView { background-position: -150px -100px; }
+
+.icon_sideFood { background-position: -200px -100px; }
+
+.icon_sideHotel { background-position: -250px -100px; }
+
+.t_earnings { height: 40px; border-bottom: 1px dotted #dddddd; color: #666666; }
+.t_earnings span { color: #ff9900; }
+.t_earnings span em { padding: 0 5px; position: relative; top: 8px; font-size: 36px; font-family: Arial; }
+
+.t_earnList { padding: 8px 0px 12px; }
+.t_earnList dt { color: #666666; }
+.t_earnList dd { color: #666666; }
+.t_earnList dd span { color: #ff9900; }
+
+.t_sideNotice a { color: #0099cc; }
+.t_sideNotice a:hover { color: #ff9900; }
+
+.t_sideProList { padding: 5px 0px; overflow: hidden; }
+.t_sideProList dt { width: 90px; float: left; height: 60px; }
+.t_sideProList dt img { vertical-align: top; }
+.t_sideProList dd { width: 116px; float: left; padding-left: 10px; }
+.t_sideProList dd a { height: 40px; display: block; overflow: hidden; line-height: 20px; color: #333333; }
+.t_sideProList dd a:hover { color: #ff9900; }
+.t_sideProList dd span { color: #ff9900; }
+.t_sideProList dd span em { font-family: Arial; }
+
+.t_side_tabBtn { height: 30px; }
+.t_side_tabBtn span { cursor: pointer; display: inline-block; margin-right: 10px; padding: 0 5px; color: #999999; }
+.t_side_tabBtn span.active, .t_side_tabBtn span:hover { background: #ff9900; color: #ffffff; border-radius: 3px; text-align: center; position: relative; }
+.t_side_tabBtn span.active:before, .t_side_tabBtn span:hover:before { content: ''; position: absolute; display: block; bottom: -15px; left: 50%; margin-left: -5px; height: 5px; border-top: 5px solid #ff9900; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 5px solid transparent; }
+
+.t_side_you li { padding: 5px 0px; border-bottom: 1px dotted #dddddd; }
+.t_side_you li a { height: 44px; overflow: hidden; color: #333333; }
+.t_side_you li a:hover { color: #ff9900; }
+.t_side_you li p { color: #999999; }
+.t_side_you li p strong { font-family: Arial; color: #ff9900; }
+.t_side_you li p strong em { font-weight: normal; }
+.t_side_you li:last-child { border-bottom: 0px; }
 
 .mt20 { margin-top: 20px; }
 

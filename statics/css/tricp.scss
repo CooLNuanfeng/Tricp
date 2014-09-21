@@ -13,7 +13,6 @@ $error: #CC0000;
 $w_main: 1200px;
 
 
-
 //滚动条样式设置
 body{ 
 scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ 
@@ -69,6 +68,9 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 .t_main{
 	margin: 0 auto;
 	width: $w_main;
+}
+.t_side{
+	width: 240px;
 }
 .t_body{
 	background: #F5F5F5;
@@ -2541,7 +2543,213 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 }
 
 
+//查看页边栏
+.t_side_model{
+	margin-bottom: 20px;
+	border: 1px solid $borderColor;
+}
+.t_side_title{
+	background: #FBFBFB;
+	padding: 0 10px;
+	h6{
+		height: 34px;
+		line-height: 34px;
+		font-size: 14px;
+		color: $txtNormal;
+	}
+}
+.t_statistics{
+	height: 54px;
+	margin: 10px 0px;
+	width: 129px;
+	border-right: 1px dotted $borderColor;
+	p{
+		font-size: 14px;
+		color: $txtGray;
+		height: 27px;
+		line-height: 27px;
+		span{
+			margin-left: 10px;
+			font-family: Arial;
+		}
+	}
+}
+.t_statistics_day{
+	font-size: 14px;
+	margin: 10px 0px;
+	color: $txtGray;
+	width: 85px;
+	height: 54px;
+	text-align: center;
+	line-height: 39px;
+	span{
+		position: relative;
+		padding: 0 10px;
+		font-size: 36px;
+		top: 8px;
+		color: #FF6666;
+		font-family: Arial;
+	}
+}
+.t_side_body{
+	padding: 10px;
+	background: #ffffff;
+}
 
+.t_experience{
+	overflow: hidden;
+	li{
+		float: left;
+		width: 50%;
+		overflow: hidden;
+	}
+}
+.icon_sidePic{
+	background-position: -50px -100px;
+}
+.icon_sideMoney{
+	background-position: -100px -100px;
+}
+.icon_sideView{
+	background-position: -150px -100px;
+}
+.icon_sideFood{
+	background-position: -200px -100px;
+}
+.icon_sideHotel{
+	background-position: -250px -100px;
+}
+
+
+.t_earnings{
+	height: 40px;
+	border-bottom: 1px dotted $borderColor;
+	color: $txtNormal;
+	span{
+		color: $orange;
+		em{
+			padding: 0 5px;
+			position: relative;
+			top: 8px;
+			font-size: 36px;
+			font-family: Arial;
+		}
+	}
+}
+
+.t_earnList{
+	padding: 8px 0px 12px;
+	dt{
+		color: $txtNormal;
+	}
+	dd{
+		color: $txtNormal;
+		span{
+			color: $orange;
+		}
+	}
+}
+.t_sideNotice{
+	a{
+		color: $txtBlue;
+		&:hover{
+			color: $orange;
+		}
+	}
+}
+
+.t_sideProList{
+	padding: 5px 0px;
+	overflow: hidden;
+	dt{
+		width: 90px;
+		float: left;
+		height: 60px;
+		img{
+			vertical-align: top;
+		}
+	}
+	dd{
+		width: 116px;
+		float: left;
+		padding-left: 10px;
+		a{
+			height: 40px;
+			display: block;
+			overflow: hidden;
+			line-height: 20px;
+			color: $txtBlack;
+			&:hover{
+				color: $orange;
+			}
+		}
+		span{
+			color: $orange;
+			em{
+				font-family: Arial;
+			}
+		}
+	}
+}
+
+.t_side_tabBtn{
+	height: 30px;
+	span{
+		cursor: pointer;
+		display: inline-block;
+		margin-right: 10px;
+		padding: 0 5px;
+		color: $txtGray;
+	}
+	span.active,span:hover{
+		background: $orange;
+		color: #ffffff;
+		border-radius: 3px;
+		text-align: center;
+		position: relative;
+		&:before{
+			content: '';
+			position: absolute;
+			display: block;
+			bottom: -15px;
+			left: 50%;
+			margin-left: -5px;
+			height: 5px;
+			border-top: 5px solid $orange;
+			border-left: 5px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 5px solid transparent; 
+		}
+	}
+}
+
+.t_side_you{
+	li{
+		padding: 5px 0px;
+		border-bottom: 1px dotted $borderColor;
+		a{
+			height: 44px;
+			overflow: hidden;;
+			color: $txtBlack;
+			&:hover{
+				color: $orange;
+			}
+		}
+		p{
+			color: $txtGray;
+			strong{
+				font-family: Arial;
+				color: $orange;
+				em{
+					font-weight: normal;
+				}
+			}
+		}
+		&:last-child{
+			border-bottom: 0px;
+		}
+	}
+}
 
 
 //修正样式
