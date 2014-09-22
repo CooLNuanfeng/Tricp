@@ -2193,18 +2193,23 @@ scrollbar-base-color:#E3E3E3;
 	}
 }
 
+.longCommit{
+	.t_picComlist li p{
+		width: 597px;
+	}
+}
 .t_picComlist{
 	li{
 		border-top: 1px dotted $borderColor;
 		overflow: hidden;
 		padding: 8px 0px;
 		p{
-			width: 570px;
+			width: 565px;
 			float: left;
 			color: $txtNormal;
 		}
 		a{
-			width: 36px;
+			width: 30px;
 			text-align: right;
 			color: $txtBlue;
 			display: block;
@@ -2262,6 +2267,29 @@ scrollbar-base-color:#E3E3E3;
 
 
 //底部评论模块
+.userCommit{
+	a{
+		width: 60px;
+		height: 23px;
+		line-height: 23px;
+		text-align: center;
+		display: inline-block;
+		margin-left: 10px;
+		border-radius: 3px;
+		background: $orange;
+		text-decoration: none;
+		color: #ffffff;
+		&:hover{
+			color: #ffffff;
+			background: #ff6600;
+		}
+	}
+	div{
+		height: 40px;
+		line-height: 40px;
+		text-align: right;
+	}
+}
 .t_commitBox{
 	h5{
 		margin-bottom: 10px;

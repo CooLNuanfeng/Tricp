@@ -198,7 +198,24 @@ $(function(){
 
 		//文章景点中的评论
 		$('.t_articalCommit .commit').toggle(function(){
-			$(this).parent().next().slideDown();
+			var _this = this;
+			$.ajax({
+				url: 'php/commitDate.php',
+				type: 'GET',
+				data: {'tagId': 'artical1'},
+				dataType: 'json',
+				success: function(res){
+					var ulHtml = '';
+					for(var i=0; i<res.length; i++){
+						ulHtml+=_.template($('#artical_comTemplate').html(),{
+							username: res[i].username,
+							context: res[i].context
+						})
+					}
+					$(_this).parent().next().find('ul').html(ulHtml)
+					$(_this).parent().next().slideDown();
+				}
+			})
 		},function(){
 			$(this).parent().next().slideUp();
 		});
@@ -218,14 +235,64 @@ $(function(){
 		});
 
 		$('.t_subCommit a').click(function(){
+			var _this = this;
+			var username = 'blue' // 获取当前用户ID
 			if($(this).parent().prev().attr('data-success') == 1){
 				$.ajax({
-					url: '',
+					url: 'php/submitArticalCommit.php',
+					type: 'POST',
+					data: {'username' : username,'context': $(_this).parent().prev().val()},
+					success: function(){
+						$(_this).parent().next().prepend(_.template($('#artical_comTemplate').html(),{
+							username: username,
+							context: $(_this).parent().prev().val()
+						}))
+					}
 					
 				})
 			}
 		})
 
+		//底部用户评论
+		$('.userCommit textarea').bind('input propertychange',function(){
+			if($(this).val()!=$(this).attr('data-value')&& $(this).val()!=''){
+				$(this).attr('data-success',1);
+				$(this).removeClass('dis_default');
+			}else{
+				$(this).attr('data-success',0);
+				$(this).addClass('dis_default');
+			}
+		})
+		$('.userCommit textarea').focus(function(){
+			if($(this).attr('data-success')==0){
+				$(this).val('');
+			}
+		}).blur(function(){
+			if($(this).attr('data-success')==0){
+				$(this).val($(this).attr('data-value'));
+			}
+		});
+
+		$('.userCommit a').click(function(){
+			var _this =this;
+			var username = 'blue' // 获取当前用户ID
+			if($(this).parent().prev().attr('data-success') == 1){
+				$.ajax({
+					url: 'php/submitUserCommit.php',
+					type: 'POST',
+					data: {'username':username, 'context':$(_this).parent().prev().val()},
+					success: function(res){
+						$(_this).parent().parent().siblings('.t_commitList').prepend(
+							_.template($('#userCommit_template').html(),{
+								username: username,
+								context: $(_this).parent().prev().val(),
+								timedate : res
+							})
+						)	
+					}
+				})
+			}
+		})
 
 		function getLength(str){
 			return String(str).replace(/[^\x00-\xff]/g,'aa').length;

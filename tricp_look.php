@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="http://pic.lvmama.com/min/index.php?f=/styles/v5/modules/tags.css" type="text/css">
 <link rel="stylesheet" href="statics/css/tricp.css" type="text/css">
 <script src="http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js,/js/new_v/top/header-air_new.js"></script>
+<script src="statics/js/Underscore.js"></script>
 </head>
 
 <body>
@@ -59,5 +60,21 @@
 <?php require_once "models/areaModel/areaModel.php" ?>
 <script src="http://pic.lvmama.com/js/you/js/you_footer.js"></script>
 <script src="statics/js/checkout.js"></script>
+<script type="text/template" id='artical_comTemplate'>
+	<li>
+		<span class="t_com_user"><%- username %>：</span>
+		<p><%- context %></p>
+	</li>
+</script>
+<script type="text/template" id='userCommit_template'>
+<li>
+	<div class="t_commit">
+		<div class="t_commitTxt fl">
+			<p><span><%- username %>：</span><%- context %></p>
+			<time><%- timedate %></time>
+		</div>
+	</div>
+</li>
+</script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 <h5 class="publishCommit" data-md='commit'>发表评论</h5>
-<textarea class="dis_default">喜欢这篇游记吗？说点什么吧...</textarea>
-<div class="t_subCommit"><a href="javascript:;">评论</a></div>
+<div class="userCommit">
+    <textarea class="dis_default" data-success='0' data-value='喜欢这篇游记吗？说点什么吧...'>喜欢这篇游记吗？说点什么吧...</textarea>
+    <div><a href="javascript:;">评论</a></div>
+</div>
 <p class="t_commitCount"><span>145</span>条评论</p>
 <ul class="t_commitList">
     <li>
@@ -9,7 +11,6 @@
                 <p><span>点点fiona:</span>我留恋江南小桥流水和大上海的繁华我留恋江南小桥流水和大上海的繁华我留恋江南小桥流水和大上海的繁华我留恋江南小桥流水和大上海的繁华，我也知道郑州的“堵”，可是，总归还是想着回去，生活了四年的城市，尽管</p>
                 <time>2014-05-22 15:33</time>
             </div>
-            <a href="javascript:;" class="fr">回复</a>
         </div>
     </li>
     <li>
@@ -18,7 +19,6 @@
                 <p><span>点点fiona:</span>我留恋江南小桥流水和大上海的繁华我留恋江南小桥流水和大上海的繁华我留恋江南小桥流水和大上海的繁华我留恋江南小桥流水和大上海的繁华，我也知道郑州的“堵”，可是，总归还是想着回去，生活了四年的城市，尽管</p>
                 <time>2014-05-22 15:33</time>
             </div>
-            <a href="javascript:;" class="fr">回复</a>
         </div>
     </li>
     <li>

@@ -549,9 +549,11 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_subCommit a { width: 60px; height: 23px; line-height: 23px; text-align: center; display: inline-block; margin-left: 10px; border-radius: 3px; background: #ff9900; text-decoration: none; color: #ffffff; }
 .t_subCommit a:hover { color: #ffffff; background: #ff6600; }
 
+.longCommit .t_picComlist li p { width: 597px; }
+
 .t_picComlist li { border-top: 1px dotted #dddddd; overflow: hidden; padding: 8px 0px; }
-.t_picComlist li p { width: 570px; float: left; color: #666666; }
-.t_picComlist li a { width: 36px; text-align: right; color: #0099cc; display: block; float: right; }
+.t_picComlist li p { width: 565px; float: left; color: #666666; }
+.t_picComlist li a { width: 30px; text-align: right; color: #0099cc; display: block; float: right; }
 .t_picComlist li a:hover { color: #ff9900; }
 .t_picComlist .t_com_user { width: 56px; color: #999999; display: block; float: left; }
 
@@ -566,6 +568,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 :root .icon_tagPic { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 
 .icon_pos { background-position: -252px -27px; }
+
+.userCommit a { width: 60px; height: 23px; line-height: 23px; text-align: center; display: inline-block; margin-left: 10px; border-radius: 3px; background: #ff9900; text-decoration: none; color: #ffffff; }
+.userCommit a:hover { color: #ffffff; background: #ff6600; }
+.userCommit div { height: 40px; line-height: 40px; text-align: right; }
 
 .t_commitBox h5 { margin-bottom: 10px; font-size: 22px; font-weight: normal; color: #333333; font-family: "微软雅黑"; }
 .t_commitBox textarea { width: 760px; padding: 5px; outline: none; border: 1px solid #dddddd; height: 90px; -webkit-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); -ms-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); -o-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.05); }
