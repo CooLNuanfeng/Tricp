@@ -1,4 +1,4 @@
-<h5>发表评论</h5>
+<h5 class="publishCommit" data-md='commit'>发表评论</h5>
 <textarea class="dis_default">喜欢这篇游记吗？说点什么吧...</textarea>
 <div class="t_subCommit"><a href="javascript:;">评论</a></div>
 <p class="t_commitCount"><span>145</span>条评论</p>

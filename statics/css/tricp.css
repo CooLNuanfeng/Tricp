@@ -429,9 +429,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_topNav div { height: 37px; line-height: 37px; }
 .tl_topNav div a { color: #df1078; font-family: "微软雅黑"; font-size: 14px; margin: 0 5px 0 10px; }
 
-.tl_userInfo { position: relative; padding: 20px 0px; }
-.tl_userInfo dl { overflow: hidden; }
-.tl_userInfo dt { float: left; width: 170px; padding-left: 70px; }
+.tl_userInfo { position: relative; padding: 20px 0px 10px; }
+.tl_userInfo dt { float: left; width: 170px; padding-left: 70px; margin-top: -10px; }
 .tl_userInfo dt div { width: 84px; text-align: center; height: 84px; overflow: hidden; border: 1px solid #dddddd; padding: 4px; border-radius: 50%; }
 .tl_userInfo dt div img { border-radius: 50%; }
 .tl_userInfo dd { float: left; position: relative; margin-top: 10px; }
@@ -470,14 +469,14 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .tl_shortInfo { display: none; }
 
-.tl_userShort { height: 62px; padding: 5px; padding-left: 240px; }
-.tl_userShort p { height: 62px; line-height: 45px; position: relative; }
+.tl_userShort { height: 50px; padding: 5px; padding-left: 240px; }
+.tl_userShort p { height: 50px; line-height: 45px; position: relative; }
 .tl_userShort p a { color: #0099cc; }
 .tl_userShort p a:hover { color: #ff9900; }
 .tl_userShort p a:hover .icon_modifyTitle { background-position: -475px -2px; }
 
-.tl_shortShare { height: 62px; overflow: hidden; }
-.tl_shortShare a { display: block; float: left; height: 62px; line-height: 62px; padding: 0 15px; text-align: center; color: #999999; border-right: 1px dotted #dddddd; }
+.tl_shortShare { margin-top: 6px; height: 50px; overflow: hidden; }
+.tl_shortShare a { display: block; float: left; height: 50px; line-height: 50px; padding: 0 15px; text-align: center; color: #999999; border-right: 1px dotted #dddddd; }
 .tl_shortShare a:hover { color: #ff9900; text-decoration: none; }
 .tl_shortShare a:hover .icon_zan { background-position: -200px -77px; }
 .tl_shortShare a:hover .icon_commit { background-position: -250px -77px; }
@@ -497,7 +496,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_articalList dt { position: relative; margin-bottom: 15px; height: 30px; line-height: 30px; text-align: center; font-size: 18px; font-family: "微软雅黑"; }
 .t_articalList dd { margin-bottom: 20px; }
 
-.t_artical_laber { width: 400px; height: 135px; padding: 10px; background: #ffffff; border: 1px solid #dddddd; position: absolute; top: -158px; left: 303px; }
+.t_artical_laber { display: none; width: 400px; height: 135px; padding: 10px; background: #ffffff; border: 1px solid #dddddd; position: absolute; top: -158px; left: 303px; }
 
 .t_closeLaber { display: block; position: absolute; right: 0px; top: 0px; background-position: -100px 0px; }
 
@@ -540,7 +539,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .maskCorner { width: 100%; height: 20px; position: absolute; top: 0px; left: 0px; background: url(../image/maskCorner_bg.png) no-repeat; }
 
-.t_picCommit { padding: 10px; border: 1px solid #dddddd; background: #FBFBFB; position: relative; }
+.t_picCommit { display: none; padding: 10px; border: 1px solid #dddddd; background: #FBFBFB; position: relative; }
 .t_picCommit textarea { width: 656px; height: 60px; outline: none; border: 1px solid #dddddd; }
 
 .t_subCommit { height: 40px; line-height: 40px; text-align: right; color: #999999; }
@@ -586,7 +585,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_commitTxt p span { color: #999999; margin-right: 3px; }
 .t_commitTxt time { color: #999999; }
 
-.t_commit_replay { background: #F3F3F3; border: 1px solid #dddddd; padding: 5px; position: relative; }
+.t_commit_replay { display: none; background: #F3F3F3; border: 1px solid #dddddd; padding: 5px; position: relative; }
 .t_commit_replay a { width: 63px; height: 24px; display: block; line-height: 24px; color: #ffffff; border-radius: 3px; background: #ff9900; text-align: center; text-decoration: none; margin-top: 23px; }
 .t_commit_replay a:hover { background: #ff6600; color: #ffffff; }
 
@@ -729,16 +728,21 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_side_activities { padding: 3px 5px; }
 .t_side_activities a { margin-bottom: 5px; display: block; }
 
-.tl_treeNav { position: fixed; top: 100px; width: 124px; }
+.tl_treeNav { position: absolute; top: 350px; width: 128px; }
 .tl_treeNav h6 { font-size: 18px; padding-right: 20px; text-align: right; color: #666666; font-weight: normal; font-family: "微软雅黑"; margin-bottom: 30px; }
 .tl_treeNav dl { margin-top: 10px; margin-bottom: 40px; }
 .tl_treeNav dt { font-family: Arial; height: 30px; line-height: 30px; padding-right: 20px; text-align: right; font-size: 18px; position: relative; margin-bottom: 10px; cursor: default; }
-.tl_treeNav dt span { width: 9px; height: 30px; display: block; position: absolute; right: -4px; top: 0px; display: none; background: url(../image/leftArrow_bg.png) no-repeat; }
+.tl_treeNav dt span { width: 9px; height: 30px; display: block; position: absolute; right: 0px; top: 0px; display: none; background: url(../image/leftArrow_bg.png) no-repeat; }
 .tl_treeNav dt.active { color: #ff9900; }
 .tl_treeNav dt.active span { display: block; }
 .tl_treeNav dd { height: 27px; line-height: 27px; padding-right: 20px; text-align: right; }
 .tl_treeNav dd a { color: #999999; }
 .tl_treeNav dd a:hover { color: #ff9900; }
+.tl_treeNav dd.active a { color: #333333; }
+.tl_treeNav dd.active a:hover { color: #ff9900; }
+
+.limitH_tree { height: 481px; overflow: hidden; }
+.limitH_tree .treeBox { height: 481px; position: relative; top: 0px; left: 0px; }
 
 .mt20 { margin-top: 20px; }
 

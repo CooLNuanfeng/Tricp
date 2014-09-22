@@ -1769,14 +1769,12 @@ scrollbar-base-color:#E3E3E3;
 }
 .tl_userInfo{
 	position: relative;
-	padding: 20px 0px;
-	dl{
-		overflow: hidden;
-	}
+	padding: 20px 0px 10px;
 	dt{
 		float: left;
 		width: 170px;
 		padding-left: 70px;
+		margin-top: -10px;
 		div{
 			width: 84px;
 			text-align: center;
@@ -1901,11 +1899,11 @@ scrollbar-base-color:#E3E3E3;
 	display: none;
 }
 .tl_userShort{
-	height: 62px;
+	height: 50px;
 	padding: 5px;
 	padding-left: 240px;
 	p{
-		height: 62px;
+		height: 50px;
 		line-height: 45px;
 		position: relative;
 		a{
@@ -1920,13 +1918,14 @@ scrollbar-base-color:#E3E3E3;
 	}
 }
 .tl_shortShare{
-	height: 62px;
+	margin-top: 6px;
+	height: 50px;
 	overflow: hidden;
 	a{
 		display: block;
 		float: left;
-		height: 62px;
-		line-height: 62px;
+		height: 50px;
+		line-height: 50px;
 		padding: 0 15px;
 		text-align: center;
 		color: $txtGray;
@@ -2006,6 +2005,7 @@ scrollbar-base-color:#E3E3E3;
 }
 
 .t_artical_laber{
+	display: none;
 	width: 400px;
 	height: 135px;
 	padding: 10px;
@@ -2148,6 +2148,7 @@ scrollbar-base-color:#E3E3E3;
 }
 
 .t_picCommit{
+	display: none;
 	padding: 10px;
 	border: 1px solid $borderColor;
 	background: #FBFBFB;
@@ -2337,6 +2338,7 @@ scrollbar-base-color:#E3E3E3;
 
 //评论回复样式
 .t_commit_replay{
+	display: none;
 	background: #F3F3F3;
 	border: 1px solid $borderColor;
 	padding: 5px;
@@ -2908,12 +2910,13 @@ scrollbar-base-color:#E3E3E3;
 }
 
 
+
 //查看也左侧树
 .tl_treeNav{
-	position: fixed;
-	top: 100px;
+	position: absolute;
+	top: 350px;
 	//left: 77px;
-	width: 124px;
+	width: 128px;
 	h6{
 		font-size: 18px;
 		padding-right: 20px;
@@ -2942,7 +2945,7 @@ scrollbar-base-color:#E3E3E3;
 			height: 30px;
 			display: block;
 			position: absolute;
-			right: -4px;
+			right: 0px;
 			top: 0px;
 			display: none;
 			background: url(../image/leftArrow_bg.png) no-repeat;
@@ -2966,11 +2969,30 @@ scrollbar-base-color:#E3E3E3;
 				color: $orange;
 			}
 		}
+		&.active{
+			a{
+				color: $txtBlack;
+				&:hover{
+					color: $orange;
+				}
+			}
+		}
 
 	}
 }
 
 
+//左侧树限制高度
+.limitH_tree{
+	height: 481px;
+	overflow: hidden;
+	.treeBox{
+		height: 481px;
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+}
 
 
 //修正样式

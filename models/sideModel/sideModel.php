@@ -49,7 +49,7 @@
             <li><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
         </ul>
         <ul class="t_side_you" style="display:none">
-            <li><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
+            <li><a href="">玩天目湖水世界、游山水园住君悦假日001人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
             <li><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
             <li><a href="">玩天目湖水世界、游山水园住君悦假日标准间双人自由...</a><p><strong><em>￥</em>2310</strong>元<span class="tagsback tagsback-orange" tip-title="提示标题" tip-content="提示内容"><em>返</em><i>20元</i></span></p></li>
         </ul>
@@ -93,7 +93,27 @@
     <div class="t_side_hotTricp">
         <dl>
             <dt><a href=""><img src="statics/image/labelpic.png" width="100" height="67"></a><i class="iconBig icon_marrow"></i></dt>
+            <dd><a href="">首尔街头留脚首尔001</a></dd>
+            <dd><i class="icon icon_user"></i>isablea </dd>
+            <dd><span class="tagsback tagsback-pink" tip-title="提示标题" tip-content="提示内容"><em>微游宝</em><i>￥20元</i></span></dd>
+        </dl>
+        <dl>
+            <dt><a href=""><img src="statics/image/labelpic.png" width="100" height="67"></a><i class="iconBig icon_marrow"></i></dt>
             <dd><a href="">首尔街头留脚首尔街头留脚</a></dd>
+            <dd><i class="icon icon_user"></i>isablea </dd>
+            <dd><span class="tagsback tagsback-pink" tip-title="提示标题" tip-content="提示内容"><em>微游宝</em><i>￥20元</i></span></dd>
+        </dl>
+        <dl>
+            <dt><a href=""><img src="statics/image/labelpic.png" width="100" height="67"></a><i class="iconBig icon_marrow"></i></dt>
+            <dd><a href="">首尔街头留脚首尔街头留脚</a></dd>
+            <dd><i class="icon icon_user"></i>isablea </dd>
+            <dd><span class="tagsback tagsback-pink" tip-title="提示标题" tip-content="提示内容"><em>微游宝</em><i>￥20元</i></span></dd>
+        </dl>
+    </div>
+    <div class="t_side_hotTricp" style="display:none">
+        <dl>
+            <dt><a href=""><img src="statics/image/labelpic.png" width="100" height="67"></a><i class="iconBig icon_marrow"></i></dt>
+            <dd><a href="">首尔街头留脚首尔002</a></dd>
             <dd><i class="icon icon_user"></i>isablea </dd>
             <dd><span class="tagsback tagsback-pink" tip-title="提示标题" tip-content="提示内容"><em>微游宝</em><i>￥20元</i></span></dd>
         </dl>
@@ -111,7 +131,7 @@
         </dl>
     </div>
 </div>
-<div class="t_side_model">
+<div class="t_side_model lastedActivities">
     <div class="t_side_title"><h6>最新活动</h6></div>
     <div class="t_side_body">
         <div class="t_side_activities">
