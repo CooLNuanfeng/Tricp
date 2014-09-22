@@ -15,18 +15,17 @@ $w_main: 1200px;
 
 //滚动条样式设置
 body{ 
-scrollbar-arrow-color: #fff; /*图6,三角箭头的颜色*/ 
-scrollbar-face-color: #dfdfdf; /*图5,立体滚动条的颜色*/ 
-scrollbar-3dlight-color: #dfdfdf; /*图1,立体滚动条亮边的颜色*/ 
-scrollbar-highlight-color: #dfdfdf; /*图2,滚动条空白部分的颜色*/ 
-scrollbar-shadow-color: #E3E3E3; /*图3,立体滚动条阴影的颜色*/ 
-scrollbar-darkshadow-color: #dfdfdf; /*图4,立体滚动条强阴影的颜色*/ 
-scrollbar-track-color: #eee; /*图7,立体滚动条背景颜色*/ 
-scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/ 
+scrollbar-arrow-color: #fff; 
+scrollbar-face-color: #dfdfdf; 
+scrollbar-3dlight-color: #dfdfdf; 
+scrollbar-highlight-color: #dfdfdf;
+scrollbar-shadow-color: #E3E3E3; 
+scrollbar-darkshadow-color: #dfdfdf; 
+scrollbar-track-color: #eee; 
+scrollbar-base-color:#E3E3E3; 
 } 
 ::-webkit-scrollbar { width: 10px; background:#E3E3E3; border-radius: 5px; } 
 ::-webkit-scrollbar-track,::-webkit-scrollbar-thumb { border-radius: 5px; } 
-/*::-webkit-scrollbar-track { box-shadow: 1px 1px 5px rgba(80,80,80,.2) inset; }滚动条内阴影*/ 
 ::-webkit-scrollbar-thumb { min-height: 20px; background-clip: content-box; box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset; } 
 ::-webkit-scrollbar-corner { background: transparent; } 
 
@@ -1723,6 +1722,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 
 //头部导航
 .tl_topNavBox{
+	position: relative;
 	width: 100%;
 	height: auto;
 	background: #ffffff;
@@ -2175,8 +2175,12 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		color: $error;
 	}
 	a{
+		width: 60px;
+		height: 23px;
+		line-height: 23px;
+		text-align: center;
+		display: inline-block;
 		margin-left: 10px;
-		padding: 3px 18px;
 		border-radius: 3px;
 		background: $orange;
 		text-decoration: none;
@@ -2339,9 +2343,9 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 	position: relative;
 	a{
 		width: 63px;
-		height: 26px;
+		height: 24px;
 		display: block;
-		line-height: 26px;
+		line-height: 24px;
 		color: #ffffff;
 		border-radius: 3px;
 		background: $orange;
@@ -2764,6 +2768,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 				font-family: Arial;
 				color: $orange;
 				em{
+					font-family: Arial;
 					font-weight: normal;
 				}
 			}
@@ -2824,8 +2829,8 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 		float: left;
 		background: #FBFBFB;
 		width: 120px;
-		height: 30px;
-		line-height: 30px;
+		height: 31px;
+		line-height: 31px;
 		cursor: pointer;
 		text-align: center;
 		color: $txtNormal;
@@ -2907,7 +2912,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 .tl_treeNav{
 	position: fixed;
 	top: 100px;
-	left: 77px;
+	//left: 77px;
 	width: 124px;
 	h6{
 		font-size: 18px;
@@ -2937,7 +2942,7 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 			height: 30px;
 			display: block;
 			position: absolute;
-			right: -5px;
+			right: -4px;
 			top: 0px;
 			display: none;
 			background: url(../image/leftArrow_bg.png) no-repeat;
@@ -2975,3 +2980,12 @@ scrollbar-base-color:#E3E3E3; /*滚动条的基本颜色*/
 .pr20{padding-right: 20px;}
 .posr{right: 10px;}
 .w730{width: 730px;}
+.tagsback-pink{
+	border-color: #FF4499;
+	em{
+		background: #FF4499;
+	}
+	i{
+		color: #FF4499;
+	}
+}
