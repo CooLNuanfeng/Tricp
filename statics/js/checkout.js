@@ -94,11 +94,11 @@ $(function(){
 					$('.treeBox').css({
 						top : -T
 					})
-				}
-				if(i==0){
-					$('.treeBox').css({
-						top : 0
-					})
+					if(i==0){
+						$('.treeBox').css({
+							top : 0
+						})
+					}
 				}
 			});
 
@@ -195,5 +195,40 @@ $(function(){
 			$(this).parent().hide();
 		});
 		
+
+		//文章景点中的评论
+		$('.t_articalCommit .commit').toggle(function(){
+			$(this).parent().next().slideDown();
+		},function(){
+			$(this).parent().next().slideUp();
+		});
+
+		$('.t_picCommit textarea').live('input propertychange',function(){
+			var len = getLength($(this).val());
+			len = Math.ceil(len/2);
+			if(len>500){
+				$(this).next().find('span').addClass('error');
+				$(this).attr('data-success',0);
+			}else{
+				$(this).next().find('span').removeClass('error');
+				$(this).attr('data-success',1);
+			}
+			$(this).next().find('span').html(len);
+				
+		});
+
+		$('.t_subCommit a').click(function(){
+			if($(this).parent().prev().attr('data-success') == 1){
+				$.ajax({
+					url: '',
+					
+				})
+			}
+		})
+
+
+		function getLength(str){
+			return String(str).replace(/[^\x00-\xff]/g,'aa').length;
+		}
 	})()	
 })
