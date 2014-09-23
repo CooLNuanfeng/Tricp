@@ -79,6 +79,11 @@ scrollbar-base-color:#E3E3E3;
 	background: #ffffff;
 	border: 1px solid $borderColor;
 }
+.t_model_upload{
+	padding: 20px 20px 35px 0px;
+	background: #ffffff;
+	border: 1px solid $borderColor;
+}
 
 
 
@@ -560,7 +565,7 @@ scrollbar-base-color:#E3E3E3;
 .t_uploadBox{
 	height: 578px;
 	margin-top: 30px;
-	margin-bottom: 80px;
+	margin-bottom: 40px;
 	position: relative;
 	.notice_txt{
 		width: 25px;
@@ -578,12 +583,11 @@ scrollbar-base-color:#E3E3E3;
 	}
 }
 .t_day_album{
-	width: 445px;
+	width: 465px;
 	height: 578px;
-	overflow-y: auto;
-	overflow-x : hidden;
+	overflow: hidden;
 	border-right: 2px dotted $borderColor;
-	
+	padding-right: 20px;
 	dt{
 		height: 30px;
 		line-height: 30px;
@@ -591,9 +595,29 @@ scrollbar-base-color:#E3E3E3;
 		font-family: "微软雅黑";
 		font-size: 18px;
 		color: $txtNormal;
+		text-indent: 22px;
+		&:hover{
+			background: #FFF5E5;
+			border-left: 5px solid $orange;
+			text-indent: 17px;
+			a{
+				display: block;
+			}
+		}
+		a{
+			display: none;
+			margin-right: 10px;
+			font-weight: normal;
+			color: $txtNormal;
+			font-size: 12px;
+			font-family: "宋体";
+			&:hover{
+				color: $orange;
+			}
+		}
 	}
 	dd{
-
+		padding-left: 20px;
 		li{
 			float: left;
 			position: relative;  // 后期absoulte
@@ -615,6 +639,28 @@ scrollbar-base-color:#E3E3E3;
 				text-align: center;
 				height: 30px;
 				line-height: 30px;
+				position: relative;
+				strong{
+					width: 72px;
+					font-weight: normal;
+					display: inline-block;
+					@extend %textoverflow;
+				}
+				a{
+					position: absolute;
+					display: none;
+					right: 2px;
+					top: 1px;
+					color: $txtBlue;
+					&:hover{
+						color: $orange;
+					}
+				}
+				&:hover{
+					a{
+						display: block;
+					}
+				}
 			}
 			span{
 				position: absolute;
@@ -632,9 +678,35 @@ scrollbar-base-color:#E3E3E3;
 				line-height: 30px;
 				text-align: center;
 				text-decoration: none;
+				&:hover{
+					color: $txtBlack;
+				}
 			}
 		}
 	}
+}
+
+.t_nextAddView{
+	div{
+		width: 142px;
+		height: 95px;
+		background: #E3E3E3;
+		text-align: center;
+		i{
+			margin-top: 25px;
+		}
+	}
+}
+
+.icon_pic{
+	background-position: -100px -150px;
+}
+
+.t_albumBox{
+	width: 460px;
+	padding-right: 15px;
+	height: 578px;
+	overflow-y: auto;
 }
 .icon_addLogo{
 	background-position: -225px -2px;
@@ -644,12 +716,188 @@ scrollbar-base-color:#E3E3E3;
 }
 
 .t_pics{
+	width: 660px;
+	height: 578px;
+	position: relative;
+	overflow: hidden;
+}
+
+.t_showPic{
+	width: 658px;
+	height: 578px;
+	overflow-y: auto;
+
+	li{
+		width: 138px;
+		height: 91px;
+		overflow: hidden;
+		border: 1px solid $borderColor;
+		float: left;
+		position: relative;
+		margin-right: 20px;
+		margin-bottom: 20px;
+
+	}
+	.pic_stint{
+		background: url(../image/failure.png) 2px bottom no-repeat #EAEAEA;
+	}
+}
+
+.t_nextAddPic{
+	background: #E3E3E3;
+	text-align: center;
+	cursor: pointer;
+	i{
+		margin-top: 10px;
+	}
+	p{
+		color: $txtGray;
+	}
+	&:hover{
+		background: #ffffff;
+		p{
+			color: $txtBlack;
+		}
+		.icon_addUpload{
+			background-position: -50px -150px;
+		}
+	}
+}
+.icon_addUpload{
+	background-position: 0px -150px;
+}
+
+.dragTip{
+	width: 126px;
+	height: 34px;
+	display: block;
+	background: url(../image/dragTip.png) no-repeat;
+	position: absolute;
+	top: 285px;
+	left: 533px;
+}
+
+.upload_addOneDay{
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	display: block;
+	position: absolute;
+	bottom: 5px;
+	left: 20px;
+	color: $txtBlue;
+	&:hover{
+		color: $orange;
+		.icon_addDay{
+			background-position: -376px -3px;
+		}
+	}
+}
+.icon_addDay{
+	background-position: -250px -3px;
+}
+
+.t_bg_txt{
+	width: 25px;
 	height: 578px;
 }
 
 
+.t_uploadCount{
+	width: auto;
+	height: 25px;
+	line-height: 25px;
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	color: $txtBlack;
+	span{
+		color: $orange;
+	}
+	.error{
+		color: $error;
+	}
+	div{
+		display: none;
+	}
+}
+
+.icon_success{
+	background-position: -75px -2px;
+}
+.icon_failure{
+	background-position: -375px -26px;
+}
+.icon_warning{
+	background-position: -400px -26px;
+}
+
+.nextStep{
+	overflow: hidden;
+	margin-bottom: 40px;
+	a{
+		width: 160px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 18px;
+		font-family: "微软雅黑";
+		color: #ffffff;
+		background: $orange;
+		display: block;
+		border-radius: 3px;
+		float: right;
+		&:hover{
+			color: #ffffff;
+			text-decoration: none;
+			background: #ff6600;
+		}
+	}
+	.dis_link{
+		background: #C9C9C9;
+		&:hover{
+			background: #C9C9C9;
+		}
+	}
+}
 
 
+
+//右侧上传页面
+.uploadInit{
+	width: 280px;
+	margin: 150px auto 0px;
+	text-align: center;
+	img{
+		margin-bottom: 15px;
+	}
+	p{
+		width: 280px;
+		color: $txtGray;
+		margin-top: 10px;
+	}
+}
+.upload_init{
+	width: 240px;
+	height: 46px;
+	margin: 0 auto;
+	line-height: 46px;
+	display: block;
+	border-radius: 5px;
+	color: #ffffff;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	background: $orange;
+	&:hover{
+		background: #ff6600;
+		color: #ffffff;
+		text-decoration: none;
+	}
+}
+.icon_upload{
+	background-position: -275px -2px;
+}
 
 //编辑页面
 .editMain{
@@ -918,8 +1166,8 @@ scrollbar-base-color:#E3E3E3;
 	}
 }
 .upStatus{
-	width: 130px;
-	height: 85px;
+	width: 100%;
+	height: 100%;
 	line-height: 85px;
 	color: #ffffff;
 	font-family: Arial;
@@ -960,9 +1208,10 @@ scrollbar-base-color:#E3E3E3;
 		position: absolute;
 		bottom: 0px;
 		left: 0px;
-		width: 130px;
+		width: 100%;
 		height: 5px;
 		background: #CCCCCC;
+		text-align: left;
 		em{
 			width: 75%;
 			height: 5px;
@@ -973,7 +1222,7 @@ scrollbar-base-color:#E3E3E3;
 }
 
 .t_listPicBox{
-	width: 733px;
+	width: 737px;
 	height: 190px;
 	overflow-y: auto;	
 }
