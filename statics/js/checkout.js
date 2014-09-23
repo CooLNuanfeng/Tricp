@@ -90,17 +90,144 @@ $(function(){
 					var id = $(this).attr('data-day');
 					$('#'+id).find('dt').addClass('active');
 					var T = $('#'+id).prev().height() + 50;
-					console.log('T='+T);
-					$('.treeBox div').scrollTop(200)
+					//console.log('T='+T);
+					$('.treeBox').scrollTop(T)
 					if(i==0){
-						$('.treeBox div').scrollTop(0)
+						$('.treeBox').scrollTop(0)
 					}
 				}
 			});
 
+
+		})
+		
+		var treeT = $('.treeBox').scrollTop();
+		
+		$('.treeBox').bind('mousewheel',function(event,delta){
+			if(delta>0){
+				treeT -=20;
+				if(treeT<0){
+					treeT =0;
+					$('.treeBtn a:eq(0)').addClass('dis_btn');
+				}else{
+					$('.treeBtn a').removeClass('dis_btn');
+				}
+				$('.treeBox').scrollTop(treeT)
+			}else{
+				treeT +=20;
+				if(treeT>$('.treeBox div').height() - $('.treeBox').height()){
+					treeT = $('.treeBox div').height()- $('.treeBox').height();
+					$('.treeBtn a:eq(1)').addClass('dis_btn');
+				}else{
+					$('.treeBtn a').removeClass('dis_btn');
+				}
+				$('.treeBox').scrollTop(treeT)
+			}
+			return false;
 		})
 
+		var treeTimer = null;
+		$('.tl_treeNav').mouseover(function(){
+			clearTimeout(treeTimer);
+			$('.treeBtn').show();
+		}).mouseout(function(){
+			treeTimer = setTimeout(function(){
+				$('.treeBtn').hide();
+			}, 500)
+		});
 
+		$('.treeBtn a:eq(0)').click(function(){
+			treeT -=20;
+			if(treeT<0){
+				treeT =0;
+				$(this).addClass('dis_btn');
+			}else{
+				$('.treeBtn a').removeClass('dis_btn');
+			}
+			$('.treeBox').scrollTop(treeT);
+		});
+		$('.treeBtn a:eq(1)').click(function(){
+			treeT +=20;
+			if(treeT>$('.treeBox div').height() - $('.treeBox').height()){
+				treeT = $('.treeBox div').height()- $('.treeBox').height();
+				$(this).addClass('dis_btn');
+			}else{
+				$('.treeBtn a').removeClass('dis_btn');
+			}
+			$('.treeBox').scrollTop(treeT);
+		});
+
+		//分享
+		/*$('.share').toggle(function(){
+			$('.shareBox').show().css({
+				top: $(this).offset().top+20,
+				left: $(this).offset().left
+			})
+		},function(){
+			$('.shareBox').show().hide();
+		});*/
+		var shareUrl = '';
+		var shareTxt = '';
+		var shareImgSrc = '';
+		$('.collectionShare').mouseover(function(){
+			shareUrl = window.location;
+			shareTxt = '我在驴妈妈发表了一篇会赚钱的新游记旅程：'+$('.tl_tricptitle').html()+'，@驴妈妈旅游网，小伙伴们，快来围观点赞~(≧▽≦)/~啦';
+			shareImgSrc = $('.t_oneDay:eq(0)').find('dd img').attr('src');
+			$('.shareBox').show().css({
+				top: $(this).offset().top+20,
+				left: $(this).offset().left
+			})
+		}).mouseout(function(){
+			$('.shareBox').show().hide();
+		});
+		$('.shortShare').mouseover(function(){
+			shareUrl = window.location;
+			shareTxt = '我在驴妈妈发表了一篇会赚钱的新游记旅程：'+$('.tl_tricptitle').html()+'，@驴妈妈旅游网，小伙伴们，快来围观点赞~(≧▽≦)/~啦';
+			shareImgSrc = $('.t_oneDay:eq(0)').find('dd img').attr('src');
+			$('.shareBox').show().css({
+				top: $(this).offset().top+32,
+				left: $(this).offset().left
+			})
+		}).mouseout(function(){
+			$('.shareBox').show().hide();
+		});
+
+		
+		$('.share').mouseover(function(){
+			shareUrl = window.location;
+			shareTxt = $(this).parent().prev().html();
+			shareImgSrc = $(this).parent().parent().prev().attr('src');
+			$('.shareBox').show().css({
+				top: $(this).offset().top+16,
+				left: $(this).offset().left
+			})
+		}).mouseout(function(){
+			$('.shareBox').show().hide();
+		});
+
+		$('.shareBox').mouseover(function(){
+			$(this).show();
+		}).mouseout(function(){
+			$(this).hide();
+		});
+		
+
+		//新浪分享
+		$('.shareBox a:eq(0)').click(function(){
+			var title = shareTxt; //定义分享，等待 
+			var url = shareUrl; //页面链接 
+			var img = shareImgSrc; //分享的图片路径 
+			var fxHref = 'http://service.weibo.com/share/share.php?title='+ title +'&url='+ url +'&source=bookmark&appkey=2992571369&pic='+ img +'&ralateUid=&sudaref=s.jiathis.com'; 
+			window.open(fxHref); 
+		})
+		//QQ分享
+		$('.shareBox a:eq(1)').click(function(){
+			var title = shareTxt; //定义分享，等待 
+			var url = shareUrl; //页面链接 
+			var img = shareImgSrc; //分享的图片路径 
+			var fxHref = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+shareUrl+'&title='+shareTxt+'&desc=&summary=&site=&pics='+img
+			window.open(fxHref); 
+		})
 		
 
 

@@ -1790,6 +1790,7 @@ scrollbar-base-color:#E3E3E3;
 	}
 	dd{
 		float: left;
+		width: 658px;
 		position: relative;
 		margin-top: 10px;		
 		a{
@@ -1814,6 +1815,7 @@ scrollbar-base-color:#E3E3E3;
 				font-weight: normal;
 			}
 		}
+
 	}
 }
 
@@ -1838,7 +1840,7 @@ scrollbar-base-color:#E3E3E3;
 	position: absolute;
 	top: 20px;
 	right: 0px;
-	overflow: hidden;
+	//overflow: hidden;
 	a{
 		display: block;
 		float: left;
@@ -1918,6 +1920,7 @@ scrollbar-base-color:#E3E3E3;
 	}
 }
 .tl_shortShare{
+	position: relative;
 	margin-top: 6px;
 	height: 50px;
 	overflow: hidden;
@@ -3013,20 +3016,88 @@ scrollbar-base-color:#E3E3E3;
 //左侧树限制高度
 .limitH_tree{
 	height: 481px;
-	overflow: hidden;
 	.treeBox{
-		width: 138px;
-		padding-right: 10px;
+		//width: 138px;
+		//padding-right: 10px;
 		height: 481px;
 		overflow: hidden;
 		position: relative;
 		div{
-			height: 481px;
-			overflow-y: scroll; 
+			height: auto;
 		}
 	}
 }
 
+.treeBtn{
+	display: none;
+	position: absolute;
+	bottom: -55px;
+	right: 25px;
+	width: 25px;
+	height: 50px;
+	background-position: -464px -450px;
+	a{
+		display: block;
+		width: 25px;
+		height: 25px;
+		&:hover{
+			.icon_treeUp{
+				background-position: -50px -150px;	
+			}
+			.icon_treeDown{
+				background-position: -50px -175px;	
+			}
+		}
+	}
+	.dis_btn{
+		.icon_treeUp{
+			background-position: -25px -150px;	
+		}
+		.icon_treeDown{
+			background-position: -25px -175px;	
+		}
+		&:hover{
+			.icon_treeUp{
+				background-position: -25px -150px;	
+			}
+			.icon_treeDown{
+				background-position: -25px -175px;	
+			}
+		}
+	}
+}
+.icon_treeUp{
+	background-position: 0px -150px;	
+}
+.icon_treeDown{
+	background-position: 0px -175px;	
+}
+
+//分享样式
+.shareBox{
+	position: absolute;
+	display: none;
+	z-index: 9999;
+	top: 20px;
+	left: 200px;
+	width: 128px;
+	height: 72px;
+	background: url(../image/shareIcon_bg.png) no-repeat;
+	a{
+		width:64px;
+		height: 72px;
+		display: block;
+		float: left;
+		text-align: center;
+		padding: 0px;
+		border: 0px;
+		line-height: 104px;
+		color: $txtNormal;
+		&:hover{
+			color: $orange;
+		}
+	}
+}
 
 //修正样式
 .mt20{margin-top: 20px;}

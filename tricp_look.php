@@ -56,11 +56,20 @@
                     </dl>
                 </div>
             </div>
+            <div class="iconBig treeBtn">
+                <a href="javascript:;" target="_self" class="dis_btn"><i class="icon icon_treeUp"></i></a>
+                <a href="javascript:;" target="_self"><i class="icon icon_treeDown"></i></a>
+            </div>
         </div>
     </div>
 </div>
+<div class="shareBox">
+    <a href="javascript:;" target="_self">新浪微博</a>
+    <a href="javascript:;" target="_self">QQ空间</a>
+</div>
 <?php require_once "models/areaModel/areaModel.php" ?>
 <script src="http://pic.lvmama.com/js/you/js/you_footer.js"></script>
+<script src="statics/js/mousewheel.js"></script>
 <script src="statics/js/checkout.js"></script>
 <script type="text/template" id='artical_comTemplate'>
 	<li>

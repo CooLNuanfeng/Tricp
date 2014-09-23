@@ -433,7 +433,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_userInfo dt { float: left; width: 170px; padding-left: 70px; margin-top: -10px; }
 .tl_userInfo dt div { width: 84px; text-align: center; height: 84px; overflow: hidden; border: 1px solid #dddddd; padding: 4px; border-radius: 50%; }
 .tl_userInfo dt div img { border-radius: 50%; }
-.tl_userInfo dd { float: left; position: relative; margin-top: 10px; }
+.tl_userInfo dd { float: left; width: 658px; position: relative; margin-top: 10px; }
 .tl_userInfo dd a { margin-left: 50px; color: #0099cc; }
 .tl_userInfo dd a:hover { color: #ff9900; }
 .tl_userInfo dd a:hover .icon_modifyTitle { background-position: -475px -2px; }
@@ -446,7 +446,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .tl_tag { padding: 1px 8px; border: 1px solid #ff9900; font-size: 12px; color: #ff9900; margin-right: 5px; border-radius: 3px; cursor: default; }
 
-.tl_shareCollection { position: absolute; top: 20px; right: 0px; overflow: hidden; }
+.tl_shareCollection { position: absolute; top: 20px; right: 0px; }
 .tl_shareCollection a { display: block; float: left; padding: 0 15px; border-right: 1px solid #dddddd; text-align: center; height: 24px; line-height: 24px; color: #999999; }
 .tl_shareCollection a:hover { color: #ff9900; text-decoration: none; }
 .tl_shareCollection a:hover .icon_zan { background-position: -200px -77px; }
@@ -475,7 +475,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_userShort p a:hover { color: #ff9900; }
 .tl_userShort p a:hover .icon_modifyTitle { background-position: -475px -2px; }
 
-.tl_shortShare { margin-top: 6px; height: 50px; overflow: hidden; }
+.tl_shortShare { position: relative; margin-top: 6px; height: 50px; overflow: hidden; }
 .tl_shortShare a { display: block; float: left; height: 50px; line-height: 50px; padding: 0 15px; text-align: center; color: #999999; border-right: 1px dotted #dddddd; }
 .tl_shortShare a:hover { color: #ff9900; text-decoration: none; }
 .tl_shortShare a:hover .icon_zan { background-position: -200px -77px; }
@@ -747,9 +747,26 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_treeNav dd.active a { color: #333333; }
 .tl_treeNav dd.active a:hover { color: #ff9900; }
 
-.limitH_tree { height: 481px; overflow: hidden; }
-.limitH_tree .treeBox { width: 138px; padding-right: 10px; height: 481px; overflow: hidden; position: relative; }
-.limitH_tree .treeBox div { height: 481px; overflow-y: scroll; }
+.limitH_tree { height: 481px; }
+.limitH_tree .treeBox { height: 481px; overflow: hidden; position: relative; }
+.limitH_tree .treeBox div { height: auto; }
+
+.treeBtn { display: none; position: absolute; bottom: -55px; right: 25px; width: 25px; height: 50px; background-position: -464px -450px; }
+.treeBtn a { display: block; width: 25px; height: 25px; }
+.treeBtn a:hover .icon_treeUp { background-position: -50px -150px; }
+.treeBtn a:hover .icon_treeDown { background-position: -50px -175px; }
+.treeBtn .dis_btn .icon_treeUp { background-position: -25px -150px; }
+.treeBtn .dis_btn .icon_treeDown { background-position: -25px -175px; }
+.treeBtn .dis_btn:hover .icon_treeUp { background-position: -25px -150px; }
+.treeBtn .dis_btn:hover .icon_treeDown { background-position: -25px -175px; }
+
+.icon_treeUp { background-position: 0px -150px; }
+
+.icon_treeDown { background-position: 0px -175px; }
+
+.shareBox { position: absolute; display: none; z-index: 9999; top: 20px; left: 200px; width: 128px; height: 72px; background: url(../image/shareIcon_bg.png) no-repeat; }
+.shareBox a { width: 64px; height: 72px; display: block; float: left; text-align: center; padding: 0px; border: 0px; line-height: 104px; color: #666666; }
+.shareBox a:hover { color: #ff9900; }
 
 .mt20 { margin-top: 20px; }
 
