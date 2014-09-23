@@ -30,29 +30,31 @@
     	</div>
         <div class="tl_treeNav">
         	<div class="treeBox">
-                <h6>前言</h6>
-                <dl id="d1">
-                    <dt class="active">D1<span></span></dt>
-                    <dd id='n1' class="active"><a href="#n1">西湖</a></dd>
-                    <dd id='n2'><a href="#n2">雷峰塔</a></dd>
-                </dl>
-                <dl id="d2">
-                    <dt>D2<span></span></dt>
-                    <dd id='n3'><a href="#n3">洞庭湖</a></dd>
-                    <dd id='n4'><a href="#n4">天山</a></dd>
-                </dl>
-                <dl id="d3">
-                    <dt>D3<span></span></dt>
-                    <dd id='n5'><a href="#n5">九寨沟</a></dd>
-                    <dd id='n6'><a href="#n6">拉萨</a></dd>
-                    <dd id='n7'><a href="#n7">腾格里</a></dd>
-                </dl>
-                <dl id="d4">
-                    <dt>D4<span></span></dt>
-                    <dd id='n8'><a href="#n8">海南</a></dd>
-                    <dd id='n9'><a href="#n9">可可西里</a></dd>
-                    <dd id='n10'><a href="#n10">大理</a></dd>
-                </dl>
+            	<div>
+                    <h6>前言</h6>
+                    <dl id="d1">
+                        <dt class="active">D1<span></span></dt>
+                        <dd id='n1' class="active"><a href="#n1">西湖</a></dd>
+                        <dd id='n2'><a href="#n2">雷峰塔</a></dd>
+                    </dl>
+                    <dl id="d2">
+                        <dt>D2<span></span></dt>
+                        <dd id='n3'><a href="#n3">洞庭湖</a></dd>
+                        <dd id='n4'><a href="#n4">天山</a></dd>
+                    </dl>
+                    <dl id="d3">
+                        <dt>D3<span></span></dt>
+                        <dd id='n5'><a href="#n5">九寨沟</a></dd>
+                        <dd id='n6'><a href="#n6">拉萨</a></dd>
+                        <dd id='n7'><a href="#n7">腾格里</a></dd>
+                    </dl>
+                    <dl id="d4">
+                        <dt>D4<span></span></dt>
+                        <dd id='n8'><a href="#n8">海南</a></dd>
+                        <dd id='n9'><a href="#n9">可可西里</a></dd>
+                        <dd id='n10'><a href="#n10">大理</a></dd>
+                    </dl>
+                </div>
             </div>
         </div>
     </div>

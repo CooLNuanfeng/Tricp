@@ -3015,10 +3015,15 @@ scrollbar-base-color:#E3E3E3;
 	height: 481px;
 	overflow: hidden;
 	.treeBox{
+		width: 138px;
+		padding-right: 10px;
 		height: 481px;
+		overflow: hidden;
 		position: relative;
-		top: 0px;
-		left: 0px;
+		div{
+			height: 481px;
+			overflow-y: scroll; 
+		}
 	}
 }
 

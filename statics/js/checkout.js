@@ -91,13 +91,9 @@ $(function(){
 					$('#'+id).find('dt').addClass('active');
 					var T = $('#'+id).prev().height() + 50;
 					console.log('T='+T);
-					$('.treeBox').css({
-						top : -T
-					})
+					$('.treeBox div').scrollTop(200)
 					if(i==0){
-						$('.treeBox').css({
-							top : 0
-						})
+						$('.treeBox div').scrollTop(0)
 					}
 				}
 			});
@@ -196,7 +192,7 @@ $(function(){
 		});
 		
 
-		//文章景点中的评论
+		//文章景点中的评论加载
 		$('.t_articalCommit .commit').toggle(function(){
 			var _this = this;
 			$.ajax({
@@ -234,6 +230,7 @@ $(function(){
 				
 		});
 
+		//评论
 		$('.t_subCommit a').click(function(){
 			var _this = this;
 			var username = 'blue' // 获取当前用户ID
@@ -246,9 +243,10 @@ $(function(){
 						$(_this).parent().next().prepend(_.template($('#artical_comTemplate').html(),{
 							username: username,
 							context: $(_this).parent().prev().val()
-						}))
+						}));
+						$(_this).parent().prev().val('');
+						$(_this).parent().find('span').text('0');
 					}
-					
 				})
 			}
 		})
@@ -287,8 +285,10 @@ $(function(){
 								username: username,
 								context: $(_this).parent().prev().val(),
 								timedate : res
-							})
-						)	
+							})							
+						)
+						$(_this).parent().prev().val($(_this).parent().prev().attr('data-value'))
+						.attr('data-success',0).addClass('dis_default');	
 					}
 				})
 			}

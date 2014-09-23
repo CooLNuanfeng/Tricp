@@ -748,7 +748,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_treeNav dd.active a:hover { color: #ff9900; }
 
 .limitH_tree { height: 481px; overflow: hidden; }
-.limitH_tree .treeBox { height: 481px; position: relative; top: 0px; left: 0px; }
+.limitH_tree .treeBox { width: 138px; padding-right: 10px; height: 481px; overflow: hidden; position: relative; }
+.limitH_tree .treeBox div { height: 481px; overflow-y: scroll; }
 
 .mt20 { margin-top: 20px; }
 
