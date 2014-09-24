@@ -295,7 +295,7 @@ $(function(){
 			// })
 			$obj.find('.dragLi img').live('mousedown',function(ev){
 				var _this = this;
-				var $cloneLi = $(this).parent().clone().css({
+				var $cloneLi = $('<li class="dragCloneli"></li>').html($(this).parent().html()).css({
 					position: 'absolute',
 					top : $(this).offset().top,
 					left: $(this).offset().left,
@@ -314,7 +314,10 @@ $(function(){
 						left: ev.pageX - disX
 					})
 
-					nearlyLi($cloneLi, $(_this).parent())
+					var $nearLi = nearlyLi($cloneLi, $(_this).parent());
+					if($nearLi){
+						$nearLi.css('border','1px solid #ff6600');
+					}
 					/*$('.dragLi').each(function(){
 
 						if( collision($cloneLi, $(this)) ){
@@ -335,6 +338,17 @@ $(function(){
 					$(_this).parent().css({
 						opacity: 1
 					})
+					var temp = '';
+					var $nearLi = nearlyLi($cloneLi, $(_this).parent());
+					if($nearLi){
+						$('.dragLi').css('border','');
+						temp = $nearLi.html();
+						console.log($nearLi.html());
+						console.log($(_this).parent().html());
+						$nearLi.html($(_this).parent().html());
+						$(_this).parent().html(temp);
+
+					}
 					$cloneLi.remove();
 				})
 				return false;
@@ -368,22 +382,29 @@ $(function(){
 	}
 
 	function nearlyLi($obj, oParent){
-		console.log(oParent);
 		var minValue = 999999999;
 		var index = -1;
+		var $nearObj = null;
 		$('.dragLi').each(function(){
-						
-			if( collision($obj, $(this))){
-				var dis = distance($obj, $(this));
-				if(dis < minValue &&  $(this).attr('id')!= oParent.attr('id')){
-					minValue = dis;
+			
+			if( collision($obj, $(this)) && oParent.attr('id')!= $(this).attr('id') ){
+				var dis_short = distance($obj, $(this));
+				
+				if(dis_short < minValue ){
+					minValue = dis_short;
 					$nearObj = $(this);
-					console.log(minValue);
 				}			
 			}
 
 		});
-		$nearObj.css({border: '1px solid #ff6600'});
+		//console.log(oParent.attr('id'));
+		/*if(index != -1){
+			return $('.dragLi').eq(index);
+		}
+		else{
+			return false;
+		}*/
+		return $nearObj;
 		
 	}
 
@@ -425,8 +446,8 @@ $(function(){
 	}*/
 
 	function distance($obj1,$obj2){
-		var a = $obj1.offset().top - $obj2.offset().top;
-		var b = $obj1.offset().left - $obj2.offset().left;
+		var a = $obj1.offset().left - $obj2.offset().left;
+		var b = $obj1.offset().top - $obj2.offset().top;
 		return Math.sqrt(a*a + b*b);
 	}
 })

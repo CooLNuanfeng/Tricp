@@ -32,7 +32,7 @@
                                     <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚1</strong></p><span>10张</span>
                                 </li>
                                 <li id="li200" class="dragLi">
-                                    <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚1</strong></p><span>10张</span>
+                                    <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚2</strong></p><span>10张</span>
                                 </li>
                             </ul>
                         </dd>

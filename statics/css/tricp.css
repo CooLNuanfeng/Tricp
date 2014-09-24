@@ -9,7 +9,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 ::-webkit-scrollbar-corner { background: transparent; }
 
-.ordersListBox li a, .tabListBox li a, .dragLi p strong, .treeNav dd, .t_picComlist .t_com_user, .t_side_hotel li a, .tl_treeNav dd { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ordersListBox li a, .tabListBox li a, .dragLi p strong, .dragCloneli p strong, .treeNav dd, .t_picComlist .t_com_user, .t_side_hotel li a, .tl_treeNav dd { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .fl { float: left; }
 
@@ -149,15 +149,15 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_day_album dt a:hover { color: #ff9900; }
 .t_day_album dd { padding-left: 20px; }
 
-.dragLi { float: left; position: relative; list-style: none; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: all-scroll; -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -ms-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -o-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); }
-.dragLi img { vertical-align: top; }
-.dragLi p { color: #333333; text-align: center; height: 30px; line-height: 30px; position: relative; }
-.dragLi p strong { width: 72px; font-weight: normal; display: inline-block; }
-.dragLi p a { position: absolute; display: none; right: 2px; top: 1px; color: #0099cc; }
-.dragLi p a:hover { color: #ff9900; }
-.dragLi p:hover a { display: block; }
-.dragLi span { position: absolute; top: 3px; right: 3px; color: #ffffff; padding: 2px 8px; display: block; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
-:root .dragLi span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
+.dragLi, .dragCloneli { float: left; position: relative; list-style: none; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: all-scroll; -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -ms-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -o-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); }
+.dragLi img, .dragCloneli img { vertical-align: top; }
+.dragLi p, .dragCloneli p { color: #333333; text-align: center; height: 30px; line-height: 30px; position: relative; }
+.dragLi p strong, .dragCloneli p strong { width: 72px; font-weight: normal; display: inline-block; }
+.dragLi p a, .dragCloneli p a { position: absolute; display: none; right: 2px; top: 1px; color: #0099cc; }
+.dragLi p a:hover, .dragCloneli p a:hover { color: #ff9900; }
+.dragLi p:hover a, .dragCloneli p:hover a { display: block; }
+.dragLi span, .dragCloneli span { position: absolute; top: 3px; right: 3px; color: #ffffff; padding: 2px 8px; display: block; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
+:root .dragLi span, :root .dragCloneli span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 
 .t_nextAddView { float: left; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: pointer; }
 .t_nextAddView div { width: 142px; height: 95px; background: #E3E3E3; text-align: center; }
