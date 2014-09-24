@@ -5,7 +5,7 @@
 
 	$arr = array(
 		"nameID" => array(
-			'li1', 'li2','li3'
+			'li3', 'li4','li5'
 		),
 		"point"=>$point,
 		"pointTxt"=>$pointTxt

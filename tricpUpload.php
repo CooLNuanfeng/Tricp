@@ -23,26 +23,20 @@
         <div class="t_model_upload t_uploadBox clearfix">
         	<div class="t_day_album fl">
             	<div class="t_albumBox">
-                    <dl>
+                    <dl id='dayId1'>
                         <dt><a href="javascript:;" class="fr">删除改天</a>第1天</dt>
                         <dd>
                             <ul class="clearfix">
                                 <li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
+                                <li id="li100" class="dragLi">
+                                    <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚1</strong></p><span>10张</span>
+                                </li>
+                                <li id="li200" class="dragLi">
+                                    <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚1</strong></p><span>10张</span>
+                                </li>
                             </ul>
                         </dd>
                     </dl>
-                    <!--<dl>
-                        <dt><a href="javascript:;" class="fr">删除改天</a>第2天</dt>
-                        <dd>
-                            <ul class="clearfix">
-                                <li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self" class="init_default"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
-                                <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
-                                <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
-                                <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
-                                <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
-                            </ul>
-                        </dd>
-                    </dl>-->
                 </div>
             </div>
             <div class="t_bg_txt fl"><div class="notice_txt"><i class="icon icon_drag"></i>拖拽右边的照片到左边</div></div>
@@ -134,7 +128,7 @@
 </body>
 <script src="statics/js/upload.js"></script>
 <script type="text/template" id="addOneDayTemplate">
-<dl>
+<dl id="dayId<%= day %>">
 	<dt><a href="javascript:;" class="fr">删除改天</a>第<%= day %>天</dt>
 	<dd>
 		<ul class="clearfix">
@@ -144,7 +138,7 @@
 </dl>
 </script>
 <script type="text/template" id="addPointTemplate">
-<li id="<%= liID %>">
+<li id="<%= liID %>" class="dragLi">
 	<img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong><%- pointName %></strong></p><span>0张</span>
 </li>
 </script>

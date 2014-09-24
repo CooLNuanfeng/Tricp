@@ -55,6 +55,10 @@ $(function(){
 			left: (L-$('.t_addPointInfo').outerWidth())/2,
 			top: (T - $('.t_addPointInfo').outerHeight())/2
 		});
+		$('.t_addInfoBox').removeClass('t_limitH');
+		$('.t_TipsList').css({
+			top: 214
+		})
 		createOff = false;
 	})
 	//修改拍摄点
@@ -127,14 +131,6 @@ $(function(){
 			}
 		});
 
-		/*$('#t_searchInput').focus(function(){
-			if($(this).val()=='这里是哪？'){
-				$(this).val('');
-			}
-		}).blur(function(){
-			//$('.t_TipsList').find('ul').html('');
-			//$('.t_TipsList').hide();
-		})*/
 		
 
 		//弹层内添加和删除多个拍摄点
@@ -230,8 +226,15 @@ $(function(){
 							$('.t_addPointInfo').hide();
 							$('.t_selectPoint').remove();
 							$('.t_TipsList').hide();
+
+							addWidth = 0; //清除宽度计算
+
+							//成功添加后调用拖拽函数
+							dragTricp($('#dayId1'));
+							dragTricp($('#dayId2'));
 						}
-					})
+					});
+
 				}	
 			}
 		})
@@ -254,4 +257,166 @@ $(function(){
 		}
 	}
 
+
+	//拖拽部分
+	//拖拽提示
+	$('.dragLi').live('mouseover',function(){
+		$('.dragTip').show().css({
+			left: $(this).offset().left +$(this).width()+10,
+			top: $(this).offset().top+ 50
+		})
+	})
+	$('.dragLi').live('mouseout',function(){
+		$('.dragTip').hide();
+	});
+
+	//拖拽
+	function dragTricp($obj){
+		//是否为同天拖拽
+		if(false){
+
+		}else{
+			//重新计算dl高度
+			// var len = $obj.find('.dragLi').length;
+			// len = Math.ceil ( (len+1)/2 );
+			// $obj.find('dd ul').height(153*len);
+			// $obj.dragPosArr=[];
+			// $obj.find('.dragLi').each(function(){
+			// 	$obj.dragPosArr.push( [ $(this).position().left, $(this).position().top ] );
+			// });
+
+			// $obj.find('.dragLi').each(function(i){
+			// 	$(this).css({
+			// 		position: 'absolute',
+			// 		left: $obj.dragPosArr[i][0],
+			// 		top: $obj.dragPosArr[i][1],
+			// 		margin: 0
+			// 	})
+			// })
+			$obj.find('.dragLi img').live('mousedown',function(ev){
+				var _this = this;
+				var $cloneLi = $(this).parent().clone(true,true).css({
+					position: 'absolute',
+					top : $(this).offset().top,
+					left: $(this).offset().left,
+					border: '1px solid #ff6600'
+				})
+				$('body').append($cloneLi);
+				$(this).parent().css({
+					opacity: 0.4
+				})
+				
+				var disX = ev.pageX - $(this).offset().left;
+				var disY = ev.pageY - $(this).offset().top;
+				$(document).bind('mousemove',function(ev){
+					$('.dragTip').hide();
+					$cloneLi.css({
+						top: ev.pageY - disY,
+						left: ev.pageX - disX
+					})
+
+				
+					/*var $nearObj = nearlyLi($cloneLi,$(_this).parent())
+					
+					if( $nearObj ){
+						$nearObj.css({
+							border: '1px solid #ff6600'
+						})
+					};*/
+				})
+				$(document).bind('mouseup',function(){
+					$(document).unbind('mousemove');
+					$(this).unbind('mouseup');
+					$(_this).parent().css({
+						opacity: 1
+					})
+					$cloneLi.remove();
+				})
+				return false;
+			})
+		}
+
+	}
+
+	//初始化时要遍历页面中存在的
+	dragTricp($('#dayId1'));
+
+	//碰撞检测
+	function collision($obj1,$obj2){
+		var L1 = $obj1.offset().left;
+		var T1 = $obj1.offset().top;
+		var R1 = $obj1.offset().left + $obj1.outerWidth();
+		var B1 = $obj1.offset().top + $obj1.outerHeight();
+
+		var L2 = $obj2.offset().left;
+		var T2 = $obj2.offset().top;
+		var R2 = $obj2.offset().left + $obj2.outerWidth();
+		var B2 = $obj2.offset().top + $obj2.outerHeight();
+
+		if( R1<L2 || L1>R2 || B1<T2 || T1>B2 ){
+			return false;
+		}
+		else{
+			return true;
+		}
+
+	}
+
+	/*function nearlyLi($obj, $oParent){
+		var minValue = 999999999;
+		var index = -1;
+		var $nearObj = null;
+		console.log($obj.offset().top+'===='+$obj.offset().left)
+		$('.dragLi').each(function(){
+			console.log('inner='+$(this).offset().top+$(this).outerHeight()+'==='+$(this).offset().left+$(this).outerWidth());
+			if($(this) == $oParent){
+				console.log('1')
+			}else{
+				console.log('2')
+			}
+			if( collision($obj, $(this)) && $(this)!= $oParent && $(this)!= $obj){
+				var dis = distance($obj, $(this));
+				if(dis < minValue){
+					minValue = dis;
+					$nearObj = $(this);
+				}			
+			}
+		});
+		//console.log($nearObj)
+
+		return $nearObj;
+		
+	}*/
+
+
+
+	/*function nearlyLi($obj, $oParent){
+		var minValue = 999999999;
+		var index = -1;
+		var arr = [];
+		console.log($('.dragLi').length)
+		$('.dragLi').each(function(){
+			if( collision($obj, $(this)) && $(this)!= $oParent && $(this)!= $obj){
+				arr.push($(this));				
+			}
+		})
+		console.log(arr);
+		for(var i=0; i<arr.length; i++){
+			if( distance($obj,arr[i]) < minValue){
+				minValue = distance($obj,arr[i]);
+				index = i;
+			}
+		}
+		
+		if(index!= -1){
+			return arr[index]
+		}else{
+			return false;
+		}
+	}*/
+	function distance($obj1,$obj2){
+		var a = $obj1.offset().top - $obj2.offset().top;
+		var b = $obj1.offset().left - $obj2.offset().left;
+		return Math.sqrt(a*a + b*b);
+	}
 })

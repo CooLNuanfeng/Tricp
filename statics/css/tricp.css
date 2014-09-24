@@ -9,7 +9,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 ::-webkit-scrollbar-corner { background: transparent; }
 
-.ordersListBox li a, .tabListBox li a, .t_day_album dd li p strong, .treeNav dd, .t_picComlist .t_com_user, .t_side_hotel li a, .tl_treeNav dd { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ordersListBox li a, .tabListBox li a, .dragLi p strong, .treeNav dd, .t_picComlist .t_com_user, .t_side_hotel li a, .tl_treeNav dd { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .fl { float: left; }
 
@@ -148,17 +148,18 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_day_album dt a { display: none; margin-right: 10px; font-weight: normal; color: #666666; font-size: 12px; font-family: "宋体"; }
 .t_day_album dt a:hover { color: #ff9900; }
 .t_day_album dd { padding-left: 20px; }
-.t_day_album dd li { float: left; position: relative; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -ms-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -o-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); }
-.t_day_album dd li img { vertical-align: top; }
-.t_day_album dd li p { color: #333333; text-align: center; height: 30px; line-height: 30px; position: relative; }
-.t_day_album dd li p strong { width: 72px; font-weight: normal; display: inline-block; }
-.t_day_album dd li p a { position: absolute; display: none; right: 2px; top: 1px; color: #0099cc; }
-.t_day_album dd li p a:hover { color: #ff9900; }
-.t_day_album dd li p:hover a { display: block; }
-.t_day_album dd li span { position: absolute; top: 3px; right: 3px; color: #ffffff; padding: 2px 8px; display: block; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
-:root .t_day_album dd li span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 
-.t_nextAddView { cursor: pointer; }
+.dragLi { float: left; position: relative; list-style: none; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: all-scroll; -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -ms-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -o-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); }
+.dragLi img { vertical-align: top; }
+.dragLi p { color: #333333; text-align: center; height: 30px; line-height: 30px; position: relative; }
+.dragLi p strong { width: 72px; font-weight: normal; display: inline-block; }
+.dragLi p a { position: absolute; display: none; right: 2px; top: 1px; color: #0099cc; }
+.dragLi p a:hover { color: #ff9900; }
+.dragLi p:hover a { display: block; }
+.dragLi span { position: absolute; top: 3px; right: 3px; color: #ffffff; padding: 2px 8px; display: block; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
+:root .dragLi span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
+
+.t_nextAddView { float: left; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: pointer; }
 .t_nextAddView div { width: 142px; height: 95px; background: #E3E3E3; text-align: center; }
 .t_nextAddView div i { margin-top: 25px; }
 .t_nextAddView a { color: #999999; display: block; height: 30px; line-height: 30px; text-align: center; text-decoration: none; }
@@ -170,6 +171,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .icon_pic { background-position: -100px -150px; }
 
 .t_albumBox { width: 460px; padding-right: 15px; height: 578px; overflow-y: auto; }
+.t_albumBox ul { position: relative; }
 
 .icon_addLogo { background-position: -225px -2px; }
 
@@ -190,7 +192,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .icon_addUpload { background-position: 0px -150px; }
 
-.dragTip { width: 126px; height: 34px; display: block; background: url(../image/dragTip.png) no-repeat; position: absolute; top: 285px; left: 533px; }
+.dragTip { width: 126px; height: 34px; background: url(../image/dragTip.png) no-repeat; position: absolute; display: none; }
 
 .upload_addOneDay { width: 80px; height: 25px; line-height: 25px; display: block; position: absolute; bottom: 5px; left: 20px; color: #0099cc; }
 .upload_addOneDay:hover { color: #ff9900; }
@@ -411,7 +413,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 #t_addTips { height: 22px; padding: 4px 0px; line-height: 22px; outline: none; color: #666666; background: transparent; }
 
 .t_TipsList { width: 664px; border: 1px solid #dddddd; border-top: 0px; background: #ffffff; overflow: hidden; position: absolute; display: none; top: 214px; left: 32px; }
-.t_TipsList div { width: 653px; height: 224px; margin: 7px 0px; overflow-y: auto; }
+.t_TipsList div { width: 653px; height: 224px; margin: 7px 0px; overflow-y: auto; overflow-x: hidden; }
 .t_TipsList li { width: 630px; padding-left: 8px; overflow: hidden; height: 40px; line-height: 40px; }
 .t_TipsList li i { margin-right: 10px; }
 .t_TipsList li a { font-size: 14px; margin-right: 10px; color: #333333; }

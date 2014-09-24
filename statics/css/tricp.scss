@@ -618,65 +618,73 @@ scrollbar-base-color:#E3E3E3;
 	}
 	dd{
 		padding-left: 20px;
-		li{
-			float: left;
-			position: relative;  // 后期absoulte
-			margin-right: 20px;
-			margin-bottom: 20px;
-			background: #ffffff;
-			border: 1px solid $borderColor;
-			padding: 3px;
-			-webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
-			-moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
-			-ms-box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
-			-o-box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
-			box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
-			img{
-				vertical-align: top;
+	}
+}
+.dragLi{
+	float: left;
+	position: relative;
+	list-style: none;  
+	margin-right: 20px;
+	margin-bottom: 20px;
+	background: #ffffff;
+	border: 1px solid $borderColor;
+	padding: 3px;
+	cursor:all-scroll;
+	-webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
+	-ms-box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
+	-o-box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
+	img{
+		vertical-align: top;
+	}
+	p{
+		color: $txtBlack;
+		text-align: center;
+		height: 30px;
+		line-height: 30px;
+		position: relative;
+		strong{
+			width: 72px;
+			font-weight: normal;
+			display: inline-block;
+			@extend %textoverflow;
+		}
+		a{
+			position: absolute;
+			display: none;
+			right: 2px;
+			top: 1px;
+			color: $txtBlue;
+			&:hover{
+				color: $orange;
 			}
-			p{
-				color: $txtBlack;
-				text-align: center;
-				height: 30px;
-				line-height: 30px;
-				position: relative;
-				strong{
-					width: 72px;
-					font-weight: normal;
-					display: inline-block;
-					@extend %textoverflow;
-				}
-				a{
-					position: absolute;
-					display: none;
-					right: 2px;
-					top: 1px;
-					color: $txtBlue;
-					&:hover{
-						color: $orange;
-					}
-				}
-				&:hover{
-					a{
-						display: block;
-					}
-				}
-			}
-			span{
-				position: absolute;
-				top: 3px;
-				right: 3px;
-				color: #ffffff;
-				padding: 2px 8px;
+		}
+		&:hover{
+			a{
 				display: block;
-				@include bg();
 			}
-			
 		}
 	}
+	span{
+		position: absolute;
+		top: 3px;
+		right: 3px;
+		color: #ffffff;
+		padding: 2px 8px;
+		display: block;
+		@include bg();
+	}
+	
 }
 
 .t_nextAddView{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	background: #ffffff;
+	border: 1px solid $borderColor;
+	padding: 3px;
 	cursor: pointer;
 	div{
 		width: 142px;
@@ -721,6 +729,9 @@ scrollbar-base-color:#E3E3E3;
 	padding-right: 15px;
 	height: 578px;
 	overflow-y: auto;
+	ul{
+		position: relative;
+	}
 }
 .icon_addLogo{
 	background-position: -225px -2px;
@@ -784,11 +795,9 @@ scrollbar-base-color:#E3E3E3;
 .dragTip{
 	width: 126px;
 	height: 34px;
-	display: block;
 	background: url(../image/dragTip.png) no-repeat;
 	position: absolute;
-	top: 285px;
-	left: 533px;
+	display: none;
 }
 
 .upload_addOneDay{
@@ -1655,6 +1664,7 @@ scrollbar-base-color:#E3E3E3;
 		height: 224px;
 		margin: 7px 0px;
 		overflow-y: auto;
+		overflow-x: hidden;
 	}
 	li{
 		width: 630px;
