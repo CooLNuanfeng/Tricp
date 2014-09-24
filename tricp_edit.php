@@ -139,10 +139,6 @@
             <a href="javascript:;" data-point='recreation'><i class="iconBig icon_recreations"></i>娱乐</a>
             <a href="javascript:;" data-point='other'><i class="iconBig icon_others"></i>其他</a>
         </div>
-        <div class="t_addInfoBox" style="display:none">
-        	<div class="t_selectPoint">日月光<i class="icon icon_close"></i></div>
-            <div id="t_tips"><input type="text" id="t_addTips" ><span class="">可添加多个拍摄地点</span></div>
-        </div>
         <input type="text" id="t_searchInput">
         <div class="t_TipsList">
         	<div>

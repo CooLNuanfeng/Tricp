@@ -671,22 +671,13 @@ scrollbar-base-color:#E3E3E3;
 				display: block;
 				@include bg();
 			}
-			.init_default{
-				color: $txtGray;
-				display: block;
-				height: 30px;
-				line-height: 30px;
-				text-align: center;
-				text-decoration: none;
-				&:hover{
-					color: $txtBlack;
-				}
-			}
+			
 		}
 	}
 }
 
 .t_nextAddView{
+	cursor: pointer;
 	div{
 		width: 142px;
 		height: 95px;
@@ -694,6 +685,29 @@ scrollbar-base-color:#E3E3E3;
 		text-align: center;
 		i{
 			margin-top: 25px;
+		}
+	}
+	a{
+
+		color: $txtGray;
+		display: block;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		text-decoration: none;
+		&:hover{
+			color: $txtBlack;
+			.icon_addLogo{
+				background-position: -425px -25px;
+			}
+		}
+	}
+	&:hover{
+		a{
+			color: $txtBlack;
+		}
+		.icon_addLogo{
+			background-position: -425px -25px;
 		}
 	}
 }
@@ -3347,6 +3361,78 @@ scrollbar-base-color:#E3E3E3;
 		}
 	}
 }
+
+
+//弹层确认和取消样式
+.t_config{
+	position: absolute;
+	width: 500px;
+	.t_dialog_border{
+		padding: 0px
+	}
+}
+.t_configTitle{
+	height: 31px;
+	line-height: 31px;
+	font-family: "宋体";
+	font-size: 14px;
+	color: $txtBlack;
+	background: #EEEEEE;
+	padding: 0 10px;
+}
+.t_configTxt{
+	padding: 20px;
+	font-size: 12px;
+	color: $txtBlack;
+}
+.t_configBtn{
+	padding: 0px 20px 20px;
+	text-align: right;
+}
+.t_configSure{
+	width: 53px;
+	height: 26px;
+	display: inline-block;
+	text-align: center;
+	line-height: 26px;
+	margin-left: 10px;
+	color: #ffffff;
+	background: $orange;
+	background-image: -webkit-linear-gradient(to top, #ff6600 0%, #ff8800 100%);
+	background-image: -moz-linear-gradient(to top, #ff6600 0%, #ff8800 100%);
+	background-image: linear-gradient(to top, #ff6600 0%, #ff8800 100%);
+	border-radius: 3px;
+	border: 1px solid #ff6600;
+	&:hover{
+		background: #ff6600;
+		color: #ffffff;
+		text-decoration: none;
+	}
+}
+
+.t_configCancel{
+	width: 53px;
+	height: 26px;
+	display: inline-block;
+	text-align: center;
+	line-height: 26px;
+	margin-left: 10px;
+	color: #545454;
+	background: #f8f8f8;
+	background-image: -webkit-linear-gradient(to top, #ffffff 0%, #f8f8f8 100%);
+	background-image: -moz-linear-gradient(to top, #ffffff 0%, #f8f8f8 100%);
+	background-image: linear-gradient(to top, #ffffff 0%, #f8f8f8 100%);
+	border-radius: 3px;
+	border: 1px solid #cccccc;
+	&:hover{
+		background: #fafafa;
+		color: #545454;
+		text-decoration: none;
+	}
+}
+
+
+
 
 //修正样式
 .mt20{margin-top: 20px;}

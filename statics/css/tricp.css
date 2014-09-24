@@ -157,11 +157,15 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_day_album dd li p:hover a { display: block; }
 .t_day_album dd li span { position: absolute; top: 3px; right: 3px; color: #ffffff; padding: 2px 8px; display: block; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
 :root .t_day_album dd li span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
-.t_day_album dd li .init_default { color: #999999; display: block; height: 30px; line-height: 30px; text-align: center; text-decoration: none; }
-.t_day_album dd li .init_default:hover { color: #333333; }
 
+.t_nextAddView { cursor: pointer; }
 .t_nextAddView div { width: 142px; height: 95px; background: #E3E3E3; text-align: center; }
 .t_nextAddView div i { margin-top: 25px; }
+.t_nextAddView a { color: #999999; display: block; height: 30px; line-height: 30px; text-align: center; text-decoration: none; }
+.t_nextAddView a:hover { color: #333333; }
+.t_nextAddView a:hover .icon_addLogo { background-position: -425px -25px; }
+.t_nextAddView:hover a { color: #333333; }
+.t_nextAddView:hover .icon_addLogo { background-position: -425px -25px; }
 
 .icon_pic { background-position: -100px -150px; }
 
@@ -835,6 +839,21 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .shareBox { position: absolute; display: none; z-index: 9999; top: 20px; left: 200px; width: 128px; height: 72px; background: url(../image/shareIcon_bg.png) no-repeat; }
 .shareBox a { width: 64px; height: 72px; display: block; float: left; text-align: center; padding: 0px; border: 0px; line-height: 104px; color: #666666; }
 .shareBox a:hover { color: #ff9900; }
+
+.t_config { position: absolute; width: 500px; }
+.t_config .t_dialog_border { padding: 0px; }
+
+.t_configTitle { height: 31px; line-height: 31px; font-family: "宋体"; font-size: 14px; color: #333333; background: #EEEEEE; padding: 0 10px; }
+
+.t_configTxt { padding: 20px; font-size: 12px; color: #333333; }
+
+.t_configBtn { padding: 0px 20px 20px; text-align: right; }
+
+.t_configSure { width: 53px; height: 26px; display: inline-block; text-align: center; line-height: 26px; margin-left: 10px; color: #ffffff; background: #ff9900; background-image: -webkit-linear-gradient(to top, #ff6600 0%, #ff8800 100%); background-image: -moz-linear-gradient(to top, #ff6600 0%, #ff8800 100%); background-image: linear-gradient(to top, #ff6600 0%, #ff8800 100%); border-radius: 3px; border: 1px solid #ff6600; }
+.t_configSure:hover { background: #ff6600; color: #ffffff; text-decoration: none; }
+
+.t_configCancel { width: 53px; height: 26px; display: inline-block; text-align: center; line-height: 26px; margin-left: 10px; color: #545454; background: #f8f8f8; background-image: -webkit-linear-gradient(to top, white 0%, #f8f8f8 100%); background-image: -moz-linear-gradient(to top, white 0%, #f8f8f8 100%); background-image: linear-gradient(to top, white 0%, #f8f8f8 100%); border-radius: 3px; border: 1px solid #cccccc; }
+.t_configCancel:hover { background: #fafafa; color: #545454; text-decoration: none; }
 
 .mt20 { margin-top: 20px; }
 

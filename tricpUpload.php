@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="http://s1.lvjs.com.cn/min/index.php?f=/styles/v6/header.css">
 <link rel="stylesheet" href="statics/css/tricp.css" type="text/css">
 <script src="http://pic.lvmama.com/min/index.php?f=js/new_v/jquery-1.7.2.min.js,/js/ui/lvmamaUI/lvmamaUI.js,/js/new_v/top/header-air_new.js"></script>
+<script src="statics/js/Underscore.js"></script>
 </head>
 
 <body>
@@ -26,15 +27,11 @@
                         <dt><a href="javascript:;" class="fr">删除改天</a>第1天</dt>
                         <dd>
                             <ul class="clearfix">
-                                <li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self" class="init_default"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
-                                <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
-                                <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
-                                <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
-                                <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
+                                <li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
                             </ul>
                         </dd>
                     </dl>
-                    <dl>
+                    <!--<dl>
                         <dt><a href="javascript:;" class="fr">删除改天</a>第2天</dt>
                         <dd>
                             <ul class="clearfix">
@@ -45,7 +42,7 @@
                                 <li><img src="http://placehold.it/315x155/019ed8" width="142" height="95"><p><a href="javascript:;" target="_self">修改</a><strong>日本</strong></p><span>118张</span></li>
                             </ul>
                         </dd>
-                    </dl>
+                    </dl>-->
                 </div>
             </div>
             <div class="t_bg_txt fl"><div class="notice_txt"><i class="icon icon_drag"></i>拖拽右边的照片到左边</div></div>
@@ -94,6 +91,61 @@
     </div>
 </div>
 <div class="dragTip"></div>
+
+<div class="t_dialog t_addPointInfo w730">
+	<div class="t_dialog_border">
+    	<h5 class="t_diaTitle">添加拍摄点</h5>
+        <div class="t_tabAddPoint">
+        	<a href="javascript:;" class="active" data-point="view"><i class="iconBig icon_views"></i>景点</a>
+            <a href="javascript:;" data-point='hotel'><i class="iconBig icon_hotels"></i>酒店</a>
+            <a href="javascript:;" data-point='cater'><i class="iconBig icon_caterings"></i>餐饮</a>
+            <a href="javascript:;" data-point='traffic'><i class="iconBig icon_traffics"></i>交通</a>
+            <a href="javascript:;" data-point='shopping'><i class="iconBig icon_shoppings"></i>购物</a>
+            <a href="javascript:;" data-point='recreation'><i class="iconBig icon_recreations"></i>娱乐</a>
+            <a href="javascript:;" data-point='other'><i class="iconBig icon_others"></i>其他</a>
+        </div>
+        <div class="t_addInfoBox" style="display:block">
+            <div id="t_tips"><input type="text" id="t_addTips" ><span class="">可添加多个拍摄地点</span></div>
+        </div>
+        <input type="text" id="t_searchInput">
+        <div class="t_TipsList">
+        	<div>
+            	<ul>
+                </ul>
+                <div class="last"><a href="javascript:;" class="t_tipsAdd">+没有可选的地点，点击创建“<span>马燕山的风景</span>”</a></div>
+            </div>
+        </div>
+        <a href="javascript:;" target="_self" class="t_tipsFinish">完 成</a></div>
+        <a href="javascript:;" target="_self" class="t_dialog_closed"></a>
+    </div>
+</div>
+<div class="t_dialog t_config">
+	<div class="t_dialog_border">
+    	<h6 class="t_configTitle">操作提示</h6>
+        <p class="t_configTxt">删除这天的内容，当天拍摄点和照片也会删除哦，您确定？</p>
+        <div class="t_configBtn">
+        	<a href="javascript:;" class="t_configSure" target="_self">确定</a>
+            <a href="javascript:;" class="t_configCancel" target="_self">取消</a>
+        </div>
+        <a href="javascript:;" target="_self" class="t_dialog_closed"></a>
+    </div>
+</div>
+<div class="mengban"></div>
 </body>
 <script src="statics/js/upload.js"></script>
+<script type="text/template" id="addOneDayTemplate">
+<dl>
+	<dt><a href="javascript:;" class="fr">删除改天</a>第<%= day %>天</dt>
+	<dd>
+		<ul class="clearfix">
+			<li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self" class="init_default"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
+		</ul>
+	</dd>
+</dl>
+</script>
+<script type="text/template" id="addPointTemplate">
+<li id="<%= liID %>">
+	<img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong><%- pointName %></strong></p><span>0张</span>
+</li>
+</script>
 </html>
