@@ -295,7 +295,7 @@ $(function(){
 			// })
 			$obj.find('.dragLi img').live('mousedown',function(ev){
 				var _this = this;
-				var $cloneLi = $(this).parent().clone(true,true).css({
+				var $cloneLi = $(this).parent().clone().css({
 					position: 'absolute',
 					top : $(this).offset().top,
 					left: $(this).offset().left,
@@ -305,7 +305,6 @@ $(function(){
 				$(this).parent().css({
 					opacity: 0.4
 				})
-				
 				var disX = ev.pageX - $(this).offset().left;
 				var disY = ev.pageY - $(this).offset().top;
 				$(document).bind('mousemove',function(ev){
@@ -315,14 +314,20 @@ $(function(){
 						left: ev.pageX - disX
 					})
 
-				
-					/*var $nearObj = nearlyLi($cloneLi,$(_this).parent())
+					nearlyLi($cloneLi, $(_this).parent())
+					/*$('.dragLi').each(function(){
+
+						if( collision($cloneLi, $(this)) ){
+							$(_this).parent().attr('data-collision','')
+							$(this).attr('data-collision',1)
+						}else{
+							$(this).css({
+								border: ''
+							})
+						}
+					})*/
 					
-					if( $nearObj ){
-						$nearObj.css({
-							border: '1px solid #ff6600'
-						})
-					};*/
+					
 				})
 				$(document).bind('mouseup',function(){
 					$(document).unbind('mousemove');
@@ -362,31 +367,25 @@ $(function(){
 
 	}
 
-	/*function nearlyLi($obj, $oParent){
+	function nearlyLi($obj, oParent){
+		console.log(oParent);
 		var minValue = 999999999;
 		var index = -1;
-		var $nearObj = null;
-		console.log($obj.offset().top+'===='+$obj.offset().left)
 		$('.dragLi').each(function(){
-			console.log('inner='+$(this).offset().top+$(this).outerHeight()+'==='+$(this).offset().left+$(this).outerWidth());
-			if($(this) == $oParent){
-				console.log('1')
-			}else{
-				console.log('2')
-			}
-			if( collision($obj, $(this)) && $(this)!= $oParent && $(this)!= $obj){
+						
+			if( collision($obj, $(this))){
 				var dis = distance($obj, $(this));
-				if(dis < minValue){
+				if(dis < minValue &&  $(this).attr('id')!= oParent.attr('id')){
 					minValue = dis;
 					$nearObj = $(this);
+					console.log(minValue);
 				}			
 			}
-		});
-		//console.log($nearObj)
 
-		return $nearObj;
+		});
+		$nearObj.css({border: '1px solid #ff6600'});
 		
-	}*/
+	}
 
 
 
@@ -394,17 +393,27 @@ $(function(){
 		var minValue = 999999999;
 		var index = -1;
 		var arr = [];
-		console.log($('.dragLi').length)
 		$('.dragLi').each(function(){
-			if( collision($obj, $(this)) && $(this)!= $oParent && $(this)!= $obj){
-				arr.push($(this));				
+			if( collision($obj, $(this))){
+				$oParent.parent().attr('data-collision','')
+				$(this).attr('data-collision',1)				
+			}else{
+				$(this).attr('data-collision','')
 			}
 		})
-		console.log(arr);
+
+		$('.dragLi').each(function(){
+			if($(this).attr('data-collision') ==1){
+				arr.push($(this))
+			}
+		})
+		$('.dragLi').attr('data-collision','');
+		//console.log(arr);
 		for(var i=0; i<arr.length; i++){
-			if( distance($obj,arr[i]) < minValue){
+			if( distance($obj,arr[i]) < minValue && distance($obj,arr[i])!=0){
 				minValue = distance($obj,arr[i]);
 				index = i;
+				console.log(minValue);
 			}
 		}
 		
@@ -414,6 +423,7 @@ $(function(){
 			return false;
 		}
 	}*/
+
 	function distance($obj1,$obj2){
 		var a = $obj1.offset().top - $obj2.offset().top;
 		var b = $obj1.offset().left - $obj2.offset().left;
