@@ -4,7 +4,7 @@
 	$pointTxt = $_POST['pointTxt'];
 
 	$arr = array(
-		"nameID" => 'n50',
+		"nameID" => 'n55',
 		"point"=>$point,
 		"pointTxt"=>$pointTxt
 	);

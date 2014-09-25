@@ -10,7 +10,7 @@
 <script src="statics/js/Underscore.js"></script>
 <script src="http://pic.lvmama.com/min/index.php?f=/js/v5/modules/pandora-calendar.js"></script>
 </head>
-
+<base target="_self">
 <body>
 <?php require_once "models/topHeaderModel/headerModel.php" ?>
 <div class="t_body">
@@ -176,6 +176,7 @@
 </div>
 
 </body>
+<script src="statics/js/hashChange.js"></script>
 <script src="statics/js/mousewheel.js"></script>
 <script src="statics/js/edit.js"></script>
 <script type="text/template" id="addPointTemplate">
