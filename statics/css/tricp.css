@@ -449,7 +449,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .icon_sm_other { background-position: -150px -79px; }
 
-.treeNav { width: 120px; height: auto; padding-bottom: 60px; position: fixed; top: 200px; border-right: 4px solid #dddddd; }
+.treeNav { width: 120px; height: auto; position: fixed; top: 160px; border-right: 4px solid #dddddd; }
 .treeNav h6 { font-family: "微软雅黑"; font-size: 18px; color: #666666; padding-right: 10px; text-align: right; font-weight: normal; cursor: pointer; }
 .treeNav dl { margin-top: 10px; margin-bottom: 40px; }
 .treeNav dt { font-family: Arial; height: 30px; line-height: 30px; padding-right: 10px; text-align: right; font-size: 18px; position: relative; cursor: default; }
@@ -459,6 +459,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .treeNav dd { height: 22px; line-height: 22px; padding-right: 10px; text-align: right; }
 .treeNav dd a { color: #999999; }
 .treeNav dd a:hover { color: #ff9900; }
+.treeNav .treeBox { margin-right: -7px; padding-right: 7px; }
 
 .editNav { width: 200px; padding-left: 127px; border-right: 3px solid #dddddd; position: relative; }
 

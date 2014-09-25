@@ -1784,11 +1784,9 @@ scrollbar-base-color:#E3E3E3;
 .treeNav{
 	width: 120px;
 	height: auto;
-	padding-bottom: 60px;
 	position: fixed;
-	top: 200px;
+	top: 160px;
 	border-right: 4px solid $borderColor;
-
 	h6{
 		font-family: "微软雅黑";
 		font-size: 18px;
@@ -1840,6 +1838,10 @@ scrollbar-base-color:#E3E3E3;
 				color: $orange;
 			}
 		}
+	}
+	.treeBox{
+		margin-right: -7px;
+		padding-right: 7px;
 	}
 }
 

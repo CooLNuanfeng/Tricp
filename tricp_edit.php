@@ -107,11 +107,19 @@
         </div>
        	<div class="t_publish"><a href="javascript:;" class="publish">发 表</a>或者<a href="javascript:;" class="draft">保存为草稿</a></div>
         <div class="treeNav fl">
-            <h6>前言</h6>
-            <dl id="d1">
-                <dt class="active">D1<span></span></dt>
-                <dd id='n1'><a href="">西湖</a></dd>
-            </dl>
+            <div class="treeBox">
+                <div>
+                    <h6>前言</h6>
+                    <dl id="d1">
+                        <dt class="active">D1<span></span></dt>
+                        <dd id='n1'><a href="#n1">西湖</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="iconBig treeBtn">
+                <a href="javascript:;" target="_self" class="dis_btn"><i class="icon icon_treeUp"></i></a>
+                <a href="javascript:;" target="_self"><i class="icon icon_treeDown"></i></a>
+            </div>
         </div>
     </div>
    
@@ -168,6 +176,7 @@
 </div>
 
 </body>
+<script src="statics/js/mousewheel.js"></script>
 <script src="statics/js/edit.js"></script>
 <script type="text/template" id="addPointTemplate">
 	<i class="icon icon_wrPoint"></i>
@@ -214,7 +223,7 @@
 </script>
 <script type="text/template" id="treeTemplate">
 	<dt>D<%= day %><span></span></dt>
-	<dd id="<%= nameID %>"><%= value %></dd>
+	<dd id="<%= nameID %>"><a href="<%= nameID %>"><%= value %></a></dd>
 </script>
 <script type="text/template" id="uploadTemplate">
 <div class="t_listPicBox">

@@ -6,18 +6,22 @@ $(function(){
 		var lastedTop = $('.lastedActivities').length ? $('.lastedActivities').offset().top : 0;
 
 		//左侧树部分
+		//是否有前言判断
 		if($('.t_m_foreword').length!=0){
 			$('.treeBox h6').css({
 				marginBottom: $('.t_m_foreword').outerHeight() -35
 			})
 		}
+		var showTreeBtn = false;
 		var treeHeight = $('.tl_treeNav').height();
-			if(treeHeight > 481 ){
+			if(treeHeight >= 481 ){
 				$('.tl_treeNav').addClass('limitH_tree');
-				treeHeight = 481
+				treeHeight = 481;
+				showTreeBtn = true;
 			}else{
 			   $('.tl_treeNav').removeClass('limitH_tree');
 			   treeHeight = $('.tl_treeNav').height();
+			   showTreeBtn = false;
 			}
 		var articalHeight = $('.t_articalShow').height();
 		var windowHeight = $(window).height() 
@@ -129,7 +133,9 @@ $(function(){
 		var treeTimer = null;
 		$('.tl_treeNav').mouseover(function(){
 			clearTimeout(treeTimer);
-			$('.treeBtn').show();
+			if(showTreeBtn){
+				$('.treeBtn').show();
+			}
 		}).mouseout(function(){
 			treeTimer = setTimeout(function(){
 				$('.treeBtn').hide();

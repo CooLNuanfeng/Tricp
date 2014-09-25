@@ -10,6 +10,111 @@ $(function(){
 	}
 	getWinHeight();
 	
+	//后来添加的
+	//左侧树部分
+	var showTreeBtn = false;
+	function getTreeHeight(){
+		var treeHeight = $('.treeNav').height();
+		if(treeHeight >= 481 ){
+			$('.treeNav').addClass('limitH_tree');
+			treeHeight = 481;
+			showTreeBtn = true;
+		}else{
+		   $('.treeNav').removeClass('limitH_tree');
+		   treeHeight = $('.treeNav').height();
+		   showTreeBtn = false;
+		}
+	}
+	getTreeHeight()
+
+	var windowHeight = $(window).height();
+	$(window).scroll(function(){
+		var _scrollTop = $(document).scrollTop();
+		if(_scrollTop > 200){
+			$('.treeNav').css({
+				top: 50,
+			});
+		}else{
+			$('.treeNav').css({
+				top: 160,
+			});
+		}
+		var T = 0;
+		$('.t_oneListModel').each(function(i){
+			if(_scrollTop+windowHeight/2 > $(this).offset().top){
+				$('.treeBox dl dt').removeClass('active');
+				var id = $(this).find('.t_lineList').attr('data-list');
+				$('#'+id).find('dt').addClass('active');
+				//var T = $('#'+id).prev().height() + 50;
+				T+=$('#'+id).prev().height() + 50;
+				//console.log('T='+T);
+				$('.treeBox').scrollTop(T)
+				if(i==0){
+					$('.treeBox').scrollTop(0)
+				}
+			}
+		});
+	});
+
+	var treeT = $('.treeBox').scrollTop();
+	$('.treeBox').bind('mousewheel',function(event,delta){
+		if(delta>0){
+			treeT -=20;
+			if(treeT<0){
+				treeT =0;
+				$('.treeBtn a:eq(0)').addClass('dis_btn');
+			}else{
+				$('.treeBtn a').removeClass('dis_btn');
+			}
+			$('.treeBox').scrollTop(treeT)
+		}else{
+			treeT +=20;
+			if(treeT>$('.treeBox div').height() - $('.treeBox').height()){
+				treeT = $('.treeBox div').height()- $('.treeBox').height();
+				$('.treeBtn a:eq(1)').addClass('dis_btn');
+			}else{
+				$('.treeBtn a').removeClass('dis_btn');
+			}
+			$('.treeBox').scrollTop(treeT)
+		}
+		return false;
+	})
+
+	var treeTimer = null;
+	$('.treeNav').mouseover(function(){
+		clearTimeout(treeTimer);
+		if(showTreeBtn){
+			$('.treeBtn').show();
+		}
+	}).mouseout(function(){
+		treeTimer = setTimeout(function(){
+			$('.treeBtn').hide();
+		}, 500)
+	});
+
+	$('.treeBtn a:eq(0)').click(function(){
+		treeT -=20;
+		if(treeT<0){
+			treeT =0;
+			$(this).addClass('dis_btn');
+		}else{
+			$('.treeBtn a').removeClass('dis_btn');
+		}
+		$('.treeBox').scrollTop(treeT);
+	});
+	$('.treeBtn a:eq(1)').click(function(){
+		treeT +=20;
+		if(treeT>$('.treeBox div').height() - $('.treeBox').height()){
+			treeT = $('.treeBox div').height()- $('.treeBox').height();
+			$(this).addClass('dis_btn');
+		}else{
+			$('.treeBtn a').removeClass('dis_btn');
+		}
+		$('.treeBox').scrollTop(treeT);
+	});
+
+
+
 	
 	//限制字数
 	$('.textareaDiv textarea').live('input propertychange',function(){
@@ -169,7 +274,7 @@ $(function(){
 						// 判断是否是在刚增加的一天中修改
 						if($objClick.prev().attr('data-name') =='' && !OneDayOff){
 							//console.log(OneDayOff);
-							console.log('aaaa');
+							//console.log('aaaa');
 
 							$objClick.prev().attr('data-name',res.nameID);
 
@@ -193,13 +298,13 @@ $(function(){
 								var id = $('.treeNav dl').length;
 								$objClick.prev().html($('#t_searchInput').val());
 								$objClick.prev().attr('data-name',res.nameID);
-								$('#d'+id).find('dd').first().attr('id',res.nameID)
+								$('#d'+id).find('dd').first().attr('id',res.nameID);
 								$('#d'+id).find('dd').first().text($('#t_searchInput').val());
 								OneDayOff = false;
 							}/*else if(){
 
 							}else{*/
-							console.log('olde')
+							//console.log('olde')
 							$objClick.prev().html(res.pointTxt);
 							$('#'+ $objClick.prev().attr('data-name')).html(res.pointTxt);
 							if(OneDayOff){
@@ -244,8 +349,12 @@ $(function(){
 							$objClick.parent().prev().append($dd);
 							getWinHeight();
 							var addID = $objClick.parent().prev().attr('data-list');
-							$('#'+ addID).append($('<dd id="'+ res.nameID +'">'+ $('#t_searchInput').val() +'</dd>'));
+							$('#'+ addID).append($('<dd id="'+ res.nameID +'"><a href="'+ res.nameID +'">'+ $('#t_searchInput').val() +'</a></dd>'));   //修改过
 
+
+
+							//后来增加的
+							getTreeHeight()
 							/*if(OneDayOff){
 								OneDayOff = false;
 								console.log('off');
@@ -311,11 +420,12 @@ $(function(){
 		}
 		var $treedl = $('<dl id="d'+(dayLen)+'"></dl>');
 			$treedl.html(_.template($('#treeTemplate').html(),treejson))
-		$('.treeNav').append($treedl);
+		$('.treeBox div').append($treedl);  //修改过
 
 		OneDayOff = true;
 
-
+		//后来增加的
+		getTreeHeight()
 	});
 
 	//发表旅行随笔
