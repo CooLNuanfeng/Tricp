@@ -230,8 +230,8 @@ $(function(){
 							addWidth = 0; //清除宽度计算
 
 							//成功添加后调用拖拽函数
-							dragTricp($('#dayId1'));
-							dragTricp($('#dayId2'));
+							dragTricp();
+							//dragTricp($('#dayId2'));
 						}
 					});
 
@@ -271,11 +271,11 @@ $(function(){
 	});
 
 	//拖拽
-	function dragTricp($obj){
+	function dragTricp(){
 		//是否为同天拖拽
-		if(false){
+		//if(false){
 
-		}else{
+		//}else{
 			//重新计算dl高度
 			// var len = $obj.find('.dragLi').length;
 			// len = Math.ceil ( (len+1)/2 );
@@ -293,7 +293,7 @@ $(function(){
 			// 		margin: 0
 			// 	})
 			// })
-			$obj.find('.dragLi img').live('mousedown',function(ev){
+			$('.t_albumBox').find('.dragLi img').live('mousedown',function(ev){
 				var _this = this;
 				var $cloneLi = $('<li class="dragCloneli"></li>').html($(this).parent().html()).css({
 					position: 'absolute',
@@ -384,12 +384,16 @@ $(function(){
 							});
 
 							//发送最新排序数据
+							var changeArr = [];
+							changeArr.push($(_this).parent().attr('id'),$nearLi.parents('dl').attr('id'))
 							$.ajax({
-								url: 'php/sortChangeSubmit.php',
+								url: 'php/addDelChangeSubmit.php',
 								type: 'GET',
-								data:{'liSort': arrSort},
+								data:{'changeLi': changeArr},
+								dataType: 'json',
 								success: function(res){
-									console.log(res);									
+									console.log(res[0]); //表示移动的元素
+									console.log(res[1]); //表示要添加到哪天									
 								}
 							})
 						}
@@ -447,12 +451,12 @@ $(function(){
 				})
 				return false;
 			})
-		}
+		//}
 
 	}
 
 	//初始化时要遍历页面中存在的
-	dragTricp($('#dayId1'));
+	dragTricp();
 
 	//碰撞检测
 	function collision($obj1,$obj2){
