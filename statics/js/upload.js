@@ -39,6 +39,12 @@ $(function(){
 		})
 	})
 
+	//删除一个拍摄点
+	$('.icon_closeLi').live('click',function(){
+		$(this).parent().remove();
+		$('.dragTip').hide();
+	})
+
 	//弹层
 	var createOff = true;   // 区别是修改还是新增  false表示新增
 	var $objClick = null;   //获取点击对象
@@ -272,140 +278,50 @@ $(function(){
 
 	//拖拽
 	function dragTricp(){
-		//是否为同天拖拽
-		//if(false){
-
-		//}else{
-			//重新计算dl高度
-			// var len = $obj.find('.dragLi').length;
-			// len = Math.ceil ( (len+1)/2 );
-			// $obj.find('dd ul').height(153*len);
-			// $obj.dragPosArr=[];
-			// $obj.find('.dragLi').each(function(){
-			// 	$obj.dragPosArr.push( [ $(this).position().left, $(this).position().top ] );
-			// });
-
-			// $obj.find('.dragLi').each(function(i){
-			// 	$(this).css({
-			// 		position: 'absolute',
-			// 		left: $obj.dragPosArr[i][0],
-			// 		top: $obj.dragPosArr[i][1],
-			// 		margin: 0
-			// 	})
-			// })
-			$('.t_albumBox').find('.dragLi img').live('mousedown',function(ev){
-				var _this = this;
-				var $cloneLi = $('<li class="dragCloneli"></li>').html($(this).parent().html()).css({
-					position: 'absolute',
-					top : $(this).offset().top,
-					left: $(this).offset().left,
-					border: '1px solid #ff6600'
+		$('.t_albumBox').find('.dragLi img').live('mousedown',function(ev){
+			var _this = this;
+			var $cloneLi = $('<li class="dragCloneli"></li>').html($(this).parent().html()).css({
+				position: 'absolute',
+				top : $(this).offset().top,
+				left: $(this).offset().left,
+				border: '1px solid #ff6600',
+				zIndex: 99
+			})
+			$('body').append($cloneLi);
+			$(this).parent().css({
+				opacity: 0.4
+			})
+			var disX = ev.pageX - $(this).offset().left;
+			var disY = ev.pageY - $(this).offset().top;
+			$(document).bind('mousemove',function(ev){
+				$('.dragTip').hide();
+				$cloneLi.css({
+					top: ev.pageY - disY,
+					left: ev.pageX - disX
 				})
-				$('body').append($cloneLi);
-				$(this).parent().css({
-					opacity: 0.4
+
+				var $nearLi = nearlyLi($cloneLi, $(_this).parent());
+				if($nearLi){
+					$('.dragLi').css({border:''})
+					$nearLi.css('border','1px solid #ff6600');
+				}else{
+					$('.dragLi').css({border:''})
+				}
+				
+				
+			})
+			$(document).bind('mouseup',function(){
+				$(document).unbind('mousemove');
+				$(this).unbind('mouseup');
+				$(_this).parent().css({
+					opacity: 1
 				})
-				var disX = ev.pageX - $(this).offset().left;
-				var disY = ev.pageY - $(this).offset().top;
-				$(document).bind('mousemove',function(ev){
-					$('.dragTip').hide();
-					$cloneLi.css({
-						top: ev.pageY - disY,
-						left: ev.pageX - disX
-					})
 
-					var $nearLi = nearlyLi($cloneLi, $(_this).parent());
-					if($nearLi){
-						$('.dragLi').css({border:''})
-						$nearLi.css('border','1px solid #ff6600');
-					}else{
-						$('.dragLi').css({border:''})
-					}
-					/*$('.dragLi').each(function(){
-
-						if( collision($cloneLi, $(this)) ){
-							$(_this).parent().attr('data-collision','')
-							$(this).attr('data-collision',1)
-						}else{
-							$(this).css({
-								border: ''
-							})
-						}
-					})*/
-					
-					
-				})
-				$(document).bind('mouseup',function(){
-					$(document).unbind('mousemove');
-					$(this).unbind('mouseup');
-					$(_this).parent().css({
-						opacity: 1
-					})
-
-					var $nearLi = nearlyLi($cloneLi, $(_this).parent());
-					
-					if($nearLi){
-						//判断是否为跨天拖拽
-						if($nearLi.parents('dl').attr('id')==$(_this).parents('dl').attr('id')){
-							//var temp='';
-							var dSort = '';
-							var dSort2 ='';
-							var temp2 = '';
-							if($nearLi){
-								$('.dragLi').css('border','');
-								//temp = $(_this).parent().html();
-								temp2 = $nearLi.html();
-								dSort = $(_this).parent().attr('data-dsort');
-								dSort2 = $nearLi.attr('data-dsort');
-								$(_this).parent().html( temp2 )
-									.attr('data-dsort', dSort2);
-								$nearLi.html( $cloneLi.html() )
-									   .attr('data-dsort', dSort)
-
-								//发送最新排序数据
-								var arrSort=[];
-								$nearLi.parents('dl').find('dd li.dragLi').each(function(){
-									arrSort.push($(this).attr('data-dsort'))
-								})
-								$.ajax({
-									url: 'php/sortChangeSubmit.php',
-									type: 'GET',
-									data:{'liSort': arrSort},
-									success: function(res){
-										console.log(res);									
-									}
-								})
-								
-							}
-						}else{
-							$('.dragLi').css('border','');
-							$nearLi.parents('dl').find('dd li.t_nextAddView').after($(_this).parent(),function(){
-								$(_this).parent().remove();
-							});
-
-							//发送最新排序数据
-							var changeArr = [];
-							changeArr.push($(_this).parent().attr('id'),$nearLi.parents('dl').attr('id'))
-							$.ajax({
-								url: 'php/addDelChangeSubmit.php',
-								type: 'GET',
-								data:{'changeLi': changeArr},
-								dataType: 'json',
-								success: function(res){
-									console.log(res[0]); //表示移动的元素
-									console.log(res[1]); //表示要添加到哪天									
-								}
-							})
-						}
-
-						$cloneLi.remove();
-						$('.dragCloneli').remove();
-					}else{
-						$cloneLi.remove();
-						$('.dragCloneli').remove();
-					}
-					/*
-					if($nearLi && $nearLi.parents('dl').attr('id')==$(_this).parents('dl').attr('id')){
+				var $nearLi = nearlyLi($cloneLi, $(_this).parent());
+				
+				if($nearLi){
+					//判断是否为跨天拖拽
+					if($nearLi.parents('dl').attr('id')==$(_this).parents('dl').attr('id')){
 						//var temp='';
 						var dSort = '';
 						var dSort2 ='';
@@ -436,22 +352,37 @@ $(function(){
 							})
 							
 						}
-						
-					}
-
-					if($nearLi && $nearLi.parents('dl').find('dd li.dragli').length>0){
+					}else{
 						$('.dragLi').css('border','');
 						$nearLi.parents('dl').find('dd li.t_nextAddView').after($(_this).parent(),function(){
 							$(_this).parent().remove();
 						});
-							
+
+						//发送最新排序数据
+						var changeArr = [];
+						changeArr.push($(_this).parent().attr('id'),$nearLi.parents('dl').attr('id'))
+						$.ajax({
+							url: 'php/addDelChangeSubmit.php',
+							type: 'GET',
+							data:{'changeLi': changeArr},
+							dataType: 'json',
+							success: function(res){
+								console.log(res[0]); //表示移动的元素
+								console.log(res[1]); //表示要添加到哪天									
+							}
+						})
 					}
+
 					$cloneLi.remove();
-					$('.dragCloneli').remove();*/
-				})
-				return false;
+					$('.dragCloneli').remove();
+				}else{
+					$cloneLi.remove();
+					$('.dragCloneli').remove();
+				}
+				
 			})
-		//}
+			return false;
+		})
 
 	}
 
@@ -495,57 +426,23 @@ $(function(){
 			}
 
 		});
-		//console.log(oParent.attr('id'));
-		/*if(index != -1){
-			return $('.dragLi').eq(index);
-		}
-		else{
-			return false;
-		}*/
+		
 		return $nearObj;
 		
 	}
-
-
-
-	/*function nearlyLi($obj, $oParent){
-		var minValue = 999999999;
-		var index = -1;
-		var arr = [];
-		$('.dragLi').each(function(){
-			if( collision($obj, $(this))){
-				$oParent.parent().attr('data-collision','')
-				$(this).attr('data-collision',1)				
-			}else{
-				$(this).attr('data-collision','')
-			}
-		})
-
-		$('.dragLi').each(function(){
-			if($(this).attr('data-collision') ==1){
-				arr.push($(this))
-			}
-		})
-		$('.dragLi').attr('data-collision','');
-		//console.log(arr);
-		for(var i=0; i<arr.length; i++){
-			if( distance($obj,arr[i]) < minValue && distance($obj,arr[i])!=0){
-				minValue = distance($obj,arr[i]);
-				index = i;
-				console.log(minValue);
-			}
-		}
-		
-		if(index!= -1){
-			return arr[index]
-		}else{
-			return false;
-		}
-	}*/
 
 	function distance($obj1,$obj2){
 		var a = $obj1.offset().left - $obj2.offset().left;
 		var b = $obj1.offset().top - $obj2.offset().top;
 		return Math.sqrt(a*a + b*b);
 	}
+
+
+	//图片上传部分
+	$('.upload_init').click(function(){
+		$('#upload_file').click();
+	})
+
+
+
 })

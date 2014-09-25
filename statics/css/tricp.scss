@@ -675,7 +675,22 @@ scrollbar-base-color:#E3E3E3;
 		display: block;
 		@include bg();
 	}
-	
+	&:hover{
+		.icon_closeLi{
+			display: block;
+		}
+	}
+}
+
+.icon_closeLi{
+	display: none;
+	position: absolute;
+	right: -13px;
+	top: -13px;
+	background-position: -475px -25px;
+	&:hover{
+		cursor: pointer;
+	}
 }
 
 .t_nextAddView{
@@ -3442,7 +3457,12 @@ scrollbar-base-color:#E3E3E3;
 }
 
 
-
+//上传图片
+#upload_file{
+	position: absolute;
+	top: -9999em;
+	left: 0px;
+}
 
 //修正样式
 .mt20{margin-top: 20px;}

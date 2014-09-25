@@ -158,6 +158,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .dragLi p:hover a, .dragCloneli p:hover a { display: block; }
 .dragLi span, .dragCloneli span { position: absolute; top: 3px; right: 3px; color: #ffffff; padding: 2px 8px; display: block; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
 :root .dragLi span, :root .dragCloneli span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
+.dragLi:hover .icon_closeLi, .dragCloneli:hover .icon_closeLi { display: block; }
+
+.icon_closeLi { display: none; position: absolute; right: -13px; top: -13px; background-position: -475px -25px; }
+.icon_closeLi:hover { cursor: pointer; }
 
 .t_nextAddView { float: left; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: pointer; }
 .t_nextAddView div { width: 142px; height: 95px; background: #E3E3E3; text-align: center; }
@@ -856,6 +860,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_configCancel { width: 53px; height: 26px; display: inline-block; text-align: center; line-height: 26px; margin-left: 10px; color: #545454; background: #f8f8f8; background-image: -webkit-linear-gradient(to top, white 0%, #f8f8f8 100%); background-image: -moz-linear-gradient(to top, white 0%, #f8f8f8 100%); background-image: linear-gradient(to top, white 0%, #f8f8f8 100%); border-radius: 3px; border: 1px solid #cccccc; }
 .t_configCancel:hover { background: #fafafa; color: #545454; text-decoration: none; }
+
+#upload_file { position: absolute; top: -9999em; left: 0px; }
 
 .mt20 { margin-top: 20px; }
 
