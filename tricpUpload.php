@@ -28,11 +28,11 @@
                         <dd>
                             <ul class="clearfix">
                                 <li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
-                                <li id="li100" class="dragLi">
+                                <li id="li100" class="dragLi" data-dsort='1'>
                                     <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚1</strong></p><span>10张</span>
                                 </li>
-                                <li id="li200" class="dragLi">
-                                    <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚2</strong></p><span>10张</span>
+                                <li id="li200" class="dragLi" data-dsort='2'>
+                                    <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚2</strong></p><span>20张</span>
                                 </li>
                             </ul>
                         </dd>
@@ -138,7 +138,7 @@
 </dl>
 </script>
 <script type="text/template" id="addPointTemplate">
-<li id="<%= liID %>" class="dragLi">
+<li id="<%= liID %>" class="dragLi" data-dsort="<%= liID %>">
 	<img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong><%- pointName %></strong></p><span>0张</span>
 </li>
 </script>

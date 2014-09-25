@@ -341,18 +341,109 @@ $(function(){
 					$(_this).parent().css({
 						opacity: 1
 					})
-					var temp = '';
-					var $nearLi = nearlyLi($cloneLi, $(_this).parent());
-					if($nearLi){
-						$('.dragLi').css('border','');
-						temp = $nearLi.html();
-						console.log($nearLi.html());
-						console.log($(_this).parent().html());
-						$nearLi.html($(_this).parent().html());
-						$(_this).parent().html(temp);
 
+					var $nearLi = nearlyLi($cloneLi, $(_this).parent());
+					
+					if($nearLi){
+						//判断是否为跨天拖拽
+						if($nearLi.parents('dl').attr('id')==$(_this).parents('dl').attr('id')){
+							//var temp='';
+							var dSort = '';
+							var dSort2 ='';
+							var temp2 = '';
+							if($nearLi){
+								$('.dragLi').css('border','');
+								//temp = $(_this).parent().html();
+								temp2 = $nearLi.html();
+								dSort = $(_this).parent().attr('data-dsort');
+								dSort2 = $nearLi.attr('data-dsort');
+								$(_this).parent().html( temp2 )
+									.attr('data-dsort', dSort2);
+								$nearLi.html( $cloneLi.html() )
+									   .attr('data-dsort', dSort)
+
+								//发送最新排序数据
+								var arrSort=[];
+								$nearLi.parents('dl').find('dd li.dragLi').each(function(){
+									arrSort.push($(this).attr('data-dsort'))
+								})
+								$.ajax({
+									url: 'php/sortChangeSubmit.php',
+									type: 'GET',
+									data:{'liSort': arrSort},
+									success: function(res){
+										console.log(res);									
+									}
+								})
+								
+							}
+						}else{
+							$('.dragLi').css('border','');
+							$nearLi.parents('dl').find('dd li.t_nextAddView').after($(_this).parent(),function(){
+								$(_this).parent().remove();
+							});
+
+							//发送最新排序数据
+							$.ajax({
+								url: 'php/sortChangeSubmit.php',
+								type: 'GET',
+								data:{'liSort': arrSort},
+								success: function(res){
+									console.log(res);									
+								}
+							})
+						}
+
+						$cloneLi.remove();
+						$('.dragCloneli').remove();
+					}else{
+						$cloneLi.remove();
+						$('.dragCloneli').remove();
+					}
+					/*
+					if($nearLi && $nearLi.parents('dl').attr('id')==$(_this).parents('dl').attr('id')){
+						//var temp='';
+						var dSort = '';
+						var dSort2 ='';
+						var temp2 = '';
+						if($nearLi){
+							$('.dragLi').css('border','');
+							//temp = $(_this).parent().html();
+							temp2 = $nearLi.html();
+							dSort = $(_this).parent().attr('data-dsort');
+							dSort2 = $nearLi.attr('data-dsort');
+							$(_this).parent().html( temp2 )
+								.attr('data-dsort', dSort2);
+							$nearLi.html( $cloneLi.html() )
+								   .attr('data-dsort', dSort)
+
+							//发送最新排序数据
+							var arrSort=[];
+							$nearLi.parents('dl').find('dd li.dragLi').each(function(){
+								arrSort.push($(this).attr('data-dsort'))
+							})
+							$.ajax({
+								url: 'php/sortChangeSubmit.php',
+								type: 'GET',
+								data:{'liSort': arrSort},
+								success: function(res){
+									console.log(res);									
+								}
+							})
+							
+						}
+						
+					}
+
+					if($nearLi && $nearLi.parents('dl').find('dd li.dragli').length>0){
+						$('.dragLi').css('border','');
+						$nearLi.parents('dl').find('dd li.t_nextAddView').after($(_this).parent(),function(){
+							$(_this).parent().remove();
+						});
+							
 					}
 					$cloneLi.remove();
+					$('.dragCloneli').remove();*/
 				})
 				return false;
 			})
@@ -389,11 +480,10 @@ $(function(){
 		var index = -1;
 		var $nearObj = null;
 		$('.dragLi').each(function(){
-			console.info(collision($obj, $(this)));
-			console.info($(this).attr('id')!= oParent.attr('id'))
+			
 			if( collision($obj, $(this)) && $(this).attr('id')!= oParent.attr('id')){
 				var dis_short = distance($obj, $(this));
-				
+				//console.log($(this)!=oParent)
 				if(dis_short < minValue ){
 					minValue = dis_short;
 					$nearObj = $(this);
