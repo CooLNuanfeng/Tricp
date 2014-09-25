@@ -114,6 +114,21 @@ $(function(){
 	});
 
 
+	//锚点定位
+	window.onhashchange = function(){
+		var hash = window.location.hash.substring(1);
+		$('.writeTitle span').each(function(){
+			if( $(this).attr('data-name') == hash ){
+				var T = $(this).offset().top -140;
+				$('html body').animate({
+					scrollTop : T
+				},'fast')
+			}
+		});
+	}
+
+
+
 
 	
 	//限制字数
@@ -304,9 +319,9 @@ $(function(){
 							}/*else if(){
 
 							}else{*/
-							//console.log('olde')
+							console.log('olde')
 							$objClick.prev().html(res.pointTxt);
-							$('#'+ $objClick.prev().attr('data-name')).html(res.pointTxt);
+							$('#'+ $objClick.prev().attr('data-name')).html('<a href="#'+$objClick.prev().attr('data-name')+'">'+res.pointTxt+'</a>');
 							if(OneDayOff){
 								OneDayOff = false;
 							}
@@ -349,7 +364,7 @@ $(function(){
 							$objClick.parent().prev().append($dd);
 							getWinHeight();
 							var addID = $objClick.parent().prev().attr('data-list');
-							$('#'+ addID).append($('<dd id="'+ res.nameID +'"><a href="'+ res.nameID +'">'+ $('#t_searchInput').val() +'</a></dd>'));   //修改过
+							$('#'+ addID).append($('<dd id="'+ res.nameID +'"><a href="#'+ res.nameID +'">'+ $('#t_searchInput').val() +'</a></dd>'));   //修改过
 
 
 

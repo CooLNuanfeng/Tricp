@@ -239,7 +239,7 @@ $(function(){
 
 
 
-		//锚点定位评论
+		//锚点定位
 		window.onhashchange = function(){
 			var hash = window.location.hash.substring(1);
 			$('.t_point').each(function(){

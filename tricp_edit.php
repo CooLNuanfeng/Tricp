@@ -223,7 +223,7 @@
 </script>
 <script type="text/template" id="treeTemplate">
 	<dt>D<%= day %><span></span></dt>
-	<dd id="<%= nameID %>"><a href="<%= nameID %>"><%= value %></a></dd>
+	<dd id="<%= nameID %>"><a href="#<%= nameID %>"><%= value %></a></dd>
 </script>
 <script type="text/template" id="uploadTemplate">
 <div class="t_listPicBox">
