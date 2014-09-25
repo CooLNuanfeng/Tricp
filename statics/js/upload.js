@@ -316,7 +316,10 @@ $(function(){
 
 					var $nearLi = nearlyLi($cloneLi, $(_this).parent());
 					if($nearLi){
+						$('.dragLi').css({border:''})
 						$nearLi.css('border','1px solid #ff6600');
+					}else{
+						$('.dragLi').css({border:''})
 					}
 					/*$('.dragLi').each(function(){
 
@@ -386,8 +389,9 @@ $(function(){
 		var index = -1;
 		var $nearObj = null;
 		$('.dragLi').each(function(){
-			
-			if( collision($obj, $(this)) && oParent.attr('id')!= $(this).attr('id') ){
+			console.info(collision($obj, $(this)));
+			console.info($(this).attr('id')!= oParent.attr('id'))
+			if( collision($obj, $(this)) && $(this).attr('id')!= oParent.attr('id')){
 				var dis_short = distance($obj, $(this));
 				
 				if(dis_short < minValue ){
