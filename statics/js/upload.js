@@ -439,10 +439,71 @@ $(function(){
 
 
 	//图片上传部分
-	$('.upload_init').click(function(){
-		$('#upload_file').click();
-	})
+	var uploader = new plupload.Uploader({
+        runtimes : 'html5,flash,silverlight,html4',
+		browse_button : 'uploadInitBtn', 
+        url : 'php/uploadImage.php',
+        chunk_size : '10mb',
+        //unique_names : true,
+		filters : {
+			max_file_size : '10mb',
+			mime_types: [
+				{title : "Image files", extensions : "jpg,gif,png"},
+				{title : "Zip files", extensions : "zip"}
+			]
+		},
+ 
+        //resize : { width : 138, height : 91, quality : 90 },
 
+		flash_swf_url : 'statics/js/Moxie.swf',
+		silverlight_xap_url : 'statics/js/Moxie.xap',
+         
+        init: {
+			/*PostInit: function() {
+				uploader.start();
+				return false;
+			},*/
+
+			FilesAdded: function(up, files) {
+				plupload.each(files, function(file) {
+					$('.uploadInit').hide();
+					$('.t_showPic').show();
+					var $item = $('<li id="'+file.id+'"><div class="upStatus"><i>0%</i><span><em></em></span></div></li>');
+					var image = $(new Image()).appendTo($item);
+					$('#picList').append($item);
+					var preloader = new mOxie.Image();
+					
+					preloader.onload = function(){
+						preloader.downsize( 138, 91 );
+						image.prop( "src", preloader.getAsDataURL() )
+					}
+					preloader.load( file.getSource() );
+					$('#'+file.id).find('img').css({
+						width: 138,
+						height: 91
+					})
+					uploader.start();
+					//uploader.init();
+				});
+
+			},
+
+			UploadProgress: function(up, file) {
+				$('#'+file.id).find('.upStatus i').html(file.percent+'%')
+				$('#'+file.id).find('.upStatus span em').css({
+					width: file.percent+'%'
+				})
+			},
+			FileUploaded : function(up,file,res){
+				$('#'+file.id).find('.upStatus').hide();
+			},
+
+			Error: function(up, err) {
+				if(err.message)
+			}
+		}
+	});
+	uploader.init();
 
 
 })

@@ -43,13 +43,13 @@
             <div class="t_pics fr">
             	<div class="uploadInit" style="display:block;">
                 	<img src="statics/image/upload_bg.png" width="142" height="136">
-                    <a href="javascript:;" class="upload_init">上传照片 <i class="icon icon_upload"></i></a>
+                    <a href="javascript:;" id="uploadInitBtn" class="uploadInitBtn">上传照片 <i class="icon icon_upload"></i></a>
                     <p>可批量上传，高清大图会更美<br>单张照片宽度需大于600像素，单张最大10MB</p>
                 </div>
                 <div class="t_showPic" style="display:none;">
-                	<ul class="clearfix">
+                	<ul id="picList" class="clearfix">
                     	<li class="t_nextAddPic upload_init"><i class="iconBig icon_addUpload"></i><p>继续添加照片</p></li>
-                    	<li>
+                    	<!--<li>
                         	<img src="http://placehold.it/315x155/019ed8" width="138" height="91">
                             <div class="upStatus">75%<span><em></em></span></div>
                         </li>
@@ -64,7 +64,7 @@
                         </li>
                         <li class="pic_stint">
                         	<div class="failure"><p>宽小于600像素</p><a href="javascript:;" hidefocus="false">重新上传</a></div>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -126,6 +126,7 @@
 </div>
 <div class="mengban"></div>
 </body>
+<script src="statics/js/plupload.full.min.js"></script>
 <script src="statics/js/upload.js"></script>
 <script type="text/template" id="addOneDayTemplate">
 <dl id="dayId<%= day %>">
@@ -142,4 +143,5 @@
 	<img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong><%- pointName %></strong></p><span>0张</span><i class="icon icon_closeLi"></i>
 </li>
 </script>
+
 </html>

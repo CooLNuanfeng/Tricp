@@ -227,8 +227,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .uploadInit img { margin-bottom: 15px; }
 .uploadInit p { width: 280px; color: #999999; margin-top: 10px; }
 
-.upload_init { width: 240px; height: 46px; margin: 0 auto; line-height: 46px; display: block; border-radius: 5px; color: #ffffff; text-align: center; font-family: "微软雅黑"; font-size: 20px; background: #ff9900; }
-.upload_init:hover { background: #ff6600; color: #ffffff; text-decoration: none; }
+.uploadInitBtn { width: 240px; height: 46px; margin: 0 auto; line-height: 46px; display: block; border-radius: 5px; color: #ffffff; text-align: center; font-family: "微软雅黑"; font-size: 20px; background: #ff9900; }
+.uploadInitBtn:hover { background: #ff6600; color: #ffffff; text-decoration: none; }
 
 .icon_upload { background-position: -275px -2px; }
 
@@ -291,7 +291,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .upStatus a { width: 80px; height: 22px; line-height: 22px; font-size: 12px; display: block; text-align: center; border-radius: 3px; background: #ff9900; position: absolute; color: #ffffff; top: 55%; left: 26px; }
 .upStatus a:hover { background: #ff6600; color: #ffffff; text-decoration: none; }
 .upStatus span { display: block; position: absolute; bottom: 0px; left: 0px; width: 100%; height: 5px; background: #CCCCCC; text-align: left; }
-.upStatus span em { width: 75%; height: 5px; display: block; background: #33CC00; }
+.upStatus span em { width: 0%; height: 5px; display: block; background: #33CC00; }
 
 .t_listPicBox { width: 737px; height: 190px; overflow-y: auto; }
 
