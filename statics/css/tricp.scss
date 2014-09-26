@@ -1219,6 +1219,7 @@ scrollbar-base-color:#E3E3E3;
 }
 
 .successPic{
+	display: none;
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
@@ -1928,6 +1929,15 @@ scrollbar-base-color:#E3E3E3;
 	position: relative;
 }
 
+
+
+
+.liDragPic{
+	img{
+		width: 130px;
+		height: 85px;
+	}
+}
 //图片描述样式
 .pic_description{
 	position: absolute;

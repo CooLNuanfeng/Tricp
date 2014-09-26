@@ -135,6 +135,7 @@
     <p><span>色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山</span></p>
     <textarea></textarea>
 </div>
+<button id="uploadBtn" style="position:absolute; top: -999999em; left: 0px;"></button>
 <div class="t_dialog t_addPointInfo w730">
 	<div class="t_dialog_border">
     	<h5 class="t_diaTitle">添加拍摄点</h5>
@@ -176,6 +177,7 @@
 </div>
 
 </body>
+<script src="statics/js/plupload.full.min.js"></script>
 <script src="statics/js/hashChange.js"></script>
 <script src="statics/js/mousewheel.js"></script>
 <script src="statics/js/edit.js"></script>
@@ -214,7 +216,7 @@
 			<div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
 			<i class="icon icon_leftArrow"></i>
 		</div>
-		<div class="t_list_picModel" style="display:none"></div>
+		<div class="t_list_picModel" style="display:none"><div class="t_listPicBox"><ul class="clearfix"></ul></div></div>
 		<a href="javascript:;" target="_self" class="addTravel_essay"><i class="icon icon_addEssay"></i><i class="icon icon_orner"></i>旅行
 	随笔</a>
 		<a href="javascript:;" target="_self" class="icon del_travel"></a>
@@ -226,10 +228,5 @@
 	<dt>D<%= day %><span></span></dt>
 	<dd id="<%= nameID %>"><a href="#<%= nameID %>"><%= value %></a></dd>
 </script>
-<script type="text/template" id="uploadTemplate">
-<div class="t_listPicBox">
-	<ul class="clearfix">
-	</ul>
-</div>
-</script>
+
 </html>

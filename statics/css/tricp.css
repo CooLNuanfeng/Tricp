@@ -288,7 +288,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .move { width: 37px; height: 37px; display: block; position: absolute; top: 20%; left: 36%; background-position: -457px -8px; }
 
-.successPic { position: absolute; bottom: 0px; left: 0px; height: 25px; width: 130px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
+.successPic { display: none; position: absolute; bottom: 0px; left: 0px; height: 25px; width: 130px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
 :root .successPic { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 .successPic a { width: 50%; height: 25px; line-height: 25px; display: block; float: left; color: #ffffff; }
 .successPic a:hover { color: #ff9900; }
@@ -480,6 +480,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .treeNav .treeBox { margin-right: -7px; padding-right: 7px; }
 
 .editNav { width: 200px; padding-left: 127px; border-right: 3px solid #dddddd; position: relative; }
+
+.liDragPic img { width: 130px; height: 85px; }
 
 .pic_description { position: absolute; display: none; width: 500px; padding: 10px; background: #ffffff; border: 1px solid #dddddd; }
 .pic_description textarea { width: 480px; height: 70px; padding: 7px; margin-bottom: 10px; border: 1px solid #dddddd; outline: none; -webkit-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); -moz-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); -ms-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); -o-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); }
