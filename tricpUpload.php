@@ -28,12 +28,12 @@
                         <dd>
                             <ul class="clearfix">
                                 <li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
-                                <li id="li100" class="dragLi" data-dsort='1'>
+                                <!--<li id="li100" class="dragLi" data-dsort='1'>
                                     <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚1</strong></p><span>10张</span><i class="icon icon_closeLi"></i>
                                 </li>
                                 <li id="li200" class="dragLi" data-dsort='2'>
                                     <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚2</strong></p><span>20张</span><i class="icon icon_closeLi"></i>
-                                </li>
+                                </li>-->
                             </ul>
                         </dd>
                     </dl>
@@ -41,15 +41,15 @@
             </div>
             <div class="t_bg_txt fl"><div class="notice_txt"><i class="icon icon_drag"></i>拖拽右边的照片到左边</div></div>
             <div class="t_pics fr">
-            	<div class="uploadInit" style="display:none;">
+            	<div class="uploadInit" style="display:block;">
                 	<img src="statics/image/upload_bg.png" width="142" height="136">
                     <a href="javascript:;" id="uploadInitBtn" class="uploadInitBtn">上传照片 <i class="icon icon_upload"></i></a>
                     <p>可批量上传，高清大图会更美<br>单张照片宽度需大于600像素，单张最大10MB</p>
                 </div>
-                <div class="t_showPic" style="display:block;">
+                <div class="t_showPic" style="display:none;">
                 	<ul id="picList" class="clearfix">
-                    	<li class="t_nextAddPic upload_init"><i class="iconBig icon_addUpload"></i><p>继续添加照片</p></li>
-                    	<li id="pic1">
+                    	<li id="uploadBtnLi" class="t_nextAddPic upload_init"><i class="iconBig icon_addUpload"></i><p>继续添加照片</p></li>
+                    	<!--<li id="pic1">
                         	<img src="http://placehold.it/315x155/019ed8" width="138" height="91">
                             <div class="upStatus">75%<span><em></em></span></div>
                             <div class="uploadSuccess"><i class="iconBig icon_selected"></i></div>
@@ -80,7 +80,7 @@
                         </li>
                         <li id="pic6" class="pic_stint">
                         	<div class="failure"><p>宽小于600像素</p><a href="javascript:;" hidefocus="false">重新上传</a></div>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -159,5 +159,4 @@
 	<img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong><%- pointName %></strong></p><span>0张</span><i class="icon icon_closeLi"></i>
 </li>
 </script>
-
 </html>

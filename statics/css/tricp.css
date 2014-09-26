@@ -185,6 +185,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_showPic { width: 658px; height: 578px; overflow-y: auto; }
 .t_showPic li { width: 138px; height: 91px; overflow: hidden; border: 1px solid #dddddd; float: left; position: relative; margin-right: 20px; margin-bottom: 20px; }
+.t_showPic li img { width: 138px; height: 91px; }
 .t_showPic .pic_stint { background: url(../image/failure.png) 2px bottom no-repeat #eaeaea; }
 
 .uploadSuccess { display: none; text-align: center; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
