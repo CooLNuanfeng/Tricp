@@ -57,7 +57,7 @@ if (isset($_REQUEST["name"])) {
 } else {
 	$fileName = uniqid("file_");
 }
-
+print_r($_REQUEST);
 $filePath = $targetDir . DIRECTORY_SEPARATOR . $fileName;
 
 // Chunking might be enabled

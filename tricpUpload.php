@@ -41,36 +41,52 @@
             </div>
             <div class="t_bg_txt fl"><div class="notice_txt"><i class="icon icon_drag"></i>拖拽右边的照片到左边</div></div>
             <div class="t_pics fr">
-            	<div class="uploadInit" style="display:block;">
+            	<div class="uploadInit" style="display:none;">
                 	<img src="statics/image/upload_bg.png" width="142" height="136">
                     <a href="javascript:;" id="uploadInitBtn" class="uploadInitBtn">上传照片 <i class="icon icon_upload"></i></a>
                     <p>可批量上传，高清大图会更美<br>单张照片宽度需大于600像素，单张最大10MB</p>
                 </div>
-                <div class="t_showPic" style="display:none;">
+                <div class="t_showPic" style="display:block;">
                 	<ul id="picList" class="clearfix">
                     	<li class="t_nextAddPic upload_init"><i class="iconBig icon_addUpload"></i><p>继续添加照片</p></li>
-                    	<!--<li>
+                    	<li id="pic1">
                         	<img src="http://placehold.it/315x155/019ed8" width="138" height="91">
                             <div class="upStatus">75%<span><em></em></span></div>
+                            <div class="uploadSuccess"><i class="iconBig icon_selected"></i></div>
+                            <div class="relatedSuccess"><i class="iconBig icon_related"></i></div>
+                            <div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div>
                         </li>
-                        <li>
+                        <li id="pic2">
                         	<img src="http://placehold.it/315x155/019ed8" width="138" height="91">
                             <div class="upStatus"><p>上传失败</p><a href="javascript:;" hidefocus="false">重新上传</a></div>
+                            <div class="uploadSuccess"><i class="iconBig icon_selected"></i></div>
+                            <div class="relatedSuccess"><i class="iconBig icon_related"></i></div>
                         </li>
                         
-                        <li>
+                        <li id="pic3">
                         	<img src="http://placehold.it/315x155/019ed8" width="138" height="91">
-                            <div class="uploadSuccess"></div>
+                            <div class="uploadSuccess"><i class="iconBig icon_selected"></i></div>
+                            <div class="relatedSuccess"><i class="iconBig icon_related"></i></div>
+                            <div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div>
                         </li>
-                        <li class="pic_stint">
+                        <li id="pic4">
+                        	<img src="http://placehold.it/315x155/019ed8" width="138" height="91">
+                            <div class="relatedSuccess"><i class="iconBig icon_related"></i></div>
+                            
+                        </li>
+                        <li id="pic5">
+                        	<img src="http://placehold.it/315x155/019ed8" width="138" height="91">
+                            <div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div>
+                        </li>
+                        <li id="pic6" class="pic_stint">
                         	<div class="failure"><p>宽小于600像素</p><a href="javascript:;" hidefocus="false">重新上传</a></div>
-                        </li>-->
+                        </li>
                     </ul>
                 </div>
             </div>
             <a href="javascript:;" class="upload_addOneDay" target="_self"><i class="icon icon_addDay"></i>添加一天</a>
             <div class="t_uploadCount">
-            	<div class="t_uploading">已上传<span>120张</span>/共200张</div>
+            	<div class="t_uploading" style="display:block">已上传<span>120张</span>/共200张</div>
                 <div class="t_uploadStatus_success"><i class="icon icon_success"></i>已成功上传<span>100</span>张</div>
                 <div class="t_uploadStatus_failure"><i class="icon icon_failure"></i>失败<span class="error">10</span>张/已上传90张</div>
                 <div class="t_associateing"><span>20</span>张照片已关联/已成功上传100张</div>

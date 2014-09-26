@@ -264,7 +264,7 @@ $(function(){
 	}
 
 
-	//拖拽部分
+	//左侧相册拖拽部分
 	//拖拽提示
 	$('.dragLi').live('mouseover',function(){
 		$('.dragTip').show().css({
@@ -438,6 +438,137 @@ $(function(){
 	}
 
 
+
+
+	//右侧图片拖拽关联部分
+	
+	$('#picList li').live('click',function(){
+		$(this).addClass('selectLi');
+		$(this).find('.upStatus').hide();
+		$(this).find('.uploadSuccess').show();
+		
+	})
+
+	picDrag($('#picList'));
+	function picDrag($obj){
+		$obj.find('.selectLi').live('mousedown',function(ev){
+			if($('.dragDivPic')){
+				$('.dragDivPic').remove();
+			}
+			var src = $(this).find('img').attr('src');
+			var $dragDiv = $('<div class="dragDivPic"></div>');
+			$dragDiv.html('<img src="'+src+'" width="80" height="54"><i class="icon icon_count">'+$obj.find('.selectLi').length+'</i>')
+			$dragDiv.css({
+				position: 'absolute',
+				top : ev.pageX-20,
+				left: ev.pageY-20,
+				zIndex: 99
+			})
+			$('body').append($dragDiv);
+			//var disX = ev.pageX - $(this).offset().left;
+			//var disY = ev.pageY - $(this).offset().top;
+			var $picObj = null;
+			$(document).bind('mousemove',function(ev){
+				$dragDiv.css({
+					top: ev.pageY-20,
+					left: ev.pageX-20
+				});	
+
+				$picObj = nearlyPic($dragDiv);
+				if($picObj){
+					$('.dragLi').css('border','')
+					$picObj.css({
+						border: '1px solid #ff6600'
+					})
+				}else{
+					$('.dragLi').css('border','')
+				}
+
+			})
+			$(document).bind('mouseup',function(ev){				
+				$('.dragLi').css('border','');
+				if($picObj){
+					var arrObj = [];
+					$obj.find('.selectLi').each(function(){
+						arrObj.push($(this).attr('id'));
+					})
+					$picObj.find('span').html( (parseInt($picObj.find('span').html())+$obj.find('.selectLi').length)+'张');
+					$.ajax({
+						url: 'php/dragPic.php',
+						type: 'POST',
+						data: {'idArr': arrObj },
+						dataType: 'json',
+						success: function(res){
+
+							$('.dragDivPic').remove();
+							$('.dragLi').css('border','');
+							for(var i=0; i<res.length; i++){
+								$('#'+res[i]).find('.uploadSuccess').hide();
+								$('#'+res[i]).find('.relatedFailure').hide();
+								$('#'+res[i]).find('.relatedSuccess').show();
+								$('#'+res[i]).attr('data-relate','ok');  //确定已关联
+							};
+
+							related(); //检测是否已关联
+							
+						}
+					})
+					
+				}else{
+					console.log('adfs');
+					$('.dragDivPic').remove();
+					picDrag($('#picList'));
+				}
+				
+			});
+			return false;
+		})
+	}
+
+	//检测是否都关联了
+	function related(){
+		var related = false;
+		$('#picList').find('li').each(function(){
+			if( $(this).attr('data-realte') != 'ok'){
+				related = true;
+			}else{
+				$(this).find('.relatedFailure').show();
+			}
+		})
+
+		if(!related){
+			$('.nextStep a').removeClass('dis_link');
+		}
+	}
+
+	related();
+
+
+	
+
+	function nearlyPic($obj){
+		var minValue = 999999999;
+		var $nearObj = null;
+		$('.dragLi').each(function(){
+			
+			if( collision($obj, $(this))){
+				var dis_short = distance($obj, $(this));
+				//console.log($(this)!=oParent)
+				if(dis_short < minValue ){
+					minValue = dis_short;
+					$nearObj = $(this);
+				}			
+			}
+
+		});
+		
+		return $nearObj;
+		
+	}
+
+
+
+
 	//图片上传部分
 	var uploader = new plupload.Uploader({
         runtimes : 'html5,flash,silverlight,html4',
@@ -482,6 +613,8 @@ $(function(){
 						width: 138,
 						height: 91
 					})
+					
+					//plupload.addFileFilter();
 					uploader.start();
 					//uploader.init();
 				});
@@ -495,14 +628,20 @@ $(function(){
 				})
 			},
 			FileUploaded : function(up,file,res){
+				$('#'+file.id).attr('data-load','ok');
 				$('#'+file.id).find('.upStatus').hide();
 			},
 
 			Error: function(up, err) {
-				if(err.message)
+				/*if(err.message == '-1'){
+					alert('aa')
+				}else{}*/
+				alert('a')
 			}
 		}
 	});
+	
+
 	uploader.init();
 
 

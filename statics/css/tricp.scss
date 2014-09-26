@@ -783,6 +783,79 @@ scrollbar-base-color:#E3E3E3;
 	}
 }
 
+
+.uploadSuccess{
+	display: none;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	@include bg();
+}
+
+
+.relatedSuccess{
+	display: none;
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	@include bg();
+}
+
+
+
+.relatedFailure{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 22px;
+	line-height: 22px;
+	left: 0px;
+	bottom: 0px;
+	text-align: center;
+	color: $orange;
+	@include bg();
+}
+
+
+
+
+.dragPicDiv{
+	position: absolute;
+	width: 80px;
+	height: 54px;
+	padding: 1px;
+	border: 1px solid $borderColor;
+	background: #ffffff;
+	cursor: all-scroll;
+}
+.icon_count{
+	position: absolute;
+	right: -12px;
+	top: -12px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 23px;
+	font-family: Arial;
+	background-position: -475px -50px;
+}
+
+
+
+.icon_selected{
+	margin-top: 18px;
+	background-position: -300px -100px;
+}
+.icon_related{
+	margin-top: 18px;
+	background-position: -350px -100px;
+}
+
 .t_nextAddPic{
 	background: #E3E3E3;
 	text-align: center;
