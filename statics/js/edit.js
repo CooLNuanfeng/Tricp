@@ -2,19 +2,24 @@
 $(function(){
 	
 	//获取高度适应屏幕
-	
-	function getWinHeight(){
+	/*function getWinHeight(){
 		var windowHeight = $(window).height() > $(document).height() ? $(window).height() : $(document).height();
 
 		$('.t_mainbox').height(windowHeight - $('.t_topNav').outerHeight() - $('.footerNav').outerHeight() );
-	}
-	getWinHeight();
+	}*/
+	//getWinHeight();
 	
+	function getheightauto(){
+		var windowHeight = $(window).height();
+		$('body').css('background','#F5F5F5')
+		$('.t_mainbox').css('minHeight',windowHeight)
+	}
+	getheightauto();
 	//后来添加的
 	//左侧树部分
 	var showTreeBtn = false;
 	function getTreeHeight(){
-		var treeHeight = $('.treeNav').height();
+		var treeHeight = $('.treeBox div').height();
 		if(treeHeight >= 481 ){
 			$('.treeNav').addClass('limitH_tree');
 			treeHeight = 481;
@@ -362,7 +367,7 @@ $(function(){
 								$dd.html( _.template($('#addPointTemplate').html(),json) )
 
 							$objClick.parent().prev().append($dd);
-							getWinHeight();
+							//getWinHeight();
 							var addID = $objClick.parent().prev().attr('data-list');
 							$('#'+ addID).append($('<dd id="'+ res.nameID +'"><a href="#'+ res.nameID +'">'+ $('#t_searchInput').val() +'</a></dd>'));   //修改过
 
@@ -424,7 +429,7 @@ $(function(){
 		}
 		$div.html( _.template($('#addOneDayTemplate').html(), json) );
 		$(this).parent().prev().append($div);
-		getWinHeight();
+		//getWinHeight();
 		calendar();
 
 
@@ -454,6 +459,8 @@ $(function(){
 		$(this).parent().parent().parent().remove();
 		var id = $(this).parent().parent().attr('data-list');
 		$('#'+id).remove();
+		getTreeHeight();
+		//getWinHeight();
 	});
 	//删除当前拍摄点
 	$('.t_lineList dd').live('mouseover',function(){
@@ -466,6 +473,8 @@ $(function(){
 		$(this).parent().remove();
 		var id = $(this).siblings('.writeTxtBox').find('.writeTitle').find('span:eq(0)').attr('data-name');
 		$('#'+id).remove();
+		getTreeHeight();
+		//getWinHeight();
 	})
 
 
@@ -519,7 +528,7 @@ $(function(){
 						$essayClick.prev().show()
 						var $liEassy = $('<li class="essay_listTxt">'+res+'</li>');
 						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
-						getWinHeight();
+						//getWinHeight();
 						$(_this).siblings('textarea').val('');
 					}else{
 						var $liEassy = $('<li class="essay_listTxt">'+res+'</li>')
@@ -626,14 +635,25 @@ $(function(){
 		}
 	});
 
-	//图片描述功能  ?????????????
-	$('.picDel').live('click',function(ev){
-		$(this).parent().parent().remove();
-		console.log($( ev.currentTarget).parents('.clearfix').find('li').length);
-		if($(this).parents('.t_listPicBox').find('ul li').length<5){
-			$(this).parents('.t_list_picModel').css('height',92)
+	//图片描述功能 
+	$('.picDel').live('click',function(){
+		var $obj = $(this).parent().parent();
+		if($(this).parents('.t_listPicBox').find('ul li').length<7){
+			$(this).parents('.t_list_picModel').css('height',92);
+			
+			//重新计算文档高度
+			//getWinHeight();
 		}
-	})
+		if($(this).parents('.t_listPicBox').find('ul li').length<2){
+			$(this).parents('.t_list_picModel').hide();
+			//重新计算文档高度
+			//getWinHeight();
+		}
+		$(this).parent().parent().remove();
+		
+		
+	});
+
 	$('.picDes').live('click',function(ev){
 		var T = $(this).offset().top;
 		var L = $(this).offset().left;
@@ -668,7 +688,7 @@ $(function(){
 	//图片上传功能
 	var $uploadObj = null;
 	$('.uploadPics').live('click',function(){
-		$uploadObj = $(this).parents('.t_lineList');
+		$uploadObj = $(this).parents('.writeTxtBox');
 		$('#uploadBtn').click();
 	})
 	var uploader = new plupload.Uploader({
@@ -700,17 +720,17 @@ $(function(){
 				plupload.each(files, function(file) {					
 					var $item = $('<li id="'+file.id+'" class="liDragPic"><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="successPic"><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div></li>');
 					var image = $(new Image()).appendTo($item);
-					console.log($uploadObj.find('.t_listPicBox ul li').length);
-					if($uploadObj.find('.t_listPicBox ul li').length > 4){
-						$uploadObj.find('.t_list_picModel').show().css('height',191);
+					//console.log($uploadObj.find('.t_listPicBox ul li').length);
+					if($uploadObj.next().find('.t_listPicBox ul li').length > 4){
+						$uploadObj.next().show().css('height',191);
 					}else{
-						$uploadObj.find('.t_list_picModel').show().css('height',92)
+						$uploadObj.next().show().css('height',92)
 					}
 					
-					$uploadObj.find('.t_listPicBox ul').append($item);
+					$uploadObj.next().find('.t_listPicBox ul').append($item);
 
 					//重新计算文档高度
-					getWinHeight();
+					//getWinHeight();
 					var preloader = new mOxie.Image();
 					
 					preloader.onload = function(){

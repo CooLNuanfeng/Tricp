@@ -1172,6 +1172,7 @@ scrollbar-base-color:#E3E3E3;
 .t_list_picModel{
 	width: 732px;
 	height: auto;
+	overflow: hidden;
 	background: #ffffff;
 	padding: 10px;
 	border: 1px solid $borderColor;
@@ -3553,6 +3554,7 @@ scrollbar-base-color:#E3E3E3;
 }
 
 //修正样式
+.t_mainbox{height: auto}
 .mt20{margin-top: 20px;}
 .pt40{padding-top: 40px;}
 .pt70{padding-top: 70px;}

@@ -281,7 +281,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_lineList dt input.active { background: #ffffff; width: 74px; padding-left: 20px; margin-left: 22px; border: 1px solid #dddddd; }
 .t_lineList dd { position: relative; padding-left: 46px; padding-top: 5px; margin-bottom: 30px; }
 
-.t_list_picModel { width: 732px; height: auto; background: #ffffff; padding: 10px; border: 1px solid #dddddd; border-top: 0px; position: relative; }
+.t_list_picModel { width: 732px; height: auto; overflow: hidden; background: #ffffff; padding: 10px; border: 1px solid #dddddd; border-top: 0px; position: relative; }
 .t_list_picModel li { float: left; width: 130px; height: 85px; border: 2px solid #dddddd; overflow: hidden; position: relative; margin-right: 10px; margin-bottom: 10px; cursor: pointer; }
 .t_list_picModel .essay_listTxt { padding: 5px; height: 79px; margin-right: 4px; line-height: 21px; border: 0px; color: #999999; font-size: 12px; word-break: break-all; background: url(../image/listTxtbg.png) no-repeat; }
 .t_list_picModel .pic_stint { background: url(../image/failure.png) 0 bottom no-repeat #eaeaea; }
@@ -883,6 +883,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_configCancel:hover { background: #fafafa; color: #545454; text-decoration: none; }
 
 #upload_file { position: absolute; top: -9999em; left: 0px; }
+
+.t_mainbox { height: auto; }
 
 .mt20 { margin-top: 20px; }
 

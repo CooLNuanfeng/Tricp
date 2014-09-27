@@ -172,8 +172,7 @@
 </div>
 <div class="mengban"></div>
 <div class="footerNav">                                                                                                         
-    <div class="t_main">
-    <p class="fr">Copyright © 2013 www.lvmama.com</p><a href="">关于我们</a><span>|</span><a href="">网站地图</a><span>|</span><a href="">帮助中心</a><span>|</span><a href="">友情链接</a><span>|</span><a href="">诚聘英才</a><span>|</span><a href="">意见反馈</a><span>|</span><a href="">广告业务</a><span>|</span><a href="">更多专题</a></div>
+    <div class="t_main"><p class="fr">Copyright © 2013 www.lvmama.com</p><a href="">关于我们</a><span>|</span><a href="">网站地图</a><span>|</span><a href="">帮助中心</a><span>|</span><a href="">友情链接</a><span>|</span><a href="">诚聘英才</a><span>|</span><a href="">意见反馈</a><span>|</span><a href="">广告业务</a><span>|</span><a href="">更多专题</a></div>
 </div>
 
 </body>
@@ -192,7 +191,7 @@
 		<div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
 		<i class="icon icon_leftArrow"></i>
 	</div>
-	<div class="t_list_picModel" style="display:none"></div>
+	<div class="t_list_picModel" style="display:none"><div class="t_listPicBox"><ul class="clearfix"></ul></div></div>
 	<a href="javascript:;" target="_self" class="addTravel_essay"><i class="icon icon_addEssay"></i><i class="icon icon_orner"></i>旅行
 随笔</a>
 	<a href="javascript:;" target="_self" class="icon del_travel"></a>
