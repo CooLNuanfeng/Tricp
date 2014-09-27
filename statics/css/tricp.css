@@ -884,6 +884,9 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 #upload_file { position: absolute; top: -9999em; left: 0px; }
 
+.dragDivImg { width: 130px; height: 85px; background: #ffffff; }
+.dragDivImg img { width: 130px; height: 85px; }
+
 .t_mainbox { height: auto; }
 
 .mt20 { margin-top: 20px; }

@@ -612,11 +612,114 @@ $(function(){
 
 
 	//图片拖拽功能，需要拖拽的节点调用该函数
-	function dragPic($obj){
-		$obj.find('')
+	function dragPic(){
+		$('.t_listPicBox li img').live('mousedown',function(ev){
+			var _this = this;
+			var src = $(this).attr('src')
+			var $imgDiv = $('<div class="dragDivImg"><img src="'+src+'"></div>').css({
+				position: 'absolute',
+				top : $(this).parent().offset().top,
+				left: $(this).parent().offset().left,
+				border: '1px solid #ff6600',
+				zIndex: 99
+			})
+			$('body').append($imgDiv);
+			$(this).parent().css({
+				opacity: 0.4
+			});
+
+			var disX = ev.pageX - $(this).offset().left;
+			var disY = ev.pageY - $(this).offset().top;
+			$(document).bind('mousemove',function(ev){
+				$imgDiv.css({
+					top: ev.pageY - disY,
+					left: ev.pageX - disX
+				});
+
+				var $nearLi = nearlyLi($imgDiv, $(_this).parent());
+				if($nearLi){
+					$(_this).parent().parent().find('li').css({border:'2px solid #dddddd'})
+					$nearLi.css('border','2px solid #ff6600');
+				}else{
+					$(_this).parent().parent().find('li').css({border:'2px solid #dddddd'})
+				}
+
+			});
+
+			$(document).bind('mouseup',function(){
+				$(document).unbind('mousemove');
+				$(_this).parent().css({
+					opacity: 1,
+					border:'2px solid #dddddd'
+				});
+				var $nearLi = nearlyLi($imgDiv, $(_this).parent());
+				if($nearLi){
+					var temp = '';
+					temp = $nearLi.html();
+					$nearLi.html($(_this).parent().html());
+					$(_this).parent().html( temp );
+				}
+				$imgDiv.remove();
+				// $(_this).parent().parent().find('li').css({border:'2px solid #dddddd',opacity:1});
+				// $(_this).parent().parent().find('li img').css('opacity',1)
+				$(this).unbind('mouseup');
+				$('.t_listPicBox li').css('border','2px solid #dddddd')
+			})
+			return false;
+		})
 	}
 
-	
+	dragPic();
+
+	//碰撞检测
+	function collision($obj1,$obj2){
+		var L1 = $obj1.offset().left;
+		var T1 = $obj1.offset().top;
+		var R1 = $obj1.offset().left + $obj1.outerWidth();
+		var B1 = $obj1.offset().top + $obj1.outerHeight();
+
+		var L2 = $obj2.offset().left;
+		var T2 = $obj2.offset().top;
+		var R2 = $obj2.offset().left + $obj2.outerWidth();
+		var B2 = $obj2.offset().top + $obj2.outerHeight();
+
+		if( R1<L2 || L1>R2 || B1<T2 || T1>B2 ){
+			return false;
+		}
+		else{
+			return true;
+		}
+
+	}
+
+	function nearlyLi($obj, oParent){
+		var minValue = 999999999;
+		var index = -1;
+		var $nearObj = null;
+		oParent.parent().find('li:not(".pic_stint")').each(function(){
+			
+			if( collision($obj, $(this)) && $(this).attr('id')!= oParent.attr('id')){
+				var dis_short = distance($obj, $(this));
+				//console.log($(this)!=oParent)
+				if(dis_short < minValue ){
+					minValue = dis_short;
+					$nearObj = $(this);
+				}			
+			}
+
+		});
+		
+		return $nearObj;
+		
+	}
+
+	function distance($obj1,$obj2){
+		var a = $obj1.offset().left - $obj2.offset().left;
+		var b = $obj1.offset().top - $obj2.offset().top;
+		return Math.sqrt(a*a + b*b);
+	}
+
+
 
 	//图片描述功能
 	$('.liDragPic').live('mouseover',function(){
