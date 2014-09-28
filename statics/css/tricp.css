@@ -160,7 +160,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 :root .dragLi span, :root .dragCloneli span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 .dragLi:hover .icon_closeLi, .dragCloneli:hover .icon_closeLi { display: block; }
 
-.icon_closeLi { display: none; position: absolute; right: -13px; top: -13px; background-position: -475px -25px; }
+.icon_closeLi { display: none; position: absolute; right: -13px; top: -13px; z-index: 500; background-position: -475px -25px; }
 .icon_closeLi:hover { cursor: pointer; }
 
 .t_nextAddView { float: left; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: pointer; }
@@ -181,10 +181,11 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .icon_drag { background-position: -204px 0px; }
 
-.t_pics { width: 660px; height: 578px; position: relative; overflow: hidden; }
+.t_pics { width: 660px; height: 578px; position: relative; overflow: hidden; top: -20px; left: 0px; }
 
 .t_showPic { width: 658px; height: 578px; overflow-y: auto; }
-.t_showPic li { width: 138px; height: 91px; overflow: hidden; border: 1px solid #dddddd; float: left; position: relative; margin-right: 20px; margin-bottom: 20px; }
+.t_showPic ul { margin-top: 20px; }
+.t_showPic li { width: 138px; height: 91px; border: 1px solid #dddddd; float: left; position: relative; margin-right: 20px; margin-bottom: 20px; }
 .t_showPic li img { width: 138px; height: 91px; }
 .t_showPic .pic_stint { background: url(../image/failure.png) 2px bottom no-repeat #eaeaea; }
 
@@ -282,8 +283,11 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_lineList dd { position: relative; padding-left: 46px; padding-top: 5px; margin-bottom: 30px; }
 
 .t_list_picModel { width: 732px; height: auto; overflow: hidden; background: #ffffff; padding: 10px; border: 1px solid #dddddd; border-top: 0px; position: relative; }
-.t_list_picModel li { float: left; width: 130px; height: 85px; border: 2px solid #dddddd; overflow: hidden; position: relative; margin-right: 10px; margin-bottom: 10px; cursor: pointer; }
-.t_list_picModel .essay_listTxt { padding: 5px; height: 79px; margin-right: 4px; line-height: 21px; border: 0px; color: #999999; font-size: 12px; word-break: break-all; background: url(../image/listTxtbg.png) no-repeat; }
+.t_list_picModel li { float: left; width: 130px; height: 85px; border: 2px solid #dddddd; position: relative; margin-right: 10px; margin-bottom: 10px; cursor: pointer; }
+.t_list_picModel .essay_listTxt { padding: 3px; width: 124px; height: 79px; line-height: 20px; color: #999999; font-size: 12px; word-break: break-all; }
+.t_list_picModel .essay_listTxt p { width: 124px; height: 79px; overflow: hidden; }
+.t_list_picModel .essay_listTxt span { border-bottom: 1px dotted #dddddd; }
+.t_list_picModel .essay_listTxt .icon_articalEassy { right: -12px; bottom: -12px; }
 .t_list_picModel .pic_stint { background: url(../image/failure.png) 0 bottom no-repeat #eaeaea; }
 
 .move { width: 37px; height: 37px; display: block; position: absolute; top: 20%; left: 36%; background-position: -457px -8px; }
@@ -886,6 +890,22 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .dragDivImg { width: 130px; height: 85px; background: #ffffff; }
 .dragDivImg img { width: 130px; height: 85px; }
+
+.finishLosco { width: 600px; }
+.finishLosco h5 { height: 20px; line-height: 20px; font-family: "微软雅黑"; font-size: 20px; font-weight: normal; }
+.finishLosco table { border: 0px; margin: 30px 0 10px; }
+.finishLosco table td { padding: 10px 0px; }
+.finishLosco table td label { margin-right: 10px; }
+.finishLosco table td input[type='checkbox'] { margin-top: -3px; margin-right: 3px; vertical-align: middle; outline: none; }
+.finishLosco table td input[type='radio'] { margin-top: -3px; margin-right: 3px; vertical-align: middle; outline: none; }
+
+.publish_tricp { width: 160px; height: 40px; display: block; margin: 0 auto; background: #ff9900; color: #ffffff; font-family: "微软雅黑"; font-size: 18px; text-align: center; line-height: 40px; border-radius: 3px; }
+.publish_tricp:hover { color: #ffffff; text-decoration: none; background: #ff6600; }
+
+.icon_tricp { background-position: -452px -27px; }
+
+#moneycapita { width: 140px; padding: 7px 5px; margin-right: 8px; border: 1px solid #dddddd; outline: none; }
+#moneycapita.active { border: 1px solid #ff9900; }
 
 .t_mainbox { height: auto; }
 

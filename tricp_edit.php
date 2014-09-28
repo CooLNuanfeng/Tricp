@@ -91,7 +91,7 @@
                                         <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
                                         <li><img src="http://placehold.it/315x155/019ed8" width="130" height="85"></li>
                                         <li class="pic_stint"><div class="failure"><p>宽小于600像素</p><a href="javascript:;">重新上传</a></div></li>
-                                        <li class="essay_listTxt">色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂...</li>
+                                        <li class="essay_listTxt"><p><span>色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山</span></p><i class="icon icon_articalEassy"></i></li>
                                     </ul>
                                 </div>
                             </div>
@@ -130,10 +130,9 @@
     <a href="javascript:;">保存</a><div>已输入<span class="">0</span><em>/500</em>字</div>
 </div>
 <div class="txt_description">
-	<div><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div>
+	<div><a href="javascript:;" class="eassyDes"><i class="icon icon_des"></i>编辑</a><a href="javascript:;" class="eassyDel"><i class="icon icon_deldd"></i>删除</a></div>
     <i class="icon icon_orner"></i>
-    <p><span>色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山中天堂，红墙庙宇的宗教圣地，充斥吵杂色彩缤纷的众神之都，四季如春的山</span></p>
-    <textarea></textarea>
+    <p><span></span></p>
 </div>
 <button id="uploadBtn" style="position:absolute; top: -999999em; left: 0px;"></button>
 <div class="t_dialog t_addPointInfo w730">
@@ -168,6 +167,40 @@
             <a href="javascript:;" target="_self" class="t_save_eassy dis_link"><i class="icon icon_saveEssay"></i>保存随笔</a>
         </div>
     	<a href="javascript:;" target="_self" class="t_essy_closed"></a>
+    </div>
+</div>
+<div class="t_dialog finishLosco">
+	<div class="t_dialog_border">
+    	<h5>添加更多实用信息，帮助更多小伙伴出游吧~</h5>
+        <table width="100%">
+             <tr>
+                  <td>人均费用：</td>
+                  <td><input type="text" id="moneycapita">元</td>
+             </tr>
+             <tr>
+                  <td>出游人物：</td>
+                  <td>
+                  	<label><input type="checkbox">单人</label></label>
+                    <label><input type="checkbox">情侣</label></label>
+                    <label><input type="checkbox">亲子</label></label>
+                    <label><input type="checkbox">闺蜜</label></label>
+                    <label><input type="checkbox">家族</label></label>
+                    <label><input type="checkbox">朋友</label></label>
+                    <label><input type="checkbox">团队</label></label>
+                  </td>
+             </tr>
+             <tr>
+                  <td>游玩形式：</td>
+                  <td>
+                  	<label><input type="radio" name="tricp_sort">自由行</label>
+                    <label><input type="radio" name="tricp_sort">半自由行</label>
+                    <label><input type="radio" name="tricp_sort">跟团</label>
+                    <label><input type="radio" name="tricp_sort">自驾</label>
+                  </td>
+             </tr>
+        </table>
+        <a href="javascript:;" target="_self" class="publish_tricp"><i class="icon icon_tricp"></i>发表旅程</a>
+        <a href="javascript:;" target="_self" class="t_essy_closed"></a>
     </div>
 </div>
 <div class="mengban"></div>

@@ -687,6 +687,7 @@ scrollbar-base-color:#E3E3E3;
 	position: absolute;
 	right: -13px;
 	top: -13px;
+	z-index: 500;
 	background-position: -475px -25px;
 	&:hover{
 		cursor: pointer;
@@ -760,17 +761,20 @@ scrollbar-base-color:#E3E3E3;
 	height: 578px;
 	position: relative;
 	overflow: hidden;
+	top: -20px;
+	left: 0px;
 }
 
 .t_showPic{
 	width: 658px;
 	height: 578px;
 	overflow-y: auto;
-
+	ul{
+		margin-top: 20px;
+	}
 	li{
 		width: 138px;
 		height: 91px;
-		overflow: hidden;
 		border: 1px solid $borderColor;
 		float: left;
 		position: relative;
@@ -1186,22 +1190,33 @@ scrollbar-base-color:#E3E3E3;
 		width: 130px;
 		height: 85px;
 		border: 2px solid $borderColor;
-		overflow: hidden;
+		//overflow: hidden;
 		position: relative;
 		margin-right: 10px;
 		margin-bottom: 10px;
 		cursor: pointer;
 	}
 	.essay_listTxt{
-		padding: 5px;
+		padding: 3px;
+		width: 124px;
 		height: 79px;
-		margin-right: 4px;
-		line-height: 21px;
-		border: 0px;
+		line-height: 20px;
 		color: $txtGray;
 		font-size: 12px;
 		word-break:break-all;
-		background: url(../image/listTxtbg.png) no-repeat;
+		//background: url(../image/listTxtbg.png) no-repeat;
+		p{
+			width: 124px;
+			height: 79px;
+			overflow:hidden;
+		}
+		span{
+			border-bottom: 1px dotted $borderColor;
+		}
+		.icon_articalEassy{
+			right: -12px;
+			bottom: -12px;
+		}
 	}
 	
 	.pic_stint{
@@ -3563,6 +3578,75 @@ scrollbar-base-color:#E3E3E3;
 		height: 85px;
 	}
 }
+
+
+//编辑页发表弹框统计
+.finishLosco{
+	width: 600px;
+	h5{
+		height: 20px;
+		line-height: 20px;
+		font-family: "微软雅黑";
+		font-size: 20px;
+		font-weight: normal;
+	}
+	table{
+		border: 0px;
+		margin: 30px 0 10px;
+		td{
+			padding: 10px 0px;
+			label{
+				margin-right: 10px;
+			}
+			input[type='checkbox']{
+				margin-top: -3px;
+				margin-right: 3px;
+				vertical-align: middle;
+				outline: none;
+			}
+			input[type='radio']{
+				margin-top: -3px;
+				margin-right: 3px;
+				vertical-align: middle;
+				outline: none;
+			}
+		}
+	}
+}
+
+.publish_tricp{
+	width: 160px;
+	height: 40px;
+	display: block;
+	margin: 0 auto;
+	background: $orange;
+	color: #ffffff;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 3px;
+	&:hover{
+		color: #ffffff;
+		text-decoration: none;
+		background: #ff6600;
+	}
+}
+.icon_tricp{
+	background-position: -452px -27px;
+}
+#moneycapita{
+	width: 140px;
+	padding: 7px 5px;
+	margin-right: 8px;
+	border: 1px solid $borderColor;
+	outline: none;
+	&.active{
+		border: 1px solid $orange;
+	}
+}
+
+
 
 //修正样式
 .t_mainbox{height: auto}

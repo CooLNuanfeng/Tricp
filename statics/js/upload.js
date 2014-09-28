@@ -582,6 +582,8 @@ $(function(){
 	})
 
 
+
+
 	var uploader = new plupload.Uploader({
         runtimes : 'html5,flash,silverlight,html4',
 		browse_button : 'uploadBtnLi', 
@@ -609,7 +611,7 @@ $(function(){
 
 			FilesAdded: function(up, files) {
 				plupload.each(files, function(file) {					
-					var $item = $('<li id="'+file.id+'"><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
+					var $item = $('<li id="'+file.id+'"><i class="icon icon_closeLi"></i><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
 					var image = $(new Image()).appendTo($item);
 					$('#picList').append($item);
 					var preloader = new mOxie.Image();
@@ -642,6 +644,13 @@ $(function(){
 			FileUploaded : function(up,file,res){
 				$('#'+file.id).attr('data-load','ok');
 				$('#'+file.id).find('.upStatus').hide();
+				//删除已上传图片
+				$('#'+file.id).mouseover(function(){
+					$(this).find('.icon_closeLi').show();
+				})
+				$('#'+file.id).mouseout(function(){
+					$(this).find('.icon_closeLi').hide();
+				})
 			},
 
 			Error: function(up, err) {

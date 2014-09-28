@@ -46,7 +46,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -124,7 +124,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -203,7 +203,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -281,7 +281,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -360,7 +360,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -438,7 +438,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -487,7 +487,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -566,7 +566,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -644,7 +644,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
@@ -693,7 +693,7 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
                     <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>

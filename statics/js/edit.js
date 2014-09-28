@@ -448,10 +448,7 @@ $(function(){
 		getTreeHeight()
 	});
 
-	//发表旅行随笔
-	$('.addTravel_essay').live('click',function(){
-
-	})
+	
 
 
 	//删除当天操作
@@ -481,6 +478,11 @@ $(function(){
 	//添加随笔
 	$essayClick = null;
 	$('.addTravel_essay').live('click',function(){
+		if(eassyModify){
+			$('.eassyTxt textarea').val(eassyTxt);
+		}else{
+			$('.eassyTxt textarea').val('');
+		}
 		$essayClick = $(this);
 		var L = $(window).width();
 		var T = $(window).height();
@@ -493,6 +495,7 @@ $(function(){
 	$('.t_essy_closed').click(function(){
 		$(this).parent().parent().hide();
 		$('.mengban').hide();
+		eassyModify = false;
 	});
 
 	$('.eassyTxt textarea').bind('input propertychange',function(ev){
@@ -512,9 +515,10 @@ $(function(){
 	})
 
 	//保存随笔
+	var eassyModify = false
 	$('.t_save_eassy').click(function(){
-		if($(this).siblings('textarea').attr('data-success')!= '0'){
-			var _this = this;			
+		if(!eassyModify){
+			var _this = this;	
 			$(this).parent().parent().parent().hide();
 			$('.mengban').hide();
 			var txt = $('.eassyTxt textarea').val();
@@ -526,20 +530,82 @@ $(function(){
 				success: function(res){
 					if($essayClick.prev().css('display')=='none'){			
 						$essayClick.prev().show()
-						var $liEassy = $('<li class="essay_listTxt">'+res+'</li>');
+						var $liEassy = $('<li class="essay_listTxt"><p><span>'+res+'</span></p></li>');
 						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
+						$essayClick.prev().css('height',92);
 						//getWinHeight();
 						$(_this).siblings('textarea').val('');
 					}else{
-						var $liEassy = $('<li class="essay_listTxt">'+res+'</li>')
+						var $liEassy = $('<li class="essay_listTxt"><p><span>'+res+'</span></p><i class="icon icon_articalEassy"></i></li>')
 						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
+						if($essayClick.prev().find('ul li').length<6){
+							$essayClick.prev().css('height',92);
+						}else{
+							$essayClick.prev().css('height',191);
+						}
+						
 						$(_this).siblings('textarea').val('');
 					}
+					eassyModify = false;
 				}
 			})
+		}else{
+			var txt = $('.eassyTxt textarea').val();
+			$.ajax({
+				url: 'php/eassy_submit.php',
+				type: 'GET',
+				data: {context: txt},
+				dataType:"text",
+				success: function(){
+					$eassyObj.find('p span').html(txt);
+				}
+			})
+
+			$('.eassyBox').hide();
+			$('.mengban').hide();
+			eassyModify = false;
 		}
 		
 	});
+
+	//修改随笔
+	var $eassyObj = null;
+	var eassyTxt = '';
+	$('.essay_listTxt').live('click',function(ev){
+		var _this = this;
+		$eassyObj = $(this);
+		eassyTxt = $(this).find('p span').html();
+		$('.txt_description').show().css({
+			position: 'absulote',
+			top:  $(_this).offset().top+50,
+			left: $(_this).offset().left+50,
+			zIndex: 999
+		});
+		$('.txt_description').find('p span').html(eassyTxt);
+		ev.stopPropagation();
+	});
+	
+	
+	$('.eassyDes').click(function(){
+		eassyModify = true;
+		$('.addTravel_essay').click();
+		$('.txt_description').hide();
+	});
+	$('.eassyDel').click(function(){
+		$essayClick = $eassyObj;
+		if($essayClick.prev().find('ul li').length<6){
+			$essayClick.parent().parent().parent().css('height',92);
+		}else{
+			$essayClick.parent().parent().parent().css('height',191);
+		}
+		$('.txt_description').hide();
+		$eassyObj.remove();
+
+		$.ajax({
+
+		})
+	})
+
 
 	//修改游记标题
 	$('.modifyTricpName').click(function(){
@@ -567,8 +633,15 @@ $(function(){
 
 
 
+	$('#moneycapita').focus(function(){
+		$(this).addClass('active');
+	}).blur(function(){
+		$(this).removeClass('active')
+	});;
+
 	$('.publish').click(function(){
-		if($("*[data-success='0']").length){
+		//检测是否都填完整  (最后去掉  && false)
+		if($("*[data-success='0']").length  && false){
 			//说明有内容没有填写正确
 			var arr = [];
 			for(var i=0; i< $("*[data-success='0']").length; i++){
@@ -576,9 +649,19 @@ $(function(){
 			}
 		}else{
 			//提交数据
-			$.ajax({
-				url: '',
-			})
+			var L = $(window).width();
+			var T = $(window).height();
+			$('.mengban').show();
+			$('.finishLosco').show().css({
+				left: (L-$('.eassyBox').outerWidth())/2,
+				top: (T - $('.eassyBox').outerHeight())/2
+			});
+			//发送数据
+			$('.publish_tricp').click(function(){
+				$.ajax({
+
+				})
+			});
 		}
 	});
 	
@@ -654,10 +737,22 @@ $(function(){
 				});
 				var $nearLi = nearlyLi($imgDiv, $(_this).parent());
 				if($nearLi){
-					var temp = '';
-					temp = $nearLi.html();
-					$nearLi.html($(_this).parent().html());
-					$(_this).parent().html( temp );
+					//判断是否为随笔
+					if($nearLi.attr('class')!=$(_this).parent().attr('class')){
+						var classStr = $nearLi.attr('class');
+						var temp = $nearLi.html();
+						$nearLi.attr('class','liDragPic');
+						$nearLi.html($(_this).parent().html());
+						$(_this).parent().attr('class',classStr);
+						$(_this).parent().html( temp );
+
+					}else{
+						var temp = '';
+						temp = $nearLi.html();
+						$nearLi.html($(_this).parent().html());
+						$(_this).parent().html( temp );
+					}
+					
 				}
 				$imgDiv.remove();
 				// $(_this).parent().parent().find('li').css({border:'2px solid #dddddd',opacity:1});
@@ -696,7 +791,7 @@ $(function(){
 		var minValue = 999999999;
 		var index = -1;
 		var $nearObj = null;
-		oParent.parent().find('li:not(".pic_stint")').each(function(){
+		oParent.parent().find('li').each(function(){
 			
 			if( collision($obj, $(this)) && $(this).attr('id')!= oParent.attr('id')){
 				var dis_short = distance($obj, $(this));
@@ -773,6 +868,7 @@ $(function(){
 	});
 	$(document).click(function(){
 		$('.pic_description').hide();
+		$('.txt_description').hide();
 	})
 	$('.pic_description a').live('click',function(){
 		//向服务器发送图片描述信息
@@ -864,8 +960,13 @@ $(function(){
 			FileUploaded : function(up,file,res){
 				$('#'+file.id).attr('data-load','ok');
 				$('#'+file.id).find('.upStatus').hide();
-			},
+				re = JSON.parse(res.response); 
+				if(re.error){ 
+				console.log(re.error); 
+				} 
 
+			},
+			
 			Error: function(up, err) {
 				/*if(err.message == '-1'){
 					alert('aa')

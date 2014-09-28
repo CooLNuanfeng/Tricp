@@ -67,6 +67,8 @@
     <a href="javascript:;" target="_self">新浪微博</a>
     <a href="javascript:;" target="_self">QQ空间</a>
 </div>
+<div class="picImgShowBox">
+</div>
 <?php require_once "models/areaModel/areaModel.php" ?>
 <script src="http://pic.lvmama.com/js/you/js/you_footer.js"></script>
 <script src="statics/js/mousewheel.js"></script>

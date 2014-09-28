@@ -86,6 +86,11 @@ if ($cleanupTargetDir) {
 	}
 	closedir($dir);
 }	
+//判断宽度
+$imginfo = getimagesize($_FILES['file']['tmp_name']); 
+if($imginfo[0]<600){ 
+die('{"jsonrpc" : "2.0", "error" : {"code": 101, "message": "图片宽度小于600"}, "id" : "id"}'); 
+} 
 
 
 // Open temp file
