@@ -9,7 +9,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 ::-webkit-scrollbar-corner { background: transparent; }
 
-.ordersListBox li a, .tabListBox li a, .dragLi p strong, .dragCloneli p strong, .treeNav dd, .t_picComlist .t_com_user, .t_side_hotel li a, .tl_treeNav dd { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ordersListBox li a, .tabListBox li a, .dragLi p strong, .dragCloneli p strong, .treeNav dd, .t_picComlist .t_com_user, .t_side_hotel li a, .tl_treeNav dd, .piccommituser { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .fl { float: left; }
 
@@ -556,6 +556,9 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_shareCollection a:hover .icon_commit { background-position: -250px -77px; }
 .tl_shareCollection a:hover .icon_share { background-position: -300px -77px; }
 .tl_shareCollection a:hover .icon_favorites { background-position: -350px -77px; }
+.tl_shareCollection a.active { color: #ff9900; text-decoration: none; }
+.tl_shareCollection a.active .icon_zan { background-position: -200px -77px; }
+.tl_shareCollection a.active .icon_favorites { background-position: -350px -77px; }
 .tl_shareCollection .favorites { border-right: 0px; }
 
 .icon_zan { background-position: -175px -77px; }
@@ -585,6 +588,9 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_shortShare a:hover .icon_commit { background-position: -250px -77px; }
 .tl_shortShare a:hover .icon_share { background-position: -300px -77px; }
 .tl_shortShare a:hover .icon_favorites { background-position: -350px -77px; }
+.tl_shortShare a.active { color: #ff9900; text-decoration: none; }
+.tl_shortShare a.active .icon_zan { background-position: -200px -77px; }
+.tl_shortShare a.active .icon_favorites { background-position: -350px -77px; }
 
 .t_mainArtical { width: 815px; margin-left: 119px; padding-bottom: 20px; }
 
@@ -906,6 +912,71 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 #moneycapita { width: 140px; padding: 7px 5px; margin-right: 8px; border: 1px solid #dddddd; outline: none; }
 #moneycapita.active { border: 1px solid #ff9900; }
+
+.picImgShowBox { position: fixed; background: rgba(0, 0, 0, 0.9); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#E5000000, endColorstr=#E5000000); }
+:root .picImgShowBox { filter: none; background-color: rgba(0, 0, 0, 0.9); }
+
+.picIMG { position: relative; margin: 0 auto; width: 745px; }
+.picIMG .picInfo { width: auto; margin-bottom: 20px; font-family: "微软雅黑"; font-size: 16px; color: #ffffff; }
+.picIMG .picInfo i { width: 50px; height: 50px; line-height: 50px; margin-right: 15px; text-align: center; display: inline-block; background: #594F48; font-size: 22px; }
+.picIMG .picImgCon { overflow-y: auto; }
+.picIMG img { padding: 10px; border: 1px solid #ffffff; }
+.picIMG p { color: #ffffff; }
+
+.icon_picNavClose { margin-left: 4px; background-position: -450px -50px; }
+
+.picImgCommit { position: absolute; right: -280px; top: 0px; }
+
+.picImgNav { width: 35px; background: #594F48; }
+.picImgNav ul { padding: 150px 0px 0px; }
+.picImgNav li { padding: 10px 5px; cursor: pointer; letter-spacing: 4px; text-align: center; color: #ffffff; }
+.picImgNav li.active { color: #ff6600; }
+.picImgNav li.active .icon_piccom { background-position: -250px -50px; }
+.picImgNav li:hover { color: #ff6600; }
+.picImgNav li:hover .icon_piczan { background-position: -200px -50px; }
+.picImgNav li:hover .icon_piccom { background-position: -250px -50px; }
+.picImgNav li:hover .icon_picshare { background-position: -300px -50px; }
+
+.icon_piczan { background-position: -325px -50px; }
+
+.icon_piccom { background-position: -349px -50px; }
+
+.icon_picshare { background-position: -375px -50px; }
+
+.picImgCom { width: 280px; height: 800px; background: #F5F5F5; }
+.picImgCom h6 { background: #DDD8D5; height: 40px; line-height: 40px; font-weight: normal; padding: 0 20px; font-family: "微软雅黑"; font-size: 16px; color: #666666; }
+.picImgCom h6 span { font-family: Arial; font-size: 22px; color: #333333; margin-right: 5px; position: relative; top: 2px; left: 0px; }
+.picImgCom h6 a { font-family: "宋体"; font-size: 12px; color: #666666; }
+.picImgCom h6 a:hover { color: #ff9900; }
+.picImgCom h6 a:hover .icon_toRight { background-position: -425px -50px; }
+
+.icon_toRight { background-position: -400px -50px; }
+
+.picComsubit { padding: 20px; border-bottom: 1px solid #dddddd; overflow: hidden; }
+.picComsubit textarea { width: 240px; height: 60px; border: 1px solid #dddddd; margin-bottom: 8px; outline: none; }
+.picComsubit a { float: right; width: 61px; height: 26px; line-height: 26px; text-align: center; display: block; background: #ff9900; color: #ffffff; }
+.picComsubit a:hover { background: #ff6600; color: #ffffff; text-decoration: none; }
+
+.piccomlist { overflow-y: auto; }
+.piccomlist ul { padding: 0 15px; }
+.piccomlist li { border-bottom: 1px dotted #dddddd; padding: 10px 0px; }
+.piccomlist li:last-child { border-bottom: 0px; }
+
+.piccommituser { width: 200px; color: #999999; }
+
+.piccommitxt { color: #333333; }
+
+.pictime { color: #999999; }
+.pictime a { color: #0099cc; float: right; }
+
+.pic_prev { position: absolute; top: 300px; left: -60px; background-position: -100px -200px; }
+.pic_prev:hover { background-position: 1px -200px; }
+
+.pic_next { position: absolute; top: 300px; right: -60px; background-position: -150px -200px; }
+.pic_next:hover { background-position: -53px -201px; }
+
+.pic_closed { position: absolute; top: 0px; right: 380px; background-position: -200px -150px; }
+.pic_closed:hover { background-position: -151px -150px; }
 
 .t_mainbox { height: auto; }
 

@@ -46,10 +46,10 @@
         <dd>
             <div class="t_articalPic">
                 <div class="icon_tagPic"><i class="icon icon_pos"></i>第1天：西湖</div>
-                <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
+                <img class="pointImgshow" src="statics/image/listpic.png" width="720" height="1624">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">001小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -127,7 +127,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经002</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -206,7 +206,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -284,7 +284,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -363,7 +363,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -441,7 +441,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -490,7 +490,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -569,7 +569,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -647,7 +647,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
@@ -696,7 +696,7 @@
                 <img class="pointImgshow" src="statics/image/listpic.png" width="100%">
                 <div class="t_articalPicTxt">
                     <div class="maskCorner"></div>
-                    <p>3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
+                    <p class="t_articalTxt">3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
                         <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>

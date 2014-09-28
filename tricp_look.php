@@ -68,16 +68,54 @@
     <a href="javascript:;" target="_self">QQ空间</a>
 </div>
 <div class="picImgShowBox">
+	<div class="picIMG">
+    	<div class="picInfo"><i>D1</i><span>西湖</span></div>
+        <div class="picImgCon">
+            <img src="statics/image/listpic.png" width="720" height="624">
+            <p>小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦totally</p>
+       </div>
+        <a href="javascript:;" target="_self" class="iconBig pic_prev"></a>
+    	<a href="javascript:;" target="_self" class="iconBig pic_next"></a>
+    </div>
+	<div class="picImgCommit clearfix">
+    	<div class="picImgNav fl">
+        	<ul>
+            	<li><i class="icon icon_piczan"></i>喜欢4</li>
+                <li><i class="icon icon_piccom"></i>评论4</li>
+                <li><i class="icon icon_picshare"></i>分享4</li>
+            </ul>
+        </div>
+        <div class="picImgCom fr">
+        	<h6><a href="javascript:;" class="picRight fr">收起<i class="icon icon_toRight"></i></a><span>15</span>条评论</h6>
+            <div class="picComsubit">
+            	<textarea></textarea>
+                <a href="javascript:;">评论</a>
+            </div>
+            <div class="piccomlist">
+            	<ul>
+                	
+                </ul>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:;" target="_self" class="iconBig pic_closed"></a>
 </div>
 <?php require_once "models/areaModel/areaModel.php" ?>
 <script src="http://pic.lvmama.com/js/you/js/you_footer.js"></script>
 <script src="statics/js/mousewheel.js"></script>
 <script src="statics/js/checkout.js"></script>
 <script type="text/template" id='artical_comTemplate'>
-	<li>
-		<span class="t_com_user"><%- username %>：</span>
-		<p><%- context %></p>
-	</li>
+<li>
+	<span class="t_com_user"><%- username %>：</span>
+	<p><%- context %></p>
+</li>
+</script>
+<script type="text/template" id="pic_commitTemplate">
+<li>
+	<p class="piccommituser"><%- username %>：</p>
+	<p class="piccommitxt"><%- context %></p>
+	<p class="pictime"><span><%- time %></span></p>
+</li>
 </script>
 <script type="text/template" id='userCommit_template'>
 <li>
