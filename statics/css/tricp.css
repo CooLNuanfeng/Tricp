@@ -641,7 +641,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .icon_sm_share { background-position: -275px -50px; }
 
 .t_articalPic { position: relative; border-bottom: 1px solid #dddddd; }
-.t_articalPic img { vertical-align: top; }
+.t_articalPic img { vertical-align: top; width: 100%; }
 
 .t_articalPicTxt { padding: 20px 20px 0px; position: relative; top: -20px; left: 0px; }
 .t_articalPicTxt p { font-size: 14px; color: #666666; }

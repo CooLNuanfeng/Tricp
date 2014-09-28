@@ -71,8 +71,8 @@
 	<div class="picIMG">
     	<div class="picInfo"><i>D1</i><span>西湖</span></div>
         <div class="picImgCon">
-            <img src="statics/image/listpic.png" width="720" height="624">
-            <p>小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦，1小时伦敦飞爱丁堡，小时广州飞伦敦totally</p>
+            <img src="">
+            <p></p>
        </div>
         <a href="javascript:;" target="_self" class="iconBig pic_prev"></a>
     	<a href="javascript:;" target="_self" class="iconBig pic_next"></a>
