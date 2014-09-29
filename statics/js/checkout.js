@@ -433,167 +433,26 @@ $(function(){
 		}
 
 
-		//图片预览展示(前台展示)
-		/*var arrPicshow = [];
-		var picIndex = 0;
-		var $picObj = null;
-		$('.pointImgshow').each(function(i){
-			$(this).attr('data-index',i)
-			arrPicshow.push($(this));
-		})
-		$('.pointImgshow').click(function(){
-			var _this =this;
-			picIndex = $(this).attr('data-index');
-			var L = $(window).width();
-			var T = $(window).height();
-			var w = $(this).width();
-			var h = $(this).height();
-			var txtH = $(this).next().find('.t_articalTxt').height();
-			var src = $(this).attr('src');
-			var day = $(this).parents('.t_oneDay').find('.t_dayTime').attr('data-day');
-			var point = $(this).parents('.t_articalList').find('.t_point span').html();
-			$('.picImgShowBox').show().css({
-				width: L,
-				height: T,
-				top: 0,
-				left: 0,
-				zIndex: 99999
-			});
-			$('.picIMG').width(w+22);
-			$('.picInfo i').html(day.toUpperCase());
-			$('.picInfo span').html(point);
-			$('.picIMG img').attr('src',src);
-			$('.picIMG p').html($(this).next().find('.t_articalTxt').html())
-			$('.picImgNav').height(T);
-			$('.picImgNav li:eq(1)').click(function(){
-				$(this).addClass('active');
-				$('.picImgCommit').css('right',0);
-				//加载评论
-				$.ajax({
-					url: 'php/commitDate.php',
-					type: 'GET',
-					data: {'tagId': 'artical1'},
-					dataType: 'json',
-					success: function(res){
-						var ulHtml = '';
-						for(var i=0; i<res.length; i++){
-							ulHtml+=_.template($('#pic_commitTemplate').html(),{
-								username: res[i].username,
-								context: res[i].context,
-								time : res[i].comTime
-							})
-						}
-						$('.piccomlist').find('ul').html(ulHtml);
-						picComHeight();
-					}
-				})
-
-			});
-			if(h+txtH>T-100){
-				$('.picImgCon').css({
-					height: T-100,
-					width: 760
-				})
-			}else{
-				$('.picImgCon').css({
-					height: 'auto',
-					width: 760
-				})
-			}
-			
-			$('.picRight').click(function(){
-				$('.picImgNav li:eq(1)').removeClass('active')
-				$('.picImgCommit').css('right',-280)
-			});
-		});
-	
-		$('.pic_closed').click(function(){
-			$('.picImgShowBox').hide();
-		});
-		
-
-
-		function picComHeight(){
-			var T = $(window).height();
-			var h = $('.piccomlist').height();
-			if(h>T-200){
-				$('.piccomlist').height(T-200);
-			}else{
-				$('.piccomlist').height(h);
-			}
-		}
-
-		//下一张
-		$('.pic_next').click(function(){
-			picIndex++;
-			if(picIndex>arrPicshow.length-1){
-				picIndex = 0;
-			}
-			$picObj = arrPicshow[picIndex];
-			var h = arrPicshow[picIndex].height();
-			var T = $(window).height();
-			var w = arrPicshow[picIndex].width();
-			var txtH = arrPicshow[picIndex].next().find('.t_articalTxt').height();
-			var src = $picObj.attr('src');
-			var day = arrPicshow[picIndex].parents('.t_oneDay').find('.t_dayTime').attr('data-day');
-			var point = arrPicshow[picIndex].parents('.t_articalList').find('.t_point span').html();
-
-			$('.picInfo i').html(day.toUpperCase());
-			$('.picInfo span').html(point);
-			$('.picIMG img').attr('src',src);
-			$('.picIMG p').html(arrPicshow[picIndex].next().find('.t_articalTxt').html());
-			if(h+txtH>T-100){
-				$('.picImgCon').css({
-					height: T-100,
-					width: w+40
-				})
-			}else{
-				$('.picImgCon').css({
-					height: 'auto',
-					width: w+40
-				})
-			}
-			$('.picImgCon').css({
-				height: h+100,
-				width: w+40
+		//图片中发表评论
+		$('.picComsubit a').click(function(){
+			var txt = $('.picComsubit textarea').val();
+			var username = 'blue';
+			$.ajax({
+				url: 'php/submitUserCommit.php',
+				type: 'POST',
+				data: {'username':username,'context': txt},
+				success: function(res){
+					var $comLi = _.template($('#pic_commitTemplate').html(), {
+						username:  username,
+						context : txt,
+						time : res
+					});
+					$('.piccomlist ul').prepend($comLi);
+					$('.picComsubit textarea').val('');
+					picComHeight();
+				}
 			})
 		});
-		//上一张
-		$('.pic_prev').click(function(){
-			picIndex--;
-			if(picIndex<0){
-				picIndex = arrPicshow.length-1;
-			}
-			$picObj = arrPicshow[picIndex];
-			var h = arrPicshow[picIndex].height();
-			var T = $(window).height();
-			var w = arrPicshow[picIndex].width();
-			var txtH = arrPicshow[picIndex].next().find('.t_articalTxt').height();
-			var src = $picObj.attr('src');
-			var day = arrPicshow[picIndex].parents('.t_oneDay').find('.t_dayTime').attr('data-day');
-			var point = arrPicshow[picIndex].parents('.t_articalList').find('.t_point span').html();
-
-			$('.picInfo i').html(day.toUpperCase());
-			$('.picInfo span').html(point);
-			$('.picIMG img').attr('src',src);
-			$('.picIMG p').html(arrPicshow[picIndex].next().find('.t_articalTxt').html());
-			if(h+txtH>T-100){
-				$('.picImgCon').css({
-					height: T-100,
-					width: w+40
-				})
-			}else{
-				$('.picImgCon').css({
-					height: 'auto',
-					width: w+40
-				})
-			}
-			$('.picImgCon').css({
-				height: h+100,
-				width: w+40
-			})
-		})*/
-
 		
 		//图片展示（服务器）
 		var arrPicshow = [];
@@ -691,10 +550,11 @@ $(function(){
 		function picComHeight(){
 			var T = $(window).height();
 			var h = $('.piccomlist').height();
-			if(h>T-200){
+			console.log(h, T-200)
+			if(h>=T-200){
 				$('.piccomlist').height(T-200);
 			}else{
-				$('.piccomlist').height(h);
+				$('.piccomlist').height('auto');
 			}
 		}
 
