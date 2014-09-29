@@ -2,7 +2,7 @@
 	$_POST['picId'];
 	
 	$arr = array(
-		'src'=>'http://localhost/Tricp/statics/image/002.png',
+		'src'=>'http://localhost/www/Tricp/statics/image/002.png',
 		'width'=>960,
 		'height'=>335
 	);

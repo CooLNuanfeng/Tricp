@@ -3886,6 +3886,38 @@ scrollbar-base-color:#E3E3E3;
 		background-position: -151px -150px;
 	}
 }
+
+
+//最后发表成功
+.t_tricpSuccess{
+	padding-top: 50px;
+	height: 450px;
+	text-align: center;
+}
+.t_successTrip{
+	width: 240px;
+	margin: 0 auto;
+	text-align: left;
+	a{
+		color: $txtBlue;
+		&:hover{
+			color: $orange;
+			.icon_blueArrow{
+				background-position: -30px -28px;
+			}
+		}
+	}
+	.shareSpan{
+		color: $txtGray;
+		position: relative;
+		float: left;
+		top: 4px;
+		left: 0px;
+		margin-right: 10px;
+	}
+}
+
+
 //修正样式
 .t_mainbox{height: auto}
 .mt20{margin-top: 20px;}

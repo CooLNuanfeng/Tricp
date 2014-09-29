@@ -978,6 +978,14 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .pic_closed { position: absolute; top: 0px; right: 380px; background-position: -200px -150px; }
 .pic_closed:hover { background-position: -151px -150px; }
 
+.t_tricpSuccess { padding-top: 50px; height: 450px; text-align: center; }
+
+.t_successTrip { width: 240px; margin: 0 auto; text-align: left; }
+.t_successTrip a { color: #0099cc; }
+.t_successTrip a:hover { color: #ff9900; }
+.t_successTrip a:hover .icon_blueArrow { background-position: -30px -28px; }
+.t_successTrip .shareSpan { color: #999999; position: relative; float: left; top: 4px; left: 0px; margin-right: 10px; }
+
 .t_mainbox { height: auto; }
 
 .mt20 { margin-top: 20px; }
