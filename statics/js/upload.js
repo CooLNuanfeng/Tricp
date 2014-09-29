@@ -644,6 +644,7 @@ $(function(){
 				})
 			},
 			FileUploaded : function(up,file,res){
+				// $('#'+file.id).data('switchBtn',true); //切换开发
 				$('#'+file.id).attr('data-load','ok');
 				$('#'+file.id).find('.upStatus').hide();
 				//删除已上传图片

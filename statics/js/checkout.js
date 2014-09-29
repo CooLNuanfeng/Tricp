@@ -204,7 +204,7 @@ $(function(){
 			shareTxt = $(this).parent().prev().html();
 			shareImgSrc = $(this).parent().parent().prev().attr('src');
 			$('.shareBox').show().css({
-				top: $(this).offset().top+16,
+				top: $(this).offset().top+14,
 				left: $(this).offset().left
 			})
 		}).mouseout(function(){

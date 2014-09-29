@@ -26,7 +26,7 @@
         	<div class="userHeader">
             	<div class="userAvatar"><img src="statics/image/userHeader.png" width="85" height="85"></div>
                 <p class="tricpTitle" data-success='1'>雨中有只小阿狗</p>
-                <input type="text" class="t_editingTitle">
+                <input type="text" class="t_editingTitle" maxlength="60">
                 <div class="leftTxt"><span>0</span>/30</div>
                 <a href="javascript:;" class="modifyTitle modifyTricpName"><i class="icon icon_modifyTitle"></i>修改</a>
             </div>

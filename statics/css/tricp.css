@@ -489,7 +489,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .editNav { width: 200px; padding-left: 127px; border-right: 3px solid #dddddd; position: relative; }
 
-.liDragPic img { width: 130px; height: 85px; }
+.liDragPic img { width: 130px; height: 85px; cursor: all-scroll; }
 
 .pic_description { position: absolute; display: none; width: 500px; padding: 10px; background: #ffffff; border: 1px solid #dddddd; }
 .pic_description textarea { width: 480px; height: 70px; padding: 7px; margin-bottom: 10px; border: 1px solid #dddddd; outline: none; -webkit-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); -moz-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); -ms-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); -o-box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.03); }
@@ -512,7 +512,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .txt_description p span { padding-bottom: 3px; border-bottom: 1px dotted #dddddd; }
 .txt_description textarea { width: 280px; height: 154px; border: 0px; outline: none; display: none; }
 
-.eassyTxt textarea { width: 610px; height: 200px; overflow: hidden; overflow-y: none; outline: none; padding: 10px; border: 1px solid #DDDDDD; line-height: 32px; font-size: 14px; color: #666666; }
+.eassyTxt textarea { width: 610px; height: 200px; overflow: hidden; overflow-y: auto; outline: none; padding: 10px; border: 1px solid #DDDDDD; line-height: 32px; font-size: 14px; color: #666666; }
 .eassyTxt p { text-align: right; color: #999999; }
 .eassyTxt p span { color: #ff9900; }
 .eassyTxt p .error { color: #cc0000; }
@@ -821,7 +821,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_side_you li a { width: 200px; height: 44px; display: block; overflow: hidden; color: #333333; }
 .t_side_you li a:hover { color: #ff6600; }
 .t_side_you li p { color: #999999; }
-.t_side_you li p strong { font-family: Arial; color: #ff9900; }
+.t_side_you li p strong { font-family: Arial; color: #ff6600; }
 .t_side_you li p strong em { font-family: Arial; font-weight: normal; }
 .t_side_you li:last-child { border-bottom: 0px; }
 
@@ -831,8 +831,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_side_hotel li a { width: 130px; height: 22px; display: block; color: #333333; }
 .t_side_hotel li a:hover { color: #ff6600; }
 .t_side_hotel li span { width: auto; height: 22px; display: block; font-weight: normal; color: #999999; }
-.t_side_hotel li span em { color: #ff9900; font-family: Arial; }
-.t_side_hotel li span strong { color: #ff9900; font-family: Arial; }
+.t_side_hotel li span em { color: #ff6600; font-family: Arial; }
+.t_side_hotel li span strong { color: #ff6600; font-family: Arial; }
 .t_side_hotel li:last-child { border-bottom: 0px; }
 
 .t_hotTab { background: #ffffff; border-left: 1px solid #dddddd; }
@@ -1017,6 +1017,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .posr { right: 10px; }
 
 .w730 { width: 730px; }
+
+.tagsback-orange { border-color: #FF6600; }
+.tagsback-orange em { background: #FF6600; }
+.tagsback-orange i { color: #FF6600; }
 
 .tagsback-pink { border-color: #FF4499; }
 .tagsback-pink em { background: #FF4499; }

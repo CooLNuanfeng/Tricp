@@ -173,6 +173,9 @@ $(function(){
 	function getLength(str){
 		return String(str).replace(/[^\x00-\xff]/g,'aa').length;
 	}
+	function getLength2(str){
+		return String(str).replace(/[^\x00-\xff]/g,'a').length;
+	}
 	
 	
 	
@@ -609,11 +612,12 @@ $(function(){
 
 	//修改游记标题
 	$('.modifyTricpName').click(function(){
+		$(this).html('<i class="icon icon_modifyTitle"></i>完成');
 		$(this).siblings('.tricpTitle').hide();
 		$(this).siblings('.t_editingTitle').show();
 	});
 	$('.t_editingTitle').bind('input propertychange',function(){
-		var len = Math.ceil( getLength( $(this).val() )/2 );
+		var len = Math.ceil( getLength2( $(this).val() )/2 );
 		$(this).siblings('.leftTxt').show();
 		if(len>30){
 			$(this).parent().addClass('error');
@@ -628,6 +632,7 @@ $(function(){
 		$(this).siblings('.leftTxt').hide();
 		$(this).siblings('.tricpTitle').text($(this).val()).show();
 		$(this).hide();
+		$('.modifyTricpName').html('<i class="icon icon_modifyTitle"></i>修改');
 	});
 
 

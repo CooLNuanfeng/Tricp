@@ -1968,6 +1968,7 @@ scrollbar-base-color:#E3E3E3;
 	img{
 		width: 130px;
 		height: 85px;
+		cursor: all-scroll;
 	}
 }
 //图片描述样式
@@ -2076,7 +2077,7 @@ scrollbar-base-color:#E3E3E3;
 		width: 610px;
 		height: 200px;
 		overflow: hidden;
-		overflow-y: none;
+		overflow-y: auto;
 		outline: none;
 		padding: 10px;
 		border: 1px solid #DDDDDD;
@@ -3254,7 +3255,7 @@ scrollbar-base-color:#E3E3E3;
 			color: $txtGray;
 			strong{
 				font-family: Arial;
-				color: $orange;
+				color: #ff6600;
 				em{
 					font-family: Arial;
 					font-weight: normal;
@@ -3296,11 +3297,11 @@ scrollbar-base-color:#E3E3E3;
 			font-weight: normal;
 			color: $txtGray;
 			em{
-				color: $orange;
+				color: #ff6600;
 				font-family: Arial;
 			}
 			strong{
-				color: $orange;
+				color: #ff6600;
 				font-family: Arial;
 			}
 		}
@@ -3999,6 +4000,15 @@ scrollbar-base-color:#E3E3E3;
 .pr20{padding-right: 20px;}
 .posr{right: 10px;}
 .w730{width: 730px;}
+.tagsback-orange{
+	border-color: #FF6600;
+	em{
+		background: #FF6600;
+	}
+	i{
+		color: #FF6600;
+	}
+}
 .tagsback-pink{
 	border-color: #FF4499;
 	em{
