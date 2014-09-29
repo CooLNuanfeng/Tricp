@@ -92,7 +92,7 @@ function calendar(){
 var calendar = pandora.calendar({ 
 trigger: ".J_calendar", 
 triggerClass: "J_calendar", 
-//offsetAmount:{left:-287,top:0},
+offsetAmount:{left:-256,top:0},
 //selectDateCallback: selectDateCallback, 
 cascade: { 
 days: 1, // 天数叠加一天 

@@ -63,22 +63,23 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .mengban { display: none; width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); z-index: 998; }
 :root .mengban { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 
+.createInfo { width: 900px; margin: 0 auto; }
 .createInfo h4 { font-family: "微软雅黑"; font-size: 22px; font-weight: normal; margin-bottom: 20px; color: #333333; background: url(../image/txt_bg.png) 100px 2px no-repeat; }
 .createInfo h4 .t_name { margin-right: 630px; }
 
 .createInput { position: relative; }
 
-.input_name { width: 660px; padding: 10px; padding-right: 36px; margin-right: 4px; height: 26px; line-height: 26px; font-size: 14px; outline: none; border: 2px solid #dddddd; }
+.input_name { width: 624px; padding: 10px; padding-right: 70px; margin-right: 4px; height: 26px; line-height: 26px; font-size: 14px; outline: none; border: 2px solid #dddddd; }
 .input_name.active { border: 2px solid #ff9900; }
 .input_name.error { border: 2px solid #cc0000; }
 
 .input_time { width: 160px; padding: 10px; height: 26px; outline: none; line-height: 26px; border: 1px solid #dddddd; -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); -ms-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); -o-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); }
 
-.leftTxt { display: none; position: absolute; top: 15px; left: 676px; color: #999999; }
+.leftTxt { display: none; position: absolute; top: 15px; left: 639px; color: #999999; }
 .leftTxt span { color: #ff9900; }
 .leftTxt span.error { color: #cc0000; }
 
-.icon_calendar { position: absolute; top: 12px; right: 300px; background-position: -25px 0px; }
+.icon_calendar { position: absolute; top: 12px; right: 200px; background-position: -25px 0px; }
 
 .activityInfo { margin-top: 3px; height: 36px; line-height: 36px; color: #666666; }
 .activityInfo a { margin-left: 10px; color: #999999; }
@@ -89,16 +90,18 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .icon_moreLeft { width: 10px; background-position: -6px -27px; }
 
-.relatedOrdersInfo { position: relative; width: 900px; height: 39px; line-height: 39px; font-family: "微软雅黑"; font-size: 14px; color: #333333; }
+.relatedOrdersInfo { position: relative; width: 900px; height: 39px; margin: 0 auto; line-height: 39px; font-family: "微软雅黑"; font-size: 14px; color: #333333; }
 .relatedOrdersInfo p a { color: #0099cc; font-family: "宋体"; font-size: 12px; }
+.relatedOrdersInfo p a:hover { color: #ff6600; }
+.relatedOrdersInfo p a:hover .icon_blueArrow { background-position: -30px -28px; }
 
 .answer { display: none; width: 218px; border: 1px solid #dddddd; padding: 10px; line-height: 22px; font-size: 12px; font-family: "宋体"; background: #ffffff; color: #666666; position: absolute; left: 137px; top: -60px; -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1); -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1); -ms-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1); -o-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1); box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1); }
 
-.ordersListBox { padding: 10px 20px; width: 858px; background: #ffffff; border: 1px solid #dddddd; }
+.ordersListBox { padding: 10px 20px; width: 860px; margin: 0 auto; background: #ffffff; border: 1px solid #dddddd; }
 .ordersListBox ul { padding-right: 20px; height: 72px; overflow-y: auto; }
 .ordersListBox li { height: 36px; overflow: hidden; line-height: 36px; }
-.ordersListBox li span { float: left; width: 60px; height: 36px; display: block; color: #999999; margin-right: 10px; }
-.ordersListBox li a { width: 710px; height: 36px; display: block; float: left; color: #333333; }
+.ordersListBox li span { float: left; width: 70px; height: 36px; display: block; color: #999999; margin-right: 10px; }
+.ordersListBox li a { width: 700px; height: 36px; display: block; float: left; color: #333333; }
 .ordersListBox li a:hover { color: #ff6600; }
 .ordersListBox li .select { display: inline-block; width: 45px; height: 22px; margin-top: 6px; background: url(../image/select_bg.png) no-repeat; }
 .ordersListBox li .select:hover { background: url(../image/select_hover_bg.png) no-repeat; }

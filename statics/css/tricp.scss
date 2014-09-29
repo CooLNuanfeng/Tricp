@@ -223,6 +223,8 @@ scrollbar-base-color:#E3E3E3;
 
 //创建页面样式
 .createInfo{
+	width: 900px;
+	margin: 0 auto;
 	h4{
 		font-family: "微软雅黑";
 		font-size: 22px;
@@ -239,9 +241,9 @@ scrollbar-base-color:#E3E3E3;
 	position: relative;
 }
 .input_name{
-	width: 660px;
+	width: 624px;
 	padding: 10px;
-	padding-right: 36px;
+	padding-right: 70px;
 	margin-right: 4px;
 	height: 26px;
 	line-height: 26px;
@@ -272,7 +274,7 @@ scrollbar-base-color:#E3E3E3;
 	display: none;
 	position: absolute;
 	top: 15px;
-	left: 676px;
+	left: 639px;
 	color: $txtGray;
 	span{
 		color: $orange;
@@ -284,7 +286,7 @@ scrollbar-base-color:#E3E3E3;
 .icon_calendar{
 	position: absolute;
 	top: 12px;
-	right: 300px;
+	right: 200px;
 	background-position: -25px 0px;
 }
 
@@ -319,6 +321,7 @@ scrollbar-base-color:#E3E3E3;
 	position: relative;
 	width: 900px;
 	height: 39px;
+	margin: 0 auto;
 	line-height: 39px;
 	font-family: "微软雅黑";
 	font-size: 14px;
@@ -327,6 +330,12 @@ scrollbar-base-color:#E3E3E3;
 		color: $txtBlue;
 		font-family: "宋体";
 		font-size: 12px;
+		&:hover{
+			color: #ff6600;
+			.icon_blueArrow{
+				background-position: -30px -28px;
+			}
+		}
 	}
 }
 .answer{
@@ -350,7 +359,8 @@ scrollbar-base-color:#E3E3E3;
 }
 .ordersListBox{
 	padding: 10px 20px;
-	width: 858px;
+	width: 860px;
+	margin: 0 auto;
 	background: #ffffff;
 	border: 1px solid $borderColor;
 	ul{
@@ -364,14 +374,14 @@ scrollbar-base-color:#E3E3E3;
 		line-height: 36px;
 		span{
 			float: left;
-			width: 60px;
+			width: 70px;
 			height: 36px;
 			display: block;
 			color: $txtGray;
 			margin-right: 10px;
 		}
 		a{
-			width: 710px;
+			width: 700px;
 			height: 36px;
 			display: block;
 			float: left;
