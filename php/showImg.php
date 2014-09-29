@@ -2,9 +2,7 @@
 	$_POST['picId'];
 	
 	$arr = array(
-		'src'=>'http://localhost/www/Tricp/statics/image/002.png',
-		'width'=>960,
-		'height'=>335
+		'src'=>'http://localhost/www/Tricp/statics/image/18.jpg'
 	);
 	
 	echo json_encode($arr); 

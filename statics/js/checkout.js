@@ -237,6 +237,45 @@ $(function(){
 		})
 		
 
+		//图片弹层分享
+		var shareTxt2 = '';
+		var shareUrl2 ='';
+		var shareImgSrc2 ='';
+		$('.picImgNav li:eq(2)').mouseover(function(){
+			var _this = this;
+			$('.shareBox2').show().css({
+				top: $(_this).offset().top+30,
+				left: $(_this).offset().left - 128,
+				zIndex : 9999999
+			})
+		}).mouseout(function(){
+			$('.shareBox2').hide();
+		});
+		$('.shareBox2').mouseover(function(){
+			$(this).show();
+		}).mouseout(function(){
+			$(this).hide();
+		});
+
+
+		//新浪分享
+		$('.shareBox2 a:eq(0)').click(function(){
+			var title = shareTxt2; //定义分享，等待 
+			var url = shareUrl2; //页面链接 
+			var img = shareImgSrc2; //分享的图片路径 
+			var fxHref = 'http://service.weibo.com/share/share.php?title='+ title +'&url='+ url +'&source=bookmark&appkey=2992571369&pic='+ img +'&ralateUid=&sudaref=s.jiathis.com'; 
+			window.open(fxHref); 
+		})
+		//QQ分享
+		$('.shareBox2 a:eq(1)').click(function(){
+			var title = shareTxt2; //定义分享，等待 
+			var url = encodeURIComponent(shareUrl2); //页面链接 
+			var img = shareImgSrc2; //分享的图片路径
+			console.info(url);
+			var fxHref = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+url+'&title='+shareTxt+'&desc=&summary=&site=&pics='+img
+			window.open(fxHref); 
+		})
+
 
 
 
@@ -246,7 +285,8 @@ $(function(){
 			$('.t_point').each(function(){
 				if( $(this).attr('data-md') == hash ){
 					var T = $(this).offset().top -140;
-					$('html body').animate({
+
+					$('html,body').animate({
 						scrollTop : T
 					},'fast')
 				}
@@ -258,7 +298,7 @@ $(function(){
 					var T = $('.publishCommit').offset().top - 90
 				}
 
-				$('html body').animate({
+				$('html,body').animate({
 					scrollTop : T
 				},'fast')
 			}
@@ -315,7 +355,7 @@ $(function(){
 			$(this).parent().parent().find('.t_side_you').hide();
 			$(this).parent().parent().find('.t_side_you').eq($(this).index()).show();
 		})
-		$('.t_hotTab li').click(function(){
+		$('.t_hotTab li').mouseover(function(){
 			$('.t_hotTab li').removeClass('active');
 			$(this).addClass('active');
 			$('.t_side_hotTricp').hide();
@@ -486,24 +526,30 @@ $(function(){
 				data:{picId : picID},
 				dataType: 'json',
 				success: function(res){
-					var w = res.width;
-					var h = res.height;
-					var src = res.src;
-					$('.picIMG').width(w+42);
-					$('.picInfo i').html(day.toUpperCase());
-					$('.picInfo span').html(point);
-					$('.picIMG img').attr('src',src);
-					$('.picIMG p').html($(_this).next().find('.t_articalTxt').html());
-					if(h+txtH>T-100){
-						$('.picImgCon').css({
-							height: T-100,
-							width: w+42
-						})
-					}else{
-						$('.picImgCon').css({
-							height: 'auto',
-							width: w+22
-						})
+					var img = new Image();
+					img.src = res.src;
+					var w =0;
+					var h=0;
+					img.onload=function(){
+						w = img.width;
+						h = img.height;
+						var src = res.src;
+						$('.picIMG').width(w+42);
+						$('.picInfo i').html(day.toUpperCase());
+						$('.picInfo span').html(point);
+						$('.picIMG img').attr('src',src);
+						$('.picIMG p').html($(_this).next().find('.t_articalTxt').html());
+						if(h+txtH>T-100){
+							$('.picImgCon').css({
+								height: T-100,
+								width: w+42
+							})
+						}else{
+							$('.picImgCon').css({
+								height: 'auto',
+								width: w+22
+							})
+						}
 					}
 
 				}
@@ -626,6 +672,13 @@ $(function(){
 				data:{picId : picID},
 				dataType: 'json',
 				success: function(res){
+					var img = new Image();
+					img.src = res.src;
+					var w =0;
+					var h=0;
+					img.onload = function(){
+
+					}
 					var w = res.width;
 					var h = res.height;
 					var src = res.src;

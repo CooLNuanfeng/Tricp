@@ -75,7 +75,7 @@ $(function(){
 		})
 		$('.t_diaTitle').html('修改拍摄点');
 		$('.t_addInfoBox').hide();
-		$('#t_searchInput').show();
+		$('#t_searchInput').show().val($(this).next().html());
 		var L = $(window).width();
 		var T = $(window).height();
 		$('.mengban').show();
@@ -442,7 +442,7 @@ $(function(){
 
 	//右侧图片拖拽关联部分
 	
-	$('#picList li:not("#uploadBtnLi")').live('click',function(){
+	$('#picList li:not("#uploadBtnLi")').live('click',function(e){
 		if($(this).attr('data-relate')!='ok'){   //防止重复显示
 			$(this).addClass('selectLi');
 			$(this).find('.upStatus').hide();
@@ -510,6 +510,7 @@ $(function(){
 									$('#'+res[i]).find('.uploadSuccess').hide();
 									$('#'+res[i]).find('.relatedFailure').hide();
 									$('#'+res[i]).find('.relatedSuccess').show();
+									$('#'+res[i]).find('.relatedSuccess p').html($picObj.find('p strong').html());
 									$('#'+res[i]).attr('data-relate','ok');  //确定已关联
 								};
 
@@ -522,7 +523,8 @@ $(function(){
 						$('.dragDivPic').remove();
 						picDrag($('#picList'));
 					}
-					
+					$(document).unbind('mouseup');
+					$(document).unbind('mousemove');
 				});
 				return false;
 			}
@@ -611,7 +613,7 @@ $(function(){
 
 			FilesAdded: function(up, files) {
 				plupload.each(files, function(file) {					
-					var $item = $('<li id="'+file.id+'"><i class="icon icon_closeLi"></i><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
+					var $item = $('<li id="'+file.id+'"><i class="icon icon_closeLi"></i><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i><p></p></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
 					var image = $(new Image()).appendTo($item);
 					$('#picList').append($item);
 					var preloader = new mOxie.Image();

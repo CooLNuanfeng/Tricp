@@ -12,7 +12,6 @@ $error: #CC0000;
 
 $w_main: 1200px;
 
-
 //滚动条样式设置
 body{ 
 scrollbar-arrow-color: #fff; 
@@ -147,7 +146,7 @@ scrollbar-base-color:#E3E3E3;
 		a{
 			color: $txtNormal;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		
@@ -158,7 +157,7 @@ scrollbar-base-color:#E3E3E3;
 	a{
 		color: $txtNormal;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 		}
 	}
 }
@@ -172,7 +171,7 @@ scrollbar-base-color:#E3E3E3;
 	a{
 		color: #cccccc;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 		}
 	}
 	span{
@@ -298,7 +297,7 @@ scrollbar-base-color:#E3E3E3;
 		margin-left: 10px;
 		color: $txtGray;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 			.icon_moreLeft{
 				background-position: -31px -27px;
 			}
@@ -379,7 +378,7 @@ scrollbar-base-color:#E3E3E3;
 			@extend %textoverflow;
 			color: $txtBlack;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		.select{
@@ -502,7 +501,7 @@ scrollbar-base-color:#E3E3E3;
 			@extend %textoverflow;
 			color: $txtBlack;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		.select{
@@ -612,7 +611,7 @@ scrollbar-base-color:#E3E3E3;
 			font-size: 12px;
 			font-family: "宋体";
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 	}
@@ -657,7 +656,7 @@ scrollbar-base-color:#E3E3E3;
 			top: 1px;
 			color: $txtBlue;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		&:hover{
@@ -812,6 +811,13 @@ scrollbar-base-color:#E3E3E3;
 	top: 0px;
 	left: 0px;
 	@include bg();
+	p{
+		width: 100px;
+		margin: 0 auto;
+		color: #ffffff;
+		overflow: hidden;
+		height: 22px;
+	}
 }
 
 
@@ -905,7 +911,7 @@ scrollbar-base-color:#E3E3E3;
 	left: 20px;
 	color: $txtBlue;
 	&:hover{
-		color: $orange;
+		color: #ff6600;
 		.icon_addDay{
 			background-position: -376px -3px;
 		}
@@ -1250,7 +1256,7 @@ scrollbar-base-color:#E3E3E3;
 		float: left;
 		color: #ffffff;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 			.icon_des{
 				background-position: -125px -25px;
 			}
@@ -1614,7 +1620,7 @@ scrollbar-base-color:#E3E3E3;
 		font-size: 14px;
 		color: $txtNormal;
 		&:hover,&.active{
-			color: $orange;
+			color: #ff6600;
 			text-decoration: none;
 			.icon_views{
 				background-position: -200px 0px;
@@ -1651,7 +1657,7 @@ scrollbar-base-color:#E3E3E3;
 	background-position: -150px 0px;
 }
 .icon_views_active{
-	background-position: 0px -100px;
+	background-position: 0px -103px;
 }
 .icon_hotels{
 	background-position: -250px 0px;
@@ -1790,7 +1796,7 @@ scrollbar-base-color:#E3E3E3;
 			margin-right: 10px;
 			color: $txtBlack;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		span{
@@ -1802,7 +1808,7 @@ scrollbar-base-color:#E3E3E3;
 				color: $txtBlue;
 			}
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 				span{
 					color: $orange;
 				}
@@ -1824,7 +1830,7 @@ scrollbar-base-color:#E3E3E3;
 			margin-right: 10px;
 			color: $txtBlue;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		
@@ -1928,7 +1934,7 @@ scrollbar-base-color:#E3E3E3;
 		a{
 			color: $txtGray;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 	}
@@ -2029,7 +2035,7 @@ scrollbar-base-color:#E3E3E3;
 			background-position: -196px -25px;
 		}
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 			.icon_des{
 				background-position: -123px -25px;
 			}
@@ -2189,7 +2195,7 @@ scrollbar-base-color:#E3E3E3;
 			margin-left: 50px;
 			color: $txtBlue;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 				.icon_modifyTitle{
 					background-position: -475px -2px;
 				}
@@ -2243,7 +2249,7 @@ scrollbar-base-color:#E3E3E3;
 		line-height: 24px;
 		color: $txtGray;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 			text-decoration: none;
 			.icon_zan{
 				background-position: -200px -77px;
@@ -2313,7 +2319,7 @@ scrollbar-base-color:#E3E3E3;
 		a{
 			color: $txtBlue;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 				.icon_modifyTitle{
 					background-position: -475px -2px;
 				}
@@ -2336,7 +2342,7 @@ scrollbar-base-color:#E3E3E3;
 		color: $txtGray;
 		border-right: 1px dotted $borderColor;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 			text-decoration: none;
 			.icon_zan{
 				background-position: -200px -77px;
@@ -2463,7 +2469,7 @@ scrollbar-base-color:#E3E3E3;
 		a{
 			color: $txtBlue;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 	}
@@ -2488,7 +2494,20 @@ scrollbar-base-color:#E3E3E3;
 			font-family: Arial;
 		}
 		&:hover{
-			color: $orange;
+			color: #ff6600;
+			.icon_sm_zan{
+				background-position: -200px -50px;
+			}
+			.icon_sm_commit{
+				background-position: -250px -50px;
+			}
+
+			.icon_sm_share{
+				background-position: -300px -50px;
+			}
+		}
+		&.active{
+			color: #ff6600;
 			.icon_sm_zan{
 				background-position: -200px -50px;
 			}
@@ -2502,6 +2521,12 @@ scrollbar-base-color:#E3E3E3;
 		}
 	}
 	.t_arcitalPoint:hover{
+		color: #BBBBBB;
+	}
+	.t_arcitalPoint.active{
+		&:hover{
+			color: #ff6600;
+		}
 		.icon_sm_view{
 			background-position: 0px -105px;
 		}
@@ -2545,7 +2570,9 @@ scrollbar-base-color:#E3E3E3;
 	}
 }
 .t_articalPicTxt{
-	padding: 20px 20px 0px;
+	padding: 20px;
+	border: 1px solid $borderColor;
+	border-top: 0px;
 	position: relative;
 	top: -20px;
 	left: 0px;
@@ -2570,7 +2597,7 @@ scrollbar-base-color:#E3E3E3;
 	background: #FBFBFB;
 	position: relative;
 	textarea{
-		width: 656px;
+		width: 650px;
 		height: 60px;
 		outline: none;
 		border: 1px solid $borderColor;
@@ -2610,8 +2637,13 @@ scrollbar-base-color:#E3E3E3;
 }
 
 .longCommit{
+	width: 660px;
+	margin: 0 auto;
 	.t_picComlist li p{
 		width: 597px;
+	}
+	.icon_upArrow{
+		right: 40px;
 	}
 }
 .t_picComlist{
@@ -2631,7 +2663,7 @@ scrollbar-base-color:#E3E3E3;
 			display: block;
 			float: right;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 	}
@@ -2762,7 +2794,7 @@ scrollbar-base-color:#E3E3E3;
 		color: $txtBlue;
 		display: block;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 		}
 	}
 }
@@ -3015,7 +3047,7 @@ scrollbar-base-color:#E3E3E3;
 			color: $txtNormal;
 			font-weight: normal;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 				.icon_more{
 					background-position: -30px -27px;
 				}
@@ -3123,7 +3155,7 @@ scrollbar-base-color:#E3E3E3;
 	a{
 		color: $txtBlue;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 		}
 	}
 }
@@ -3150,7 +3182,7 @@ scrollbar-base-color:#E3E3E3;
 			line-height: 20px;
 			color: $txtBlack;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		span{
@@ -3205,7 +3237,7 @@ scrollbar-base-color:#E3E3E3;
 			overflow: hidden;
 			color: $txtBlack;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		p{
@@ -3244,7 +3276,7 @@ scrollbar-base-color:#E3E3E3;
 			color: $txtBlack;
 			@extend %textoverflow;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		span{
@@ -3328,7 +3360,7 @@ scrollbar-base-color:#E3E3E3;
 			line-height: 18px;
 			color: $txtBlack;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		.icon_user{
@@ -3410,14 +3442,14 @@ scrollbar-base-color:#E3E3E3;
 		a{
 			color: $txtGray;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 			}
 		}
 		&.active{
 			a{
 				color: $txtBlack;
 				&:hover{
-					color: $orange;
+					color: #ff6600;
 				}
 			}
 		}
@@ -3507,11 +3539,34 @@ scrollbar-base-color:#E3E3E3;
 		line-height: 104px;
 		color: $txtNormal;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 		}
 	}
 }
-
+.shareBox2{
+	position: absolute;
+	display: none;
+	z-index: 9999;
+	top: 20px;
+	left: 200px;
+	width: 128px;
+	height: 72px;
+	background: url(../image/shareIcon_bg2.png) no-repeat;
+	a{
+		width:64px;
+		height: 72px;
+		display: block;
+		float: left;
+		text-align: center;
+		padding: 0px;
+		border: 0px;
+		line-height: 104px;
+		color: $txtNormal;
+		&:hover{
+			color: #ff6600;
+		}
+	}
+}
 
 //弹层确认和取消样式
 .t_config{
@@ -3733,6 +3788,12 @@ scrollbar-base-color:#E3E3E3;
 			.icon_piccom{
 				background-position: -250px -50px;
 			}
+			.icon_piczan{
+				background-position: -200px -50px;
+			}
+			.icon_picshare{
+				background-position: -300px -50px;
+			}
 		}
 		&:hover{
 			color: #ff6600;
@@ -3750,6 +3811,8 @@ scrollbar-base-color:#E3E3E3;
 	}
 
 }
+
+
 
 .icon_piczan{
 	background-position: -325px -50px;
@@ -3788,7 +3851,7 @@ scrollbar-base-color:#E3E3E3;
 			font-size: 12px;
 			color: $txtNormal;
 			&:hover{
-				color: $orange;
+				color: #ff6600;
 				.icon_toRight{
 					background-position: -425px -50px;
 				}
@@ -3901,7 +3964,7 @@ scrollbar-base-color:#E3E3E3;
 	a{
 		color: $txtBlue;
 		&:hover{
-			color: $orange;
+			color: #ff6600;
 			.icon_blueArrow{
 				background-position: -30px -28px;
 			}

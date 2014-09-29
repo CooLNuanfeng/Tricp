@@ -43,15 +43,15 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .user div { float: left; margin-right: 5px; overflow: hidden; border-radius: 50%; }
 .user p { float: left; }
 .user p a { color: #666666; }
-.user p a:hover { color: #ff9900; }
+.user p a:hover { color: #ff6600; }
 
 .userLeave { float: left; }
 .userLeave a { color: #666666; }
-.userLeave a:hover { color: #ff9900; }
+.userLeave a:hover { color: #ff6600; }
 
 .footerNav { height: 40px; line-height: 40px; background: #1F1F1F; color: #cccccc; }
 .footerNav a { color: #cccccc; }
-.footerNav a:hover { color: #ff9900; }
+.footerNav a:hover { color: #ff6600; }
 .footerNav span { padding: 0 8px; }
 .footerNav p { color: #666666; }
 
@@ -82,7 +82,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .activityInfo { margin-top: 3px; height: 36px; line-height: 36px; color: #666666; }
 .activityInfo a { margin-left: 10px; color: #999999; }
-.activityInfo a:hover { color: #ff9900; }
+.activityInfo a:hover { color: #ff6600; }
 .activityInfo a:hover .icon_moreLeft { background-position: -31px -27px; }
 
 .icon_notice { margin-right: 5px; background-position: 0px -3px; }
@@ -99,7 +99,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .ordersListBox li { height: 36px; overflow: hidden; line-height: 36px; }
 .ordersListBox li span { float: left; width: 60px; height: 36px; display: block; color: #999999; margin-right: 10px; }
 .ordersListBox li a { width: 710px; height: 36px; display: block; float: left; color: #333333; }
-.ordersListBox li a:hover { color: #ff9900; }
+.ordersListBox li a:hover { color: #ff6600; }
 .ordersListBox li .select { display: inline-block; width: 45px; height: 22px; margin-top: 6px; background: url(../image/select_bg.png) no-repeat; }
 .ordersListBox li .select:hover { background: url(../image/select_hover_bg.png) no-repeat; }
 .ordersListBox li .select_a { width: 25px; height: 25px; border: 0; margin-top: 5px; margin-left: 10px; background: url(../image/tricp_icon.png) -75px 0px no-repeat; }
@@ -126,7 +126,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tabListBox li { height: 36px; overflow: hidden; line-height: 36px; }
 .tabListBox li span { float: left; width: 60px; height: 36px; display: block; color: #999999; margin-right: 10px; }
 .tabListBox li a { width: 500px; height: 36px; display: block; float: left; color: #333333; }
-.tabListBox li a:hover { color: #ff9900; }
+.tabListBox li a:hover { color: #ff6600; }
 .tabListBox li .select { display: inline-block; width: 45px; height: 22px; margin-top: 6px; background: url(../image/select_bg.png) no-repeat; }
 .tabListBox li .select:hover { background: url(../image/select_hover_bg.png) no-repeat; }
 .tabListBox li .select_a { width: 25px; height: 25px; border: 0; margin-top: 5px; margin-left: 10px; background: url(../image/tricp_icon.png) -75px 0px no-repeat; }
@@ -146,7 +146,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_day_album dt:hover { background: #FFF5E5; border-left: 5px solid #ff9900; text-indent: 17px; }
 .t_day_album dt:hover a { display: block; }
 .t_day_album dt a { display: none; margin-right: 10px; font-weight: normal; color: #666666; font-size: 12px; font-family: "宋体"; }
-.t_day_album dt a:hover { color: #ff9900; }
+.t_day_album dt a:hover { color: #ff6600; }
 .t_day_album dd { padding-left: 20px; }
 
 .dragLi, .dragCloneli { float: left; position: relative; list-style: none; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: all-scroll; -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -ms-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); -o-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05); }
@@ -154,7 +154,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .dragLi p, .dragCloneli p { color: #333333; text-align: center; height: 30px; line-height: 30px; position: relative; }
 .dragLi p strong, .dragCloneli p strong { width: 72px; font-weight: normal; display: inline-block; }
 .dragLi p a, .dragCloneli p a { position: absolute; display: none; right: 2px; top: 1px; color: #0099cc; }
-.dragLi p a:hover, .dragCloneli p a:hover { color: #ff9900; }
+.dragLi p a:hover, .dragCloneli p a:hover { color: #ff6600; }
 .dragLi p:hover a, .dragCloneli p:hover a { display: block; }
 .dragLi span, .dragCloneli span { position: absolute; top: 3px; right: 3px; color: #ffffff; padding: 2px 8px; display: block; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
 :root .dragLi span, :root .dragCloneli span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
@@ -194,6 +194,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .relatedSuccess { display: none; text-align: center; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
 :root .relatedSuccess { filter: none; background-color: rgba(0, 0, 0, 0.5); }
+.relatedSuccess p { width: 100px; margin: 0 auto; color: #ffffff; overflow: hidden; height: 22px; }
 
 .relatedFailure { display: none; position: absolute; width: 100%; height: 22px; line-height: 22px; left: 0px; bottom: 0px; text-align: center; color: #ff9900; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
 :root .relatedFailure { filter: none; background-color: rgba(0, 0, 0, 0.5); }
@@ -218,7 +219,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .dragTip { width: 126px; height: 34px; background: url(../image/dragTip.png) no-repeat; position: absolute; display: none; }
 
 .upload_addOneDay { width: 80px; height: 25px; line-height: 25px; display: block; position: absolute; bottom: 5px; left: 20px; color: #0099cc; }
-.upload_addOneDay:hover { color: #ff9900; }
+.upload_addOneDay:hover { color: #ff6600; }
 .upload_addOneDay:hover .icon_addDay { background-position: -376px -3px; }
 
 .icon_addDay { background-position: -250px -3px; }
@@ -295,7 +296,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .successPic { display: none; position: absolute; bottom: 0px; left: 0px; height: 25px; width: 130px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
 :root .successPic { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 .successPic a { width: 50%; height: 25px; line-height: 25px; display: block; float: left; color: #ffffff; }
-.successPic a:hover { color: #ff9900; }
+.successPic a:hover { color: #ff6600; }
 .successPic a:hover .icon_des { background-position: -125px -25px; }
 .successPic a:hover .icon_deldd { background-position: -150px -25px; }
 
@@ -383,7 +384,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_tabAddPoint { padding: 15px 0; }
 .t_tabAddPoint a { padding: 0 20px; width: 50px; height: 80px; display: inline-block; text-align: center; font-family: "微软雅黑"; font-size: 14px; color: #666666; }
-.t_tabAddPoint a:hover, .t_tabAddPoint a.active { color: #ff9900; text-decoration: none; }
+.t_tabAddPoint a:hover, .t_tabAddPoint a.active { color: #ff6600; text-decoration: none; }
 .t_tabAddPoint a:hover .icon_views, .t_tabAddPoint a.active .icon_views { background-position: -200px 0px; }
 .t_tabAddPoint a:hover .icon_hotels, .t_tabAddPoint a.active .icon_hotels { background-position: -300px 0px; }
 .t_tabAddPoint a:hover .icon_caterings, .t_tabAddPoint a.active .icon_caterings { background-position: -400px 0px; }
@@ -395,7 +396,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .icon_views { background-position: -150px 0px; }
 
-.icon_views_active { background-position: 0px -100px; }
+.icon_views_active { background-position: 0px -103px; }
 
 .icon_hotels { background-position: -250px 0px; }
 
@@ -443,16 +444,16 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_TipsList li { width: 630px; padding-left: 8px; overflow: hidden; height: 40px; line-height: 40px; }
 .t_TipsList li i { margin-right: 10px; }
 .t_TipsList li a { font-size: 14px; margin-right: 10px; color: #333333; }
-.t_TipsList li a:hover { color: #ff9900; }
+.t_TipsList li a:hover { color: #ff6600; }
 .t_TipsList li span { color: #999999; }
 .t_TipsList li a.t_tipsAdd { color: #0099cc; }
 .t_TipsList li a.t_tipsAdd span { color: #0099cc; }
-.t_TipsList li a.t_tipsAdd:hover { color: #ff9900; }
+.t_TipsList li a.t_tipsAdd:hover { color: #ff6600; }
 .t_TipsList li a.t_tipsAdd:hover span { color: #ff9900; }
 .t_TipsList li:hover { background: #F5F5F5; }
 .t_TipsList .last { width: 630px; padding-left: 8px; overflow: hidden; height: 40px; line-height: 40px; border-top: 1px dotted #dddddd; }
 .t_TipsList .last a { font-size: 14px; margin-right: 10px; color: #0099cc; }
-.t_TipsList .last a:hover { color: #ff9900; }
+.t_TipsList .last a:hover { color: #ff6600; }
 
 .t_tipsFinish { margin: 20px auto; text-align: center; width: 160px; height: 40px; line-height: 40px; color: #ffffff; font-family: "微软雅黑"; font-size: 18px; border-radius: 5px; display: block; background: #ff9900; }
 .t_tipsFinish:hover { background: #ff6600; color: #ffffff; text-decoration: none; }
@@ -480,7 +481,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .treeNav dt.active span { display: block; }
 .treeNav dd { height: 22px; line-height: 22px; padding-right: 10px; text-align: right; }
 .treeNav dd a { color: #999999; }
-.treeNav dd a:hover { color: #ff9900; }
+.treeNav dd a:hover { color: #ff6600; }
 .treeNav .treeBox { margin-right: -7px; padding-right: 7px; }
 
 .editNav { width: 200px; padding-left: 127px; border-right: 3px solid #dddddd; position: relative; }
@@ -501,7 +502,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .txt_description a { color: #666666; margin-left: 8px; }
 .txt_description a .icon_des { background-position: -172px -25px; }
 .txt_description a .icon_deldd { background-position: -196px -25px; }
-.txt_description a:hover { color: #ff9900; }
+.txt_description a:hover { color: #ff6600; }
 .txt_description a:hover .icon_des { background-position: -123px -25px; }
 .txt_description a:hover .icon_deldd { background-position: -147px -25px; }
 .txt_description div { text-align: right; }
@@ -538,7 +539,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_userInfo dt div img { border-radius: 50%; }
 .tl_userInfo dd { float: left; width: 658px; position: relative; margin-top: 10px; }
 .tl_userInfo dd a { margin-left: 50px; color: #0099cc; }
-.tl_userInfo dd a:hover { color: #ff9900; }
+.tl_userInfo dd a:hover { color: #ff6600; }
 .tl_userInfo dd a:hover .icon_modifyTitle { background-position: -475px -2px; }
 .tl_userInfo dd p { color: #666666; }
 .tl_userInfo dd p span { color: #999999; }
@@ -551,7 +552,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .tl_shareCollection { position: absolute; top: 20px; right: 0px; }
 .tl_shareCollection a { display: block; float: left; padding: 0 15px; border-right: 1px solid #dddddd; text-align: center; height: 24px; line-height: 24px; color: #999999; }
-.tl_shareCollection a:hover { color: #ff9900; text-decoration: none; }
+.tl_shareCollection a:hover { color: #ff6600; text-decoration: none; }
 .tl_shareCollection a:hover .icon_zan { background-position: -200px -77px; }
 .tl_shareCollection a:hover .icon_commit { background-position: -250px -77px; }
 .tl_shareCollection a:hover .icon_share { background-position: -300px -77px; }
@@ -578,12 +579,12 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_userShort { height: 50px; padding: 5px; padding-left: 240px; }
 .tl_userShort p { height: 50px; line-height: 45px; position: relative; }
 .tl_userShort p a { color: #0099cc; }
-.tl_userShort p a:hover { color: #ff9900; }
+.tl_userShort p a:hover { color: #ff6600; }
 .tl_userShort p a:hover .icon_modifyTitle { background-position: -475px -2px; }
 
 .tl_shortShare { position: relative; margin-top: 6px; height: 50px; overflow: hidden; }
 .tl_shortShare a { display: block; float: left; height: 50px; line-height: 50px; padding: 0 15px; text-align: center; color: #999999; border-right: 1px dotted #dddddd; }
-.tl_shortShare a:hover { color: #ff9900; text-decoration: none; }
+.tl_shortShare a:hover { color: #ff6600; text-decoration: none; }
 .tl_shortShare a:hover .icon_zan { background-position: -200px -77px; }
 .tl_shortShare a:hover .icon_commit { background-position: -250px -77px; }
 .tl_shortShare a:hover .icon_share { background-position: -300px -77px; }
@@ -615,24 +616,30 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_laberTxt h4 { font-family: "微软雅黑"; font-size: 18px; font-weight: normal; color: #333333; }
 .t_laberTxt p { height: 22px; line-height: 22px; color: #999999; }
 .t_laberTxt p a { color: #0099cc; }
-.t_laberTxt p a:hover { color: #ff9900; }
+.t_laberTxt p a:hover { color: #ff6600; }
 
 .t_artical { font-size: 14px; color: #666666; padding: 0px 0px 12px; border-bottom: 1px dotted #dddddd; }
 
 .t_articalCommit { padding-top: 5px; height: 30px; line-height: 30px; text-align: right; }
 .t_articalCommit a { color: #BBBBBB; font-size: 12px; text-decoration: none; }
 .t_articalCommit a em { font-family: Arial; }
-.t_articalCommit a:hover { color: #ff9900; }
+.t_articalCommit a:hover { color: #ff6600; }
 .t_articalCommit a:hover .icon_sm_zan { background-position: -200px -50px; }
 .t_articalCommit a:hover .icon_sm_commit { background-position: -250px -50px; }
 .t_articalCommit a:hover .icon_sm_share { background-position: -300px -50px; }
-.t_articalCommit .t_arcitalPoint:hover .icon_sm_view { background-position: 0px -105px; }
-.t_articalCommit .t_arcitalPoint:hover .icon_sm_hotel { background-position: -25px -105px; }
-.t_articalCommit .t_arcitalPoint:hover .icon_sm_catering { background-position: -50px -105px; }
-.t_articalCommit .t_arcitalPoint:hover .icon_sm_traffic { background-position: -79px -105px; }
-.t_articalCommit .t_arcitalPoint:hover .icon_sm_shopping { background-position: -100px -105px; }
-.t_articalCommit .t_arcitalPoint:hover .icon_sm_recreation { background-position: -125px -107px; }
-.t_articalCommit .t_arcitalPoint:hover .icon_sm_other { background-position: -150px -105px; }
+.t_articalCommit a.active { color: #ff6600; }
+.t_articalCommit a.active .icon_sm_zan { background-position: -200px -50px; }
+.t_articalCommit a.active .icon_sm_commit { background-position: -250px -50px; }
+.t_articalCommit a.active .icon_sm_share { background-position: -300px -50px; }
+.t_articalCommit .t_arcitalPoint:hover { color: #BBBBBB; }
+.t_articalCommit .t_arcitalPoint.active:hover { color: #ff6600; }
+.t_articalCommit .t_arcitalPoint.active .icon_sm_view { background-position: 0px -105px; }
+.t_articalCommit .t_arcitalPoint.active .icon_sm_hotel { background-position: -25px -105px; }
+.t_articalCommit .t_arcitalPoint.active .icon_sm_catering { background-position: -50px -105px; }
+.t_articalCommit .t_arcitalPoint.active .icon_sm_traffic { background-position: -79px -105px; }
+.t_articalCommit .t_arcitalPoint.active .icon_sm_shopping { background-position: -100px -105px; }
+.t_articalCommit .t_arcitalPoint.active .icon_sm_recreation { background-position: -125px -107px; }
+.t_articalCommit .t_arcitalPoint.active .icon_sm_other { background-position: -150px -105px; }
 
 .icon_sm_zan { background-position: -175px -50px; }
 
@@ -643,13 +650,13 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_articalPic { position: relative; border-bottom: 1px solid #dddddd; }
 .t_articalPic img { vertical-align: top; width: 100%; }
 
-.t_articalPicTxt { padding: 20px 20px 0px; position: relative; top: -20px; left: 0px; }
+.t_articalPicTxt { padding: 20px; border: 1px solid #dddddd; border-top: 0px; position: relative; top: -20px; left: 0px; }
 .t_articalPicTxt p { font-size: 14px; color: #666666; }
 
 .maskCorner { width: 100%; height: 20px; position: absolute; top: 0px; left: 0px; background: url(../image/maskCorner_bg.png) no-repeat; }
 
 .t_picCommit { display: none; padding: 10px; border: 1px solid #dddddd; background: #FBFBFB; position: relative; }
-.t_picCommit textarea { width: 656px; height: 60px; outline: none; border: 1px solid #dddddd; }
+.t_picCommit textarea { width: 650px; height: 60px; outline: none; border: 1px solid #dddddd; }
 
 .t_subCommit { height: 40px; line-height: 40px; text-align: right; color: #999999; }
 .t_subCommit span { color: #ff9900; }
@@ -658,12 +665,14 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_subCommit a { width: 60px; height: 23px; line-height: 23px; text-align: center; display: inline-block; margin-left: 10px; border-radius: 3px; background: #ff9900; text-decoration: none; color: #ffffff; }
 .t_subCommit a:hover { color: #ffffff; background: #ff6600; }
 
+.longCommit { width: 660px; margin: 0 auto; }
 .longCommit .t_picComlist li p { width: 597px; }
+.longCommit .icon_upArrow { right: 40px; }
 
 .t_picComlist li { border-top: 1px dotted #dddddd; overflow: hidden; padding: 8px 0px; }
 .t_picComlist li p { width: 565px; float: left; color: #666666; }
 .t_picComlist li a { width: 30px; text-align: right; color: #0099cc; display: block; float: right; }
-.t_picComlist li a:hover { color: #ff9900; }
+.t_picComlist li a:hover { color: #ff6600; }
 .t_picComlist .t_com_user { width: 56px; color: #999999; display: block; float: left; }
 
 .icon_upArrow { position: absolute; top: -12px; right: 130px; background-position: -150px -50px; }
@@ -693,7 +702,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_commit { overflow: hidden; }
 .t_commit a { width: 35px; color: #0099cc; display: block; }
-.t_commit a:hover { color: #ff9900; }
+.t_commit a:hover { color: #ff6600; }
 
 .t_commitTxt { width: 725px; }
 .t_commitTxt p { color: #333333; }
@@ -752,7 +761,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_side_title { background: #FBFBFB; padding: 0 10px; }
 .t_side_title h6 { height: 34px; line-height: 34px; font-size: 14px; color: #666666; }
 .t_side_title h6 a { font-size: 12px; color: #666666; font-weight: normal; }
-.t_side_title h6 a:hover { color: #ff9900; }
+.t_side_title h6 a:hover { color: #ff6600; }
 .t_side_title h6 a:hover .icon_more { background-position: -30px -27px; }
 
 .icon_more { width: 15px; background-position: -5px -27px; }
@@ -789,14 +798,14 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_earnList dd span { color: #ff9900; }
 
 .t_sideNotice a { color: #0099cc; }
-.t_sideNotice a:hover { color: #ff9900; }
+.t_sideNotice a:hover { color: #ff6600; }
 
 .t_sideProList { padding: 5px 0px; overflow: hidden; }
 .t_sideProList dt { width: 90px; float: left; height: 60px; }
 .t_sideProList dt img { vertical-align: top; }
 .t_sideProList dd { width: 116px; float: left; padding-left: 10px; }
 .t_sideProList dd a { height: 40px; display: block; overflow: hidden; line-height: 20px; color: #333333; }
-.t_sideProList dd a:hover { color: #ff9900; }
+.t_sideProList dd a:hover { color: #ff6600; }
 .t_sideProList dd span { color: #ff9900; }
 .t_sideProList dd span em { font-family: Arial; }
 
@@ -807,7 +816,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_side_you li { padding: 5px 0px; position: relative; border-bottom: 1px dotted #dddddd; }
 .t_side_you li a { width: 200px; height: 44px; display: block; overflow: hidden; color: #333333; }
-.t_side_you li a:hover { color: #ff9900; }
+.t_side_you li a:hover { color: #ff6600; }
 .t_side_you li p { color: #999999; }
 .t_side_you li p strong { font-family: Arial; color: #ff9900; }
 .t_side_you li p strong em { font-family: Arial; font-weight: normal; }
@@ -817,7 +826,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_side_hotel li { border-bottom: 1px dotted #dddddd; padding: 7px 0px; overflow: hidden; }
 .t_side_hotel li a { width: 130px; height: 22px; display: block; color: #333333; }
-.t_side_hotel li a:hover { color: #ff9900; }
+.t_side_hotel li a:hover { color: #ff6600; }
 .t_side_hotel li span { width: auto; height: 22px; display: block; font-weight: normal; color: #999999; }
 .t_side_hotel li span em { color: #ff9900; font-family: Arial; }
 .t_side_hotel li span strong { color: #ff9900; font-family: Arial; }
@@ -835,7 +844,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_side_hotTricp dt { float: left; width: 100px; height: 67px; position: relative; }
 .t_side_hotTricp dd { width: 108px; line-height: 18px; padding-left: 10px; float: left; color: #999999; }
 .t_side_hotTricp dd a { height: 32px; display: block; line-height: 18px; color: #333333; }
-.t_side_hotTricp dd a:hover { color: #ff9900; }
+.t_side_hotTricp dd a:hover { color: #ff6600; }
 .t_side_hotTricp dd .icon_user { width: 18px; height: 18px; background-position: -353px -28px; }
 
 .icon_marrow { position: absolute; top: -12px; left: -11px; background-position: -400px -50px; }
@@ -852,9 +861,9 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_treeNav dt.active span { display: block; }
 .tl_treeNav dd { height: 27px; line-height: 27px; padding-right: 20px; text-align: right; }
 .tl_treeNav dd a { color: #999999; }
-.tl_treeNav dd a:hover { color: #ff9900; }
+.tl_treeNav dd a:hover { color: #ff6600; }
 .tl_treeNav dd.active a { color: #333333; }
-.tl_treeNav dd.active a:hover { color: #ff9900; }
+.tl_treeNav dd.active a:hover { color: #ff6600; }
 
 .limitH_tree { height: 481px; }
 .limitH_tree .treeBox { height: 481px; overflow: hidden; position: relative; }
@@ -875,7 +884,11 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .shareBox { position: absolute; display: none; z-index: 9999; top: 20px; left: 200px; width: 128px; height: 72px; background: url(../image/shareIcon_bg.png) no-repeat; }
 .shareBox a { width: 64px; height: 72px; display: block; float: left; text-align: center; padding: 0px; border: 0px; line-height: 104px; color: #666666; }
-.shareBox a:hover { color: #ff9900; }
+.shareBox a:hover { color: #ff6600; }
+
+.shareBox2 { position: absolute; display: none; z-index: 9999; top: 20px; left: 200px; width: 128px; height: 72px; background: url(../image/shareIcon_bg2.png) no-repeat; }
+.shareBox2 a { width: 64px; height: 72px; display: block; float: left; text-align: center; padding: 0px; border: 0px; line-height: 104px; color: #666666; }
+.shareBox2 a:hover { color: #ff6600; }
 
 .t_config { position: absolute; width: 500px; }
 .t_config .t_dialog_border { padding: 0px; }
@@ -932,6 +945,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .picImgNav li { padding: 10px 5px; cursor: pointer; letter-spacing: 4px; text-align: center; color: #ffffff; }
 .picImgNav li.active { color: #ff6600; }
 .picImgNav li.active .icon_piccom { background-position: -250px -50px; }
+.picImgNav li.active .icon_piczan { background-position: -200px -50px; }
+.picImgNav li.active .icon_picshare { background-position: -300px -50px; }
 .picImgNav li:hover { color: #ff6600; }
 .picImgNav li:hover .icon_piczan { background-position: -200px -50px; }
 .picImgNav li:hover .icon_piccom { background-position: -250px -50px; }
@@ -947,7 +962,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .picImgCom h6 { background: #DDD8D5; height: 40px; line-height: 40px; font-weight: normal; padding: 0 20px; font-family: "微软雅黑"; font-size: 16px; color: #666666; }
 .picImgCom h6 span { font-family: Arial; font-size: 22px; color: #333333; margin-right: 5px; position: relative; top: 2px; left: 0px; }
 .picImgCom h6 a { font-family: "宋体"; font-size: 12px; color: #666666; }
-.picImgCom h6 a:hover { color: #ff9900; }
+.picImgCom h6 a:hover { color: #ff6600; }
 .picImgCom h6 a:hover .icon_toRight { background-position: -425px -50px; }
 
 .icon_toRight { background-position: -400px -50px; }
@@ -982,7 +997,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_successTrip { width: 240px; margin: 0 auto; text-align: left; }
 .t_successTrip a { color: #0099cc; }
-.t_successTrip a:hover { color: #ff9900; }
+.t_successTrip a:hover { color: #ff6600; }
 .t_successTrip a:hover .icon_blueArrow { background-position: -30px -28px; }
 .t_successTrip .shareSpan { color: #999999; position: relative; float: left; top: 4px; left: 0px; margin-right: 10px; }
 

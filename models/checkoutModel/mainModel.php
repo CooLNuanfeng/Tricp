@@ -22,7 +22,6 @@
                 <div class="t_articalCommit pr20">
                     <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
                     <a href="javascript:;" class="commit"><i class="icon icon_sm_commit"></i>评论（<em>4</em>）</a>
-                    <a href="javascript:;" class="share"><i class="icon icon_sm_share"></i>分享（<em>4</em>）</a>
                 </div>
                 <div class="t_picCommit longCommit">
                     <i class="icon icon_upArrow"></i>
@@ -84,9 +83,8 @@
                     <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_catering"></i>雷锋塔</a>
                     <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
                     <a href="javascript:;" class="commit"><i class="icon icon_sm_commit"></i>评论（<em>4</em>）</a>
-                    <a href="javascript:;" class="share"><i class="icon icon_sm_share"></i>分享（<em>4</em>）</a>
                 </div>
-                <div class="t_picCommit">
+                <div class="t_picCommit longCommit">
                     <i class="icon icon_upArrow"></i>
                     <textarea></textarea>
                     <div class="t_subCommit">已输入<span>0</span><em>/500</em>字<a href="javascript:;">评论</a></div>

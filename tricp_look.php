@@ -10,7 +10,7 @@
 <script src="statics/js/Underscore.js"></script>
 </head>
 
-<body>
+<body style="position:relative; top:0px;">
 <div style="width:100%; height:170px; background:#0CF; text-align:center; font-size:100px; line-height:170px; color:#fff;">网站公用头部，开发时去掉</div>
 <div class="tl_topNavBox">
 	<?php require_once "models/topHeaderModel/checkoutHearderModel.php" ?>
@@ -67,6 +67,10 @@
     <a href="javascript:;" target="_self">新浪微博</a>
     <a href="javascript:;" target="_self">QQ空间</a>
 </div>
+<div class="shareBox2">
+    <a href="javascript:;" target="_self">新浪微博</a>
+    <a href="javascript:;" target="_self">QQ空间</a>
+</div>
 <div class="picImgShowBox">
 	<div class="picIMG">
     	<div class="picInfo"><i>D1</i><span>西湖</span></div>
@@ -84,6 +88,7 @@
                 <li><i class="icon icon_piccom"></i>评论4</li>
                 <li><i class="icon icon_picshare"></i>分享4</li>
             </ul>
+            
         </div>
         <div class="picImgCom fr">
         	<h6><a href="javascript:;" class="picRight fr">收起<i class="icon icon_toRight"></i></a><span>15</span>条评论</h6>
