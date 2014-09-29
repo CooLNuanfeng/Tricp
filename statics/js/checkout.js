@@ -522,16 +522,22 @@ $(function(){
 					data: {'tagId': 'artical1'},
 					dataType: 'json',
 					success: function(res){
-						var ulHtml = '';
-						for(var i=0; i<res.length; i++){
-							ulHtml+=_.template($('#pic_commitTemplate').html(),{
-								username: res[i].username,
-								context: res[i].context,
-								time : res[i].comTime
-							})
+						if(res.length!=0){
+							$('.noCommitPic').hide();
+							var ulHtml = '';
+							for(var i=0; i<res.length; i++){
+								ulHtml+=_.template($('#pic_commitTemplate').html(),{
+									username: res[i].username,
+									context: res[i].context,
+									time : res[i].comTime
+								})
+							}
+							$('.piccomlist').find('ul').html(ulHtml);
+							picComHeight();
+						}else{
+							$('.noCommitPic').show();
 						}
-						$('.piccomlist').find('ul').html(ulHtml);
-						picComHeight();
+						
 					}
 				})
 

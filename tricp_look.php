@@ -95,6 +95,7 @@
             	<ul>
                 	
                 </ul>
+                <img class="noCommitPic" src="statics/image/nocommit.png">
             </div>
         </div>
     </div>
