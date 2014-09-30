@@ -48,20 +48,14 @@ $(function(){
 			}
 		})
 		
-		if(ie){
-			$('.input_name')[0].onpropertychange = toChange;
-		}
-		else{
-			$('.input_name')[0].oninput = toChange;
-		}
-		
-		function toChange(){
+		var txtBtn = false;
+		$('.input_name').bind('input propertychange',function(){
 			$('.leftTxt').show();
 			var dataAttrlen = getLength($(this).attr('data-activity'));
 			var len = getLength($('.input_name').val()) - dataAttrlen;
-				len = Math.ceil(len/2);
+				len = Math.ceil(len / 2);
 				$('.leftTxt').html('<span class="active">'+len+'</span>/40')
-			if(len<=40){
+			if(len < 41){
 				$('.input_name').removeClass('error');
 				$('.leftTxt span').removeClass('error');
 				$('.btnBox a').removeClass('dis_link');
@@ -69,8 +63,18 @@ $(function(){
 				$('.input_name').addClass('error');
 				$('.leftTxt span').addClass('error');
 				$('.btnBox a').addClass('dis_link');
+				txtBtn = true;
 			}
-		}
+		})
+		
+		$('.input_name').keydown(function(ev){
+			if(txtBtn&&ev.keyCode!=8){
+				return false;
+			}
+			if(ev.keyCode==8){
+				txtBtn = false;
+			}
+		});
 		
 		function getLength(str){
 			return String(str).replace(/[^\x00-\xff]/g,'aa').length;

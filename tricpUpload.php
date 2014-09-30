@@ -93,7 +93,7 @@
                 <div class="t_associate_failure"><i class="icon icon_warning"></i>尚有<span class="error">4</span>张照片未进行拍照点关联，建议进行关联</div>
             </div>
         </div>
-        <div class="nextStep"><a href="javascript:;" class="dis_link">下一步</a></div>
+        <div class="nextStep"><a href="javascript:;" class="">下一步</a></div>
     </div>
     <div class="footerNav">                                                                                                         
     	<div class="t_main">

@@ -18,8 +18,8 @@
     	<div class="t_step_box">
         	<ul>
             	<li>创建新旅程<i class="icon icon_point"></i></li>
-                <li class="active">上传照片,关联拍摄点<i class="icon icon_point"></i></li>
-                <li>编辑发布<i class="icon icon_point"></i></li>
+                <li>上传照片,关联拍摄点<i class="icon icon_point"></i></li>
+                <li class="active">编辑发布<i class="icon icon_point"></i></li>
             </ul>
         </div>
         <div class="editMain">

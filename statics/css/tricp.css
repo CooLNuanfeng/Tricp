@@ -75,11 +75,11 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .input_time { width: 160px; padding: 10px; height: 26px; outline: none; line-height: 26px; border: 1px solid #dddddd; -webkit-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); -ms-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); -o-box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1); }
 
-.leftTxt { display: none; position: absolute; top: 15px; left: 639px; color: #999999; }
+.leftTxt { display: none; position: absolute; top: 15px; left: 662px; color: #999999; }
 .leftTxt span { color: #ff9900; }
 .leftTxt span.error { color: #cc0000; }
 
-.icon_calendar { position: absolute; top: 12px; right: 200px; background-position: -25px 0px; }
+.icon_calendar { position: absolute; top: 12px; right: 9px; background-position: -25px 0px; }
 
 .activityInfo { margin-top: 3px; height: 36px; line-height: 36px; color: #666666; }
 .activityInfo a { margin-left: 10px; color: #999999; }
@@ -321,10 +321,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_listPicBox { width: 737px; height: 190px; overflow-y: auto; }
 
-.iconDay { background-position: 0px 0px; text-align: center; line-height: 50px; font-family: Arial; font-size: 20px; color: #999999; position: absolute; right: -23px; top: -25px; }
+.iconDay { background-position: 0px 0px; text-align: center; line-height: 50px; font-family: Arial; font-size: 20px; color: #999999; position: absolute; right: -23px; top: -13px; }
 .iconDay:hover { background-position: -450px -50px; font-size: 0px; }
 
-.iconDay1 { background-position: 0px 0px; text-align: center; line-height: 50px; font-family: Arial; font-size: 20px; color: #999999; position: absolute; right: -23px; top: -25px; }
+.iconDay1 { background-position: 0px 0px; text-align: center; line-height: 50px; font-family: Arial; font-size: 20px; color: #999999; position: absolute; right: -23px; top: -13px; }
 .iconDay1:hover { color: #999999; text-decoration: none; }
 
 .icon_calendarLittle { position: absolute; top: 28px; left: 25px; background-position: -325px -2px; }
@@ -457,8 +457,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_TipsList li a.t_tipsAdd:hover { color: #ff6600; }
 .t_TipsList li a.t_tipsAdd:hover span { color: #ff9900; }
 .t_TipsList li:hover { background: #F5F5F5; }
-.t_TipsList .last { width: 630px; padding-left: 8px; overflow: hidden; height: 40px; line-height: 40px; border-top: 1px dotted #dddddd; }
-.t_TipsList .last a { font-size: 14px; margin-right: 10px; color: #0099cc; }
+.t_TipsList .last { width: 630px; padding-left: 8px; overflow: hidden; height: 30px; line-height: 40px; border-top: 1px dotted #dddddd; }
+.t_TipsList .last a { font-size: 12px; margin-right: 10px; color: #0099cc; }
 .t_TipsList .last a:hover { color: #ff6600; }
 
 .t_tipsFinish { margin: 20px auto; text-align: center; width: 160px; height: 40px; line-height: 40px; color: #ffffff; font-family: "微软雅黑"; font-size: 18px; border-radius: 5px; display: block; background: #ff9900; }
@@ -676,7 +676,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .longCommit .icon_upArrow { right: 40px; }
 
 .t_picComlist li { border-top: 1px dotted #dddddd; overflow: hidden; padding: 8px 0px; }
-.t_picComlist li p { width: 565px; float: left; color: #666666; }
+.t_picComlist li p { width: 565px; float: left; font-size: 12px; color: #666666; }
 .t_picComlist li a { width: 30px; text-align: right; color: #0099cc; display: block; float: right; }
 .t_picComlist li a:hover { color: #ff6600; }
 .t_picComlist .t_com_user { width: 56px; color: #999999; display: block; float: left; }
@@ -812,7 +812,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_sideProList dd { width: 116px; float: left; padding-left: 10px; }
 .t_sideProList dd a { height: 40px; display: block; overflow: hidden; line-height: 20px; color: #333333; }
 .t_sideProList dd a:hover { color: #ff6600; }
-.t_sideProList dd span { color: #ff9900; }
+.t_sideProList dd span { color: #ff6600; font-weight: bold; }
 .t_sideProList dd span em { font-family: Arial; }
 
 .t_side_tabBtn { height: 30px; }
