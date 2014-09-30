@@ -871,6 +871,17 @@ $(function(){
 	$('.pic_description textarea').click(function(ev){
 		ev.stopPropagation();
 	});
+	$('.pic_description textarea').bind('input propertychange',function(){
+		var len = getLength($(this).val());
+		len = Math.ceil(len/2);
+		if(len>500){
+			$(this).siblings('div').find('span').addClass('error');
+		}else{
+			$(this).siblings('div').find('span').removeClass('error');
+		}
+		$(this).siblings('div').find('span').html(len);
+
+	})
 	$(document).click(function(){
 		$('.pic_description').hide();
 		$('.txt_description').hide();

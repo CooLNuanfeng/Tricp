@@ -10,64 +10,7 @@ $(function(){
 		
 		$('.t_mainbox').height(windowHeight - $('.t_topNav').outerHeight() - $('.footerNav').outerHeight() );
 		
-
-
 		$('.input_name').focus(function(){
-			$(this).addClass('active');
-			if($('.activityTxt').html()!='' ){
-				$('.activityTxt').show();
-				var w = $('.activityTxt').width();
-				$(this).css('textIndent',w-10)
-			}
-		}).blur(function(){
-			if($('.activityTxt').html()!=''){
-				if($(this).val()!=''){
-					$('.activityTxt').show();
-					$(this).removeClass('active');
-					$('.leftTxt').hide();
-				}else{
-					$('.activityTxt').hide();
-					$(this).removeClass('active');
-					$('.leftTxt').hide();
-				}
-				
-			}
-			$(this).removeClass('active');
-			$('.leftTxt').hide();
-			/*if($('.activityTxt').html()!='' ){
-				if($(this).val() ==  $(this).attr('data-activity')){
-					$(this).removeClass('active');
-					$(this).val('')
-				}
-			}else if($(this).val() == ''){
-				$(this).removeClass('active');
-			}*/
-		})
-
-		$('.input_name').keydown(function(e){
-			var len = getLength($('.input_name').val());
-			len = Math.ceil(len/2);
-			if(len>40 && e.keyCode!=8){
-				return false;
-			}
-		})
-
-		$('.input_name').bind('input propertychange',function(){
-			$('.leftTxt').show();
-			var len = getLength($('.input_name').val());
-				len = Math.ceil(len/2);
-				$('.leftTxt').html('<span class="active">'+len+'</span>/40')
-			if(len<=40){
-				$('.input_name').removeClass('error');
-				$('.leftTxt span').removeClass('error');
-				$('.btnBox a').removeClass('dis_link');
-			}else{
-				$('.input_name').addClass('error');
-				$('.leftTxt span').addClass('error');
-				$('.btnBox a').addClass('dis_link');
-			}
-		})
-		/*$('.input_name').focus(function(){
 			$(this).addClass('active');
 			if($(this).attr('data-activity') && $(this).val() == ''){
 				$(this).val($(this).attr('data-activity'))
@@ -92,16 +35,11 @@ $(function(){
 		})
 		
 		$('.input_name').keydown(function(e){
-			if($(this).attr('data-activity')){
-				if(e.keyCode ==8 && $(this).val() == $(this).attr('data-activity')){
-					$('.btnBox a').addClass('dis_link');
-					$('.leftTxt').hide();
-					return false;
-				}
-			}else{
-				if( $(this).val() ==''){
-					
-				}
+			if(txtBtn&& e.keyCode!=8){
+				return false;
+			}
+			if( e.keyCode ==8 ){
+				txtBtn = false;
 			}
 		})
 		
@@ -111,14 +49,14 @@ $(function(){
 		else{
 			$('.input_name')[0].oninput = toChange;
 		}
-		
+		var txtBtn = false;
 		function toChange(){
 			$('.leftTxt').show();
 			var dataAttrlen = getLength($(this).attr('data-activity'));
 			var len = getLength($('.input_name').val()) - dataAttrlen;
 				len = Math.ceil(len/2);
 				$('.leftTxt').html('<span class="active">'+len+'</span>/40')
-			if(len<=40){
+			if(len<41){
 				$('.input_name').removeClass('error');
 				$('.leftTxt span').removeClass('error');
 				$('.btnBox a').removeClass('dis_link');
@@ -126,19 +64,14 @@ $(function(){
 				$('.input_name').addClass('error');
 				$('.leftTxt span').addClass('error');
 				$('.btnBox a').addClass('dis_link');
+				txtBtn = true;
 			}
 		}
 		
 		function getLength(str){
 			return String(str).replace(/[^\x00-\xff]/g,'aa').length;
 		}
-		*/
-
-		function getLength(str){
-			return String(str).replace(/[^\x00-\xff]/g,'aa').length;
-		}
-
-
+		
 		//筛选部分
 		$('.select').click(function(){
 			$(this).parent().parent().find('li a').removeClass('select_a');

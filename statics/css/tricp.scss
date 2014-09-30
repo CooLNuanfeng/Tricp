@@ -240,6 +240,20 @@ scrollbar-base-color:#E3E3E3;
 .createInput{
 	position: relative;
 }
+
+.activityTxt{
+	color: $txtBlack;
+	font-size: 14px;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	display: none;
+	height: 46px;
+	line-height: 46px;
+	background:#ffffff;
+	z-index: 33;
+
+}
 .input_name{
 	width: 624px;
 	padding: 10px;
@@ -574,7 +588,7 @@ scrollbar-base-color:#E3E3E3;
 .t_uploadBox{
 	height: 578px;
 	margin-top: 30px;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	position: relative;
 	.notice_txt{
 		width: 25px;

@@ -17,10 +17,11 @@
     	<div class="createInfo pt70">
         	<h4><span class="t_name">旅程名字</span><span class="t_time">出游日期</span></h4>
             <div class="createInput">
-            	<input type="text" id='input_name' class="input_name"  value="" data-activity="【我要做神驴】">
+            	<div class="activityTxt"></div>
+            	<input type="text" id='input_name' class="input_name"  value="">
                 <input type="text" id='input_time' class="input_time J_calendar" value="" placeholder="请选择出游日期">
                 <div class="leftTxt"><span>0</span>/40</div>
-                <i class="icon icon_calendar"></i>
+                <i class="icon icon_calendar J_calendar"></i>
             </div>
             <div class="activityInfo"><i class="icon icon_notice"></i>发表标题带有【我要做驴神】前缀的旅程，即视为参加“驴妈妈百万重金求驴神”活动。<a href="">活动详情<i class="icon icon_moreLeft"></i></a></div>
         </div>

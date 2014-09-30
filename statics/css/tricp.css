@@ -69,6 +69,8 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .createInput { position: relative; }
 
+.activityTxt { color: #333333; font-size: 14px; position: absolute; top: 2px; left: 2px; display: none; height: 46px; line-height: 46px; background: #ffffff; z-index: 33; }
+
 .input_name { width: 624px; padding: 10px; padding-right: 70px; margin-right: 4px; height: 26px; line-height: 26px; font-size: 14px; outline: none; border: 2px solid #dddddd; }
 .input_name.active { border: 2px solid #ff9900; }
 .input_name.error { border: 2px solid #cc0000; }
@@ -141,7 +143,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_step_box li.active .icon_point { background-position: -175px 0px; }
 .t_step_box .icon_point { position: absolute; bottom: -15px; left: 48%; background-position: -150px 0px; }
 
-.t_uploadBox { height: 578px; margin-top: 30px; margin-bottom: 40px; position: relative; }
+.t_uploadBox { height: 578px; margin-top: 30px; margin-bottom: 20px; position: relative; }
 .t_uploadBox .notice_txt { width: 25px; text-align: center; height: auto; background: #ffffff; padding: 10px 0px; position: absolute; left: 478px; top: 166px; z-index: 3; color: #999999; word-spacing: 10px; letter-spacing: 10px; }
 
 .t_day_album { width: 465px; height: 578px; overflow: hidden; border-right: 2px dotted #dddddd; padding-right: 20px; }
