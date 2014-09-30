@@ -287,7 +287,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_lineList dd { position: relative; padding-left: 46px; padding-top: 5px; margin-bottom: 30px; }
 
 .t_list_picModel { width: 732px; height: auto; overflow: hidden; background: #ffffff; padding: 10px; border: 1px solid #dddddd; border-top: 0px; position: relative; }
-.t_list_picModel li { float: left; width: 130px; height: 85px; border: 2px solid #dddddd; position: relative; margin-right: 10px; margin-bottom: 10px; cursor: pointer; }
+.t_list_picModel li { float: left; width: 130px; height: 85px; border: 1px solid #dddddd; position: relative; margin-right: 10px; margin-bottom: 10px; cursor: pointer; }
 .t_list_picModel .essay_listTxt { padding: 3px; width: 124px; height: 79px; line-height: 20px; color: #999999; font-size: 12px; word-break: break-all; }
 .t_list_picModel .essay_listTxt p { width: 124px; height: 79px; overflow: hidden; }
 .t_list_picModel .essay_listTxt span { border-bottom: 1px dotted #dddddd; }
@@ -323,6 +323,9 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .iconDay { background-position: 0px 0px; text-align: center; line-height: 50px; font-family: Arial; font-size: 20px; color: #999999; position: absolute; right: -23px; top: -25px; }
 .iconDay:hover { background-position: -450px -50px; font-size: 0px; }
+
+.iconDay1 { background-position: 0px 0px; text-align: center; line-height: 50px; font-family: Arial; font-size: 20px; color: #999999; position: absolute; right: -23px; top: -25px; }
+.iconDay1:hover { color: #999999; text-decoration: none; }
 
 .icon_calendarLittle { position: absolute; top: 28px; left: 25px; background-position: -325px -2px; }
 

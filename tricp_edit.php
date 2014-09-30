@@ -55,7 +55,7 @@
                             <h6>第1天</h6>
                             <input type="text" class="J_calendar" value="2014-07-26">
                             <i class="icon icon_calendarLittle"></i>
-                            <a href="javascript:;" class="iconBig iconDay">D1</a>
+                            <a href="javascript:;" class="iconBig iconDay1">D1</a>
                         </dt>
                         <dd>
                             <i class="icon icon_wrPoint"></i>
@@ -68,6 +68,7 @@
                                 <i class="icon icon_leftArrow"></i>
                                 <i class="icon icon_orner"></i>
                             </div>
+                            <a href="javascript:;" target="_self" class="icon del_travel" hidefocus="false" style="display: none;"></a>
                         </dd>
                         <dd>
                             <i class="icon icon_wrPoint"></i>

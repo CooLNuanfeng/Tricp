@@ -1205,7 +1205,7 @@ scrollbar-base-color:#E3E3E3;
 		float: left;
 		width: 130px;
 		height: 85px;
-		border: 2px solid $borderColor;
+		border: 1px solid $borderColor;
 		//overflow: hidden;
 		position: relative;
 		margin-right: 10px;
@@ -1389,7 +1389,21 @@ scrollbar-base-color:#E3E3E3;
 		font-size: 0px;
 	}
 }
-
+.iconDay1{
+	background-position: 0px 0px;
+	text-align: center;
+	line-height: 50px;
+	font-family: Arial;
+	font-size: 20px;
+	color: $txtGray;
+	position: absolute;
+	right: -23px;
+	top: -25px;
+	&:hover{
+		color: $txtGray;
+		text-decoration: none;
+	}
+}
 .icon_calendarLittle{
 	position: absolute;
 	top: 28px;

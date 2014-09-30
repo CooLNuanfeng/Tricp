@@ -726,10 +726,10 @@ $(function(){
 
 				var $nearLi = nearlyLi($imgDiv, $(_this).parent());
 				if($nearLi){
-					$(_this).parent().parent().find('li').css({border:'2px solid #dddddd'})
-					$nearLi.css('border','2px solid #ff6600');
+					$(_this).parent().parent().find('li').css({border:'1px solid #dddddd'})
+					$nearLi.css('border','1px solid #ff6600');
 				}else{
-					$(_this).parent().parent().find('li').css({border:'2px solid #dddddd'})
+					$(_this).parent().parent().find('li').css({border:'1px solid #dddddd'})
 				}
 
 			});
@@ -738,7 +738,7 @@ $(function(){
 				$(document).unbind('mousemove');
 				$(_this).parent().css({
 					opacity: 1,
-					border:'2px solid #dddddd'
+					border:'1px solid #dddddd'
 				});
 				var $nearLi = nearlyLi($imgDiv, $(_this).parent());
 				if($nearLi){
@@ -763,7 +763,7 @@ $(function(){
 				// $(_this).parent().parent().find('li').css({border:'2px solid #dddddd',opacity:1});
 				// $(_this).parent().parent().find('li img').css('opacity',1)
 				$(this).unbind('mouseup');
-				$('.t_listPicBox li').css('border','2px solid #dddddd')
+				$('.t_listPicBox li').css('border','1px solid #dddddd')
 			})
 			return false;
 		})
