@@ -63,7 +63,11 @@
         </div>
     </div>
 </div>
-<div class="shareBox">
+<div class="shareBox" id="shareBox1">
+    <a href="javascript:;" target="_self">新浪微博</a>
+    <a href="javascript:;" target="_self">QQ空间</a>
+</div>
+<div class="shareBox" id="shareBox2">
     <a href="javascript:;" target="_self">新浪微博</a>
     <a href="javascript:;" target="_self">QQ空间</a>
 </div>

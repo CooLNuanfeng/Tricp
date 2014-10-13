@@ -51,7 +51,7 @@
                     <p class="t_articalTxt">001小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally.3小时广州飞伦敦，1小时伦敦飞爱丁堡，1个半小时车程爱丁堡到圣安，抵达酒店时已经totally</p>
                     <div class="t_articalCommit">
                         <a href="javascript:;" class="t_arcitalPoint fl"><i class="icon icon_sm_hotel"></i>雷锋塔</a>
-                        <a href="javascript:;" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>4</em>）</a>
+                        <a href="javascript:;" id="segment_13_zan" class="zan"><i class="icon icon_sm_zan"></i>喜欢（<em>5</em>）</a>
                         <a href="javascript:;" class="commit"><i class="icon icon_sm_commit"></i>评论（<em>4</em>）</a>
                         <a href="javascript:;" class="share"><i class="icon icon_sm_share"></i>分享（<em>4</em>）</a>
                     </div>
