@@ -483,7 +483,10 @@ $(function(){
 	$('.addTravel_essay').live('click',function(){
 		if(eassyModify){
 			$('.eassyTxt textarea').val(eassyTxt);
+			$('.eassyLeftTxt').find('span').html(Math.ceil(getLength($('.eassyTxt textarea').val())/2));
 		}else{
+			$('.eassyLeftTxt').find('span').html('0');
+			$('.t_save_eassy').addClass('dis_link');
 			$('.eassyTxt textarea').val('');
 		}
 		$essayClick = $(this);
@@ -525,6 +528,7 @@ $(function(){
 			$(this).parent().parent().parent().hide();
 			$('.mengban').hide();
 			var txt = $('.eassyTxt textarea').val();
+
 			$.ajax({
 				url: 'php/eassy_submit.php',
 				type: 'GET',
@@ -537,6 +541,7 @@ $(function(){
 						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
 						$essayClick.prev().css('height',92);
 						//getWinHeight();
+						
 						$(_this).siblings('textarea').val('');
 					}else{
 						var $liEassy = $('<li class="essay_listTxt"><p><span>'+res+'</span></p><i class="icon icon_articalEassy"></i></li>')
@@ -550,6 +555,7 @@ $(function(){
 						$(_this).siblings('textarea').val('');
 					}
 					eassyModify = false;
+					dragPic();
 				}
 			})
 		}else{
@@ -561,6 +567,7 @@ $(function(){
 				dataType:"text",
 				success: function(){
 					$eassyObj.find('p span').html(txt);
+					dragPic();
 				}
 			})
 
@@ -700,9 +707,12 @@ $(function(){
 
 
 	//图片拖拽功能，需要拖拽的节点调用该函数
+	var $oParentObj = null;
 	function dragPic(){
 		$('.t_listPicBox li img').live('mousedown',function(ev){
+			var psortArr = [];
 			var _this = this;
+			$oParentObj = $(this).parent().parent();
 			var src = $(this).attr('src')
 			var $imgDiv = $('<div class="dragDivImg"><img src="'+src+'"></div>').css({
 				position: 'absolute',
@@ -746,13 +756,19 @@ $(function(){
 					if($nearLi.attr('class')!=$(_this).parent().attr('class')){
 						var classStr = $nearLi.attr('class');
 						var temp = $nearLi.html();
+						var psort = $nearLi.attr('data-psort');
 						$nearLi.attr('class','liDragPic');
+						$nearLi.attr('data-psort',$(_this).parent().attr('data-psort'));
 						$nearLi.html($(_this).parent().html());
 						$(_this).parent().attr('class',classStr);
+						$(_this).parent().attr('data-psort',psort);
 						$(_this).parent().html( temp );
 
 					}else{
 						var temp = '';
+						var psort = $nearLi.attr('data-psort');
+						$nearLi.attr('data-psort',$(_this).parent().attr('data-psort'));
+						$(_this).parent().attr('data-psort',psort);
 						temp = $nearLi.html();
 						$nearLi.html($(_this).parent().html());
 						$(_this).parent().html( temp );
@@ -762,8 +778,20 @@ $(function(){
 				$imgDiv.remove();
 				// $(_this).parent().parent().find('li').css({border:'2px solid #dddddd',opacity:1});
 				// $(_this).parent().parent().find('li img').css('opacity',1)
+				
+				//发送排序 
+				$oParentObj.find('li').each(function(){
+					psortArr.push($(this).attr('data-psort'));
+				});
+				$.ajax({
+					url: '',
+					data: psortArr,
+					success: function(){
+					}
+				});
+
 				$(this).unbind('mouseup');
-				$('.t_listPicBox li').css('border','1px solid #dddddd')
+				$('.t_listPicBox li').css('border','1px solid #dddddd');
 			})
 			return false;
 		})
@@ -933,7 +961,7 @@ $(function(){
 
 			FilesAdded: function(up, files) {
 				plupload.each(files, function(file) {					
-					var $item = $('<li id="'+file.id+'" class="liDragPic"><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="successPic"><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div></li>');
+					var $item = $('<li id="'+file.id+'" class="liDragPic" data-psort="'+ file.id +'"><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="successPic"><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div></li>');
 					var image = $(new Image()).appendTo($item);
 					//console.log($uploadObj.find('.t_listPicBox ul li').length);
 					if($uploadObj.next().find('.t_listPicBox ul li').length > 4){
@@ -944,6 +972,7 @@ $(function(){
 					
 					$uploadObj.next().find('.t_listPicBox ul').append($item);
 
+					dragPic();
 					//重新计算文档高度
 					//getWinHeight();
 					var preloader = new mOxie.Image();
@@ -976,10 +1005,10 @@ $(function(){
 			FileUploaded : function(up,file,res){
 				$('#'+file.id).attr('data-load','ok');
 				$('#'+file.id).find('.upStatus').hide();
-				re = JSON.parse(res.response); 
-				if(re.error){ 
-				console.log(re.error); 
-				} 
+				//re = JSON.parse(res.response); 
+				//if(re.error){ 
+				//console.log(re.error); 
+				//} 
 
 			},
 			
