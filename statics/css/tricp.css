@@ -371,7 +371,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .icon_orner { position: absolute; bottom: -9px; right: -9px; background-position: -50px -50px; }
 
-.newPoint { width: 123px; height: 25px; line-height: 25px; color: #666666; font-size: 14px; position: relative; top: 10px; left: -100px; margin-bottom: 80px; }
+.newPoint { width: 123px; height: 25px; line-height: 25px; color: #666666; font-size: 14px; position: relative; top: 10px; left: -100px; margin-bottom: 30px; }
 
 .icon_addPoint { margin-left: 15px; margin-top: -5px; background-position: -425px 1px; }
 .icon_addPoint:hover { background-position: -450px 1px; }
