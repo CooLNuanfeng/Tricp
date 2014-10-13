@@ -57,14 +57,14 @@ $(function(){
 			var len = getLength($('.input_name').val());
 				len = Math.ceil(len/2);
 				$('.leftTxt').html('<span class="active">'+len+'</span>/40')
-			if(len<=40){
-				$('.input_name').removeClass('error');
-				$('.leftTxt span').removeClass('error');
-				$('.btnBox a').removeClass('dis_link');
-			}else{
+			if(len>=40||len<=0){
 				$('.input_name').addClass('error');
 				$('.leftTxt span').addClass('error');
 				$('.btnBox a').addClass('dis_link');
+			}else{
+				$('.input_name').removeClass('error');
+				$('.leftTxt span').removeClass('error');
+				$('.btnBox a').removeClass('dis_link');
 			}
 		})
 		/*$('.input_name').focus(function(){

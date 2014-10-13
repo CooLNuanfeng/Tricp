@@ -17,7 +17,7 @@
     	<div class="createInfo pt70">
         	<h4><span class="t_name">旅程名字</span><span class="t_time">出游日期</span></h4>
             <div class="createInput">
-            	<div class="activityTxt"></div>
+            	<div class="activityTxt">卡死了附加</div>
             	<input type="text" id='input_name' class="input_name"  value="">
                 <input type="text" id='input_time' class="input_time J_calendar" value="" placeholder="请选择出游日期">
                 <div class="leftTxt"><span>0</span>/40</div>
