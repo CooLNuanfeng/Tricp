@@ -470,15 +470,24 @@ $(function(){
 	})
 
 	picDrag($('#picList'));
+	
 	function picDrag($obj){
-		$obj.find('.selectLi').live('mousedown',function(ev){
+		$obj.find('li').live('mousedown',function(ev){
+			var _this = this;
 			if($(this).attr('data-relate')!='ok'){  // 防止重复添加
 				if($('.dragDivPic')){
 					$('.dragDivPic').remove();
 				}
 				var src = $(this).find('img').attr('src');
 				var $dragDiv = $('<div class="dragDivPic"></div>');
-				$dragDiv.html('<img src="'+src+'" width="80" height="54"><i class="icon icon_count">'+$obj.find('.selectLi').length+'</i>')
+				var imgLength = $obj.find('.selectLi').length;
+				
+				if(imgLength==0){
+					$dragDiv.html('<img src="'+'statics/image/defaultPicbg.png'+'" width="80" height="54"><i class="icon icon_count">'+ (imgLength+1) +'</i>')
+				}else{
+					$dragDiv.html('<img src="'+'statics/image/defaultPicbg.png'+'" width="80" height="54"><i class="icon icon_count">'+ imgLength +'</i>')
+				}
+				
 				$dragDiv.css({
 					position: 'absolute',
 					top : ev.pageX-20,
@@ -509,12 +518,19 @@ $(function(){
 				})
 				$(document).bind('mouseup',function(ev){				
 					$('.dragLi').css('border','');
+
 					if($picObj){
 						var arrObj = [];
-						$obj.find('.selectLi').each(function(){
-							arrObj.push($(this).attr('id'));
-						})
-						$picObj.find('span').html( (parseInt($picObj.find('span').html())+$obj.find('.selectLi').length)+'张');
+						if(imgLength==0){
+							arrObj.push($(_this).attr('id'));
+							$picObj.find('span').html( (parseInt($picObj.find('span').html())+1)+'张');
+						}else{
+							$obj.find('.selectLi').each(function(){
+								arrObj.push($(this).attr('id'));
+							})
+							$picObj.find('span').html( (parseInt($picObj.find('span').html())+imgLength)+'张');
+						}
+						
 						$.ajax({
 							url: 'php/dragPic.php',
 							type: 'POST',
@@ -532,7 +548,7 @@ $(function(){
 									$('#'+res[i]).find('.relatedSuccess p').html($picObj.find('p strong').html());
 									$('#'+res[i]).attr('data-relate','ok');  //确定已关联
 								};
-
+								alert(1)
 								related(); //检测是否已关联
 								
 							}
@@ -549,6 +565,8 @@ $(function(){
 			}
 		})
 	}
+
+	
 
 	//检测是否都关联了
 	function related(){
@@ -596,8 +614,8 @@ $(function(){
 
 	//图片上传部分
 	$('#uploadInitBtn').click(function(){
-		$(this).parent().hide();
-		$('.t_showPic').show();
+		// $(this).parent().hide();
+		// $('.t_showPic').show();
 		$('#uploadBtnLi').click();
 
 	})
@@ -631,6 +649,8 @@ $(function(){
 			},*/
 
 			FilesAdded: function(up, files) {
+				$('#uploadInitBtn').parent().hide();
+				$('.t_showPic').show();
 				plupload.each(files, function(file) {					
 					var $item = $('<li id="'+file.id+'"><i class="icon icon_closeLi"></i><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i><p></p></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
 					var image = $(new Image()).appendTo($item);

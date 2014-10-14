@@ -710,7 +710,6 @@ $(function(){
 	var $oParentObj = null;
 	function dragPic(){
 		$('.t_listPicBox li img').live('mousedown',function(ev){
-			
 			var psortArr = [];
 			var _this = this;
 			$oParentObj = $(this).parent().parent();
