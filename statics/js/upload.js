@@ -42,7 +42,15 @@ $(function(){
 	//删除一个拍摄点
 	$('.icon_closeLi').live('click',function(){
 		$(this).parent().remove();
+		var delTxt = $(this).parent().find('p strong').html();
 		$('.dragTip').hide();
+		$('#picList li').find('.relatedSuccess p').each(function(){
+			if($(this).html()==delTxt){
+				$(this).parent().parent().attr('data-relate','');
+				$(this).parent().parent().data('selectBtn',false);
+				$(this).parent().hide();
+			}
+		})
 	})
 
 	//弹层
@@ -323,12 +331,13 @@ $(function(){
 					//判断是否为跨天拖拽
 					if($nearLi.parents('dl').attr('id')==$(_this).parents('dl').attr('id')){
 						//var temp='';
-						var dSort = '';
-						var dSort2 ='';
-						var temp2 = '';
+						// var dSort = '';
+						// var dSort2 ='';
+						// var temp2 = '';
 						if($nearLi){
 							$('.dragLi').css('border','');
 							//temp = $(_this).parent().html();
+							/*
 							temp2 = $nearLi.html();
 							dSort = $(_this).parent().attr('data-dsort');
 							dSort2 = $nearLi.attr('data-dsort');
@@ -336,6 +345,9 @@ $(function(){
 								.attr('data-dsort', dSort2);
 							$nearLi.html( $cloneLi.html() )
 								   .attr('data-dsort', dSort)
+							*/
+							$nearLi.before($(_this).parent());
+
 
 							//发送最新排序数据
 							var arrSort=[];
@@ -441,12 +453,18 @@ $(function(){
 
 
 	//右侧图片拖拽关联部分
-	
+
 	$('#picList li:not("#uploadBtnLi")').live('click',function(e){
-		if($(this).attr('data-relate')!='ok'){   //防止重复显示
+		if($(this).attr('data-relate')!='ok'&& !$(this).data('selectBtn')){   //防止重复显示
 			$(this).addClass('selectLi');
 			$(this).find('.upStatus').hide();
 			$(this).find('.uploadSuccess').show();
+			$(this).data('selectBtn', true);
+		}else{
+			$(this).removeClass('selectLi');
+			$(this).find('.upStatus').hide();
+			$(this).find('.uploadSuccess').hide();
+			$(this).data('selectBtn', false);
 		}
 		
 	})
@@ -471,6 +489,7 @@ $(function(){
 				//var disX = ev.pageX - $(this).offset().left;
 				//var disY = ev.pageY - $(this).offset().top;
 				var $picObj = null;
+
 				$(document).bind('mousemove',function(ev){
 					$dragDiv.css({
 						top: ev.pageY-20,
@@ -616,6 +635,7 @@ $(function(){
 					var $item = $('<li id="'+file.id+'"><i class="icon icon_closeLi"></i><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i><p></p></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
 					var image = $(new Image()).appendTo($item);
 					$('#picList').append($item);
+					$item.data('selectBtn',false);
 					var preloader = new mOxie.Image();
 					
 					preloader.onload = function(){
