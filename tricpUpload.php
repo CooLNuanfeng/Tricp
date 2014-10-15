@@ -156,7 +156,7 @@
 </script>
 <script type="text/template" id="addPointTemplate">
 <li id="<%= liID %>" class="dragLi" data-dsort="<%= liID %>">
-	<img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong><%- pointName %></strong></p><span>0张</span><i class="icon icon_closeLi"></i>
+	<img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong><%- pointName %></strong></p><span>0张</span><i class="icon icon_closeLi liAlbum"></i>
 </li>
 </script>
 </html>
