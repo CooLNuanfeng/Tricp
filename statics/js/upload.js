@@ -618,7 +618,7 @@ $(function(){
 							})
 							$picObj.find('span').html( (parseInt($picObj.find('span').html())+imgLength)+'张');
 						}
-						
+						//console.log( $picObj.attr('data-dsort') );
 						$.ajax({
 							url: 'php/dragPic.php',
 							type: 'POST',

@@ -1,4 +1,8 @@
 <?php 
 	$txt = $_GET['context'];
-	echo $txt;
+	$arr = array(
+		"eassyID"=>'eassy5',
+		"eassyTxt"=>$txt
+	);
+	echo json_encode($arr);
 ?>
