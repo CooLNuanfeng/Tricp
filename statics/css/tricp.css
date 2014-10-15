@@ -165,7 +165,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 :root .dragLi span, :root .dragCloneli span { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 .dragLi:hover .icon_closeLi, .dragCloneli:hover .icon_closeLi { display: block; }
 
-.icon_closeLi { display: none; position: absolute; right: -13px; top: -13px; z-index: 500; background-position: -475px -25px; }
+.icon_closeLi { display: none; position: absolute; right: -13px; top: -13px; z-index: 900; background-position: -475px -25px; }
 .icon_closeLi:hover { cursor: pointer; }
 
 .t_nextAddView { float: left; margin-right: 20px; margin-bottom: 20px; background: #ffffff; border: 1px solid #dddddd; padding: 3px; cursor: pointer; }

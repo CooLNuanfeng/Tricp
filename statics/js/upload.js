@@ -308,6 +308,7 @@ $(function(){
 					left: ev.pageX - disX
 				})
 
+				gunlunHeight($cloneLi,$('.t_albumBox'));
 				var $nearLi = nearlyLi($cloneLi, $(_this).parent());
 				if($nearLi){
 					$('.dragLi').css({border:'1px solid #dddddd'})
@@ -326,7 +327,17 @@ $(function(){
 				})
 
 				var $nearLi = nearlyLi($cloneLi, $(_this).parent());
-				
+				var $nearUl = nearlyUl($cloneLi,$(_this).parent());
+
+				if($nearUl){
+					$nearUl.append($(_this).parent());
+					//更新服务器数据
+					$.ajax({
+						url:'',
+						data: {}
+					})		
+				}
+
 				if($nearLi){
 					//判断是否为跨天拖拽
 					if($nearLi.parents('dl').attr('id')==$(_this).parents('dl').attr('id')){
@@ -346,7 +357,12 @@ $(function(){
 							$nearLi.html( $cloneLi.html() )
 								   .attr('data-dsort', dSort)
 							*/
-							$nearLi.before($(_this).parent());
+							if($nearLi.index()>$(_this).parent().index()){
+								$nearLi.after($(_this).parent());
+							}else{
+								$nearLi.before($(_this).parent());
+							}
+							
 
 
 							//发送最新排序数据
@@ -365,8 +381,9 @@ $(function(){
 							
 						}
 					}else{
+
 						$('.dragLi').css('border','1px solid #dddddd');
-						$nearLi.parents('dl').find('dd li.t_nextAddView').after($(_this).parent(),function(){
+						$nearLi.after($(_this).parent(),function(){
 							$(_this).parent().remove();
 						});
 
@@ -401,6 +418,19 @@ $(function(){
 	//初始化时要遍历页面中存在的
 	dragTricp();
 
+	//滚轮函数
+	function gunlunHeight($obj,$box){
+		if($obj.offset().top+100>$box.offset().top+$box.outerHeight()){
+			var T = $box.scrollTop()+100;
+			$box.scrollTop(T);
+		}
+		if($obj.offset().top<$box.offset().top+20){
+			var T = $box.scrollTop()-100;
+			$box.scrollTop(T);
+		}
+
+	}
+
 	//碰撞检测
 	function collision($obj1,$obj2){
 		var L1 = $obj1.offset().left;
@@ -429,6 +459,29 @@ $(function(){
 		$('.dragLi').each(function(){
 			
 			if( collision($obj, $(this)) && $(this).attr('id')!= oParent.attr('id')){
+				var dis_short = distance($obj, $(this));
+				//console.log($(this)!=oParent)
+				if(dis_short < minValue ){
+					minValue = dis_short;
+					$nearObj = $(this);
+				}			
+			}
+
+		});
+		
+		return $nearObj;
+		
+	}
+
+	function nearlyUl($obj, oParent){
+		var minValue = 999999999;
+		var index = -1;
+		var $nearObj = null;
+		$('.js_day_box').each(function(){
+			//alert()
+			var dayIndex1 = oParent.parents('dl').index();
+			var dayIndex2 = $(this).parents('dl').index();
+			if( collision($obj, $(this)) && dayIndex1!=dayIndex2){
 				var dis_short = distance($obj, $(this));
 				//console.log($(this)!=oParent)
 				if(dis_short < minValue ){
@@ -610,100 +663,24 @@ $(function(){
 				return false;
 			//}
 
-			//修改关联地点
-			/*if($(this).attr('data-relate')=='ok'){
-				if($('.dragDivPic')){
-					$('.dragDivPic').remove();
-				}
-				var src = $(this).find('img').attr('src');
-				var $dragDiv = $('<div class="dragDivPic"></div>');
-				$dragDiv.html('<img src="'+'statics/image/defaultPicbg.png'+'" width="80" height="54"><i class="icon icon_count">'+ (imgLength+1) +'</i>');
-				var changeLen = $obj.find('.changeLi').length;
-				if(!changeLen){
-					$dragDiv.html('<img src="'+'statics/image/defaultPicbg.png'+'" width="80" height="54"><i class="icon icon_count">'+ (changeLen+1) +'</i>')
-				}else{
-					$dragDiv.html('<img src="'+'statics/image/defaultPicbg.png'+'" width="80" height="54"><i class="icon icon_count">'+ changeLen +'</i>')
-				}
-				$dragDiv.css({
-					position: 'absolute',
-					top : ev.pageX-20,
-					left: ev.pageY-20,
-					zIndex: 99
-				})
-				$('body').append($dragDiv);
-				var $picObj = null;
-
-				$(document).bind('mousemove',function(ev){
-					$dragDiv.css({
-						top: ev.pageY-20,
-						left: ev.pageX-20
-					});	
-
-					$picObj = nearlyPic($dragDiv);
-					if($picObj){
-						$('.dragLi').css('border','1px solid #dddddd')
-						$picObj.css({
-							border: '1px solid #ff6600'
-						})
-					}else{
-						$('.dragLi').css('border','1px solid #dddddd')
-					}
-
-				});
-				$(document).bind('mouseup',function(ev){				
-					$('.dragLi').css('border','');
-
-					if($picObj){
-						var arrObj = [];
-						if(!changeLen){
-							arrObj.push($(_this).attr('id'));
-							$(_this).attr('data-prevRelate',$picObj.attr('id'));  //上一次关联的标记
-							$picObj.find('span').html( (parseInt($picObj.find('span').html())+1)+'张');
-						}else{
-							$obj.find('.selectLi').each(function(){
-								arrObj.push($(this).attr('id'));
-								$(this).attr('data-prevRelate',$picObj.attr('id')); //上一次关联的标记
-							})
-							$picObj.find('span').html( (parseInt($picObj.find('span').html())+imgLength)+'张');
-						}
-						
-						$.ajax({
-							url: 'php/dragPic.php',
-							type: 'POST',
-							data: {'idArr': arrObj },
-							dataType: 'json',
-							success: function(res){
-
-								$('.dragDivPic').remove();
-								$('.dragLi').css('border','1px solid #dddddd');
-								for(var i=0; i<res.length; i++){
-									$('#'+res[i]).removeClass('selectLi');
-									$('#'+res[i]).find('.uploadSuccess').hide();
-									$('#'+res[i]).find('.relatedFailure').hide();
-									$('#'+res[i]).find('.relatedSuccess').show();
-									$('#'+res[i]).find('.relatedSuccess p').html($picObj.find('p strong').html());
-									$('#'+res[i]).attr('data-relate','ok');  //确定已关联
-								};
-								related(); //检测是否已关联
-								
-							}
-						})
-						
-					}else{
-						$('.dragDivPic').remove();
-						picDrag($('#picList'));
-					}
-					$(document).unbind('mouseup');
-					$(document).unbind('mousemove');
-				});
-				return false;
-
-			}*/
 
 		})
 	}
 
-	
+	//删除对应文件
+	$('.picDel').live('click',function(ev){
+		if($(this).parent().attr('data-prevRelate')){
+			var leftCount = parseInt( $('#'+$(this).parent().attr('data-prevRelate')).find('span').html() );
+			$('#'+$(this).parent().attr('data-prevRelate')).find('span').html( (leftCount-1)+'张');
+			//发送删除信息
+			$.ajax({
+				url: '',
+				data: {id: $(this).parent().attr('data-prevRelate')}
+			})
+		}
+		$(this).parent().remove();
+		ev.stopPropagation();
+	})
 
 	//检测是否都关联了
 	function related(){
@@ -789,7 +766,7 @@ $(function(){
 				$('#uploadInitBtn').parent().hide();
 				$('.t_showPic').show();
 				plupload.each(files, function(file) {					
-					var $item = $('<li id="'+file.id+'"><i class="icon icon_closeLi"></i><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i><p></p></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
+					var $item = $('<li id="'+file.id+'"><i class="icon icon_closeLi picDel"></i><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i><p></p></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
 					var image = $(new Image()).appendTo($item);
 					$('#picList').append($item);
 					$item.data('selectBtn',false);

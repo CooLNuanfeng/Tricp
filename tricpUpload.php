@@ -26,7 +26,7 @@
                     <dl id='dayId1'>
                         <dt><a href="javascript:;" class="fr">删除改天</a>第1天</dt>
                         <dd>
-                            <ul class="clearfix">
+                            <ul class="clearfix js_day_box">
                                 <li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
                                 <!--<li id="li100" class="dragLi" data-dsort='1'>
                                     <img src="statics/image/defaultPicbg.png" width="142" height="95"><p><a href="javascript:;" class="modefiyPoint" target="_self">修改</a><strong>马来西亚1</strong></p><span>10张</span><i class="icon icon_closeLi"></i>
@@ -148,7 +148,7 @@
 <dl id="dayId<%= day %>">
 	<dt><a href="javascript:;" class="fr">删除改天</a>第<%= day %>天</dt>
 	<dd>
-		<ul class="clearfix">
+		<ul class="clearfix js_day_box">
 			<li class="t_nextAddView"><div><i class="iconBig icon_pic"></i></div><a href="javascript:;" target="_self" class="init_default"><i class="icon icon_addLogo"></i>添加拍照地点</a></li>
 		</ul>
 	</dd>
