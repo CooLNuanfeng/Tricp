@@ -125,7 +125,7 @@ $(function(){
 		$('.writeTitle span').each(function(){
 			if( $(this).attr('data-name') == hash ){
 				var T = $(this).offset().top -140;
-				$('html body').animate({
+				$('html,body').animate({
 					scrollTop : T
 				},'fast')
 			}
@@ -317,7 +317,6 @@ $(function(){
 						}else{
 							
 							if(OneDayOff){
-								console.log('start');
 								var id = $('.treeNav dl').length;
 								$objClick.prev().html($('#t_searchInput').val());
 								$objClick.prev().attr('data-name',res.nameID);
@@ -533,18 +532,18 @@ $(function(){
 				url: 'php/eassy_submit.php',
 				type: 'GET',
 				data: {context: txt},
-				dataType:"text",
+				dataType:'json',
 				success: function(res){
 					if($essayClick.prev().css('display')=='none'){			
 						$essayClick.prev().show()
-						var $liEassy = $('<li class="essay_listTxt"><p><span>'+res+'</span></p></li>');
+						var $liEassy = $('<li id="'+res.eassyID+'" class="essay_listTxt" data-psort="'+res.eassyID+'"><p><span>'+res.eassyTxt+'</span></p></li>');
 						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
 						$essayClick.prev().css('height',92);
 						//getWinHeight();
 						
 						$(_this).siblings('textarea').val('');
 					}else{
-						var $liEassy = $('<li class="essay_listTxt"><p><span>'+res+'</span></p><i class="icon icon_articalEassy"></i></li>')
+						var $liEassy = $('<li id="'+res.eassyID+'" class="essay_listTxt" data-psort="'+res.eassyID+'"><p><span>'+res.eassyTxt+'</span></p><i class="icon icon_articalEassy"></i></li>')
 						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
 						if($essayClick.prev().find('ul li').length<6){
 							$essayClick.prev().css('height',92);
@@ -579,6 +578,7 @@ $(function(){
 	});
 
 	//修改随笔
+	/*
 	var $eassyObj = null;
 	var eassyTxt = '';
 	$('.essay_listTxt').live('click',function(ev){
@@ -615,6 +615,54 @@ $(function(){
 
 		})
 	})
+	*/
+
+	var $eassyObj = null;
+	var eassyTxt = '';
+	$('.essay_listTxt').live('mouseover',function(ev){
+		var _this = this;
+		$eassyObj = $(this);
+		eassyTxt = $(this).find('p span').html();
+		$('.txt_description').show().css({
+			position: 'absulote',
+			top:  $(_this).offset().top+50,
+			left: $(_this).offset().left+50,
+			zIndex: 999
+		});
+		$('.txt_description').find('p span').html(eassyTxt);
+		ev.stopPropagation();
+	});
+	$('.essay_listTxt').live('mouseout',function(){
+		$('.txt_description').hide();
+	});
+
+	$('.txt_description').mouseover(function(){
+		$(this).show();
+	}).mouseout(function(){
+		$(this).hide();
+	})
+
+	
+	$('.eassyDes').click(function(){
+		eassyModify = true;
+		$('.addTravel_essay').click();
+		$('.txt_description').hide();
+	});
+	$('.eassyDel').click(function(){
+		//$essayClick = $eassyObj;
+		if($eassyObj.parent().find('li').length<6){
+			$eassyObj.parent().parent().parent().css('height',92);
+		}else{
+			$eassyObj.parent().parent().parent().css('height',191);
+		}
+		$('.txt_description').hide();
+		$eassyObj.remove();
+
+		$.ajax({
+
+		})
+	})
+
 
 
 	//修改游记标题
@@ -707,9 +755,12 @@ $(function(){
 
 
 	//图片拖拽功能，需要拖拽的节点调用该函数
+	
+	/*
 	var $oParentObj = null;
 	function dragPic(){
 		$('.t_listPicBox li img').live('mousedown',function(ev){
+			
 			var psortArr = [];
 			var _this = this;
 			$oParentObj = $(this).parent().parent();
@@ -795,10 +846,123 @@ $(function(){
 			})
 			return false;
 		})
+	}*/
+	var $oParentObj = null;
+	function dragPic(){
+		$('.t_listPicBox li').live('mousedown',function(ev){
+			var $imgDiv = null;
+			var _this = this;
+			var psortArr = [];
+			$oParentObj = $(this).parent();
+
+			if(ev.target.nodeName.toLowerCase()=='img'){
+				var src = $(this).find('img').attr('src');
+				$imgDiv = $('<div class="dragDivImg"><img src="'+src+'"></div>').css({
+					position: 'absolute',
+					top : $(this).offset().top,
+					left: $(this).offset().left,
+					border: '1px solid #ff6600',
+					zIndex: 99
+				})
+			}
+			if(ev.target.nodeName.toLowerCase()=='p'){
+				$imgDiv = $('<div class="dragDivImg"></div>').html('<p>'+$(ev.target).html()+'</p>').css({
+					position: 'absolute',
+					top : $(this).offset().top,
+					left: $(this).offset().left,
+					border: '1px solid #ff6600',
+					zIndex: 99
+				});
+			}
+			if(ev.target.nodeName.toLowerCase()=='a'){
+				return false;
+			}
+
+			if($imgDiv){
+				$('body').append($imgDiv);
+			}
+			
+			$(this).css({
+				opacity: 0.4
+			});
+
+			var disX = ev.pageX - $(this).offset().left;
+			var disY = ev.pageY - $(this).offset().top;
+			$(document).bind('mousemove',function(ev){
+				$('.txt_description').hide();
+				$imgDiv.css({
+					top: ev.pageY - disY,
+					left: ev.pageX - disX
+				});
+
+				var $nearLi = nearlyLi($imgDiv, $(_this));
+				if($nearLi){
+					$(_this).parent().find('li').css({border:'1px solid #dddddd'})
+					$nearLi.css('border','1px solid #ff6600');
+				}else{
+					$(_this).parent().find('li').css({border:'1px solid #dddddd'})
+				}
+				gunlunHeight($imgDiv,$(_this).parent().parent())
+			});
+
+			$(document).bind('mouseup',function(){
+				$(document).unbind('mousemove');
+				$(_this).css({
+					opacity: 1,
+					border:'1px solid #dddddd'
+				});
+				// if(ev.target.nodeName.toLowerCase()=='p'){
+				// 	$(ev.target).data('dragTxt',0);
+				// }
+
+				var $nearLi = nearlyLi($imgDiv, $(_this));
+				if($nearLi){
+					if($nearLi.index()>$(_this).index()){
+					 	$nearLi.after($(_this));
+					}else{
+						$nearLi.before($(_this));
+					}
+					
+				}
+
+				$imgDiv.remove();
+				// $(_this).parent().parent().find('li').css({border:'2px solid #dddddd',opacity:1});
+				// $(_this).parent().parent().find('li img').css('opacity',1)
+				
+				//发送排序 
+				$oParentObj.find('li').each(function(){
+					psortArr.push($(this).attr('data-psort'));
+				});
+				$.ajax({
+					url: '',
+					data: psortArr,
+					success: function(){
+					}
+				});
+
+				$(document).unbind('mouseup');
+				$('.t_listPicBox li').css('border','1px solid #dddddd');
+			})
+			return false;
+		})
 	}
+
 
 	dragPic();
 
+
+	//滚轮函数
+	function gunlunHeight($obj,$box){
+		if($obj.offset().top+100>$box.offset().top+$box.outerHeight()){
+			var T = $box.scrollTop()+100;
+			$box.scrollTop(T);
+		}
+		if($obj.offset().top<$box.offset().top+20){
+			var T = $box.scrollTop()-100;
+			$box.scrollTop(T);
+		}
+
+	}
 	//碰撞检测
 	function collision($obj1,$obj2){
 		var L1 = $obj1.offset().left;
@@ -825,7 +989,6 @@ $(function(){
 		var index = -1;
 		var $nearObj = null;
 		oParent.parent().find('li').each(function(){
-			
 			if( collision($obj, $(this)) && $(this).attr('id')!= oParent.attr('id')){
 				var dis_short = distance($obj, $(this));
 				//console.log($(this)!=oParent)
@@ -867,7 +1030,7 @@ $(function(){
 	});
 
 	//图片描述功能 
-	$('.picDel').live('click',function(){
+	$('.picDel').live('click',function(ev){
 		var $obj = $(this).parent().parent();
 		if($(this).parents('.t_listPicBox').find('ul li').length<7){
 			$(this).parents('.t_list_picModel').css('height',92);
@@ -881,7 +1044,7 @@ $(function(){
 			//getWinHeight();
 		}
 		$(this).parent().parent().remove();
-		
+		ev.stopPropagation();
 		
 	});
 

@@ -424,6 +424,8 @@ $(function(){
 		var $div = $('<div class="t_oneListModel"></div>');
 	    //dayLen = $(this).parent().prev().find('dl').length;
 		//var dateDay = $(this).parent().prev().find('.J_calendar').val().split('-');
+
+
 		dayLen++;
 		var json = {
 			day: dayLen,
@@ -458,6 +460,7 @@ $(function(){
 		$(this).parent().parent().parent().remove();
 		var id = $(this).parent().parent().attr('data-list');
 		$('#'+id).remove();
+		reviseDate($(this));
 		getTreeHeight();
 		//getWinHeight();
 	});
@@ -475,6 +478,25 @@ $(function(){
 		getTreeHeight();
 		//getWinHeight();
 	})
+
+
+	//修正天数日期
+	function reviseDate($obj){
+		$.ajax({
+			url: 'php/test.php',
+			type: 'POST',
+			data: {'dateValue': $obj.parent().find('.J_calendar').val() },
+			dataType : 'json',
+			success: function(res){
+				$('.t_lineList').each(function(i){
+					$(this).find('dt h6').html('第'+res[i].dayInt+'天');
+					$('#'+ $(this).attr('data-list')).find('dt').html('D'+res[i].dayInt);
+					$(this).find('dt input').val(res[i].data);
+				})
+			}
+		})
+	}
+
 
 
 	//添加随笔
@@ -536,14 +558,14 @@ $(function(){
 				success: function(res){
 					if($essayClick.prev().css('display')=='none'){			
 						$essayClick.prev().show()
-						var $liEassy = $('<li id="'+res.eassyID+'" class="essay_listTxt"><p><span>'+res.eassyTxt+'</span></p></li>');
+						var $liEassy = $('<li id="'+res.eassyID+'" class="essay_listTxt" data-psort="'+res.eassyID+'"><p><span>'+res.eassyTxt+'</span></p></li>');
 						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
 						$essayClick.prev().css('height',92);
 						//getWinHeight();
 						
 						$(_this).siblings('textarea').val('');
 					}else{
-						var $liEassy = $('<li id="'+res.eassyID+'" class="essay_listTxt"><p><span>'+res.eassyTxt+'</span></p><i class="icon icon_articalEassy"></i></li>')
+						var $liEassy = $('<li id="'+res.eassyID+'" class="essay_listTxt" data-psort="'+res.eassyID+'"><p><span>'+res.eassyTxt+'</span></p><i class="icon icon_articalEassy"></i></li>')
 						$essayClick.prev().find('.t_listPicBox ul').append($liEassy);
 						if($essayClick.prev().find('ul li').length<6){
 							$essayClick.prev().css('height',92);
@@ -878,8 +900,10 @@ $(function(){
 				return false;
 			}
 
+			if($imgDiv){
+				$('body').append($imgDiv);
+			}
 			
-			$('body').append($imgDiv);
 			$(this).css({
 				opacity: 0.4
 			});
@@ -916,13 +940,13 @@ $(function(){
 				var $nearLi = nearlyLi($imgDiv, $(_this));
 				if($nearLi){
 					if($nearLi.index()>$(_this).index()){
-						console.log($nearLi.index(), $(_this).index())
 					 	$nearLi.after($(_this));
 					}else{
 						$nearLi.before($(_this));
 					}
 					
 				}
+
 				$imgDiv.remove();
 				// $(_this).parent().parent().find('li').css({border:'2px solid #dddddd',opacity:1});
 				// $(_this).parent().parent().find('li img').css('opacity',1)

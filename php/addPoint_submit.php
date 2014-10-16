@@ -1,0 +1,3 @@
+<?php
+	$dataJson = $_POST[''];
+?>
