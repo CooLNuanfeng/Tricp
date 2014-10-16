@@ -804,9 +804,11 @@ $(function(){
 				$('#'+file.id).find('.upStatus').hide();
 				//删除已上传图片
 				$('#'+file.id).mouseover(function(){
+					console.info(window);
 					$(this).find('.icon_closeLi').show();
 				})
 				$('#'+file.id).mouseout(function(){
+					console.info("xiao song shang");
 					$(this).find('.icon_closeLi').hide();
 				})
 			},
