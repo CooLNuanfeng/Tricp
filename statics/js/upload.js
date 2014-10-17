@@ -41,16 +41,34 @@ $(function(){
 
 	//删除一个拍摄点
 	$('.liAlbum').live('click',function(){
-		$(this).parent().remove();
-		var delID = $(this).parent().attr('id');
-		$('.dragTip').hide();
-		$('#picList li').each(function(){
-			if($(this).attr('data-prevRelate')==delID){
-				$(this).attr('data-relate','');
-				$(this).data('selectBtn',false);
-				$(this).find('.relatedSuccess').hide();
-			}
+		var _this = this;
+		var L = $(window).width();
+		var T = $(window).height();
+		$('.mengban').show();
+		$('.t_config_P').show().css({
+			left: (L-$('.t_config_P').outerWidth())/2,
+			top: (T - $('.t_config_P').outerHeight())/2
+		});
+		$('.t_configSure').click(function(){
+
+			$(_this).parent().remove();
+			var delID = $(_this).parent().attr('id');
+			$('.dragTip').hide();
+			$('#picList li').each(function(){
+				if($(this).attr('data-prevRelate')==delID){
+					$(this).attr('data-relate','');
+					$(this).data('selectBtn',false);
+					$(this).find('.relatedSuccess').hide();
+				}
+			})
+			$('.mengban').hide();
+			$('.t_config_P').hide();
+		});
+		$('.t_configCancel').click(function(){
+			$('.mengban').hide();
+			$('.t_config_P').hide();
 		})
+		
 	})
 
 	//弹层

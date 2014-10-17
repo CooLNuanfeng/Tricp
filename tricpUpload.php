@@ -140,6 +140,17 @@
         <a href="javascript:;" target="_self" class="t_dialog_closed"></a>
     </div>
 </div>
+<div class="t_dialog t_config_P">
+	<div class="t_dialog_border">
+    	<h6 class="t_configTitle">操作提示</h6>
+        <p class="t_configTxt">删除该拍摄点，拍摄点信息和照片也会删除哦，您确定？</p>
+        <div class="t_configBtn">
+        	<a href="javascript:;" class="t_configSure" target="_self">确定</a>
+            <a href="javascript:;" class="t_configCancel" target="_self">取消</a>
+        </div>
+        <a href="javascript:;" target="_self" class="t_dialog_closed"></a>
+    </div>
+</div>
 <div class="mengban"></div>
 </body>
 <script src="statics/js/plupload.full.min.js"></script>

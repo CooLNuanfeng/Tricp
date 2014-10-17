@@ -1220,24 +1220,14 @@ $(function(){
 	//offsetAmount:{left:-333,top:0},
 	selectDateCallback: function(e){
 		console.log(e.selectedDate)
-	}, 
+	},
+	
 	cascade: { 
 	days: 1, // 天数叠加一天 
 	trigger: ".J_calendar", 
 	isTodayClick: false
 	},
-	classNames: {
-        week: ["sun", "mon", "tue", "wed", "thu", "fri", "sat"],
-        caldate: "caldate",
-        nodate: "caldate", // 禁用和空
-        today: "today", // 今天
-        hover: "hover", // 鼠标滑过效果
-        selectDay: "selectDay", // input 
-        interval: "interval", // 区间
-        festival: "calfest", // 节日
-        monthPrev: "month-prev",
-        monthNext: "month-next"
-    },
+	
 	template: { 
 	warp: '<div class="ui-calendar ui-calendar-mini"></div>', 
 	calControl: '<span class="month-prev" {{stylePrev}} title="上一月">‹</span><span class="month-next" {{styleNext}} title="下一月">›</span>', 

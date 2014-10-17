@@ -234,7 +234,7 @@
 <dl class="t_lineList" data-list="d<%= day %>">
 	<dt>
 		<h6>第<%= day %>天</h6>
-		<input type="text" class="J_calendar" value="<%= date %>" data-success="0">
+		<input type="text" class="J_calendar" data-range="true" value="<%= date %>" data-success="0">
 		<i class="icon icon_calendarLittle"></i>
 		<a href="javascript:;" class="iconBig iconDay">D<%= day %></a>
 	</dt>
