@@ -15,9 +15,9 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .fr { float: right; }
 
-.icon { width: 25px; height: 25px; display: inline-block; vertical-align: middle; background: url(../image/tricp_icon.png) no-repeat; }
+.icon { width: 25px; height: 25px; display: inline-block; vertical-align: middle; background: url(http://pic.lvmama.com/img/you/tricp_icon.png) no-repeat; }
 
-.iconBig { width: 50px; height: 50px; display: inline-block; vertical-align: middle; background: url(../image/tricp_iconBig.png) no-repeat; }
+.iconBig { width: 50px; height: 50px; display: inline-block; vertical-align: middle; background: url(http://pic.lvmama.com/img/you/tricp_iconBig.png) no-repeat; }
 
 .t_main { margin: 0 auto; width: 1200px; }
 
@@ -31,7 +31,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_topNav { width: 100%; height: 50px; background: #ffffff; border-bottom: 1px solid #dddddd; -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); -ms-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); -o-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); }
 
-.topNav { padding-left: 120px; background: url(../image/logo.png) 0px 7px no-repeat; }
+.topNav { padding-left: 120px; background: url(http://pic.lvmama.com/img/you/logo.png) 0px 7px no-repeat; }
 .topNav li { float: left; height: 50px; line-height: 50px; margin-right: 10px; padding: 0 15px; }
 .topNav li a { width: 100%; height: 100%; color: #333333; display: block; font-family: "微软雅黑"; font-size: 16px; }
 .topNav li a:hover { text-decoration: none; }
@@ -57,14 +57,14 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .t_dialog { width: 700px; height: auto; background: #FFFFFF; border: 5px solid #CCCCCC; position: fixed; z-index: 999; display: none; }
 .t_dialog .t_dialog_border { border: 1px solid #999999; padding: 31px; overflow: hidden; }
-.t_dialog .t_dialog_closed, .t_dialog .t_essy_closed { position: absolute; width: 25px; height: 25px; display: block; top: 5px; right: 5px; background: url(../image/tricp_icon.png) -100px 0px no-repeat; }
+.t_dialog .t_dialog_closed, .t_dialog .t_essy_closed { position: absolute; width: 25px; height: 25px; display: block; top: 5px; right: 5px; background: url(http://pic.lvmama.com/img/you/tricp_icon.png) -100px 0px no-repeat; }
 .t_dialog .t_dialog_closed:hover, .t_dialog .t_essy_closed:hover { background-position: -125px 0px; }
 
 .mengban { display: none; width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); z-index: 998; }
 :root .mengban { filter: none; background-color: rgba(0, 0, 0, 0.5); }
 
 .createInfo { width: 900px; margin: 0 auto; }
-.createInfo h4 { font-family: "微软雅黑"; font-size: 22px; font-weight: normal; margin-bottom: 20px; color: #333333; background: url(../image/txt_bg.png) 100px 2px no-repeat; }
+.createInfo h4 { font-family: "微软雅黑"; font-size: 22px; font-weight: normal; margin-bottom: 20px; color: #333333; background: url(http://pic.lvmama.com/img/you/txt_bg.png) 100px 2px no-repeat; }
 .createInfo h4 .t_name { margin-right: 630px; }
 
 .createInput { position: relative; }
@@ -105,10 +105,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .ordersListBox li span { float: left; width: 70px; height: 36px; display: block; color: #999999; margin-right: 10px; }
 .ordersListBox li a { width: 700px; height: 36px; display: block; float: left; color: #333333; }
 .ordersListBox li a:hover { color: #ff6600; }
-.ordersListBox li .select { display: inline-block; width: 45px; height: 22px; margin-top: 6px; background: url(../image/select_bg.png) no-repeat; }
-.ordersListBox li .select:hover { background: url(../image/select_hover_bg.png) no-repeat; }
-.ordersListBox li .select_a { width: 25px; height: 25px; border: 0; margin-top: 5px; margin-left: 10px; background: url(../image/tricp_icon.png) -75px 0px no-repeat; }
-.ordersListBox li .select_a:hover { background: url(../image/tricp_icon.png) -75px 0px no-repeat; }
+.ordersListBox li .select { display: inline-block; width: 45px; height: 22px; margin-top: 6px; background: url(http://pic.lvmama.com/img/you/select_bg.png) no-repeat; }
+.ordersListBox li .select:hover { background: url(http://pic.lvmama.com/img/you/select_hover_bg.png) no-repeat; }
+.ordersListBox li .select_a { width: 25px; height: 25px; border: 0; margin-top: 5px; margin-left: 10px; background: url(http://pic.lvmama.com/img/you/tricp_icon.png) -75px 0px no-repeat; }
+.ordersListBox li .select_a:hover { background: url(http://pic.lvmama.com/img/you/tricp_icon.png) -75px 0px no-repeat; }
 
 .icon_blueArrow { background-position: -54px -27px; }
 
@@ -132,10 +132,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tabListBox li span { float: left; width: 60px; height: 36px; display: block; color: #999999; margin-right: 10px; }
 .tabListBox li a { width: 500px; height: 36px; display: block; float: left; color: #333333; }
 .tabListBox li a:hover { color: #ff6600; }
-.tabListBox li .select { display: inline-block; width: 45px; height: 22px; margin-top: 6px; background: url(../image/select_bg.png) no-repeat; }
-.tabListBox li .select:hover { background: url(../image/select_hover_bg.png) no-repeat; }
-.tabListBox li .select_a { width: 25px; height: 25px; border: 0; margin-top: 5px; margin-left: 10px; background: url(../image/tricp_icon.png) -75px 0px no-repeat; }
-.tabListBox li .select_a:hover { background: url(../image/tricp_icon.png) -75px 0px no-repeat; }
+.tabListBox li .select { display: inline-block; width: 45px; height: 22px; margin-top: 6px; background: url(http://pic.lvmama.com/img/you/select_bg.png) no-repeat; }
+.tabListBox li .select:hover { background: url(http://pic.lvmama.com/img/you/select_hover_bg.png) no-repeat; }
+.tabListBox li .select_a { width: 25px; height: 25px; border: 0; margin-top: 5px; margin-left: 10px; background: url(http://pic.lvmama.com/img/you/tricp_icon.png) -75px 0px no-repeat; }
+.tabListBox li .select_a:hover { background: url(http://pic.lvmama.com/img/you/tricp_icon.png) -75px 0px no-repeat; }
 
 .t_step_box { padding-top: 20px; height: 60px; }
 .t_step_box li { width: 33.333%; float: left; height: 40px; line-height: 40px; font-family: "微软雅黑"; font-size: 16px; color: #999999; text-align: center; position: relative; border-bottom: 5px solid #dddddd; }
@@ -192,7 +192,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_showPic ul { margin-top: 20px; }
 .t_showPic li { width: 138px; height: 91px; border: 1px solid #dddddd; float: left; position: relative; margin-right: 20px; margin-bottom: 20px; }
 .t_showPic li img { width: 138px; height: 91px; }
-.t_showPic .pic_stint { background: url(../image/failure.png) 2px bottom no-repeat #eaeaea; }
+.t_showPic .pic_stint { background: url(http://pic.lvmama.com/img/you/failure.png) 2px bottom no-repeat #eaeaea; }
 
 .uploadSuccess { display: none; text-align: center; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr=#7F000000, endColorstr=#7F000000); }
 :root .uploadSuccess { filter: none; background-color: rgba(0, 0, 0, 0.5); }
@@ -221,10 +221,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .icon_addUpload { background-position: 0px -150px; }
 
-.dragTip { width: 126px; height: 34px; background: url(../image/dragTip.png) no-repeat; position: absolute; display: none; }
+.dragTip { width: 126px; height: 34px; background: url(http://pic.lvmama.com/img/you/dragTip.png) no-repeat; position: absolute; display: none; }
 
 .upload_addOneDay { width: 80px; height: 25px; line-height: 25px; display: block; position: absolute; bottom: 5px; left: 20px; color: #0099cc; }
-.upload_addOneDay:hover { color: #ff6600; }
+.upload_addOneDay:hover { color: #f60; }
 .upload_addOneDay:hover .icon_addDay { background-position: -376px -3px; }
 
 .icon_addDay { background-position: -250px -3px; }
@@ -232,7 +232,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_bg_txt { width: 25px; height: 578px; }
 
 .t_uploadCount { width: auto; height: 25px; line-height: 25px; position: absolute; right: 20px; bottom: 10px; color: #333333; }
-.t_uploadCount span { color: #ff9900; }
+.t_uploadCount span { color: #f60; }
 .t_uploadCount .error { color: #cc0000; }
 .t_uploadCount div { display: none; }
 
@@ -291,10 +291,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_list_picModel { width: 732px; height: auto; overflow: hidden; background: #ffffff; padding: 10px; border: 1px solid #dddddd; border-top: 0px; position: relative; }
 .t_list_picModel li { float: left; width: 130px; height: 85px; border: 1px solid #dddddd; position: relative; margin-right: 10px; margin-bottom: 10px; cursor: pointer; }
 .t_list_picModel .essay_listTxt { padding: 3px; width: 124px; height: 79px; line-height: 20px; color: #999999; font-size: 12px; word-break: break-all; }
-.t_list_picModel .essay_listTxt p { width: 124px; height: 79px; overflow: hidden; cursor: all-scroll; }
+.t_list_picModel .essay_listTxt p { width: 124px; height: 79px; overflow: hidden; cursor: crosshair;}
 .t_list_picModel .essay_listTxt span { border-bottom: 1px dotted #dddddd; }
 .t_list_picModel .essay_listTxt .icon_articalEassy { right: -12px; bottom: -12px; }
-.t_list_picModel .pic_stint { background: url(../image/failure.png) 0 bottom no-repeat #eaeaea; }
+.t_list_picModel .pic_stint { background: url(http://pic.lvmama.com/img/you/failure.png) 0 bottom no-repeat #eaeaea; }
 
 .move { width: 37px; height: 37px; display: block; position: absolute; top: 20%; left: 36%; background-position: -457px -8px; }
 
@@ -484,7 +484,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .treeNav h6 { font-family: "微软雅黑"; font-size: 18px; color: #666666; padding-right: 10px; text-align: right; font-weight: normal; cursor: pointer; }
 .treeNav dl { margin-top: 10px; margin-bottom: 40px; }
 .treeNav dt { font-family: Arial; height: 30px; line-height: 30px; padding-right: 10px; text-align: right; font-size: 18px; position: relative; cursor: default; }
-.treeNav dt span { width: 9px; height: 30px; display: block; position: absolute; right: -9px; top: 0px; display: none; background: url(../image/leftArrow_bg.png) no-repeat; }
+.treeNav dt span { width: 9px; height: 30px; display: block; position: absolute; right: -9px; top: 0px; display: none; background: url(http://pic.lvmama.com/img/you/leftArrow_bg.png) no-repeat; }
 .treeNav dt.active { color: #ff9900; }
 .treeNav dt.active span { display: block; }
 .treeNav dd { height: 22px; line-height: 22px; padding-right: 10px; text-align: right; }
@@ -661,7 +661,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_articalPicTxt { padding: 20px; border: 1px solid #dddddd; border-top: 0px; position: relative; top: -20px; left: 0px; }
 .t_articalPicTxt p { font-size: 14px; color: #666666; }
 
-.maskCorner { width: 100%; height: 20px; position: absolute; top: 0px; left: 0px; background: url(../image/maskCorner_bg.png) no-repeat; }
+.maskCorner { width: 100%; height: 20px; position: absolute; top: 0px; left: 0px; background: url(http://pic.lvmama.com/img/you/maskCorner_bg.png) no-repeat; }
 
 .t_picCommit { display: none; padding: 10px; border: 1px solid #dddddd; background: #FBFBFB; position: relative; }
 .t_picCommit textarea { width: 650px; height: 60px; outline: none; border: 1px solid #dddddd; }
@@ -735,10 +735,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_page span { color: #ff9900; margin-right: 5px; }
 .t_page a { width: auto; height: 25px; line-height: 25px; padding: 0 8px; display: block; float: left; text-align: center; font-family: Arial; background: #F6F6F6; color: #666666; margin-left: 5px; text-decoration: none; }
 .t_page a:hover { color: #FFFFFF; background: #ff9900; }
-.t_page a.prev { width: 25px; padding: 0px; height: 25px; display: block; float: left; background: url(../image/tricp_icon.png) -25px -125px no-repeat #f6f6f6; }
-.t_page a.prev:hover { background: url(../image/tricp_icon.png) -75px -125px no-repeat #ff6600; }
-.t_page a.next { width: 25px; padding: 0px; height: 25px; display: block; float: left; background: url(../image/tricp_icon.png) 0px -125px no-repeat #f6f6f6; }
-.t_page a.next:hover { background: url(../image/tricp_icon.png) -50px -125px no-repeat #ff6600; }
+.t_page a.prev { width: 25px; padding: 0px; height: 25px; display: block; float: left; background: url(http://pic.lvmama.com/img/you/tricp_icon.png) -25px -125px no-repeat #f6f6f6; }
+.t_page a.prev:hover { background: url(http://pic.lvmama.com/img/you/tricp_icon.png) -75px -125px no-repeat #ff6600; }
+.t_page a.next { width: 25px; padding: 0px; height: 25px; display: block; float: left; background: url(http://pic.lvmama.com/img/you/tricp_icon.png) 0px -125px no-repeat #f6f6f6; }
+.t_page a.next:hover { background: url(http://pic.lvmama.com/img/you/tricp_icon.png) -50px -125px no-repeat #ff6600; }
 
 /* 底部城市区域 */
 .wy_state_area { width: 100%; background: #FFFFFF; }
@@ -864,7 +864,7 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tl_treeNav h6 { font-size: 18px; padding-right: 20px; text-align: right; color: #666666; font-weight: normal; font-family: "微软雅黑"; margin-bottom: 30px; }
 .tl_treeNav dl { margin-top: 10px; margin-bottom: 40px; }
 .tl_treeNav dt { font-family: Arial; height: 30px; line-height: 30px; padding-right: 20px; text-align: right; font-size: 18px; position: relative; margin-bottom: 10px; cursor: default; }
-.tl_treeNav dt span { width: 9px; height: 30px; display: block; position: absolute; right: 0px; top: 0px; display: none; background: url(../image/leftArrow_bg.png) no-repeat; }
+.tl_treeNav dt span { width: 9px; height: 30px; display: block; position: absolute; right: 0px; top: 0px; display: none; background: url(http://pic.lvmama.com/img/you/leftArrow_bg.png) no-repeat; }
 .tl_treeNav dt.active { color: #ff9900; }
 .tl_treeNav dt.active span { display: block; }
 .tl_treeNav dd { height: 27px; line-height: 27px; padding-right: 20px; text-align: right; }
@@ -890,11 +890,11 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .icon_treeDown { background-position: 0px -175px; }
 
-.shareBox { position: absolute; display: none; z-index: 9999; top: 20px; left: 200px; width: 128px; height: 72px; background: url(../image/shareIcon_bg.png) no-repeat; }
+.shareBox { position: absolute; display: none; z-index: 9999; top: 20px; left: 200px; width: 128px; height: 72px; background: url(http://pic.lvmama.com/img/you/shareIcon_bg.png) no-repeat; }
 .shareBox a { width: 64px; height: 72px; display: block; float: left; text-align: center; padding: 0px; border: 0px; line-height: 104px; color: #666666; }
 .shareBox a:hover { color: #ff6600; }
 
-.shareBox2 { position: absolute; display: none; z-index: 9999; top: 20px; left: 200px; width: 128px; height: 72px; background: url(../image/shareIcon_bg2.png) no-repeat; }
+.shareBox2 { position: absolute; display: none; z-index: 9999; top: 20px; left: 200px; width: 128px; height: 72px; background: url(http://pic.lvmama.com/img/you/shareIcon_bg2.png) no-repeat; }
 .shareBox2 a { width: 64px; height: 72px; display: block; float: left; text-align: center; padding: 0px; border: 0px; line-height: 104px; color: #666666; }
 .shareBox2 a:hover { color: #ff6600; }
 
@@ -1001,9 +1001,9 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .pic_closed { position: absolute; top: 0px; right: 380px; background-position: -200px -150px; }
 .pic_closed:hover { background-position: -151px -150px; }
 
-.t_tricpSuccess { padding-top: 50px; height: 450px; text-align: center; }
+.t_tricpSuccess { margin-top: 30px; padding-left: 350px; height: 450px; }
 
-.t_successTrip { width: 240px; margin: 0 auto; text-align: left; }
+.t_successTrip { width: 240px; padding-left: 85px; }
 .t_successTrip a { color: #0099cc; }
 .t_successTrip a:hover { color: #ff6600; }
 .t_successTrip a:hover .icon_blueArrow { background-position: -30px -28px; }
@@ -1030,3 +1030,11 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .tagsback-pink { border-color: #FF4499; }
 .tagsback-pink em { background: #FF4499; }
 .tagsback-pink i { color: #FF4499; }
+
+/*10.15 edit by dxl for tricp_checkout.html */
+.t_articalCommit .t_arcitalPoint.active {color: #f90;}
+
+.uploadSuccess {width: 136px;height: 89px;border: 2px solid #f60;}
+/*拖动图片的阴影*/
+.dragDivPic img {-webkit-box-shadow: 2px 2px 3px #ccc; box-shadow: 3px 3px 4px #ccc; border: 1px solid #f60;}
+
