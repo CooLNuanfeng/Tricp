@@ -372,7 +372,14 @@ $(function(){
 							var addID = $objClick.parent().prev().attr('data-list');
 							$('#'+ addID).append($('<dd id="'+ res.nameID +'"><a href="#'+ res.nameID +'">'+ $('#t_searchInput').val() +'</a></dd>'));   //修改过
 
-
+							
+							//666666
+							
+							$('#'+dataName).data('uploadSwitch',true);
+							myUpload(dataName);
+							/*if($('#'+dataName).data('uploadSwitch')){
+								myUpload(dataName);
+							}*/
 
 							//后来增加的
 							getTreeHeight()
@@ -910,6 +917,7 @@ $(function(){
 			var disX = ev.pageX - $(this).offset().left;
 			var disY = ev.pageY - $(this).offset().top;
 			$(document).bind('mousemove',function(ev){
+				ev.preventDefault();
 				$('.txt_description').hide();
 				$imgDiv.css({
 					top: ev.pageY - disY,
@@ -1114,11 +1122,20 @@ $(function(){
 
 	//图片上传功能
 	var $uploadObj = null;
-	$('.uploadPics').live('click',function(){
+	$('.uploadPics').one('click',function(){
 		$uploadObj = $(this).parents('.writeTxtBox');
-		myUpload($(this).attr('id'))
+		/*if($(this).attr('data-uploadOnload')){
+			myUpload($(this).attr('id'));
+			$(this).attr('data-uploadOnload',0)
+		}*/
+		if($(this).data('uploadSwitch')){
+			//myUpload($(this).attr('id'));
+			$(this).data('uploadSwitch',false);
+		}
+		
+		
 	})
-	myUpload('up1')
+	myUpload('up1');
 	function myUpload(str){
 		var uploader = new plupload.Uploader({
 	        runtimes : 'html5,flash,silverlight,html4',

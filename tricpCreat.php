@@ -91,47 +91,62 @@
 //日历部分 
 calendar(); 
 function calendar(){ 
-var calendar = pandora.calendar({ 
-trigger: ".J_calendar", 
-triggerClass: "J_calendar", 
-offsetAmount:{left:-256,top:0},
-//selectDateCallback: selectDateCallback, 
-cascade: { 
-days: 1, // 天数叠加一天 
-trigger: ".J_calendar", 
-isTodayClick: false
-}, 
-template: { 
-warp: '<div class="ui-calendar ui-calendar-mini"></div>', 
-calControl: '<span class="month-prev" {{stylePrev}} title="上一月">‹</span><span class="month-next" {{styleNext}} title="下一月">›</span>', 
-calWarp: '<div class="calwarp clearfix">{{content}}</div>', 
-calMonth: '<div class="calmonth">{{content}}</div>', 
-calTitle: '<div class="caltitle"><span class="mtitle">{{month}}</span></div>', 
-calBody: '<div class="calbox">' + 
-'<i class="monthbg">{{month}}</i>' + 
-'<table cellspacing="0" cellpadding="0" border="0" class="caltable">' + 
-'<thead>' + 
-'<tr>' + 
-'<th class="sun">日</th>' + 
-'<th class="mon">一</th>' + 
-'<th class="tue">二</th>' + 
-'<th class="wed">三</th>' + 
-'<th class="thu">四</th>' + 
-'<th class="fri">五</th>' + 
-'<th class="sat">六</th>' + 
-'</tr>' + 
-'</thead>' + 
-'<tbody>' + 
-'{{date}}' + 
-'</tbody>' + 
-'</table>' + 
-'</div>', 
-weekWarp: '<tr>{{week}}</tr>', 
-day: '<td {{week}} {{dateMap}} >' + 
-'<div {{className}}>{{day}}</div>' + 
-'</td>' 
-} 
-}); 
+	var calendar = pandora.calendar({ 
+			trigger: ".J_calendar", 
+			triggerClass: "J_calendar", 
+			offsetAmount:{left:-256,top:0},
+			//selectDateCallback: selectDateCallback, 
+			cascade: { 
+			days: 1, // 天数叠加一天 
+			trigger: ".J_calendar", 
+			isTodayClick: false
+			},
+			mos: 0,
+			showPrev: true, // 控制上个月翻月按钮
+			control : true,
+			classNames: {
+					week: ["sun", "mon", "tue", "wed", "thu", "fri", "sat"],
+					caldate: "caldate",
+					nodate: "", // 禁用和空
+					today: "today", // 今天
+					hover: "hover", // 鼠标滑过效果
+					selectDay: "selectDay", // input 
+					interval: "interval", // 区间
+					festival: "calfest", // 节日
+					monthPrev: "month-prev",
+					monthNext: "month-next"
+			},
+			template: { 
+				warp: '<div class="ui-calendar ui-calendar-mini"></div>', 
+				calControl: '<span class="month-prev" {{stylePrev}} title="上一月">‹</span><span class="month-next" {{styleNext}} title="下一月">›</span>', 
+				calWarp: '<div class="calwarp clearfix">{{content}}</div>', 
+				calMonth: '<div class="calmonth">{{content}}</div>', 
+				calTitle: '<div class="caltitle"><span class="mtitle">{{month}}</span></div>', 
+				calBody: '<div class="calbox">' + 
+				'<i class="monthbg">{{month}}</i>' + 
+				'<table cellspacing="0" cellpadding="0" border="0" class="caltable">' + 
+				'<thead>' + 
+				'<tr>' + 
+				'<th class="sun">日</th>' + 
+				'<th class="mon">一</th>' + 
+				'<th class="tue">二</th>' + 
+				'<th class="wed">三</th>' + 
+				'<th class="thu">四</th>' + 
+				'<th class="fri">五</th>' + 
+				'<th class="sat">六</th>' + 
+				'</tr>' + 
+				'</thead>' + 
+				'<tbody>' + 
+				'{{date}}' + 
+				'</tbody>' + 
+				'</table>' + 
+				'</div>', 
+				weekWarp: '<tr>{{week}}</tr>', 
+				day: '<td {{week}} {{dateMap}} >' + 
+				'<div {{className}}>{{day}}</div>' + 
+				'</td>' 
+			} 
+	}); 
 }
 
 </script>

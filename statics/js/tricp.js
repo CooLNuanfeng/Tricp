@@ -17,7 +17,7 @@ $(function(){
 			if($('.activityTxt').html()!='' ){
 				$('.activityTxt').show();
 				var w = $('.activityTxt').width();
-				$(this).css('textIndent',w-10)
+				//$(this).css('textIndent',w-10)
 			}
 		}).blur(function(){
 			if($('.activityTxt').html()!=''){
