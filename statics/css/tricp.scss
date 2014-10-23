@@ -4026,6 +4026,29 @@ scrollbar-base-color:#E3E3E3;
 }
 
 
+//后期修改的
+.relatedOrdersInfo .cancelOrder{
+	a{
+		color: $txtGray;
+		&:hover{
+			color: $txtGray;
+			text-decoration: underline;
+		}
+	}
+}
+.findOrder{
+	width: 900px;
+	overflow: hidden;
+	margin: 0 auto;
+	padding-top: 10px;
+	a{
+		color: $txtBlue;
+		i{
+			width: 10px;
+		}
+	}
+}
+
 //修正样式
 .t_mainbox{height: auto}
 .mt20{margin-top: 20px;}

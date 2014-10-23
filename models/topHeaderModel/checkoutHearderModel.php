@@ -12,7 +12,7 @@
             </dl>
             <div class="tl_shareCollection">
                 <a href="javascript:;" class="zan headZan"><i class="icon icon_zan"></i>赞 <em>324</em></a>
-                <a href="#commit" class="commit"><i class="icon icon_commit"></i>评论 324</a>
+                <a href="#commit" class="commit commit_md"><i class="icon icon_commit"></i>评论 324</a>
                 <a href="javascript:;" class="collectionShare"><i class="icon icon_share"></i>分享 324</a>
                 <a href="javascript:;" class="favorites"><i class="icon icon_favorites"></i>收藏</a>
                 
@@ -25,7 +25,7 @@
         </div>
         <div class="tl_shortShare fr">
             <a href="javascript:;" class="headZan"><i class="icon icon_zan"></i>赞 <em>324</em></a>
-            <a href="#commit"><i class="icon icon_commit"></i>评论 324</a>
+            <a href="#commit" class="commit_md"><i class="icon icon_commit"></i>评论 324</a>
             <a href="javascript:;" class="shortShare"><i class="icon icon_share"></i>分享 324</a>
             <a href="javascript:;" class="favorites"><i class="icon icon_favorites"></i>收藏</a>
         </div>

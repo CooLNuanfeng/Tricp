@@ -262,7 +262,7 @@ $(function(){
 							addWidth = 0; //清除宽度计算
 
 							//成功添加后调用拖拽函数
-							dragTricp();
+							//dragTricp();
 							//dragTricp($('#dayId2'));
 						}
 					});
@@ -305,23 +305,35 @@ $(function(){
 	//拖拽
 	function dragTricp(){
 		$('.t_albumBox').find('.dragLi img').live('mousedown',function(ev){
+			var X = ev.pageX,
+				Y = ev.pageY,
+				L = $(this).parent().offset().left,
+				T = $(this).parent().offset().top;
 			var _this = this;
 			var $cloneLi = $('<li class="dragCloneli"></li>').html($(this).parent().html()).css({
 				position: 'absolute',
-				top : $(this).offset().top,
-				left: $(this).offset().left,
+				top : T,
+				left: L,
 				border: '1px solid #ff6600',
-				zIndex: 99
+				zIndex: 9999
 			})
 			$('body').append($cloneLi);
 			$(this).parent().css({
 				opacity: 0.4
 			})
-			var disX = ev.pageX - $(this).offset().left;
-			var disY = ev.pageY - $(this).offset().top;
+
+			/*console.log(ev.pageX, ev.pageY);
+			console.log($(this).parent().offset().left, $(this).parent().offset().top)
+			console.log(ev.pageX - $(this).parent().offset().left, ev.pageY - $(this).parent().offset().top);*/
+			var disX = X - L;
+			var disY = Y - T;
+			console.log(L, T);
+			ev.preventDefault();
 			$(document).bind('mousemove',function(ev){
+				ev.preventDefault();
 				$('.dragTip').hide();
 				$cloneLi.css({
+					position: 'absoulte',
 					top: ev.pageY - disY,
 					left: ev.pageX - disX
 				})
@@ -364,7 +376,7 @@ $(function(){
 						// var dSort2 ='';
 						// var temp2 = '';
 						if($nearLi){
-							$('.dragLi').css('border','');
+							$('.dragLi').css('border','1px solid #dddddd');
 							//temp = $(_this).parent().html();
 							/*
 							temp2 = $nearLi.html();
@@ -428,7 +440,8 @@ $(function(){
 				}
 				
 			})
-			return false;
+			
+			//return false;
 		})
 
 	}
@@ -575,7 +588,7 @@ $(function(){
 	picDrag($('#picList'));
 	
 	function picDrag($obj){
-		$obj.find('li').live('mousedown',function(ev){
+		$obj.find('li:not(#uploadBtnLi)').live('mousedown',function(ev){
 			var _this = this;
 			//if($(this).attr('data-relate')!='ok'){  // 防止重复添加
 				if($('.dragDivPic')){
@@ -743,19 +756,22 @@ $(function(){
 
 
 
-
 	//图片上传部分
-	$('#uploadInitBtn').click(function(){
+	/*
+	$('#uploadInitBtn').live('click',function(){
 		// $(this).parent().hide();
 		// $('.t_showPic').show();
-		$('#uploadBtnLi').click();
+		setTimeout(function(){
+			$('#uploadBtnLi').click();
+		},300)
+		
 
-	})
+	})*/
 
 
 
 
-	var uploader = new plupload.Uploader({
+	/*var uploader = new plupload.Uploader({
         runtimes : 'html5,flash,silverlight,html4',
 		browse_button : 'uploadBtnLi', 
         url : 'php/uploadImage.php',
@@ -775,10 +791,10 @@ $(function(){
 		silverlight_xap_url : 'statics/js/Moxie.xap',
          
         init: {
-			/*PostInit: function() {
-				uploader.start();
-				return false;
-			},*/
+			// PostInit: function() {
+			// 	uploader.start();
+			// 	return false;
+			// },
 
 			FilesAdded: function(up, files) {
 				$('#uploadInitBtn').parent().hide();
@@ -798,10 +814,10 @@ $(function(){
 					preloader.load( file.getSource() );
 
 					//限制预览图片的尺寸
-					/*$('#'+file.id).find('img').css({
-						width: 138,
-						height: 91
-					})*/
+					// $('#'+file.id).find('img').css({
+					// 	width: 138,
+					// 	height: 91
+					// })
 					
 					//plupload.addFileFilter();
 					uploader.start();
@@ -830,9 +846,7 @@ $(function(){
 			},
 
 			Error: function(up, err) {
-				/*if(err.message == '-1'){
-					alert('aa')
-				}else{}*/
+				
 				alert('a')
 			}
 		}
@@ -840,6 +854,110 @@ $(function(){
 	
 
 	uploader.init();
+*/
+	
+	var uploadSwitchBtn = false;
+	function myUpload(str){
+		var uploader = new plupload.Uploader({
+	        runtimes : 'html5,flash,silverlight,html4',
+			browse_button : str, 
+	        url : 'php/uploadImage.php',
+	        chunk_size : '10mb',
+	        //unique_names : true,
+			filters : {
+				max_file_size : '10mb',
+				mime_types: [
+					{title : "Image files", extensions : "jpg,gif,png"}
+				]
+			},
+	 
+	        //resize : { width : 138, height : 91, quality : 90 },
 
+			flash_swf_url : 'statics/js/Moxie.swf',
+			silverlight_xap_url : 'statics/js/Moxie.xap',
+		});
+		uploader.init();
+
+		uploader.bind('FilesAdded',function(up,files){
+			uploader.start();
+			$('#uploadInitBtn').parent().hide();
+			$('.t_showPic').show();
+			//uploadSwitchBtn = true;
+			plupload.each(files, function(file) {					
+				var $item = $('<li id="'+file.id+'"><i class="icon icon_closeLi picDel"></i><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="uploadSuccess"><i class="iconBig icon_selected"></i></div><div class="relatedSuccess"><i class="iconBig icon_related"></i><p></p></div><div class="relatedFailure"><i class="icon icon_warning"></i>未关联照片</div></li>');
+				var image = $(new Image()).appendTo($item);
+				$('#picList').append($item);
+				$item.data('selectBtn',false);
+				$item.data('changeBtn',false);
+				var preloader = new mOxie.Image();
+				
+				preloader.onload = function(){
+					//preloader.downsize( 138, 91 );  //限制预览图片的尺寸
+					image.prop( "src", preloader.getAsDataURL() )
+				}
+				preloader.load( file.getSource() );
+
+				//限制预览图片的尺寸
+				/*$('#'+file.id).find('img').css({
+					width: 138,
+					height: 91
+				})*/
+				
+				//plupload.addFileFilter();
+				
+				//uploader.init();
+				if(!uploadSwitchBtn){
+					myUpload('uploadBtnLi');
+					uploadSwitchBtn = true;
+				}
+				
+			});
+		})
+
+		
+		uploader.bind('UploadProgress',function(up,file){
+			$('#'+file.id).find('.upStatus i').html(file.percent+'%')
+			$('#'+file.id).find('.upStatus span em').css({
+				width: file.percent+'%'
+			})
+		});
+
+		uploader.bind('FileUploaded',function(up,file,res){
+			$('#'+file.id).attr('data-load','ok');
+			$('#'+file.id).find('.upStatus').hide();
+			//删除已上传图片
+			$('#'+file.id).mouseover(function(){
+				$(this).find('.icon_closeLi').show();
+			})
+			$('#'+file.id).mouseout(function(){
+				$(this).find('.icon_closeLi').hide();
+			})
+		});
+		uploader.bind('Error',function(up,file,res){
+
+		})
+	}
+
+	myUpload('uploadInitBtn');
+
+
+
+	//切换触发上传节点
+	// Hook in the second button
+	/*plupload.addEvent(document.getElementById('uploadInitBtn'), 'click', function(e) {
+	  var input = document.getElementById(uploader.id + '_html5');
+	  if (input && !input.disabled) {
+	    input.click();
+	  } // if
+	  e.preventDefault();
+	});*/
+	
+	/*$('#uploadInitBtn').click(function(){
+		// $(this).parent().hide();
+		// $('.t_showPic').show();
+		if(!uploadSwitchBtn){
+			
+		}
+	})*/
 
 })

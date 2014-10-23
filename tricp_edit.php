@@ -76,7 +76,7 @@
                                 <div class="writeTitle">
                                     <span data-name='n1'>西湖</span><a href="javascript:;" class="modifyTitle shootPoint"><i class="icon icon_modifyTitle"></i>修改</a>
                                     <div class="remainTxt">已输入<span>0</span><em>/500</em>字</div>
-                                    <a href="javascript:;" class="uploadPics">上传照片</a>
+                                    <a href="javascript:;" id='up1' class="uploadPics">上传照片</a>
                                 </div>
                                 <div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
                                 <i class="icon icon_leftArrow"></i>
@@ -220,7 +220,7 @@
 		<div class="writeTitle">
 			<span data-name="<%= name %>"><%- title %></span><a href="javascript:;" class="modifyTitle shootPoint"><i class="icon icon_modifyTitle"></i>修改</a>
 			<div class="remainTxt">已输入<span>0</span><em>/500</em>字</div>
-			<a href="javascript:;" class="uploadPics">上传照片</a>
+			<a href="javascript:;" id="<%= nameID %>" class="uploadPics">上传照片</a>
 		</div>
 		<div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
 		<i class="icon icon_leftArrow"></i>
@@ -244,7 +244,7 @@
 			<div class="writeTitle">
 				<span data-name="">这里是哪？</span><a href="javascript:;" class="modifyTitle shootPoint"><i class="icon icon_modifyTitle"></i>修改</a>
 				<div class="remainTxt">已输入<span>0</span><em>/500</em>字</div>
-				<a href="javascript:;" class="uploadPics">上传照片</a>
+				<a href="javascript:;" id="<%= day %>" class="uploadPics">上传照片</a>
 			</div>
 			<div class="textareaDiv"><textarea class="dis_default" data-value='这里的简介、感觉、旅行故事…' data-success="0">这里的简介、感觉、旅行故事…</textarea></div>
 			<i class="icon icon_leftArrow"></i>

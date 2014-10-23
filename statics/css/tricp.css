@@ -442,10 +442,10 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .icon_close { background-position: -96px -3px; }
 
 #t_tips { position: relative; }
-#t_tips span { position: absolute; top: 0px; left: 0px; z-index: -1; color: #cccccc; }
+#t_tips span { position: absolute; top: 0px; left: 0px; z-index: 1; color: #cccccc; width: 148px; top: 0px; left:0px; }
 #t_tips span.active { display: none; }
 
-#t_addTips { height: 22px; padding: 4px 0px; line-height: 22px; outline: none; color: #666666; background: transparent; }
+#t_addTips { height: 22px; padding: 4px 0px; line-height: 22px; outline: none; color: #666666; background: transparent; position:absolute; top:2px; left:0px; z-index:2 }
 
 .t_TipsList { width: 664px; border: 1px solid #dddddd; border-top: 0px; background: #ffffff; overflow: hidden; position: absolute; display: none; top: 214px; left: 32px; }
 .t_TipsList div { width: 653px; height: 224px; margin: 7px 0px; overflow-y: auto; overflow-x: hidden; }
@@ -1008,6 +1008,13 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .t_successTrip a:hover { color: #ff6600; }
 .t_successTrip a:hover .icon_blueArrow { background-position: -30px -28px; }
 .t_successTrip .shareSpan { color: #999999; position: relative; float: left; top: 4px; left: 0px; margin-right: 10px; }
+
+.relatedOrdersInfo .cancelOrder a { color: #999999; }
+.relatedOrdersInfo .cancelOrder a:hover { color: #999999; text-decoration: underline; }
+
+.findOrder { width: 900px; overflow: hidden; margin: 0 auto; padding-top: 10px; }
+.findOrder a { color: #0099cc; }
+.findOrder a i { width: 10px; }
 
 .t_mainbox { height: auto; }
 

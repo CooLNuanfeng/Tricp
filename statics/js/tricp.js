@@ -143,6 +143,23 @@ $(function(){
 		$('.select').click(function(){
 			$(this).parent().parent().find('li a').removeClass('select_a');
 			$(this).addClass('select_a');
+			if($('#associateLi').html()){
+				$('#associateLi').html($(this).parent().html());
+				$('.ordersListBox ul li').find('.select').removeClass('select_a');
+				$('#associateLi').find('.select').addClass('select_a')
+			}else{				
+				var $oLi = $('<li id="associateLi"></li>');
+				$oLi.html($(this).parent().html());
+				$('.ordersListBox ul').prepend($oLi);
+			}
+			
+		});
+		//取消关联
+		$('#cancleAssoc').click(function(){
+			$('.select').removeClass('select_a');
+			if($('#associateLi').html()){
+				$('#associateLi').remove();
+			}
 		})
 		//提示浮层
 		$('.icon_question').mouseover(function(){

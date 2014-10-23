@@ -328,7 +328,31 @@ $(function(){
 			}
 			//$(window).scrollTop();
 		}
+
+		if( window.location.hash.substring(1)=='commit'){
+			if($('.tl_topHead').css('display') == 'block'){
+				var T = $('.publishCommit').offset().top - 240
+			}else{
+				var T = $('.publishCommit').offset().top - 90
+			}
+
+			$('html,body').animate({
+				scrollTop : T
+			},'fast')
+		}
 		
+		//评论定位
+		$('.commit_md').click(function(){
+			if($('.tl_topHead').css('display') == 'block'){
+				var T = $('.publishCommit').offset().top - 240
+			}else{
+				var T = $('.publishCommit').offset().top - 90
+			}
+
+			$('html,body').animate({
+				scrollTop : T
+			},'fast')
+		})
 		
 		
 		//喜欢点赞评论分享

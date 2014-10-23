@@ -326,7 +326,6 @@ $(function(){
 							}/*else if(){
 
 							}else{*/
-							console.log('olde')
 							$objClick.prev().html(res.pointTxt);
 							$('#'+ $objClick.prev().attr('data-name')).html('<a href="#'+$objClick.prev().attr('data-name')+'">'+res.pointTxt+'</a>');
 							if(OneDayOff){
@@ -362,7 +361,7 @@ $(function(){
 							var json = {
 								title : titleTxt,
 								name: dataName,
-
+								nameID: dataName
 							}
 
 							var $dd = $('<dd></dd>')
@@ -1117,97 +1116,83 @@ $(function(){
 	var $uploadObj = null;
 	$('.uploadPics').live('click',function(){
 		$uploadObj = $(this).parents('.writeTxtBox');
-		$('#uploadBtn').click();
+		myUpload($(this).attr('id'))
 	})
-	var uploader = new plupload.Uploader({
-        runtimes : 'html5,flash,silverlight,html4',
-		browse_button : 'uploadBtn', 
-        url : 'php/uploadImage.php',
-        chunk_size : '10mb',
-        //unique_names : true,
-		filters : {
-			max_file_size : '10mb',
-			mime_types: [
-				{title : "Image files", extensions : "jpg,gif,png"},
-				{title : "Zip files", extensions : "zip"}
-			]
-		},
- 
-        //resize : { width : 138, height : 91, quality : 90 },
-
-		flash_swf_url : 'statics/js/Moxie.swf',
-		silverlight_xap_url : 'statics/js/Moxie.xap',
-         
-        init: {
-			/*PostInit: function() {
-				uploader.start();
-				return false;
-			},*/
-
-			FilesAdded: function(up, files) {
-				plupload.each(files, function(file) {					
-					var $item = $('<li id="'+file.id+'" class="liDragPic" data-psort="'+ file.id +'"><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="successPic"><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div></li>');
-					var image = $(new Image()).appendTo($item);
-					//console.log($uploadObj.find('.t_listPicBox ul li').length);
-					if($uploadObj.next().find('.t_listPicBox ul li').length > 4){
-						$uploadObj.next().show().css('height',191);
-					}else{
-						$uploadObj.next().show().css('height',92)
-					}
-					
-					$uploadObj.next().find('.t_listPicBox ul').append($item);
-
-					dragPic();
-					//重新计算文档高度
-					//getWinHeight();
-					var preloader = new mOxie.Image();
-					
-					preloader.onload = function(){
-						//preloader.downsize( 138, 91 );  //限制预览图片的尺寸
-						image.prop( "src", preloader.getAsDataURL() )
-					}
-					preloader.load( file.getSource() );
-
-					//限制预览图片的尺寸
-					/*$('#'+file.id).find('img').css({
-						width: 138,
-						height: 91
-					})*/
-					
-					//plupload.addFileFilter();
-					uploader.start();
-					//uploader.init();
-				});
-
+	myUpload('up1')
+	function myUpload(str){
+		var uploader = new plupload.Uploader({
+	        runtimes : 'html5,flash,silverlight,html4',
+			browse_button : str, 
+	        url : 'php/uploadImage.php',
+	        chunk_size : '10mb',
+	        //unique_names : true,
+			filters : {
+				max_file_size : '10mb',
+				mime_types: [
+					{title : "Image files", extensions : "jpg,gif,png"},
+					{title : "Zip files", extensions : "zip"}
+				]
 			},
+	 
+	        //resize : { width : 138, height : 91, quality : 90 },
 
-			UploadProgress: function(up, file) {
-				$('#'+file.id).find('.upStatus i').html(file.percent+'%')
-				$('#'+file.id).find('.upStatus span em').css({
-					width: file.percent+'%'
-				})
-			},
-			FileUploaded : function(up,file,res){
-				$('#'+file.id).attr('data-load','ok');
-				$('#'+file.id).find('.upStatus').hide();
-				//re = JSON.parse(res.response); 
-				//if(re.error){ 
-				//console.log(re.error); 
-				//} 
+			flash_swf_url : 'statics/js/Moxie.swf',
+			silverlight_xap_url : 'statics/js/Moxie.xap'
+		});
 
-			},
-			
-			Error: function(up, err) {
-				/*if(err.message == '-1'){
-					alert('aa')
-				}else{}*/
-				alert('a')
-			}
-		}
-	});
+		uploader.init();
+
+		uploader.bind('FilesAdded',function(up, files){
+			plupload.each(files, function(file) {
+				uploader.start();					
+				var $item = $('<li id="'+file.id+'" class="liDragPic" data-psort="'+ file.id +'"><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="successPic"><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div></li>');
+				var image = $(new Image()).appendTo($item);
+				//console.log($uploadObj.find('.t_listPicBox ul li').length);
+				if($uploadObj.next().find('.t_listPicBox ul li').length > 4){
+					$uploadObj.next().show().css('height',191);
+				}else{
+					$uploadObj.next().show().css('height',92)
+				}
+				
+				$uploadObj.next().find('.t_listPicBox ul').append($item);
+
+				dragPic();
+				//重新计算文档高度
+				//getWinHeight();
+				var preloader = new mOxie.Image();
+				
+				preloader.onload = function(){
+					//preloader.downsize( 138, 91 );  //限制预览图片的尺寸
+					image.prop( "src", preloader.getAsDataURL() )
+				}
+				preloader.load( file.getSource() );
+
+				//限制预览图片的尺寸
+				/*$('#'+file.id).find('img').css({
+					width: 138,
+					height: 91
+				})*/
+				
+				//plupload.addFileFilter();
+				
+				//uploader.init();
+			});
+		});
+		uploader.bind('UploadProgress',function(up, file){
+			$('#'+file.id).find('.upStatus i').html(file.percent+'%')
+			$('#'+file.id).find('.upStatus span em').css({
+				width: file.percent+'%'
+			})
+		});
+		uploader.bind('FileUploaded',function(up,file){
+			$('#'+file.id).attr('data-load','ok');
+			$('#'+file.id).find('.upStatus').hide();
+		});
+	}
 	
+        	
 
-	uploader.init();
+	
 
 
 
@@ -1216,7 +1201,7 @@ $(function(){
 	function calendar(){ 
 	var calendar = pandora.calendar({ 
 	trigger: ".J_calendar", 
-	triggerClass: "J_calendar", 
+	triggerClass: "         ", 
 	//offsetAmount:{left:-333,top:0},
 	selectDateCallback: function(e){
 		console.log(e.selectedDate)

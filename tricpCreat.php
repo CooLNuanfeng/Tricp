@@ -27,12 +27,12 @@
         </div>
         <div class="relatedOrders pt70">
         	<div class="relatedOrdersInfo">
-            	<p><a href="javascript:;" class="findMoreOrder fr">查看更多订单<i class="icon icon_blueArrow"></i></a>关联订单，发表订单旅程 <i class="icon icon_question"></i></p>
+            	<p class="cancelOrder"><a id="cancleAssoc" href="javascript:;" class="fr">取消关联</a>关联订单，发表订单旅程 <i class="icon icon_question"></i></p>
             	<div class="answer">订单旅程，需要与您选择的订单产品吻合，才有可能被审核通过哦~”<i class="icon icon_arrowPosD"></i></div>
             </div>
             <div class="ordersListBox">
             	<ul>
-                	<li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select select_a"></a></li>
+                	<li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select"></a></li>
                     <li><span>2014-08-21</span><a href="">【尊享系列】马尔代夫AYADA阿雅达4晚6日自由行(直飞白天飞抵马累)</a><a href="javascript:;" class="fr select"></a></li>
                     <li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select"></a></li>
                     <li><span>2014-08-21</span><a href="">【尊享系列】马尔代夫AYADA阿雅达4晚6日自由行(直飞白天飞抵马累)</a><a href="javascript:;" class="fr select"></a></li>
@@ -40,6 +40,7 @@
                     <li><span>2014-08-21</span><a href="">【尊享系列】马尔代夫AYADA阿雅达4晚6日自由行(直飞白天飞抵马累)</a><a href="javascript:;" class="fr select"></a></li>
                 </ul>
            	</div>
+            <div class="findOrder"><a href="javascript:;" class="findMoreOrder fr">查看更多订单<i class="icon icon_blueArrow"></i></a></div>
         </div>
         <div class="btnBox pt70"><a href="javascript:;" class="dis_link">创 建</a></div>
     </div>
@@ -56,7 +57,7 @@
         </div>
         <div class="tabListBox">
         	<ul>
-            	<li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select select_a"></a></li>
+            	<li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select"></a></li>
                 <li><span>2014-08-21</span><a href="">【尊享系列】马尔代夫AYADA阿雅达4晚6日自由行(直飞白天飞抵马累)</a><a href="javascript:;" class="fr select"></a></li>
                 <li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select"></a></li>
                 <li><span>2014-08-21</span><a href="">【尊享系列】马尔代夫AYADA阿雅达4晚6日自由行(直飞白天飞抵马累)</a><a href="javascript:;" class="fr select"></a></li>
@@ -69,7 +70,7 @@
         </div>
         <div class="tabListBox" style="display:none">
         	<ul>
-            	<li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由00111行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select select_a"></a></li>
+            	<li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由00111行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select"></a></li>
                 <li><span>2014-08-21</span><a href="">【尊享系列】马尔代夫AYADA阿雅达4晚6日自由行(直飞白天飞抵马累)</a><a href="javascript:;" class="fr select"></a></li>
                 <li><span>2014-08-21</span><a href="">玩天目湖水世界、游山水园（含游船），住君悦假日标准间双人自由行【赠意大利馆门票2张】</a><a href="javascript:;" class="fr select"></a></li>
                 <li><span>2014-08-21</span><a href="">【尊享系列】马尔代夫AYADA阿雅达4晚6日自由行(直飞白天飞抵马累)</a><a href="javascript:;" class="fr select"></a></li>
