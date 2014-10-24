@@ -44,38 +44,21 @@ $(function(){
 			}*/
 		})
 
-		var inputStrName = '';
-		var inputLen = ''
-		$('.input_name').keydown(function(e){
-			var len = '';
-			inputLen = getLength($('.input_name').val());
-			len = inputLen;
-			len = Math.ceil(len/2);
-			if(len>40 && e.keyCode!=8){
-				$('.input_name').val(inputStrName);
-				e.preventDefault();
-				return false;
-			}
-		});
-
-		$('.input_name').bind('input propertychange',function(ev){
+		// var inputStr = '';
+		// var inputBtn = true;
+		// //var len = '';
+		$('.input_name').keydown(function(){
 			$('.leftTxt').show();
-			var len = '';
-			inputLen = getLength($('.input_name').val());
-			len = inputLen;
+		});
+		$('.input_name').keyup(function(){
+			var len = getLength($('.input_name').val());
 				len = Math.ceil(len/2);
-				$('.leftTxt').html('<span class="active">'+len+'</span>/40')
 			if(len>40){
-				inputStrName = $('.input_name').val();
-				$('.input_name').addClass('error');
-				$('.leftTxt span').addClass('error');
-				$('.btnBox a').addClass('dis_link');
-				ev.preventDefault();
-				return false;
+				$('.input_name').val($('.input_name').val().substring(0,40));
+				$('.leftTxt').html('<span class="active">40</span>/40')
 			}else{
-				$('.input_name').removeClass('error');
-				$('.leftTxt span').removeClass('error');
 				$('.btnBox a').removeClass('dis_link');
+				$('.leftTxt').html('<span class="active">'+len+'</span>/40');
 			}
 		})
 		/*$('.input_name').focus(function(){
