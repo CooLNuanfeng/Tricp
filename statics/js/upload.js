@@ -327,7 +327,6 @@ $(function(){
 			console.log(ev.pageX - $(this).parent().offset().left, ev.pageY - $(this).parent().offset().top);*/
 			var disX = X - L;
 			var disY = Y - T;
-			console.log(L, T);
 			ev.preventDefault();
 			$(document).bind('mousemove',function(ev){
 				ev.preventDefault();
@@ -537,36 +536,45 @@ $(function(){
 
 
 	//右侧图片拖拽关联部分
-
-	$('#picList li:not("#uploadBtnLi")').live('click',function(e){
-		if($(this).attr('data-relate')!='ok'){  
-			if(!$(this).data('selectBtn')){  //防止重复显示
-				$(this).addClass('selectLi');
-				$(this).find('.upStatus').hide();
-				$(this).find('.uploadSuccess').show();
-				$(this).data('selectBtn', true);
-			}else{
-				$(this).removeClass('selectLi');
-				$(this).find('.upStatus').hide();
-				$(this).find('.uploadSuccess').hide();
-				$(this).data('selectBtn', false);
-			}			
-		}
-		if($(this).attr('data-relate')=='ok'){
-			if(!$(this).data('changeBtn')){
-				$(this).find('.icon_related').css({
-					backgroundPosition: '-300px -100px'
-				});
-				$(this).addClass('selectLi');
-				$(this).data('changeBtn', true);
-			}else{
-				$(this).find('.icon_related').css({
-					backgroundPosition: '-350px -100px'
-				});
-				$(this).removeClass('selectLi');
-				$(this).data('changeBtn', false);
+	var start_time = null;
+	var end_time = null;
+	$('#picList li:not("#uploadBtnLi")').live('click',function(){
+		console.log(end_time - start_time,1)
+		if(end_time - start_time > 300){
+			var _this =$(this);
+			console.log(end_time - start_time,2)
+			if(_this.attr('data-relate')!='ok'){  
+				if(!_this.data('selectBtn')){  //防止重复显示
+					_this.addClass('selectLi');
+					//$(this).find('.upStatus').hide();
+					_this.find('.uploadSuccess').show();
+					_this.data('selectBtn', true);
+				}else{
+					_this.removeClass('selectLi');
+					//$(this).find('.upStatus').hide();
+					_this.find('.uploadSuccess').hide();
+					_this.data('selectBtn', false);
+				}			
 			}
+			if(_this.attr('data-relate')=='ok'){
+				if(!_this.data('changeBtn')){
+					_this.find('.icon_related').css({
+						backgroundPosition: '-300px -100px'
+					});
+					_this.addClass('selectLi');
+					_this.data('changeBtn', true);
+				}else{
+					_this.find('.icon_related').css({
+						backgroundPosition: '-350px -100px'
+					});
+					_this.removeClass('selectLi');
+					_this.data('changeBtn', false);
+				}
+			}
+		}else{
+			return false;
 		}
+		
 		
 	})
 
@@ -589,6 +597,7 @@ $(function(){
 	
 	function picDrag($obj){
 		$obj.find('li:not(#uploadBtnLi)').live('mousedown',function(ev){
+			start_time = new Date();
 			var _this = this;
 			//if($(this).attr('data-relate')!='ok'){  // 防止重复添加
 				if($('.dragDivPic')){
@@ -633,21 +642,25 @@ $(function(){
 					}
 
 				})
-				$(document).bind('mouseup',function(ev){				
+				$(document).bind('mouseup',function(ev){					
+					$(document).unbind('mousemove');
+					$(document).unbind('mouseup');				
 					$('.dragLi').css('border','');
-
+					end_time = new Date();
 					if($picObj){
 						var arrObj = [];
 						if(imgLength==0){
 							arrObj.push($(_this).attr('id'));
+							var $span = $picObj.find('span');
 							//$(_this).attr('data-prevRelate',$picObj.attr('id'));  //上一次关联的标记
-							$picObj.find('span').html( (parseInt($picObj.find('span').html())+1)+'张');
+							$span.html( (parseInt($span.html())+1)+'张');
 						}else{
 							$obj.find('.selectLi').each(function(){
 								arrObj.push($(this).attr('id'));
 								//$(this).attr('data-prevRelate',$picObj.attr('id')); //上一次关联的标记
 							})
-							$picObj.find('span').html( (parseInt($picObj.find('span').html())+imgLength)+'张');
+							var $span = $picObj.find('span')
+							$span.html( (parseInt($span.html())+imgLength)+'张');
 						}
 						//console.log( $picObj.attr('data-dsort') );
 						$.ajax({
@@ -660,24 +673,25 @@ $(function(){
 								$('.dragDivPic').remove();
 								$('.dragLi').css('border','1px solid #dddddd');
 								for(var i=0; i<res.length; i++){
-									$('#'+res[i]).removeClass('selectLi');
-									$('#'+res[i]).find('.uploadSuccess').hide();
-									$('#'+res[i]).find('.relatedFailure').hide();
-									$('#'+res[i]).find('.relatedSuccess').show();
+									var $resObj = $('#'+res[i]);
+									$resObj.removeClass('selectLi');
+									$resObj.find('.uploadSuccess').hide();
+									$resObj.find('.relatedFailure').hide();
+									$resObj.find('.relatedSuccess').show();
 									//表示修改关联点
-									var prevID = $('#'+res[i]).attr('data-prevRelate');
+									var prevID = $resObj.attr('data-prevRelate');
 									if(prevID){
 										$('#'+prevID).find('span').html(parseInt($('#'+prevID).find('span').html())-1+'张');
 									}
-									$('#'+res[i]).attr('data-prevRelate',$picObj.attr('id'));
+									$resObj.attr('data-prevRelate',$picObj.attr('id'));
 
 
-									$('#'+res[i]).find('.icon_related').css({
+									$resObj.find('.icon_related').css({
 										backgroundPosition: '-350px -100px'
 									});
-									$('#'+res[i]).data('changeBtn', false);
-									$('#'+res[i]).find('.relatedSuccess p').html($picObj.find('p strong').html());
-									$('#'+res[i]).attr('data-relate','ok');  //确定已关联
+									$resObj.data('changeBtn', false);
+									$resObj.find('.relatedSuccess p').html($picObj.find('p strong').html());
+									$resObj.attr('data-relate','ok');  //确定已关联
 								};
 								related(); //检测是否已关联
 								
@@ -688,8 +702,7 @@ $(function(){
 						$('.dragDivPic').remove();
 						picDrag($('#picList'));
 					}
-					$(document).unbind('mouseup');
-					$(document).unbind('mousemove');
+					
 				});
 				return false;
 			//}
@@ -924,7 +937,7 @@ $(function(){
 
 		uploader.bind('FileUploaded',function(up,file,res){
 			$('#'+file.id).attr('data-load','ok');
-			$('#'+file.id).find('.upStatus').hide();
+			$('#'+file.id).find('.upStatus').remove();
 			//删除已上传图片
 			$('#'+file.id).mouseover(function(){
 				$(this).find('.icon_closeLi').show();

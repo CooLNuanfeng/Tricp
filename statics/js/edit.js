@@ -1122,20 +1122,21 @@ $(function(){
 
 	//图片上传功能
 	var $uploadObj = null;
-	$('.uploadPics').one('click',function(){
+	$('.uploadPics').live('click',function(){
 		$uploadObj = $(this).parents('.writeTxtBox');
-		/*if($(this).attr('data-uploadOnload')){
-			myUpload($(this).attr('id'));
-			$(this).attr('data-uploadOnload',0)
-		}*/
 		if($(this).data('uploadSwitch')){
 			//myUpload($(this).attr('id'));
 			$(this).data('uploadSwitch',false);
+		}		
+	});
+
+	$('.uploadPics').each(function(){
+		if($(this).attr('data-uploadOnload')){
+			myUpload($(this).attr('id'));
 		}
-		
-		
 	})
-	myUpload('up1');
+
+	//myUpload('up1');
 	function myUpload(str){
 		var uploader = new plupload.Uploader({
 	        runtimes : 'html5,flash,silverlight,html4',
@@ -1164,7 +1165,6 @@ $(function(){
 				uploader.start();					
 				var $item = $('<li id="'+file.id+'" class="liDragPic" data-psort="'+ file.id +'"><div class="upStatus"><i>0%</i><span><em></em></span></div><div class="successPic"><a href="javascript:;" class="picDes"><i class="icon icon_des"></i>描述</a><a href="javascript:;" class="picDel"><i class="icon icon_deldd"></i>删除</a></div></li>');
 				var image = $(new Image()).appendTo($item);
-				//console.log($uploadObj.find('.t_listPicBox ul li').length);
 				if($uploadObj.next().find('.t_listPicBox ul li').length > 4){
 					$uploadObj.next().show().css('height',191);
 				}else{
