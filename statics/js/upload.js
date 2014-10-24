@@ -536,45 +536,36 @@ $(function(){
 
 
 	//右侧图片拖拽关联部分
-	var start_time = null;
-	var end_time = null;
 	$('#picList li:not("#uploadBtnLi")').live('click',function(){
-		console.log(end_time - start_time,1)
-		if(end_time - start_time > 300){
-			var _this =$(this);
-			console.log(end_time - start_time,2)
-			if(_this.attr('data-relate')!='ok'){  
-				if(!_this.data('selectBtn')){  //防止重复显示
-					_this.addClass('selectLi');
-					//$(this).find('.upStatus').hide();
-					_this.find('.uploadSuccess').show();
-					_this.data('selectBtn', true);
-				}else{
-					_this.removeClass('selectLi');
-					//$(this).find('.upStatus').hide();
-					_this.find('.uploadSuccess').hide();
-					_this.data('selectBtn', false);
-				}			
-			}
-			if(_this.attr('data-relate')=='ok'){
-				if(!_this.data('changeBtn')){
-					_this.find('.icon_related').css({
-						backgroundPosition: '-300px -100px'
-					});
-					_this.addClass('selectLi');
-					_this.data('changeBtn', true);
-				}else{
-					_this.find('.icon_related').css({
-						backgroundPosition: '-350px -100px'
-					});
-					_this.removeClass('selectLi');
-					_this.data('changeBtn', false);
-				}
-			}
-		}else{
-			return false;
+		var _this =$(this);
+		if(_this.attr('data-relate')!='ok'){  
+			if(!_this.data('selectBtn')){  //防止重复显示
+				_this.addClass('selectLi');
+				//$(this).find('.upStatus').hide();
+				_this.find('.uploadSuccess').show();
+				_this.data('selectBtn', true);
+			}else{
+				_this.removeClass('selectLi');
+				//$(this).find('.upStatus').hide();
+				_this.find('.uploadSuccess').hide();
+				_this.data('selectBtn', false);
+			}			
 		}
-		
+		if(_this.attr('data-relate')=='ok'){
+			if(!_this.data('changeBtn')){
+				_this.find('.icon_related').css({
+					backgroundPosition: '-300px -100px'
+				});
+				_this.addClass('selectLi');
+				_this.data('changeBtn', true);
+			}else{
+				_this.find('.icon_related').css({
+					backgroundPosition: '-350px -100px'
+				});
+				_this.removeClass('selectLi');
+				_this.data('changeBtn', false);
+			}
+		}
 		
 	})
 
@@ -597,7 +588,6 @@ $(function(){
 	
 	function picDrag($obj){
 		$obj.find('li:not(#uploadBtnLi)').live('mousedown',function(ev){
-			start_time = new Date();
 			var _this = this;
 			//if($(this).attr('data-relate')!='ok'){  // 防止重复添加
 				if($('.dragDivPic')){
@@ -646,7 +636,6 @@ $(function(){
 					$(document).unbind('mousemove');
 					$(document).unbind('mouseup');				
 					$('.dragLi').css('border','');
-					end_time = new Date();
 					if($picObj){
 						var arrObj = [];
 						if(imgLength==0){
@@ -700,7 +689,7 @@ $(function(){
 						
 					}else{
 						$('.dragDivPic').remove();
-						picDrag($('#picList'));
+						//picDrag($('#picList'));
 					}
 					
 				});

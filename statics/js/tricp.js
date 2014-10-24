@@ -44,23 +44,34 @@ $(function(){
 			}*/
 		})
 
+		var inputStrName = '';
+		var inputLen = ''
 		$('.input_name').keydown(function(e){
-			var len = getLength($('.input_name').val());
+			var len = '';
+			inputLen = getLength($('.input_name').val());
+			len = inputLen;
 			len = Math.ceil(len/2);
 			if(len>40 && e.keyCode!=8){
+				$('.input_name').val(inputStrName);
+				e.preventDefault();
 				return false;
 			}
-		})
+		});
 
-		$('.input_name').bind('input propertychange',function(){
+		$('.input_name').bind('input propertychange',function(ev){
 			$('.leftTxt').show();
-			var len = getLength($('.input_name').val());
+			var len = '';
+			inputLen = getLength($('.input_name').val());
+			len = inputLen;
 				len = Math.ceil(len/2);
 				$('.leftTxt').html('<span class="active">'+len+'</span>/40')
-			if(len>=40||len<=0){
+			if(len>40){
+				inputStrName = $('.input_name').val();
 				$('.input_name').addClass('error');
 				$('.leftTxt span').addClass('error');
 				$('.btnBox a').addClass('dis_link');
+				ev.preventDefault();
+				return false;
 			}else{
 				$('.input_name').removeClass('error');
 				$('.leftTxt span').removeClass('error');
