@@ -54,13 +54,25 @@ $(function(){
 			var len = getLength($('.input_name').val());
 				len = Math.ceil(len/2);
 			if(len>40){
-				$('.input_name').val($('.input_name').val().substring(0,40));
+				$('.input_name').val(sub($('.input_name').val(),80));
 				$('.leftTxt').html('<span class="active">40</span>/40')
 			}else{
 				$('.btnBox a').removeClass('dis_link');
 				$('.leftTxt').html('<span class="active">'+len+'</span>/40');
 			}
 		})
+
+		function sub(str,n){
+		  var r=/[^\x00-\xff]/g;
+		  if(str.replace(r,"mm").length<=n){return str;}
+		  var m=Math.floor(n/2);
+		  for(var i=m;i<str.length;i++){
+		      if(str.substr(0,i).replace(r,"mm").length>=n){
+		          return str.substr(0,i);
+		      }
+		  }
+		  return str;
+		}
 		/*$('.input_name').focus(function(){
 			$(this).addClass('active');
 			if($(this).attr('data-activity') && $(this).val() == ''){

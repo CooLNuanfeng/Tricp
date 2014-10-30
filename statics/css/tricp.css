@@ -259,19 +259,20 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 
 .editMain { margin-top: 110px; margin-left: 328px; border-left: 3px solid #dddddd; width: 869px; position: relative; padding-top: 100px; }
 
-.userHeader { height: 94px; line-height: 94px; position: absolute; top: -85px; left: -50px; overflow: hidden; }
-.userHeader .leftTxt { left: 428px; top: 0px; }
+.userHeader { height: 94px; position: absolute; top: -85px; left: -50px; overflow: hidden; }
+.userHeader .leftTxt { left: 428px; top: 32px; }
 .userHeader.error .t_editingTitle { border: 1px solid #cc0000; }
 .userHeader.error .leftTxt span { color: #cc0000; }
 
 .userAvatar { float: left; width: 85px; height: 85px; padding: 3px; background: #ffffff; border-radius: 50%; overflow: hidden; border: 1px solid #dddddd; }
 .userAvatar img { border-radius: 50%; }
 
+.userTitle{float:left; width: 826px; padding-top: 25px;}
 .t_editingTitle { width: 310px; height: 23px; padding: 5px; padding-right: 40px; line-height: 23px; border: 1px solid #ff9900; outline: none; margin-left: 10px; display: none; }
 
-.tricpTitle { float: left; height: 85px; margin: 0 10px; line-height: 85px; font-family: "微软雅黑"; font-size: 24px; color: #333333; }
+.tricpTitle { float: left; height: 32px; margin: 0 10px; line-height: 32px; font-family: "微软雅黑"; font-size: 20px; color: #333333; }
 
-.modifyTitle { color: #0099cc; }
+.modifyTitle { color: #0099cc; line-height: 32px; display: inline-block; }
 .modifyTitle:hover .icon_modifyTitle { background-position: -475px -2px; }
 
 .icon_modifyTitle { background-position: -300px -2px; }
@@ -335,12 +336,13 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .writeTxtBox textarea { width: 742px; line-height: 25px; height: 116px; border: 0px; outline: none; padding: 5px; color: #666666; }
 
 .writeTitle { position: relative; height: 42px; line-height: 42px; font-family: "微软雅黑"; font-size: 16px; color: #999999; background: #EAEAEA; padding: 0 10px; }
+.writeTitle span{ font-size: 14px;}
 .writeTitle a { font-size: 12px; }
 
 .textareaDiv { overflow: hidden; height: 126px; }
 
 .remainTxt { position: absolute; top: 0px; right: 100px; font-size: 12px; color: #999999; font-family: "宋体"; }
-.remainTxt span { color: #ff9900; }
+.remainTxt span { color: #ff9900; font-size: 12px; }
 .remainTxt span.error { color: #cc0000; }
 
 .uploadPics { position: absolute; width: 76px; height: 26px; line-height: 26px; text-align: center; color: #ffffff; top: 8px; right: 10px; background: #ff9900; border-radius: 3px; }
@@ -1015,6 +1017,14 @@ body { scrollbar-arrow-color: #fff; scrollbar-face-color: #dfdfdf; scrollbar-3dl
 .findOrder { width: 900px; overflow: hidden; margin: 0 auto; padding-top: 10px; }
 .findOrder a { color: #0099cc; }
 .findOrder a i { width: 10px; }
+
+.t_tripSuccess{ width:536px; height:96px; margin:0 auto; overflow:hidden;}
+.t_tripSuccess dt{ float:left; width:50px; height:88px; padding-top: 8px;}
+.t_tripSuccess dd{float:left; }
+.t_tripSuccess dd h6 { padding: 10px 0px; font-family:"微软雅黑"; font-weight: normal; font-size:36px; color: #666666; line-height:36px; text-indent: 10px;}
+.t_tripSuccess dd p{ font-family:"微软雅黑"; font-size:18px; color: #999999; line-height:18px; text-indent: 10px; }
+.icon_tricpSuccess { background-position: -250px -150px;}
+
 
 .t_mainbox { height: auto; }
 

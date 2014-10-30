@@ -695,27 +695,36 @@ $(function(){
 
 	//修改游记标题
 	$('.modifyTricpName').click(function(){
-		$(this).html('<i class="icon icon_modifyTitle"></i>完成');
-		$(this).siblings('.tricpTitle').hide();
-		$(this).siblings('.t_editingTitle').show();
-	});
-	$('.t_editingTitle').bind('input propertychange',function(){
-		var len = Math.ceil( getLength2( $(this).val() )/2 );
-		$(this).siblings('.leftTxt').show();
-		if(len>30){
-			$(this).parent().addClass('error');
-			$(this).siblings('.tricpTitle').attr('data-success',0);
-		}else{
-			$(this).parent().removeClass('error');
-			$(this).siblings('.tricpTitle').attr('data-success',1);
+		if($('.t_editingTitle').val()!=''){
+			$(this).html('<i class="icon icon_modifyTitle"></i>完成');
+			$(this).siblings('.tricpTitle').hide();
+			$(this).siblings('.t_editingTitle').show().val($(this).siblings('.tricpTitle').html()).focus()
 		}
-		$(this).siblings('.leftTxt').find('span').text(len);
 	});
+	$('.t_editingTitle').keydown(function(){
+		$('.leftTxt').show();
+	});
+	$('.t_editingTitle').keyup(function(){
+		var len = getLength($(this).val());
+		len = Math.ceil(len/2);
+		if(len>40){
+			$(this).val($(this).val().substring(0,40));
+			$('.leftTxt').html('<span class="active">40</span>/40')
+		}else{
+			$('.leftTxt').html('<span class="active">'+len+'</span>/40');
+		}
+	})
 	$('.t_editingTitle').blur(function(){
-		$(this).siblings('.leftTxt').hide();
-		$(this).siblings('.tricpTitle').text($(this).val()).show();
-		$(this).hide();
-		$('.modifyTricpName').html('<i class="icon icon_modifyTitle"></i>修改');
+		var re = /\s+/;
+		if($(this).val()!=''&& !re.test($(this).val()) ){
+			$(this).siblings('.leftTxt').hide();
+			$(this).siblings('.tricpTitle').text($(this).val()).show();
+			$(this).hide();
+			$('.modifyTricpName').html('<i class="icon icon_modifyTitle"></i>修改');
+		}else{
+			$(this).val('')
+		}
+		
 	});
 
 

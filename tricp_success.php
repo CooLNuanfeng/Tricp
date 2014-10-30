@@ -20,7 +20,11 @@
             </ul>
         </div>
         <div class="t_model t_tricpSuccess">
-        	<img src="statics/image/successImg.png">
+        	<dl class="t_tripSuccess">
+            	<dt><i class="iconBig icon_tricpSuccess"></i></dt>
+                <dd><h6>撒花~~恭喜旅程成功发表！</h6></dd>
+                <dd><p>分享攒人气，人气越高，微游宝的收益也会越高哟~~</p></dd>
+            </dl>
             <div class="t_successTrip">
             	<a href="">查看我的旅程<i class="icon icon_blueArrow"></i></a>
                 <div class="bdsharebuttonbox">
@@ -43,7 +47,9 @@ function getheightauto(){
 getheightauto();
 </script>
 <script>
-	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+	var str = "啊啊啊"
+	var url = "http://www.baidu.com"
+	window._bd_share_config={"common":{"bdSnsKey":{},"bdText":str,"bdUrl":url,"bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 </script>
 
 </body>
